@@ -3,40 +3,40 @@ import { TouchableOpacity, StyleSheet, Text, View, TextInput } from 'react-nativ
 import { useFonts, Lato_300Light, Lato_400Regular, Lato_700Bold, Lato_900Black } from '@expo-google-fonts/lato'
 
 export default function SignInScreen({ navigation }) {
-    
-        let [loaded] = useFonts({
-            Lato_300Light,
-            Lato_400Regular,
-            Lato_700Bold,
-            Lato_900Black,
-        })
-    
-        if (!loaded) {
-            return null
-        }
-    
-        return (
-            <View style={styles.container}>
-                <LogotypeV />
-                <Text style={styles.title}>Bonjour</Text>
-                <View style={styles.identifiantC}>
-                    <Text style={styles.identifiant}>Identifiant</Text>
-                    <TextInput style={styles.input} placeholder="" />
-                </View>
-                <View style={styles.mdpC}>
-                    <Text style={styles.mdp}>Mot de passe</Text>
-                    <TextInput style={styles.input} placeholder="" />
-                </View>
-                <TouchableOpacity onPress={() => navigation.navigate('Mdp oublié')} >
-                    <Text style={styles.mdpoublié}>Mot de passe oublié ?</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.connecterC} title="Se connecter" onPress={() => navigation.navigate('Home')} >
-                    <Text style={styles.connecter}>Se connecter</Text>
-                </TouchableOpacity>
-                
-            </View>
-        )
+
+    let [loaded] = useFonts({
+        Lato_300Light,
+        Lato_400Regular,
+        Lato_700Bold,
+        Lato_900Black,
+    })
+
+    if (!loaded) {
+        return null
     }
+
+    return (
+        <View style={styles.container}>
+            <LogotypeV />
+            <Text style={styles.title}>Bonjour</Text>
+            <View style={styles.inputC}>
+                <Text style={styles.identifiant}>Identifiant</Text>
+                <TextInput style={styles.input} placeholder="" />
+            </View>
+            <View style={styles.inputC}>
+                <Text style={styles.mdp}>Mot de passe</Text>
+                <TextInput style={styles.input} placeholder="" />
+            </View>
+            <TouchableOpacity onPress={() => navigation.navigate('Mdp oublié')} >
+                <Text style={styles.mdpoublié}>Mot de passe oublié ?</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.seconnecterC} title="Se connecter" onPress={() => navigation.navigate('Home')} >
+                <Text style={styles.seconnecter}>Se connecter</Text>
+            </TouchableOpacity>
+
+        </View>
+    )
+}
 
 const styles = StyleSheet.create({
     container: {
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontFamily: 'Lato_900Black',
-        fontSize: 36,
+        fontSize: 30,
         marginTop: 30,
         marginBottom: 30,
     },
@@ -57,22 +57,18 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 5,
         marginBottom: 20,
+        height: 40,
     },
-    identifiantC: {
+    inputC: {
         width: '80%',
-        marginBottom: 20,
     },
-    mdpC: {
-        width: '80%',
-        marginBottom: 20,
-    },
-    connecterC: {
+    seconnecterC: {
         width: '80%',
         backgroundColor: '#000',
         padding: 10,
         borderRadius: 5,
     },
-    connecter: {
+    seconnecter: {
         color: '#fff',
         textAlign: 'center',
     },
@@ -87,6 +83,7 @@ const styles = StyleSheet.create({
     mdpoublié: {
         fontFamily: 'Lato_700Bold',
         color: '#000',
+        marginTop: 10,
         marginBottom: 20,
         textDecorationLine: 'underline',
     }

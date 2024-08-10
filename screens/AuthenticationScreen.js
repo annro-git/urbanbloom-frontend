@@ -19,10 +19,12 @@ export default function AuthenticationScreen({ navigation }) {
     return (
         <View style={styles.container}>
             <LogotypeV />
-            <Text style={styles.title}>Bonjour</Text>
-            <Text>"Tagline"</Text>
-            <TouchableOpacity style={styles.connecterC} title="Se connecter" onPress={() => navigation.navigate('Sign-in')} >
-                <Text style={styles.connecter}>Se connecter</Text>
+            <View style={styles.titlecontainer}>
+                <Text style={styles.title}>Bonjour</Text>
+                <Text>"Tagline"</Text>
+            </View>
+            <TouchableOpacity style={styles.seconnecterC} title="Se connecter" onPress={() => navigation.navigate('Sign-in')} >
+                <Text style={styles.seconnecter}>Se connecter</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.créerC} title="Créer un compte" onPress={() => navigation.navigate('Sign-up')} >
                 <Text style={styles.créer}>Créer un compte</Text>
@@ -45,42 +47,55 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    titlecontainer: {
+        alignItems: 'center',
+        marginBottom: 10,
+    },
     title: {
         fontFamily: 'Lato_900Black',
-        fontSize: 36,
+        fontSize: 30,
         marginTop: 30,
     },
     socials: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: '50%',
-        marginTop: 20,
+        marginTop: 10,
     },
-    connecterC: {
+    seconnecterC: {
+        width: '80%',
         marginTop: 20,
         backgroundColor: 'black',
-        paddingVertical: 10,
+        paddingTop: 10,
+        paddingBottom: 13,
         paddingHorizontal: 20,
         borderRadius: 5,
         alignItems: 'center',
+        justifyContent: 'center',
     },
-    connecter: {
+    seconnecter: {
         color: 'white',
         fontFamily: 'Lato_400Regular',
+        textAlign: 'center',
     },
     créerC: {
+        width: '80%',
         marginTop: 20,
         borderWidth: 1,
         borderColor: 'black',
-        padding: 10,
+        paddingHorizontal: 20,
         borderRadius: 5,
-        marginBottom: 20,
+        marginBottom: 40,
+        paddingTop: 10,
+        paddingBottom: 13,
     },
     créer: {
         color: 'black',
         fontFamily: 'Lato_400Regular',
+        textAlign: 'center',
     },
     continuer: {
         fontFamily: 'Lato_400Regular',
-    }
+    },
+
 });

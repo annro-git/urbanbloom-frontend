@@ -18,21 +18,21 @@ export default function SignUpScreen({ navigation }) {
     return (
         <View style={styles.container}>
             <LogotypeV />
-            <Text style={styles.title}>Bonjour</Text>
-            <View style={styles.identifiantC}>
+            <Text style={styles.title}>Bienvenue</Text>
+            <View style={styles.inputC}>
                 <Text style={styles.identifiant}>Identifiant</Text>
                 <TextInput style={styles.input} placeholder="" />
             </View>
-            <View style={styles.emailC}>
+            <View style={styles.inputC}>
                 <Text style={styles.email}>Email</Text>
                 <TextInput style={styles.input} placeholder="" />
             </View>
-            <View style={styles.mdpC}>
+            <View style={styles.inputC}>
                 <Text style={styles.mdp}>Mot de passe</Text>
                 <TextInput style={styles.input} placeholder="" />
             </View>
-            <TouchableOpacity style={styles.connecterC} title="Créer un compte" onPress={() => navigation.navigate('Sign-in')} >
-                <Text style={styles.connecter}>Se connecter</Text>
+            <TouchableOpacity style={styles.seconnecterC} title="Créer un compte" onPress={() => navigation.navigate('Sign-in')} >
+                <Text style={styles.seconnecter}>Se connecter</Text>
             </TouchableOpacity>
         </View>
     )
@@ -47,9 +47,9 @@ const styles = StyleSheet.create({
     },
     title: {
         fontFamily: 'Lato_900Black',
-        fontSize: 36,
+        fontSize: 30,
         marginTop: 30,
-        marginBottom: 30,
+        marginBottom: 20,
     },
     input: {
         borderWidth: 1,
@@ -57,35 +57,33 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 5,
         marginBottom: 20,
+        height: 40,
     },
-    identifiantC: {
-        width: '80%',
-    },
-    emailC: {
-        width: '80%',
-    },
-    mdpC: {
+    inputC: {
         width: '80%',
     },
     identifiant: {
         fontFamily: 'Lato_700Bold',
-        fontSize: 18,
+        fontSize: 15,
     },
     email: {
         fontFamily: 'Lato_700Bold',
-        fontSize: 18,
+        fontSize: 15,
     },
     mdp: {
         fontFamily: 'Lato_700Bold',
-        fontSize: 18,
+        fontSize: 15,
     },
-    connecterC: {
+    seconnecterC: {
         width: '80%',
         backgroundColor: '#000',
         padding: 10,
         borderRadius: 5,
+        paddingTop: 10,
+        paddingBottom: 13,
+        marginTop: 20,
     }, 
-    connecter: {
+    seconnecter: {
         color: '#fff',
         textAlign: 'center',
     },

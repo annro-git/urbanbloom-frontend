@@ -13,6 +13,7 @@ import LogotypeV from './components/LogotypeV'
 import AuthenticationScreen from './screens/AuthenticationScreen'
 import SignUpScreen from './screens/SignUpScreen'
 import SignInScreen from './screens/SignInScreen'
+import ForgotPassword from './screens/ForgotPassword'
 
 const Stack = createNativeStackNavigator();
 
@@ -43,6 +44,7 @@ export default function App() {
         <Stack.Screen name="Authentication" component={AuthenticationScreen} />
         <Stack.Screen name="Sign-up" component={SignUpScreen} />
         <Stack.Screen name="Sign-in" component={SignInScreen} />
+        <Stack.Screen name="Mdp oublié" component={ForgotPassword} />
       </Stack.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>
