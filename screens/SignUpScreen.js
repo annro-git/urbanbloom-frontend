@@ -31,7 +31,7 @@ export default function SignUpScreen({ navigation }) {
                 <Text style={styles.mdp}>Mot de passe</Text>
                 <TextInput style={styles.input} placeholder="" />
             </View>
-            <TouchableOpacity style={styles.seconnecterC} title="Créer un compte" onPress={() => navigation.navigate('Sign-in')} >
+            <TouchableOpacity style={styles.seconnecterC} title="Créer un compte" onPress={() => navigation.navigate('TabNavigator')} >
                 <Text style={styles.seconnecter}>Se connecter</Text>
             </TouchableOpacity>
         </View>
