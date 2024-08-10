@@ -41,11 +41,10 @@ export default function App() {
       <Stack.Navigator initialRouteName="Authentication">
         <Stack.Screen name="Authentication" component={AuthenticationScreen} />
         <Stack.Screen name="Sign-up" component={SignUpScreen} />
-        
       </Stack.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>
-    
+
   );
 }
 
