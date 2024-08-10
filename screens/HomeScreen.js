@@ -6,6 +6,17 @@ export default HomeScreen = () => {
     return (
         <View style={styles.container}>
             <Header title='Home' />
+            <View>
+                <Text>Agenda</Text>
+                
+            </View>
+            <View> 
+                <Text>Partages</Text>
+
+            </View>
+            <View>
+                <Text>Au jardin</Text>
+            </View>
         </View>
     );
 }

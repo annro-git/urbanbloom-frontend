@@ -99,7 +99,7 @@ export default function App() {
         <Stack.Screen name="Sign-up" component={SignUpScreen} />
         <Stack.Screen name="Sign-in" component={SignInScreen} />
         <Stack.Screen name="Mdp oublié" component={ForgotPassword} />
-        <Stack.Screen name="Home" component={TabNavigator} />
+        <Stack.Screen name="TabNavigator" component={TabNavigator} />
       </Stack.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>

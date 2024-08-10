@@ -30,7 +30,7 @@ export default function SignInScreen({ navigation }) {
             <TouchableOpacity onPress={() => navigation.navigate('Mdp oublié')} >
                 <Text style={styles.mdpoublié}>Mot de passe oublié ?</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.seconnecterC} title="Se connecter" onPress={() => navigation.navigate('Home')} >
+            <TouchableOpacity style={styles.seconnecterC} title="Se connecter" onPress={() => navigation.navigate('TabNavigator')} >
                 <Text style={styles.seconnecter}>Se connecter</Text>
             </TouchableOpacity>
 

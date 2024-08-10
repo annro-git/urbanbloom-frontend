@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
         paddingTop: 10,
         paddingBottom: 13,
         marginTop: 20,
-    }, 
+    },
     seconnecter: {
         color: '#fff',
         textAlign: 'center',
