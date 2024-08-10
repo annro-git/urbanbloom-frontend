@@ -31,9 +31,9 @@ export default function AuthenticationScreen({ navigation }) {
             </TouchableOpacity>
             <Text styles={styles.continuer}>Continuer avec:</Text>
             <View style={styles.socials}>
-                <FontAwesome name='google' size={25} color='#ec6e5b' />
+                <FontAwesome name='google' size={25} color='#000' />
                 <FontAwesome name='apple' size={25} color='#000' />
-                <FontAwesome name='facebook' size={25} color='#3b5998' />
+                <FontAwesome name='facebook' size={25} color='#000' />
             </View>
         </View>
     )
