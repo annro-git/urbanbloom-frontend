@@ -1,6 +1,8 @@
 import { useFonts, Lato_300Light, Lato_400Regular, Lato_700Bold, Lato_900Black } from '@expo-google-fonts/lato'
 import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, View } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { persistStore, persistReducer } from 'redux-persist'
@@ -8,6 +10,9 @@ import { PersistGate } from 'redux-persist/integration/react'
 
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import LogotypeV from './components/LogotypeV'
+import AuthenticationScreen from './screens/AuthenticationScreen'
+
+const Stack = createNativeStackNavigator();
 
 // const reducers = combineReducers({  })
 // const persistConfig = { key: 'urbanbloom', storage: AsyncStorage } // ! increment key to clear cache
@@ -32,7 +37,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <LogotypeV />
+      <AuthenticationScreen />
       <StatusBar style="auto" />
     </View>
   );
