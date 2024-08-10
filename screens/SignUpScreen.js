@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Lato_900Black',
         fontSize: 36,
         marginTop: 30,
+        marginBottom: 30,
     },
     input: {
         borderWidth: 1,
@@ -77,5 +78,15 @@ const styles = StyleSheet.create({
     mdp: {
         fontFamily: 'Lato_700Bold',
         fontSize: 18,
+    },
+    connecterC: {
+        width: '80%',
+        backgroundColor: '#000',
+        padding: 10,
+        borderRadius: 5,
+    }, 
+    connecter: {
+        color: '#fff',
+        textAlign: 'center',
     },
 })

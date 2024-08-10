@@ -12,6 +12,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import LogotypeV from './components/LogotypeV'
 import AuthenticationScreen from './screens/AuthenticationScreen'
 import SignUpScreen from './screens/SignUpScreen'
+import SignInScreen from './screens/SignInScreen'
 
 const Stack = createNativeStackNavigator();
 
@@ -41,6 +42,7 @@ export default function App() {
       <Stack.Navigator initialRouteName="Authentication">
         <Stack.Screen name="Authentication" component={AuthenticationScreen} />
         <Stack.Screen name="Sign-up" component={SignUpScreen} />
+        <Stack.Screen name="Sign-in" component={SignInScreen} />
       </Stack.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>
