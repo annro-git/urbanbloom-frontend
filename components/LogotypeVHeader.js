@@ -5,7 +5,7 @@ export default function LogotypeVHeader() {
     return (
         <View style={styles.container}>
             {/* require('../assets/logo.svg') */}
-            <Logo width={30} height={35} style={styles.logo}/>
+            <Logo width={30} height={35}/>
             <Text style={styles.logoa}>Urban<Text style={styles.logob}>Bloom</Text></Text>
         </View>
     )
@@ -17,14 +17,12 @@ const styles = StyleSheet.create({
         paddingLeft: 20,
         alignItems: 'center',
     },
-    logo: {
-       
-    },
     logoa: {
         fontFamily: 'Lato_300Light',
         fontSize: 15,
         textTransform: 'uppercase',
         color: '#666666',
+        marginLeft: 5,
     },
     logob: {
         fontFamily: 'Lato_900Black',

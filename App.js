@@ -41,24 +41,26 @@ const TabNavigator = () => {
     <Tab.Navigator screenOptions={({ route }) => ({
       headerShown: false,
       tabBarStyle: styles.tabBar,
-      tabBarIcon: ({ focused, color, size }) => {
+      tabBarLabelStyle: styles.tabBarLabel,
+      tabBarIconStyle: styles.tabBarIcon,
+      tabBarIcon: ({ color, size }) => {
         let iconName;
 
         switch (route.name) {
           case 'Home':
-            iconName = focused ? 'home' : 'home';
+            iconName = 'home' 
             break;
-          case 'Search':
-            iconName = focused ? 'search' : 'search';
+          case 'Recherche':
+            iconName = 'search' 
             break;
           case 'Post':
-            iconName = focused ? 'plus-circle' : 'plus-circle';
+            iconName = 'plus-circle' 
             break;
-          case 'Gardens':
-            iconName = focused ? 'leaf' : 'leaf';
+          case 'Jardins':
+            iconName = 'leaf' 
             break;
           case 'Ressources':
-            iconName = focused ? 'book' : 'book';
+            iconName =  'book'
             break;
           default:
             iconName = 'circle';
@@ -69,9 +71,9 @@ const TabNavigator = () => {
       },
     })}>
       <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Search" component={SearchScreen} />
+      <Tab.Screen name="Recherche" component={SearchScreen} />
       <Tab.Screen name="Post" component={PostScreen} />
-      <Tab.Screen name="Gardens" component={GardensScreen} />
+      <Tab.Screen name="Jardins" component={GardensScreen} />
       <Tab.Screen name="Ressources" component={RessourcesScreen} />
     </Tab.Navigator>
   );
@@ -115,5 +117,14 @@ const styles = StyleSheet.create({
   tabBar: {
     backgroundColor: '#fff',
     height: '10%',
+    paddingBottom: 10,
+  },
+  tabBarIcon: {
+    marginBottom: -10,
+    marginTop: 5,
+  },
+  tabBarLabel: {
+    fontSize: 12,
+    marginBottom: 5,
   },
 });
