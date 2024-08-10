@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     },
     logoa: {
         fontFamily: 'Lato_300Light',
-        fontSize: 20,
+        fontSize: 24,
         textTransform: 'uppercase',
         color: '#666666',
         marginTop: 10,
