@@ -11,6 +11,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import LogotypeV from './components/LogotypeV'
 import AuthenticationScreen from './screens/AuthenticationScreen'
+import SignUpScreen from './screens/SignUpScreen'
 
 const Stack = createNativeStackNavigator();
 
@@ -25,21 +26,26 @@ const Stack = createNativeStackNavigator();
 export default function App() {
 
   let [loaded] = useFonts({
-    Lato_300Light, 
-    Lato_400Regular, 
-    Lato_700Bold, 
+    Lato_300Light,
+    Lato_400Regular,
+    Lato_700Bold,
     Lato_900Black,
   })
 
-  if(!loaded){
+  if (!loaded) {
     return null
   }
 
   return (
-    <View style={styles.container}>
-      <AuthenticationScreen />
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Authentication">
+        <Stack.Screen name="Authentication" component={AuthenticationScreen} />
+        <Stack.Screen name="Sign-up" component={SignUpScreen} />
+        
+      </Stack.Navigator>
       <StatusBar style="auto" />
-    </View>
+    </NavigationContainer>
+    
   );
 }
 

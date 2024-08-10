@@ -13,7 +13,7 @@ export default function AuthenticationScreen({ navigation }) {
     })
 
     if (!loaded) {
-        return null
+        return null 
     }
 
     return (
