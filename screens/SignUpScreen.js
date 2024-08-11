@@ -17,7 +17,7 @@ export default function SignUpScreen({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <LogotypeV />
+            <LogotypeV width={60} height={65}/>
             <Text style={styles.title}>Bienvenue</Text>
             <View style={styles.inputC}>
                 <Text style={styles.identifiant}>Identifiant</Text>

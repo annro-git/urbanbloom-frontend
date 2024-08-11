@@ -1,11 +1,14 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import LogotypeVHeader from './LogotypeVHeader';
+import LogotypeV from './LogotypeV';
 
 const Header = ({ style }) => {
+
+    const inHeader = true;
+
     return (
         <View style={[styles.headerContainer, style]}>
-            <LogotypeVHeader />
+            <LogotypeV width={30} height={35} inHeader={inHeader}/>
         </View>
     );
 };
