@@ -6,9 +6,7 @@ export default function LogotypeV(props) {
         <View style={[styles.container, props.inHeader ? styles.containerinheader : null]}>
             {/* require('../assets/logo.svg') */}
             <Logo width={props.width} height={props.height} />
-            <Text style={[styles.logoa, props.inHeader ? styles.logoainheader : null]}>Urban
-                <Text style={styles.logob}>Bloom</Text>
-            </Text>
+            <Text style={[styles.logoa, props.inHeader ? styles.logoainheader : null]}>Urban<Text style={styles.logob}>Bloom</Text></Text>
         </View >
     )
 }
