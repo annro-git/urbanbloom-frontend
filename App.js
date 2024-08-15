@@ -13,14 +13,18 @@ import { House, Search, CirclePlus, Leaf, Book } from 'lucide-react-native'
 
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import LogotypeV from './components/LogotypeV'
+import TestScreen from './screens/TestScreen'
+import AuthScreen from './screens/AuthScreen'
+import CustomHeader from './components/molecular/CustomHeader'
 
-// const reducers = combineReducers({  })
-// const persistConfig = { key: 'urbanbloom', storage: AsyncStorage } // ! increment key to clear cache
-// const store = configureStore({
-//   reducer: persistReducer(persistConfig, reducers),
-//   middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false })
-// })
-// const persiststore = persistStore(store)
+// Redux
+const reducers = combineReducers({ add, remove })
+const persistConfig = { key: 'urbanbloom', storage: AsyncStorage }
+const store = configureStore({
+  reducer: persistReducer(persistConfig, reducers),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false })
+})
+const persiststor = persistStore(store)
 
 // Tab navigation
 const Tab = createBottomTabNavigator()
@@ -36,14 +40,14 @@ const TabNavigator = () => {
     <Tab.Navigator
       screenOptions={({ route }) => ({
         headerStyle: { backgroundColor: '#466760' },
-        headerTitle: props => <CustomHeader { ...props } />,
+        headerTitle: props => <CustomHeader {...props} />,
         tabBarIcon: ({ focused }) => {
           const Icon = tabs.find(e => e.name === route.name).icon
-          return <Icon color={ focused ? 'red' : 'black' } size={tabs.find(e => e.name === route.name).size || 32} />
+          return <Icon color={focused ? 'red' : 'black'} size={tabs.find(e => e.name === route.name).size || 32} />
         },
       })}
-      >
-      { tabs.map((tab, index) => <Tab.Screen key={index} name={tab.name} component={tab.component}/>) }
+    >
+      {tabs.map((tab, index) => <Tab.Screen key={index} name={tab.name} component={tab.component} />)}
     </Tab.Navigator>
   )
 }
@@ -70,18 +74,20 @@ const App = () => {
   }
 
   return (
-    <View style={styles.container}>
-      <LogotypeV />
-      <StatusBar style="auto" />
-    </View>
-  );
+    <Provider store={store}>
+      <PersistGate persistor={persiststor}>
+        <NavigationContainer>
+          <Stack.Navigator
+            screenOptions={({ route }) => ({
+              headerShown: false,
+            })}
+          >
+            {stacks.map((stack, index) => <Stack.Screen key={index} name={stack.name} component={stack.component} />)}
+          </Stack.Navigator>
+        </NavigationContainer>
+      </PersistGate>
+    </Provider>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
