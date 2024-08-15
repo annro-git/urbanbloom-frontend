@@ -19,7 +19,7 @@ const CustomHeader = props => {
                 paddingTop: 0,
             }}
         >
-            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Accueil')}>
                 <Logotype size={32} color={'white'} fontSize={16} />
             </TouchableOpacity>
             <View style={{ flexDirection: 'row', gap: 20 }}>
