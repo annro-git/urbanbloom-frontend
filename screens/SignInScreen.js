@@ -28,7 +28,7 @@ export default function SignInScreen({ navigation }) {
                 <TextInput style={styles.input} placeholder="" />
             </View>
             <TouchableOpacity onPress={() => navigation.navigate('Mdp oublié')} >
-                <Text style={styles.mdpoublié}>Mot de passe oublié ?</Text>
+                <Text style={styles.mdpoublie}>Mot de passe oublié ?</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.seconnecterC} title="Se connecter" onPress={() => navigation.navigate('TabNavigator')} >
                 <Text style={styles.seconnecter}>Se connecter</Text>
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Lato_700Bold',
         marginBottom: 5,
     },
-    mdpoublié: {
+    mdpoublie: {
         fontFamily: 'Lato_700Bold',
         color: '#000',
         marginTop: 10,

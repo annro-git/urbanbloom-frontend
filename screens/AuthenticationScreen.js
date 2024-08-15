@@ -4,7 +4,7 @@ import { useFonts, Lato_300Light, Lato_400Regular, Lato_700Bold, Lato_900Black }
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 
-export default function AuthenticationScreen({ navigation}) {
+export default function AuthenticationScreen({ navigation }) {
     let [loaded] = useFonts({
         Lato_300Light,
         Lato_400Regular,
@@ -13,12 +13,12 @@ export default function AuthenticationScreen({ navigation}) {
     })
 
     if (!loaded) {
-        return null 
+        return null
     }
 
     return (
         <View style={styles.container}>
-            <LogotypeV width={60} height={65}/>
+            <LogotypeV width={60} height={65} />
             <View style={styles.titlecontainer}>
                 <Text style={styles.title}>Bonjour</Text>
                 <Text>"Tagline"</Text>
@@ -26,8 +26,8 @@ export default function AuthenticationScreen({ navigation}) {
             <TouchableOpacity style={styles.seconnecterC} title="Se connecter" onPress={() => navigation.navigate('Sign-in')} >
                 <Text style={styles.seconnecter}>Se connecter</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.créerC} title="Créer un compte" onPress={() => navigation.navigate('Sign-up')} >
-                <Text style={styles.créer}>Créer un compte</Text>
+            <TouchableOpacity style={styles.creerC} title="Créer un compte" onPress={() => navigation.navigate('Sign-up')} >
+                <Text style={styles.creer}>Créer un compte</Text>
             </TouchableOpacity>
             <Text styles={styles.continuer}>Continuer avec:</Text>
             <View style={styles.socials}>
@@ -38,7 +38,6 @@ export default function AuthenticationScreen({ navigation}) {
         </View>
     )
 }
-
 
 const styles = StyleSheet.create({
     container: {
@@ -78,7 +77,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Lato_400Regular',
         textAlign: 'center',
     },
-    créerC: {
+    creerC: {
         width: '80%',
         marginTop: 20,
         borderWidth: 1,
@@ -89,7 +88,7 @@ const styles = StyleSheet.create({
         paddingTop: 10,
         paddingBottom: 13,
     },
-    créer: {
+    creer: {
         color: 'black',
         fontFamily: 'Lato_400Regular',
         textAlign: 'center',
