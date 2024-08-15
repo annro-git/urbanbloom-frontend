@@ -3,7 +3,7 @@ import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { persistStore, persistReducer } from 'redux-persist'
 import { PersistGate } from 'redux-persist/integration/react'
-import { NavigationContainer, useNavigation } from '@react-navigation/native'
+import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { add, remove } from './reducers/test'
@@ -36,8 +36,7 @@ const TabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        headerStyle: { backgroundColor: '#466760' },
-        headerTitle: props => <CustomHeader { ...props } />,
+        header: props => <CustomHeader { ...props } />,
         tabBarIcon: ({ focused }) => {
           const Icon = tabs.find(e => e.name === route.name).icon
           return <Icon color={ focused ? 'red' : 'black' } size={tabs.find(e => e.name === route.name).size || 32} />

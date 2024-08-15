@@ -18,7 +18,7 @@ const AuthScreen = ({ navigation }) =>  {
             justifyContent: 'center',
             padding: 20,
         }}>
-            <Logotype direction='vertical' color='#FF0' size={64} />
+            <Logotype direction='vertical' color='#294849' size={64} fontSize={16} />
             <InputText value={ email } onChangeText={e => setEmail(e)} placeholder='Email'/>
             <InputText value={ password } onChangeText={e => setPassword(e)} placeholder='Password' secureTextEntry={ true } />
             <TouchableOpacity onPress={() => navigation.navigate('Tab')}>
