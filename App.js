@@ -1,29 +1,18 @@
 import { useFonts, Lato_300Light, Lato_400Regular, Lato_700Bold, Lato_900Black } from '@expo-google-fonts/lato'
 import { StatusBar } from 'expo-status-bar'
-import { StyleSheet } from 'react-native'
-import FontAwesome from 'react-native-vector-icons/FontAwesome'
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { StyleSheet, View } from 'react-native'
 import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { persistStore, persistReducer } from 'redux-persist'
 import { PersistGate } from 'redux-persist/integration/react'
+import { NavigationContainer, useNavigation } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { add, remove } from './reducers/test'
+import { House, Search, CirclePlus, Leaf, Book } from 'lucide-react-native'
 
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import LogotypeV from './components/LogotypeV'
-import AuthenticationScreen from './screens/AuthenticationScreen'
-import SignUpScreen from './screens/SignUpScreen'
-import SignInScreen from './screens/SignInScreen'
-import ForgotPassword from './screens/ForgotPassword'
-import HomeScreen from './screens/HomeScreen'
-import SearchScreen from './screens/SearchScreen'
-import PostScreen from './screens/PostScreen'
-import GardensScreen from './screens/GardensScreen'
-import RessourcesScreen from './screens/RessourcesScreen'
-
-
-
 
 // const reducers = combineReducers({  })
 // const persistConfig = { key: 'urbanbloom', storage: AsyncStorage } // ! increment key to clear cache
@@ -33,54 +22,42 @@ import RessourcesScreen from './screens/RessourcesScreen'
 // })
 // const persiststore = persistStore(store)
 
-const Stack = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
-
+// Tab navigation
+const Tab = createBottomTabNavigator()
+const tabs = [
+  { name: 'Accueil', component: TestScreen, icon: House, },
+  { name: 'Recherche', component: TestScreen, icon: Search, },
+  { name: 'Publier', component: TestScreen, icon: CirclePlus, size: 64 },
+  { name: 'Jardins', component: TestScreen, icon: Leaf, },
+  { name: 'Ressources', component: TestScreen, icon: Book, },
+]
 const TabNavigator = () => {
   return (
-    <Tab.Navigator screenOptions={({ route }) => ({
-      headerShown: false,
-      tabBarStyle: styles.tabBar,
-      tabBarLabelStyle: styles.tabBarLabel,
-      tabBarIconStyle: styles.tabBarIcon,
-      tabBarIcon: ({ color, size }) => {
-        let iconName;
-
-        switch (route.name) {
-          case 'Home':
-            iconName = 'home' 
-            break;
-          case 'Recherche':
-            iconName = 'search' 
-            break;
-          case 'Post':
-            iconName = 'plus-circle' 
-            break;
-          case 'Jardins':
-            iconName = 'leaf' 
-            break;
-          case 'Ressources':
-            iconName =  'book'
-            break;
-          default:
-            iconName = 'circle';
-            break;
-        }
-
-        return <FontAwesome name={iconName} size={size} color={color} />;
-      },
-    })}>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Recherche" component={SearchScreen} />
-      <Tab.Screen name="Post" component={PostScreen} />
-      <Tab.Screen name="Jardins" component={GardensScreen} />
-      <Tab.Screen name="Ressources" component={RessourcesScreen} />
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        headerStyle: { backgroundColor: '#466760' },
+        headerTitle: props => <CustomHeader { ...props } />,
+        tabBarIcon: ({ focused }) => {
+          const Icon = tabs.find(e => e.name === route.name).icon
+          return <Icon color={ focused ? 'red' : 'black' } size={tabs.find(e => e.name === route.name).size || 32} />
+        },
+      })}
+      >
+      { tabs.map((tab, index) => <Tab.Screen key={index} name={tab.name} component={tab.component}/>) }
     </Tab.Navigator>
-  );
+  )
 }
 
-export default function App() {
+// Stack navigation
+const Stack = createNativeStackNavigator()
+const stacks = [
+  { name: 'Auth', component: AuthScreen, },
+  { name: 'Tab', component: TabNavigator, },
+]
 
+const App = () => {
+
+  // Loading Fonts
   let [loaded] = useFonts({
     Lato_300Light,
     Lato_400Regular,
@@ -93,17 +70,10 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Authentication" screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Authentication" component={AuthenticationScreen} />
-        <Stack.Screen name="Sign-up" component={SignUpScreen} />
-        <Stack.Screen name="Sign-in" component={SignInScreen} />
-        <Stack.Screen name="Mdp oublié" component={ForgotPassword} />
-        <Stack.Screen name="TabNavigator" component={TabNavigator} />
-      </Stack.Navigator>
+    <View style={styles.container}>
+      <LogotypeV />
       <StatusBar style="auto" />
-    </NavigationContainer>
-
+    </View>
   );
 }
 
@@ -113,18 +83,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  tabBar: {
-    backgroundColor: '#fff',
-    height: '10%',
-    paddingBottom: 10,
-  },
-  tabBarIcon: {
-    marginBottom: -10,
-    marginTop: 5,
-  },
-  tabBarLabel: {
-    fontSize: 12,
-    marginBottom: 5,
   },
 });
