@@ -1,6 +1,4 @@
 import { useFonts, Lato_300Light, Lato_400Regular, Lato_700Bold, Lato_900Black } from '@expo-google-fonts/lato'
-import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, View, Text } from 'react-native'
 import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { persistStore, persistReducer } from 'redux-persist'
@@ -13,6 +11,8 @@ import { House, Search, CirclePlus, Leaf, Book } from 'lucide-react-native'
 
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import TestScreen from './screens/TestScreen'
+import AuthScreen from './screens/AuthScreen'
+import CustomHeader from './components/molecular/CustomHeader'
 
 // Redux
 const reducers = combineReducers({ add, remove })
@@ -36,11 +36,12 @@ const TabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
+        headerStyle: { backgroundColor: '#466760' },
+        headerTitle: props => <CustomHeader { ...props } />,
         tabBarIcon: ({ focused }) => {
           const Icon = tabs.find(e => e.name === route.name).icon
           return <Icon color={ focused ? 'red' : 'black' } size={tabs.find(e => e.name === route.name).size || 32} />
         },
-        // headerShown: false,
       })}
       >
       { tabs.map((tab, index) => <Tab.Screen key={index} name={tab.name} component={tab.component}/>) }
@@ -51,11 +52,11 @@ const TabNavigator = () => {
 // Stack navigation
 const Stack = createNativeStackNavigator()
 const stacks = [
-  { name: 'Auth', component: TestScreen, },
+  { name: 'Auth', component: AuthScreen, },
   { name: 'Tab', component: TabNavigator, },
 ]
 
-export default function App() {
+const App = () => {
 
   // Loading Fonts
   let [loaded] = useFonts({
@@ -73,7 +74,11 @@ export default function App() {
     <Provider store={ store }>
       <PersistGate persistor={ persiststor }>
         <NavigationContainer>
-          <Stack.Navigator >
+          <Stack.Navigator
+            screenOptions={({ route }) => ({
+              headerShown: false,
+            })}
+          >
             { stacks.map((stack, index) => <Stack.Screen key={index} name={stack.name} component={stack.component}/>) }
           </Stack.Navigator>
         </NavigationContainer>
@@ -82,11 +87,5 @@ export default function App() {
   )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+export default App
