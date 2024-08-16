@@ -6,8 +6,6 @@ export default function Event(props) {
 
     const { date, hour, title } = props;
 
-    
-
     return (
         <View style={styles.container}>
             <Text style={styles.date}>{date}</Text>

@@ -5,7 +5,7 @@ import * as LucideIcons from 'lucide-react-native';
 
 const CustomHeader = props => {
 
-    const IP = '192.168.1.11'
+    const IP = '192.168.1.95'
     const token = '1kng1LLkUufcsktC3AhLD3P4N0MkepXn'
 
     const [cityName, setCityName] = useState('Paris')
@@ -69,7 +69,7 @@ const CustomHeader = props => {
                         'token': token
                     }
                 });
-           
+
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -97,10 +97,10 @@ const CustomHeader = props => {
                     {weatherIcon}
                     <Text>{temp}</Text>
                 </TouchableOpacity>
-                <TouchableOpacity  style={styles.ppc}>
+                <TouchableOpacity style={styles.ppc}>
                     <Image
                         style={styles.profilpicture}
-                        source={{uri: ppURI}}
+                        source={{ uri: ppURI }}
                         onError={(e) => console.error('Image load error:', e.nativeEvent.error)} />
                 </TouchableOpacity>
             </View>
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginLeft: 65,
     },
-    ppc : {
+    ppc: {
         marginLeft: 25,
         flexDirection: 'row',
         alignItems: 'center',
