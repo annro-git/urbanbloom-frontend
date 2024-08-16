@@ -1,4 +1,4 @@
-import Header from '../components/Header';
+
 import Event from '../components/Event';
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';

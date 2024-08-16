@@ -1,11 +1,11 @@
-import Header from '../components/Header';
+
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 export default SearchScreen = () => {
     return (
         <View style={styles.container}>
-            <Header title='Search' />
+            
         </View>
     );
 }
