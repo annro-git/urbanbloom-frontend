@@ -1,8 +1,10 @@
 import { TouchableOpacity, View, Text } from "react-native"
 import { useState } from "react"
+import { Trash2 } from "lucide-react-native"
 
 import Logotype from "../components/molecular/Logotype"
 import InputText from "../components/atomic/InputText"
+import AsyncStorage from "@react-native-async-storage/async-storage"
 
 const AuthScreen = ({ navigation }) =>  {
 
@@ -18,12 +20,19 @@ const AuthScreen = ({ navigation }) =>  {
             justifyContent: 'center',
             padding: 20,
         }}>
-            <Logotype direction='vertical' color='#FF0' size={64} />
+            <Logotype direction='vertical' color='#294849' size={64} fontSize={16} />
             <InputText value={ email } onChangeText={e => setEmail(e)} placeholder='Email'/>
             <InputText value={ password } onChangeText={e => setPassword(e)} placeholder='Password' secureTextEntry={ true } />
             <TouchableOpacity onPress={() => navigation.navigate('Tab')}>
                 <Text>GO</Text>
             </TouchableOpacity>
+
+            {/* on press : empty urbanbloom AsyncStorage key */}
+            <View style={{ position: "absolute", bottom: 0, right: 0, margin: 20}}>
+                <TouchableOpacity onPress={() => AsyncStorage.removeItem('persist:urbanbloom')}>
+                    <Trash2 color='red' size={32} />
+                </TouchableOpacity>
+            </View>
         </View>
     )
 }

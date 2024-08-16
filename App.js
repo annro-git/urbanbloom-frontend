@@ -5,16 +5,18 @@ import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { persistStore, persistReducer } from 'redux-persist'
 import { PersistGate } from 'redux-persist/integration/react'
-import { NavigationContainer, useNavigation } from '@react-navigation/native'
+import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { add, remove } from './reducers/test'
 import { House, Search, CirclePlus, Leaf, Book } from 'lucide-react-native'
+import { StatusBar } from 'react-native'
 
 import AsyncStorage from '@react-native-async-storage/async-storage'
 // import LogotypeV from './components/LogotypeV'
 import TestScreen from './screens/TestScreen'
 import AuthScreen from './screens/AuthScreen'
+import ProfileScreen from './screens/ProfileScreen'
+import WeatherScreen from './screens/WeatherScreen'
 import CustomHeader from './components/molecular/CustomHeader'
 import ForgotScreen from './screens/ForgotScreen'
 import SearchScreen from './screens/SearchScreen'
@@ -25,9 +27,11 @@ import GardensScreen from './screens/GardensScreen'
 import ResourcesScreen from './screens/ResourcesScreen'
 import HomeScreen from './screens/HomeScreen'
 
+import CustomTabBar from './components/molecular/CustomTabBar'
+import test from './reducers/test'
 
 // Redux
-const reducers = combineReducers({ add, remove })
+const reducers = combineReducers({ test })
 const persistConfig = { key: 'urbanbloom', storage: AsyncStorage }
 const store = configureStore({
   reducer: persistReducer(persistConfig, reducers),
@@ -38,21 +42,23 @@ const persiststor = persistStore(store)
 // Tab navigation
 const Tab = createBottomTabNavigator()
 const tabs = [
-  { name: 'Accueil', component: HomeScreen, icon: House, },
-  { name: 'Recherche', component: SearchScreen, icon: Search, },
-  { name: 'Publier', component: PostScreen, icon: CirclePlus, size: 64 },
-  { name: 'Jardins', component: GardensScreen, icon: Leaf, },
-  { name: 'Ressources', component: ResourcesScreen, icon: Book, },
+  { name: 'Accueil', component: HomeScreen, icon: House, position: 'bottom' },
+  { name: 'Recherche', component: SearchScreen, icon: Search, position: 'bottom' },
+  { name: 'Publier', component: PostScreen, icon: CirclePlus, position: 'bottom' },
+  { name: 'Jardins', component: GardensScreen, icon: Leaf, position: 'bottom' },
+  { name: 'Ressources', component: ResourcesScreen, icon: Book, position: 'bottom' },
+  { name: 'Profile', component: ProfileScreen },
+  { name: 'Weather', component: WeatherScreen },
 ]
 const TabNavigator = () => {
   return (
     <Tab.Navigator
+      tabBar={ props => <CustomTabBar { ...props } />}
       screenOptions={({ route }) => ({
-        headerStyle: { backgroundColor: '#466760' },
-        headerTitle: props => <CustomHeader {...props} />,
-        tabBarIcon: ({ focused }) => {
-          const Icon = tabs.find(e => e.name === route.name).icon
-          return <Icon color={focused ? 'red' : 'black'} size={tabs.find(e => e.name === route.name).size || 32} />
+        header: props => <CustomHeader { ...props } route={ route } />,
+        tabBarIcon: {
+          Icon: tabs.find(e => e.name === route.name).icon, 
+          position: tabs.find(e => e.name === route.name).position,
         },
       })}
     >
@@ -69,6 +75,7 @@ const stacks = [
   
   { name: 'Tab', component: TabNavigator, },
 
+  // { name: 'Profile', component: ProfileScreen, }
 ]
 
 const App = () => {
@@ -84,16 +91,12 @@ const App = () => {
   if (!loaded) {
     return null
   }
-
   return (
     <Provider store={store}>
       <PersistGate persistor={persiststor}>
         <NavigationContainer>
-          <Stack.Navigator
-            screenOptions={({ route }) => ({
-              headerShown: false,
-            })}
-          >
+          <StatusBar barStyle='dark-content' backgroundColor='white' />
+          <Stack.Navigator screenOptions={{ headerShown: false }} >
             {stacks.map((stack, index) => <Stack.Screen key={index} name={stack.name} component={stack.component} />)}
           </Stack.Navigator>
         </NavigationContainer>

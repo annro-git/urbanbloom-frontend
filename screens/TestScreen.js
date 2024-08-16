@@ -1,12 +1,34 @@
-import { Text, TouchableOpacity } from "react-native"
+import { View, Text, TouchableOpacity } from "react-native"
+import { useDispatch, useSelector } from "react-redux"
+import { useState } from "react"
+import { add } from "../reducers/test"
 
-export default function TestScreen({ navigation }) {
+import InputText from "../components/atomic/InputText"
+import AsyncStorage from "@react-native-async-storage/async-storage"
+
+// Check AsyncStorage key content
+AsyncStorage.getItem("persist:urbanbloom").then(e => console.log(e))
+
+const TestScreen = () => {
+
+    const dispatch = useDispatch()
+    const [test, setTest] = useState('')
+    const testRedux = useSelector(state => state.test.value)
+
     return (
-        <>
-            <Text>Test</Text>
-            <TouchableOpacity onPress={() => navigation.navigate('Tab') } style={{ height: 50, backgroundColor: 'blue' }}>
+        <View style={{ backgroundColor: '#F9F2E0', flex: 1, justifyContent: 'center', alignItems: 'center', gap: 50 }}>
+            <InputText value={test} onChangeText={e => setTest(e)} />
+            <TouchableOpacity 
+                onPress={() => dispatch(add(test)) } 
+                style={{ height: 50, backgroundColor: '#00000033', justifyContent: 'center', alignItems: 'center', width: '100%' }}
+            >
                 <Text>GO</Text>
             </TouchableOpacity>
-        </>
+            <Text>State : {test}</Text>
+            <Text>Selector : {testRedux}</Text>
+        </View>
     )
+    
 }
+
+export default TestScreen
