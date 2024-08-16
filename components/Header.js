@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import LogotypeV from './LogotypeV';
+
 
 const Header = ({ style }) => {
 
@@ -8,7 +8,7 @@ const Header = ({ style }) => {
 
     return (
         <View style={[styles.headerContainer, style]}>
-            <LogotypeV width={30} height={35} inHeader={inHeader}/>
+        
         </View>
     );
 };

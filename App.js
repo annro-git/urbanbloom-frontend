@@ -12,10 +12,19 @@ import { add, remove } from './reducers/test'
 import { House, Search, CirclePlus, Leaf, Book } from 'lucide-react-native'
 
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import LogotypeV from './components/LogotypeV'
+// import LogotypeV from './components/LogotypeV'
 import TestScreen from './screens/TestScreen'
 import AuthScreen from './screens/AuthScreen'
 import CustomHeader from './components/molecular/CustomHeader'
+import ForgotScreen from './screens/ForgotScreen'
+import SearchScreen from './screens/SearchScreen'
+import SignInScreen from './screens/SignInScreen'
+import SignUpScreen from './screens/SignUpScreen'
+import PostScreen from './screens/PostScreen'
+import GardensScreen from './screens/GardensScreen'
+import ResourcesScreen from './screens/ResourcesScreen'
+import HomeScreen from './screens/HomeScreen'
+
 
 // Redux
 const reducers = combineReducers({ add, remove })
@@ -29,11 +38,11 @@ const persiststor = persistStore(store)
 // Tab navigation
 const Tab = createBottomTabNavigator()
 const tabs = [
-  { name: 'Accueil', component: TestScreen, icon: House, },
-  { name: 'Recherche', component: TestScreen, icon: Search, },
-  { name: 'Publier', component: TestScreen, icon: CirclePlus, size: 64 },
-  { name: 'Jardins', component: TestScreen, icon: Leaf, },
-  { name: 'Ressources', component: TestScreen, icon: Book, },
+  { name: 'Accueil', component: HomeScreen, icon: House, },
+  { name: 'Recherche', component: SearchScreen, icon: Search, },
+  { name: 'Publier', component: PostScreen, icon: CirclePlus, size: 64 },
+  { name: 'Jardins', component: GardensScreen, icon: Leaf, },
+  { name: 'Ressources', component: ResourcesScreen, icon: Book, },
 ]
 const TabNavigator = () => {
   return (
@@ -56,7 +65,10 @@ const TabNavigator = () => {
 const Stack = createNativeStackNavigator()
 const stacks = [
   { name: 'Auth', component: AuthScreen, },
+  { name: 'Forgot', component: ForgotScreen, },
+  
   { name: 'Tab', component: TabNavigator, },
+
 ]
 
 const App = () => {

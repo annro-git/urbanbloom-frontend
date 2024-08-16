@@ -1,4 +1,4 @@
-import LogotypeV from "../components/LogotypeV";
+
 import { TouchableOpacity, StyleSheet, Text, View, TextInput } from 'react-native';
 import { useFonts, Lato_300Light, Lato_400Regular, Lato_700Bold, Lato_900Black } from '@expo-google-fonts/lato'
 
@@ -17,7 +17,7 @@ import { useFonts, Lato_300Light, Lato_400Regular, Lato_700Bold, Lato_900Black }
 
         return (
             <View style={styles.container}>
-                <LogotypeV width={60} height={65}/>
+              
                 <Text style={styles.title}>Mot de passe oublié</Text>
                 <View style={styles.inputC}>
                     <Text style={styles.email}>Email</Text>

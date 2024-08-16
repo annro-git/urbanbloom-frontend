@@ -1,4 +1,4 @@
-import LogotypeV from "../components/LogotypeV";
+
 import { TouchableOpacity, StyleSheet, Text, View } from 'react-native';
 import { useFonts, Lato_300Light, Lato_400Regular, Lato_700Bold, Lato_900Black } from '@expo-google-fonts/lato'
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -18,7 +18,7 @@ export default function AuthenticationScreen({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <LogotypeV width={60} height={65} />
+           
             <View style={styles.titlecontainer}>
                 <Text style={styles.title}>Bonjour</Text>
                 <Text>"Tagline"</Text>

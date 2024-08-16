@@ -9,8 +9,6 @@ export default HomeScreen = () => {
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
-
-        fetch('http://localhost:3000/events')
         
         const fetchedEvents = [
             { id: 1, date: '01/01/2022', hour: '10:00', title: 'Event 1' },
@@ -21,7 +19,6 @@ export default HomeScreen = () => {
 
     return (
         <View style={styles.container}>
-            <Header title='Home' />
             <View>
                 <Text style={styles.agenda}>Agenda</Text>
                 {events.map(event => (
@@ -44,6 +41,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         flexDirection: 'column',
+        justifyContent: 'flex-start',
     },
     agenda: {
         fontSize: 20,
