@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native"
-import { View, TouchableOpacity } from "react-native"
+import { View, TouchableOpacity, StatusBar } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
 import { UserRound } from "lucide-react-native"
 
@@ -23,6 +23,7 @@ const CustomHeader = ({ route }) => {
                 paddingTop: 0,
             }}
         >
+            <StatusBar barStyle='light-content' backgroundColor='#294849' />
             <TouchableOpacity onPress={() => navigate('Accueil')}>
                 <Logotype size={32} color={'white'} fontSize={16} />
             </TouchableOpacity>

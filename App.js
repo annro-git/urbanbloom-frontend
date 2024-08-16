@@ -8,6 +8,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { add, remove } from './reducers/test'
 import { House, Search, CirclePlus, Leaf, Book } from 'lucide-react-native'
+import { StatusBar } from 'react-native'
 
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import TestScreen from './screens/TestScreen'
@@ -75,11 +76,11 @@ const App = () => {
   if(!loaded){
     return null
   }
-
   return (
     <Provider store={ store }>
       <PersistGate persistor={ persiststor }>
         <NavigationContainer>
+          <StatusBar barStyle='dark-content' backgroundColor='white' />
           <Stack.Navigator
             screenOptions={{ headerShown: false }}
           >
