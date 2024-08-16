@@ -5,7 +5,7 @@ import * as LucideIcons from 'lucide-react-native';
 
 const CustomHeader = props => {
 
-    const IP = '192.168.1.11'
+    const IP = ''
     const token = '1kng1LLkUufcsktC3AhLD3P4N0MkepXn'
 
     const [cityName, setCityName] = useState('Paris')
