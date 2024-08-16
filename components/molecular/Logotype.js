@@ -1,7 +1,7 @@
 import { Text, View } from 'react-native';
 import Logo from '../../assets/logo.svg'
 
-const Logotype = props => {
+const Logotype = ({ color, direction, fontSize, size }) => {
 
     const ratio = 100*133/128/100
 
@@ -9,7 +9,7 @@ const Logotype = props => {
         <>
             <View
                 style={[
-                    props.direction === 'vertical' ? { flexDirection: 'column' } : { flexDirection: 'row' },
+                    direction === 'vertical' ? { flexDirection: 'column' } : { flexDirection: 'row' },
                     {
                         justifyContent: 'center',
                         alignItems: 'center',
@@ -17,11 +17,11 @@ const Logotype = props => {
                     }
                 ]}
             >
-                <Logo width={props.size} height={props.size * ratio} color={props.color} />
+                <Logo width={size} height={size * ratio} color={color} />
                 <Text style={{
-                    color: props.color,
+                    color: color,
                     fontFamily: 'Lato_300Light', 
-                    fontSize: props.fontSize,
+                    fontSize: fontSize,
                     textTransform: 'uppercase', 
                 }}>
                     Urban

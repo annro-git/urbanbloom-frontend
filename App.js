@@ -12,7 +12,10 @@ import { House, Search, CirclePlus, Leaf, Book } from 'lucide-react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import TestScreen from './screens/TestScreen'
 import AuthScreen from './screens/AuthScreen'
+import ProfileScreen from './screens/ProfileScreen'
+import WeatherScreen from './screens/WeatherScreen'
 import CustomHeader from './components/molecular/CustomHeader'
+import CustomTabBar from './components/molecular/CustomTabBar'
 
 // Redux
 const reducers = combineReducers({ add, remove })
@@ -26,22 +29,25 @@ const persiststor = persistStore(store)
 // Tab navigation
 const Tab = createBottomTabNavigator()
 const tabs = [
-  { name: 'Accueil', component: TestScreen, icon: House, },
-  { name: 'Recherche', component: TestScreen, icon: Search, },
-  { name: 'Publier', component: TestScreen, icon: CirclePlus, size: 64 },
-  { name: 'Jardins', component: TestScreen, icon: Leaf, },
-  { name: 'Ressources', component: TestScreen, icon: Book, },
+  { name: 'Accueil', component: TestScreen, icon: House, position: 'bottom' },
+  { name: 'Recherche', component: TestScreen, icon: Search, position: 'bottom' },
+  { name: 'Publier', component: TestScreen, icon: CirclePlus, position: 'bottom' },
+  { name: 'Jardins', component: TestScreen, icon: Leaf, position: 'bottom' },
+  { name: 'Ressources', component: TestScreen, icon: Book, position: 'bottom' },
+  { name: 'Profile', component: ProfileScreen },
+  { name: 'Weather', component: WeatherScreen },
 ]
 const TabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        header: props => <CustomHeader { ...props } />,
-        tabBarIcon: ({ focused }) => {
-          const Icon = tabs.find(e => e.name === route.name).icon
-          return <Icon color={ focused ? 'red' : 'black' } size={tabs.find(e => e.name === route.name).size || 32} />
+        header: props => <CustomHeader { ...props } route={ route } />,
+        tabBarIcon: {
+          Icon: tabs.find(e => e.name === route.name).icon, 
+          position: tabs.find(e => e.name === route.name).position,
         },
       })}
+      tabBar={ props => <CustomTabBar { ...props } />}
       >
       { tabs.map((tab, index) => <Tab.Screen key={index} name={tab.name} component={tab.component}/>) }
     </Tab.Navigator>
@@ -53,6 +59,7 @@ const Stack = createNativeStackNavigator()
 const stacks = [
   { name: 'Auth', component: AuthScreen, },
   { name: 'Tab', component: TabNavigator, },
+  // { name: 'Profile', component: ProfileScreen, }
 ]
 
 const App = () => {
@@ -74,9 +81,7 @@ const App = () => {
       <PersistGate persistor={ persiststor }>
         <NavigationContainer>
           <Stack.Navigator
-            screenOptions={({ route }) => ({
-              headerShown: false,
-            })}
+            screenOptions={{ headerShown: false }}
           >
             { stacks.map((stack, index) => <Stack.Screen key={index} name={stack.name} component={stack.component}/>) }
           </Stack.Navigator>

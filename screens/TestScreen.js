@@ -1,12 +1,17 @@
-import { Text, TouchableOpacity } from "react-native"
+import { View, Text, TouchableOpacity } from "react-native"
 
-export default function TestScreen({ navigation }) {
+const TestScreen = ({ navigation }) => {
+
+    const { navigate } = navigation
+
     return (
-        <>
-            <Text>Test</Text>
-            <TouchableOpacity onPress={() => navigation.navigate('Tab') } style={{ height: 50, backgroundColor: 'blue' }}>
+        <View style={{ backgroundColor: '#F9F2E0', flex: 1, justifyContent: 'center' }}>
+            <TouchableOpacity onPress={() => navigate('Auth') } style={{ height: 50, backgroundColor: 'aqua', justifyContent: 'center', alignItems: 'center' }}>
                 <Text>GO</Text>
             </TouchableOpacity>
-        </>
+        </View>
     )
+    
 }
+
+export default TestScreen
