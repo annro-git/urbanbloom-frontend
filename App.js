@@ -6,7 +6,6 @@ import { PersistGate } from 'redux-persist/integration/react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { add, remove } from './reducers/test'
 import { House, Search, CirclePlus, Leaf, Book } from 'lucide-react-native'
 import { StatusBar } from 'react-native'
 
@@ -17,9 +16,10 @@ import ProfileScreen from './screens/ProfileScreen'
 import WeatherScreen from './screens/WeatherScreen'
 import CustomHeader from './components/molecular/CustomHeader'
 import CustomTabBar from './components/molecular/CustomTabBar'
+import test from './reducers/test'
 
 // Redux
-const reducers = combineReducers({ add, remove })
+const reducers = combineReducers({ test })
 const persistConfig = { key: 'urbanbloom', storage: AsyncStorage }
 const store = configureStore({
   reducer: persistReducer(persistConfig, reducers),
@@ -41,6 +41,7 @@ const tabs = [
 const TabNavigator = () => {
   return (
     <Tab.Navigator
+      tabBar={ props => <CustomTabBar { ...props } />}
       screenOptions={({ route }) => ({
         header: props => <CustomHeader { ...props } route={ route } />,
         tabBarIcon: {
@@ -48,7 +49,6 @@ const TabNavigator = () => {
           position: tabs.find(e => e.name === route.name).position,
         },
       })}
-      tabBar={ props => <CustomTabBar { ...props } />}
       >
       { tabs.map((tab, index) => <Tab.Screen key={index} name={tab.name} component={tab.component}/>) }
     </Tab.Navigator>
@@ -81,9 +81,7 @@ const App = () => {
       <PersistGate persistor={ persiststor }>
         <NavigationContainer>
           <StatusBar barStyle='dark-content' backgroundColor='white' />
-          <Stack.Navigator
-            screenOptions={{ headerShown: false }}
-          >
+          <Stack.Navigator screenOptions={{ headerShown: false }} >
             { stacks.map((stack, index) => <Stack.Screen key={index} name={stack.name} component={stack.component}/>) }
           </Stack.Navigator>
         </NavigationContainer>
