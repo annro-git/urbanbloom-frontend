@@ -40,3 +40,36 @@ const CustomHeader = ({ route }) => {
 }
 
 export default CustomHeader
+
+const styles = StyleSheet.create({
+
+    logob: {
+        fontFamily: 'Lato_900Black'
+    },
+    container: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    logoa: {
+        fontFamily: 'Lato_300Light',
+        fontSize: 15,
+        textTransform: 'uppercase',
+        color: 'black',
+        marginLeft: 5,
+    },
+    weather: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginLeft: 65,
+    },
+    ppc : {
+        marginLeft: 25,
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    profilpicture: {
+        width: 30,
+        height: 30,
+        borderRadius: 15,
+    }
+});
