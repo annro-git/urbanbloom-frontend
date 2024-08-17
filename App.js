@@ -11,7 +11,9 @@ import { StatusBar } from 'react-native'
 
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import TestScreen from './screens/TestScreen'
-import AuthScreen from './screens/AuthScreen'
+import SplashScreen from './screens/SplashScreen'
+import SigninScreen from './screens/SigninScreen'
+import SignupScreen from './screens/SignupScreen'
 import ProfileScreen from './screens/ProfileScreen'
 import WeatherScreen from './screens/WeatherScreen'
 import CustomHeader from './components/molecular/CustomHeader'
@@ -58,7 +60,9 @@ const TabNavigator = () => {
 // Stack navigation
 const Stack = createNativeStackNavigator()
 const stacks = [
-  { name: 'Auth', component: AuthScreen, },
+  { name: 'Splash', component: SplashScreen, },
+  { name: 'SignIn', component: SigninScreen, },
+  { name: 'SignUp', component: SignupScreen, },
   { name: 'Tab', component: TabNavigator, },
   // { name: 'Profile', component: ProfileScreen, }
 ]

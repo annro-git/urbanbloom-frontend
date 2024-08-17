@@ -1,15 +1,13 @@
-import { TouchableOpacity, View, Text } from "react-native"
-import { useState } from "react"
+import { View, TouchableOpacity } from "react-native"
 import { Trash2 } from "lucide-react-native"
 
-import Logotype from "../components/molecular/Logotype"
-import InputText from "../components/atomic/InputText"
 import AsyncStorage from "@react-native-async-storage/async-storage"
+import Logotype from "../components/molecular/Logotype"
+import Button from "../components/atomic/Button"
 
-const AuthScreen = ({ navigation }) =>  {
+const SplashSreen = ({ navigation }) => {
 
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const { navigate } = navigation
 
     return (
         <View style={{
@@ -21,11 +19,15 @@ const AuthScreen = ({ navigation }) =>  {
             padding: 20,
         }}>
             <Logotype direction='vertical' color='#294849' size={64} fontSize={20} />
-            <InputText value={ email } onChangeText={e => setEmail(e)} placeholder='Email'/>
-            <InputText value={ password } onChangeText={e => setPassword(e)} placeholder='Password' secureTextEntry={ true } />
-            <TouchableOpacity onPress={() => navigation.navigate('Tab')}>
-                <Text>GO</Text>
-            </TouchableOpacity>
+            <View
+                style={{
+                    width: '80%',
+                    gap: 20,
+                }}
+            >
+                <Button onPress={() => navigate('SignIn')} text="Se connecter" primary="#294849" secondary="white" />
+                <Button onPress={() => navigate('SignUp')} text="Créer un compte" primary="white" secondary="#294849" border="#294849" />
+            </View>
 
             {/* on press : empty urbanbloom AsyncStorage key */}
             <View style={{ position: "absolute", bottom: 0, right: 0, margin: 20}}>
@@ -37,4 +39,4 @@ const AuthScreen = ({ navigation }) =>  {
     )
 }
 
-export default AuthScreen
+export default SplashSreen

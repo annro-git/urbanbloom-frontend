@@ -21,13 +21,14 @@ const CustomHeader = ({ route }) => {
                 justifyContent: 'space-between',
                 padding: 20,
                 paddingTop: 0,
+                gap: 20,
             }}
         >
             <StatusBar barStyle='light-content' backgroundColor='#294849' />
             <TouchableOpacity onPress={() => navigate('Accueil')}>
-                <Logotype size={32} color={'white'} fontSize={16} />
+                <Logotype size={32} color={'white'} fontSize={18} />
             </TouchableOpacity>
-            <View style={{ flexDirection: 'row', gap: 40 }}>
+            <View style={{ flexDirection: 'row', gap: 20, }}>
                 <TouchableOpacity onPress={() => navigate('Weather')}>
                     <WeatherIcon color= { isWeatherFocused ? '#FEC2A9' : '#BDCEBB' } />
                 </TouchableOpacity>
