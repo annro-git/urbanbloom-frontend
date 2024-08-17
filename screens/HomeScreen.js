@@ -1,4 +1,5 @@
 import Event from '../components/molecular/Event';
+import Partage from '../components/molecular/Partage';
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useState, useEffect } from 'react';
@@ -12,10 +13,12 @@ export default HomeScreen = () => {
         Lato_400Regular,
         Lato_700Bold,
         Lato_900Black,
-      })
-    
+    })
+
     const [events, setEvents] = useState([]);
+    const [partages, setPartages] = useState([]);
     const [showAllEvents, setShowAllEvents] = useState(false);
+    const [showAllPartages, setShowAllPartages] = useState(false);
 
     useEffect(() => {
 
@@ -26,13 +29,22 @@ export default HomeScreen = () => {
             { id: 4, date: '04/01/2022', hour: '13:00', title: 'Event 4' },
         ];
         setEvents(fetchedEvents);
+
+        const fetchedPartages = [
+            { id: 1, username: 'John Doe' },
+            { id: 2, username: 'Jane Doe' },
+            { id: 3, username: 'Ash' },
+            { id: 4, username: 'Raygun' },
+        ];
+        setPartages(fetchedPartages);
     }, []);
 
     const displayedEvents = showAllEvents ? events : events.slice(0, 3);
+    const displayedPartages = showAllPartages ? partages : partages.slice(0, 3);
 
     if (!loaded) {
         return null
-      }
+    }
 
     return (
         <View style={styles.container}>
@@ -47,9 +59,16 @@ export default HomeScreen = () => {
                     </TouchableOpacity>
                 )}
             </View>
-            <View>
-                <Text style={styles.partages}>Partages</Text>   
-
+            <View style={styles.partagesc}>
+                <Text style={styles.partages}>Partages</Text>
+                {displayedPartages.map(partage => (
+                    <Partage key={partage.id} username={partage.username} />
+                ))}
+                {partages.length > 3 && (
+                    <TouchableOpacity style={styles.showall} onPress={() => setShowAllPartages(!showAllPartages)}>
+                        <LucideIcons.CircleEllipsis name={showAllPartages ? "expand-less" : "expand-more"} size={20} color="#2c4943" />
+                    </TouchableOpacity>
+                )}
             </View>
             <View>
                 <Text style={styles.aujardin}>Au jardin</Text>
@@ -66,7 +85,7 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
     },
     agendac: {
-        marginBottom: 20,
+        marginBottom: 10,
         marginTop: 10,
     },
     agenda: {
@@ -86,7 +105,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     showall: {
-        marginTop: 10,
         alignItems: 'center',
+        marginTop: 10,
+        marginBottom: -5,
+    },
+    partagesc: {
+        marginBottom: 10,
+    },
+    partages: {
+        fontSize: 20,
     },
 });
