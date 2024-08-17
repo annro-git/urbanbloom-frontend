@@ -5,7 +5,7 @@ import { View, Text, StyleSheet } from 'react-native';
 export default RessourcesScreen = () => {
     return (
         <View style={styles.container}>
-           
+
         </View>
     );
 }

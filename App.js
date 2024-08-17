@@ -52,11 +52,11 @@ const tabs = [
 const TabNavigator = () => {
   return (
     <Tab.Navigator
-      tabBar={ props => <CustomTabBar { ...props } />}
+      tabBar={props => <CustomTabBar {...props} />}
       screenOptions={({ route }) => ({
-        header: props => <CustomHeader { ...props } route={ route } />,
+        header: props => <CustomHeader {...props} route={route} />,
         tabBarIcon: {
-          Icon: tabs.find(e => e.name === route.name).icon, 
+          Icon: tabs.find(e => e.name === route.name).icon,
           position: tabs.find(e => e.name === route.name).position,
         },
       })}
@@ -71,7 +71,7 @@ const Stack = createNativeStackNavigator()
 const stacks = [
   { name: 'Auth', component: AuthScreen, },
   { name: 'Forgot', component: ForgotScreen, },
-  
+
   { name: 'Tab', component: TabNavigator, },
 
   // { name: 'Profile', component: ProfileScreen, }

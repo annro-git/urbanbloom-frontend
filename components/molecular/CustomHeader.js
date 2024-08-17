@@ -29,10 +29,10 @@ const CustomHeader = ({ route }) => {
             </TouchableOpacity>
             <View style={{ flexDirection: 'row', gap: 40 }}>
                 <TouchableOpacity onPress={() => navigate('Weather')}>
-                    <WeatherIcon color= { isWeatherFocused ? '#FEC2A9' : '#BDCEBB' } />
+                    <WeatherIcon color={isWeatherFocused ? '#FEC2A9' : '#BDCEBB'} />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigate('Profile')}>
-                    <UserRound size={32} color={ isProfileFocused ? '#FEC2A9' : '#BDCEBB' } />
+                    <UserRound size={32} color={isProfileFocused ? '#FEC2A9' : '#BDCEBB'} />
                 </TouchableOpacity>
             </View>
         </SafeAreaView>
