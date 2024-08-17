@@ -1,7 +1,8 @@
 import Event from '../components/molecular/Event';
-import Partage from '../components/molecular/Partage';
+import Partages from '../components/molecular/Partages/Partages';
+import AuJardin from '../components/molecular/Garden/AuJardin';
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { useState, useEffect } from 'react';
 import { useFonts, Lato_300Light, Lato_400Regular, Lato_700Bold, Lato_900Black } from '@expo-google-fonts/lato';
 import * as LucideIcons from 'lucide-react-native';
@@ -23,18 +24,18 @@ export default HomeScreen = () => {
     useEffect(() => {
 
         const fetchedEvents = [
-            { id: 1, date: '01/01/2022', hour: '10:00', title: 'Event 1' },
-            { id: 2, date: '02/01/2022', hour: '11:00', title: 'Event 2' },
-            { id: 3, date: '03/01/2022', hour: '12:00', title: 'Event 3' },
-            { id: 4, date: '04/01/2022', hour: '13:00', title: 'Event 4' },
+            { id: 1, date: '01/01/2024', hour: '10:00', title: 'Event 1' },
+            { id: 2, date: '02/01/2024', hour: '11:00', title: 'Event 2' },
+            { id: 3, date: '03/01/2024', hour: '12:00', title: 'Event 3' },
+            { id: 4, date: '04/01/2024', hour: '13:00', title: 'Event 4' },
         ];
         setEvents(fetchedEvents);
 
         const fetchedPartages = [
-            { id: 1, username: 'John Doe' },
-            { id: 2, username: 'Jane Doe' },
-            { id: 3, username: 'Ash' },
-            { id: 4, username: 'Raygun' },
+            { id: 1, username: 'John Doe', uriPP: 'https://avatar.iran.liara.run/public/35' },
+            { id: 2, username: 'Jane Doe', uriPP: 'https://avatar.iran.liara.run/public/71'},
+            { id: 3, username: 'Ash', uriPP: 'https://avatar.iran.liara.run/public/41'},
+            { id: 4, username: 'Yoda', uriPP: 'https://avatar.iran.liara.run/public/45' },
         ];
         setPartages(fetchedPartages);
     }, []);
@@ -47,37 +48,43 @@ export default HomeScreen = () => {
     }
 
     return (
-        <View style={styles.container}>
-            <View style={styles.agendac}>
-                <Text style={styles.agenda}>Agenda</Text>
-                {displayedEvents.map(event => (
-                    <Event key={event.id} date={event.date} hour={event.hour} title={event.title} />
-                ))}
-                {events.length > 3 && (
-                    <TouchableOpacity style={styles.showall} onPress={() => setShowAllEvents(!showAllEvents)}>
-                        <LucideIcons.CircleEllipsis name={showAllEvents ? "expand-less" : "expand-more"} size={20} color="#2c4943" />
-                    </TouchableOpacity>
-                )}
+        <ScrollView style={styles.scrollview}>
+            <View style={styles.container}>
+                <View style={styles.agendac}>
+                    <Text style={styles.agenda}>Agenda</Text>
+                    {displayedEvents.map(event => (
+                        <Event key={event.id} date={event.date} hour={event.hour} title={event.title} />
+                    ))}
+                    {events.length > 3 && (
+                        <TouchableOpacity style={styles.showall} onPress={() => setShowAllEvents(!showAllEvents)}>
+                            <LucideIcons.CircleEllipsis name={showAllEvents ? "expand-less" : "expand-more"} size={20} color="#2c4943" />
+                        </TouchableOpacity>
+                    )}
+                </View>
+                <View style={styles.partagesc}>
+                    <Text style={styles.partages}>Partages</Text>
+                    {displayedPartages.map(partage => (
+                        <Partages key={partage.id} username={partage.username} uriPP={partage.uriPP} />
+                    ))}
+                    {partages.length > 3 && (
+                        <TouchableOpacity style={styles.showall} onPress={() => setShowAllPartages(!showAllPartages)}>
+                            <LucideIcons.CircleEllipsis name={showAllPartages ? "expand-less" : "expand-more"} size={20} color="#2c4943" />
+                        </TouchableOpacity>
+                    )}
+                </View>
+                <View style={styles.aujardin}>
+                    <AuJardin />
+                </View>
             </View>
-            <View style={styles.partagesc}>
-                <Text style={styles.partages}>Partages</Text>
-                {displayedPartages.map(partage => (
-                    <Partage key={partage.id} username={partage.username} />
-                ))}
-                {partages.length > 3 && (
-                    <TouchableOpacity style={styles.showall} onPress={() => setShowAllPartages(!showAllPartages)}>
-                        <LucideIcons.CircleEllipsis name={showAllPartages ? "expand-less" : "expand-more"} size={20} color="#2c4943" />
-                    </TouchableOpacity>
-                )}
-            </View>
-            <View>
-                <Text style={styles.aujardin}>Au jardin</Text>
-            </View>
-        </View>
+        </ScrollView>
     );
 }
 
 const styles = StyleSheet.create({
+    scrollview: {
+        flex: 1,
+        backgroundColor: '#fff',
+    },
     container: {
         flex: 1,
         backgroundColor: '#fff',
@@ -87,15 +94,12 @@ const styles = StyleSheet.create({
     agendac: {
         marginBottom: 10,
         marginTop: 10,
+        backgroundColor: '#f0f0f0',
+        paddingBottom: 10,
     },
     agenda: {
         fontSize: 20,
-    },
-    partages: {
-        fontSize: 20,
-    },
-    aujardin: {
-        fontSize: 20,
+        marginLeft: 10,
     },
     event: {
         flex: 1,
@@ -106,13 +110,17 @@ const styles = StyleSheet.create({
     },
     showall: {
         alignItems: 'center',
-        marginTop: 10,
+        marginTop: 5,
         marginBottom: -5,
     },
     partagesc: {
         marginBottom: 10,
+        backgroundColor: '#f0f0f0',
+        paddingBottom: 10,
     },
     partages: {
         fontSize: 20,
+        marginLeft: 10,
     },
+    
 });

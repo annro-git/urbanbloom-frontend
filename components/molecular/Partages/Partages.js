@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import * as LucideIcons from 'lucide-react-native';
 import { useFonts, Lato_300Light, Lato_400Regular, Lato_700Bold, Lato_900Black } from '@expo-google-fonts/lato';
@@ -12,7 +12,7 @@ export default function Partage(props) {
         Lato_900Black,
     })
 
-
+    const { uriPP } = props;
 
     const { username } = props;
 
@@ -22,7 +22,7 @@ export default function Partage(props) {
 
     return (
         <View style={styles.container}>
-            <Image source={{ uri: 'https://avatar.iran.liara.run/public/boy?username=Ash' }} style={styles.logo} />
+            <Image source={{ uri: uriPP }} style={styles.logo} />
             <View style={styles.text}>
                 <Text style={styles.partage}>{username}</Text>
                 <Text style={styles.contenu}> a partagé un événement</Text>
@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'center',
+        backgroundColor: '#fff',
     },
     logo: {
         width: 50,
