@@ -1,8 +1,7 @@
 import { useNavigation } from "@react-navigation/native"
-import { View, TouchableOpacity, StatusBar } from "react-native"
+import { View, TouchableOpacity, StatusBar, StyleSheet } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
 import { UserRound } from "lucide-react-native"
-
 import Logotype from "./Logotype"
 import WeatherIcon from "./Weather/WeatherIcon"
 

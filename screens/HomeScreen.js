@@ -1,8 +1,9 @@
 import Event from '../components/molecular/Event';
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useState, useEffect } from 'react';
 import { useFonts, Lato_300Light, Lato_400Regular, Lato_700Bold, Lato_900Black } from '@expo-google-fonts/lato';
+import * as LucideIcons from 'lucide-react-native';
 
 export default HomeScreen = () => {
 
@@ -14,15 +15,20 @@ export default HomeScreen = () => {
       })
     
     const [events, setEvents] = useState([]);
+    const [showAllEvents, setShowAllEvents] = useState(false);
 
     useEffect(() => {
 
         const fetchedEvents = [
             { id: 1, date: '01/01/2022', hour: '10:00', title: 'Event 1' },
             { id: 2, date: '02/01/2022', hour: '11:00', title: 'Event 2' },
+            { id: 3, date: '03/01/2022', hour: '12:00', title: 'Event 3' },
+            { id: 4, date: '04/01/2022', hour: '13:00', title: 'Event 4' },
         ];
         setEvents(fetchedEvents);
     }, []);
+
+    const displayedEvents = showAllEvents ? events : events.slice(0, 3);
 
     if (!loaded) {
         return null
@@ -30,12 +36,16 @@ export default HomeScreen = () => {
 
     return (
         <View style={styles.container}>
-            <View>
+            <View style={styles.agendac}>
                 <Text style={styles.agenda}>Agenda</Text>
-                {events.map(event => (
+                {displayedEvents.map(event => (
                     <Event key={event.id} date={event.date} hour={event.hour} title={event.title} />
                 ))}
-                
+                {events.length > 3 && (
+                    <TouchableOpacity style={styles.showall} onPress={() => setShowAllEvents(!showAllEvents)}>
+                        <LucideIcons.CircleEllipsis name={showAllEvents ? "expand-less" : "expand-more"} size={20} color="#2c4943" />
+                    </TouchableOpacity>
+                )}
             </View>
             <View>
                 <Text style={styles.partages}>Partages</Text>   
@@ -55,6 +65,10 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'flex-start',
     },
+    agendac: {
+        marginBottom: 20,
+        marginTop: 10,
+    },
     agenda: {
         fontSize: 20,
     },
@@ -69,6 +83,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         flexDirection: 'row',
         justifyContent: 'space-between',
+        alignItems: 'center',
+    },
+    showall: {
+        marginTop: 10,
         alignItems: 'center',
     },
 });

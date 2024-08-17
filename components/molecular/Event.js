@@ -25,13 +25,13 @@ export default function Event(props) {
             <Text style={styles.hour}>{hour}</Text>
             <Text style={styles.title}>|      {title}</Text>
             <View style={styles.icons}>
-                <TouchableOpacity>
+                <TouchableOpacity style={styles.icon1}>
                     <LucideIcons.CircleX size={20} color={'#ccc'} />
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity style={styles.icon2}>
                     <LucideIcons.CircleHelp size={20} color={'#ccc'} />
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity style={styles.icon3}>
                     <LucideIcons.CircleCheck size={20} color={'#ccc'} />
                 </TouchableOpacity>
             </View>
@@ -61,9 +61,17 @@ const styles = StyleSheet.create({
         marginRight: 70,
     },
     icons: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
+        flexDirection: 'row', 
     },
+    icon1: {
+        marginLeft: -20,
+        marginRight: 10,
+    },
+    icon2: {
+        marginRight: 10,
+    },
+    icon3: {
+        marginRight: 30,
+    }
 
 });
