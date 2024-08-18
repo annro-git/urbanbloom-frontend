@@ -11,6 +11,7 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
             backgroundColor: '#294849', 
             flexDirection: 'row', 
             justifyContent: 'space-evenly',
+            paddingHorizontal: 5,
             paddingVertical: 20,
         }}>
             {state.routes.map((route, index) => {
@@ -33,7 +34,8 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
                             }}
                             key={route.name}
                             style={{
-                                alignItems: 'center'
+                                alignItems: 'center',
+                                width: '20%',
                             }}
                         >
                             <Icon color={ isFocused ? '#FEC2A9' : '#BDCEBB' } />

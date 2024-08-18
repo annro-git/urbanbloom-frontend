@@ -1,4 +1,6 @@
 import { View, TouchableOpacity } from "react-native"
+import { useEffect } from "react"
+import { useSelector } from "react-redux"
 import { Trash2 } from "lucide-react-native"
 
 import AsyncStorage from "@react-native-async-storage/async-storage"
@@ -8,6 +10,12 @@ import Button from "../components/atomic/Button"
 const SplashSreen = ({ navigation }) => {
 
     const { navigate } = navigation
+    const isLogged = useSelector(state => state.user.token)
+
+    useEffect(() => {
+      isLogged.length !== 0 && navigate('Tab')
+    }, [])
+    
 
     return (
         <View style={{

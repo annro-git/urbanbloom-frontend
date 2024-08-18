@@ -1,11 +1,16 @@
 import { ScrollView, View, Text } from "react-native"
 import { useState } from "react"
+import { useDispatch } from "react-redux"
+import { updateUser } from "../reducers/user"
 
 import InputText from '../components/atomic/InputText'
 import Button from "../components/atomic/Button"
 import Logotype from "../components/molecular/Logotype"
 
 const SignupScreen = ({ navigation }) => {
+
+    const dispatch = useDispatch()
+    const { navigate } = navigation
 
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
@@ -28,8 +33,8 @@ const SignupScreen = ({ navigation }) => {
             setError(json.error)
             return
         }
-        // TODO : save token to user reducer
-        // TODO : navigate to 'Accueil"
+        dispatch(updateUser({ username, email, token: json.token }))
+        navigate('Tab')
     }
 
     return (
@@ -50,8 +55,8 @@ const SignupScreen = ({ navigation }) => {
             >
                 {error && <Text style={{ color: 'red' }}>{ error }</Text>}
                 <InputText value={ username } onChangeText={ e => setUsername(e) } placeholder="Identifiant" color="#C5BBA2" />
-                <InputText value={ email } onChangeText={ e => setEmail(e) } placeholder="Email" color="#C5BBA2" />
-                <InputText value={ password } onChangeText={ e => setPassword(e) } placeholder="Mot de passe" color="#C5BBA2" secureTextEntry={ true } />
+                <InputText value={ email } onChangeText={ e => setEmail(e) } placeholder="Email" color="#C5BBA2" autoCapitalize="none" autoComplete="email" inputMode="email" />
+                <InputText value={ password } onChangeText={ e => setPassword(e) } placeholder="Mot de passe" color="#C5BBA2" secureTextEntry={ true } autoCapitalize="none" />
                 <Button onPress={() => handleSignup()} text="Créer un compte" primary="#294849" secondary="white" />
             </View>
         </ScrollView>

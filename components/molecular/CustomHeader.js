@@ -6,6 +6,11 @@ import { UserRound } from "lucide-react-native"
 import Logotype from "./Logotype"
 import WeatherIcon from "./Weather/WeatherIcon"
 
+/* AsyncStorage cleaner imports */
+import { Trash2 } from "lucide-react-native"
+import AsyncStorage from "@react-native-async-storage/async-storage"
+/* -------------------------- */
+
 const CustomHeader = ({ route }) => {
 
     const { navigate } = useNavigation()
@@ -28,7 +33,17 @@ const CustomHeader = ({ route }) => {
             <TouchableOpacity onPress={() => navigate('Accueil')}>
                 <Logotype size={32} color={'white'} fontSize={18} />
             </TouchableOpacity>
-            <View style={{ flexDirection: 'row', gap: 20, }}>
+            <View style={{ flexDirection: 'row', gap: 20, alignItems: 'center' }}>
+
+                {/* on press : empty urbanbloom AsyncStorage key, then navigate to Splash */}
+                <TouchableOpacity onPress={() => {
+                    AsyncStorage.removeItem('persist:urbanbloom')
+                    navigate('Splash')
+                }}>
+                    <Trash2 color='red' size={16} />
+                </TouchableOpacity>
+                {/* --------------------------------------------------------------------- */}
+                
                 <TouchableOpacity onPress={() => navigate('Weather')}>
                     <WeatherIcon color= { isWeatherFocused ? '#FEC2A9' : '#BDCEBB' } />
                 </TouchableOpacity>

@@ -19,9 +19,10 @@ import WeatherScreen from './screens/WeatherScreen'
 import CustomHeader from './components/molecular/CustomHeader'
 import CustomTabBar from './components/molecular/CustomTabBar'
 import test from './reducers/test'
+import user from './reducers/user'
 
 // Redux
-const reducers = combineReducers({ test })
+const reducers = combineReducers({ test, user })
 const persistConfig = { key: 'urbanbloom', storage: AsyncStorage }
 const store = configureStore({
   reducer: persistReducer(persistConfig, reducers),

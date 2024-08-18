@@ -1,5 +1,5 @@
 import { TouchableOpacity, View, Text } from "react-native"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Trash2 } from "lucide-react-native"
 
 import Logotype from "../components/molecular/Logotype"

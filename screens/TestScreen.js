@@ -6,9 +6,6 @@ import { add } from "../reducers/test"
 import InputText from "../components/atomic/InputText"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 
-// Check AsyncStorage key content
-AsyncStorage.getItem("persist:urbanbloom").then(e => console.log(e))
-
 const TestScreen = () => {
 
     const dispatch = useDispatch()
