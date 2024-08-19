@@ -54,9 +54,30 @@ const SignupScreen = ({ navigation }) => {
                 }}
             >
                 {error && <Text style={{ color: 'red' }}>{ error }</Text>}
-                <InputText value={ username } onChangeText={ e => setUsername(e) } placeholder="Identifiant" color="#C5BBA2" />
-                <InputText value={ email } onChangeText={ e => setEmail(e) } placeholder="Email" color="#C5BBA2" autoCapitalize="none" autoComplete="email" inputMode="email" />
-                <InputText value={ password } onChangeText={ e => setPassword(e) } placeholder="Mot de passe" color="#C5BBA2" secureTextEntry={ true } autoCapitalize="none" />
+                <InputText
+                    value={ username } 
+                    onChangeText={ e => setUsername(e) } 
+                    placeholder="Identifiant" 
+                    color="#C5BBA2"
+                />
+                <InputText
+                    value={ email } 
+                    onChangeText={ e => setEmail(e) } 
+                    placeholder="Email" 
+                    color="#C5BBA2" 
+                    autoCapitalize="none" 
+                    autoComplete="email" 
+                    inputMode="email"
+                />
+                <InputText
+                    value={ password } 
+                    onChangeText={ e => setPassword(e) } 
+                    placeholder="Mot de passe" 
+                    color="#C5BBA2" 
+                    secureTextEntry={ true } 
+                    autoCapitalize="none" 
+                    onSubmitEditing={() => handleSignup() }
+                />
                 <Button onPress={() => handleSignup()} text="Créer un compte" primary="#294849" secondary="white" />
             </View>
         </ScrollView>

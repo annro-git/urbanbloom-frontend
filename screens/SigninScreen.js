@@ -47,8 +47,24 @@ const SigninScreen = ({ navigation }) => {
                 }}
             >
                 {error && <Text style={{ color: 'red' }}>{ error }</Text>}
-                <InputText value={ email } onChangeText={ e => setEmail(e) } placeholder="Email" color="#C5BBA2" autoCapitalize="none" autoComplete="email" inputMode="email" />
-                <InputText value={ password } onChangeText={ e => setPassword(e) } placeholder="Mot de passe" color="#C5BBA2" secureTextEntry={ true } autoCapitalize="none" />
+                <InputText
+                    value={ email } 
+                    onChangeText={ e => setEmail(e) } 
+                    placeholder="Email" 
+                    color="#C5BBA2" 
+                    autoCapitalize="none" 
+                    autoComplete="email" 
+                    inputMode="email"
+                />
+                <InputText
+                    value={ password } 
+                    onChangeText={ e => setPassword(e) } 
+                    placeholder="Mot de passe" 
+                    color="#C5BBA2" 
+                    secureTextEntry={ true } 
+                    autoCapitalize="none" 
+                    onSubmitEditing={() => handleSignin()}
+                />
                 <Button onPress={() => handleSignin()} text="Se connecter" primary="#294849" secondary="white" />
             </View>
         </ScrollView>
