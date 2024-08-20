@@ -17,7 +17,7 @@ const SigninScreen = ({ navigation }) => {
     const [error, setError] = useState(null)
 
     const handleSignin = async () => {
-        const response = await fetch('http://192.168.1.24:3000/user/token', {
+        const response = await fetch(`${global.BACKEND_URL}/user/token`, {
             method: 'GET',
             headers: {'Content-Type': 'application/json', email, password }
         })
@@ -26,7 +26,7 @@ const SigninScreen = ({ navigation }) => {
             setError(json.error)
             return
         }
-        dispatch(updateUser({ email, password, token: json.token}))
+        dispatch(updateUser({ email, token: json.token, username: json.username }))
         navigate('Tab')
     }
 

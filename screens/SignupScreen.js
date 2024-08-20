@@ -19,7 +19,7 @@ const SignupScreen = ({ navigation }) => {
 
     const handleSignup = async () => {
         const newUser = { username, email, password }
-        const response = await fetch('http://192.168.1.24:3000/user', {
+        const response = await fetch(`${global.BACKEND_URL}/user`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newUser)

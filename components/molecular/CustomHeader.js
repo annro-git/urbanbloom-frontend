@@ -1,21 +1,39 @@
 import { useNavigation } from "@react-navigation/native"
 import { View, TouchableOpacity, StatusBar } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
+import { useEffect } from "react"
+import { useDispatch } from "react-redux"
 import { UserRound } from "lucide-react-native"
+import { updateLocation } from "../../reducers/user"
 
+import * as Location from 'expo-location'
 import Logotype from "./Logotype"
 import WeatherIcon from "./Weather/WeatherIcon"
 
 /* AsyncStorage cleaner imports */
 import { Trash2 } from "lucide-react-native"
 import AsyncStorage from "@react-native-async-storage/async-storage"
-/* -------------------------- */
+/* ---------------------------- */
 
 const CustomHeader = ({ route }) => {
 
+    const dispatch = useDispatch()
     const { navigate } = useNavigation()
     const isWeatherFocused = route.name === 'Weather'
     const isProfileFocused = route.name === 'Profile'
+
+    useEffect(() => {
+        (async () => {
+            const { status } = await Location.requestForegroundPermissionsAsync()
+            if(status === 'granted'){
+                await Location.watchPositionAsync({ distanceInterval: 10 },
+                (location) => {
+                    const { latitude, longitude } = location.coords
+                    dispatch(updateLocation({ latitude, longitude }))
+                })
+            }
+        })()
+    }, [])
 
     return (
         <SafeAreaView

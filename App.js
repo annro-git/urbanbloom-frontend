@@ -18,8 +18,13 @@ import ProfileScreen from './screens/ProfileScreen'
 import WeatherScreen from './screens/WeatherScreen'
 import CustomHeader from './components/molecular/CustomHeader'
 import CustomTabBar from './components/molecular/CustomTabBar'
+import SearchScreen from './screens/SearchScreen'
+import GardenScreen from './screens/GardenScreen'
 import test from './reducers/test'
 import user from './reducers/user'
+
+// URL BACKEND
+global.BACKEND_URL = 'http://192.168.1.24:3000'
 
 // Redux
 const reducers = combineReducers({ test, user })
@@ -34,9 +39,9 @@ const persiststor = persistStore(store)
 const Tab = createBottomTabNavigator()
 const tabs = [
   { name: 'Accueil', component: TestScreen, icon: House, position: 'bottom' },
-  { name: 'Recherche', component: TestScreen, icon: Search, position: 'bottom' },
+  { name: 'Recherche', component: SearchScreen, icon: Search, position: 'bottom' },
   { name: 'Publier', component: TestScreen, icon: CirclePlus, position: 'bottom' },
-  { name: 'Jardins', component: TestScreen, icon: Leaf, position: 'bottom' },
+  { name: 'Jardins', component: GardenScreen, icon: Leaf, position: 'bottom' },
   { name: 'Ressources', component: TestScreen, icon: Book, position: 'bottom' },
   { name: 'Profile', component: ProfileScreen },
   { name: 'Weather', component: WeatherScreen },

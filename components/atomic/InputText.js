@@ -14,7 +14,7 @@ const TextInput = props => {
                 color: '#000000BF',
                 fontFamily: 'Lato_400Regular',
                 fontSize: 16,
-                padding: 20,
+                padding: props.padding || 20,
                 width: '100%'
             }}
         />

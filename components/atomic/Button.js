@@ -9,8 +9,8 @@ const Button = props => {
                 backgroundColor: props.primary,
                 borderRadius: 10,
                 justifyContent: 'center',
-                padding: 20,
-                width: '100%',
+                padding: props.padding || 20,
+                width: props.width || '100%',
                 borderWidth: 1,
                 borderColor: props.border ? props.border : 'transparent'
             }}

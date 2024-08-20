@@ -23,9 +23,16 @@ export const userSlice = createSlice({
             state.username = username
             state.email = email
             state.token = token
+        },
+        updateLocation: (state, action) => {
+            const { latitude, longitude } = action.payload
+            state.lastLocation = { latitude, longitude }
+        },
+        updateGardens: (state, action) => {
+            state.gardens = action.payload
         }
     }
 })
 
-export const { updateUser } = userSlice.actions
+export const { updateUser, updateLocation, updateGardens } = userSlice.actions
 export default userSlice.reducer
