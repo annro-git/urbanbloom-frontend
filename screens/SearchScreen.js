@@ -8,16 +8,15 @@ import MapView, { Marker } from "react-native-maps"
 import TextInput from "../components/atomic/InputText"
 import RadioButtonGroup from "../components/atomic/RadioButtonGroup"
 import CheckBoxGroup from "../components/atomic/CheckBoxGroup"
-import Button from "../components/atomic/Button"
 
-const interestItems =[
+const interestOptions =[
     { label: 'Fruits', value: 'fruits', },
     { label: 'Légumes', value: 'vegetables', },
     { label: 'Fleurs', value: 'flowers', },
     { label: 'Peu importe', value: '', isChecked: true },
 ]
 
-const bonusItems =[
+const bonusOptions =[
     { label: 'Accessibilité', value: 'a11y' },
     { label: 'Animaux', value: 'dogs' },
     { label: 'Point d\'eau', value: 'water' },
@@ -70,6 +69,7 @@ const SearchScreen = () => {
         json.result && dispatch(updateGardens([...user.gardens, gardenPreview.id]))
     }
 
+    // Set user.gardens reducer from backend
     useEffect(() => {
         (async() => {
             const response = await fetch(`${global.BACKEND_URL}/user/gardens`, {
@@ -81,6 +81,7 @@ const SearchScreen = () => {
         })()
     }, [])
 
+    // Filter markers depending interest and bonus
     useEffect(() => {
       (async() => {
         const response = await fetch(`${global.BACKEND_URL}/garden/location`, {
@@ -138,7 +139,9 @@ const SearchScreen = () => {
                         padding: 20,
                     }}
                 >
-                    {!!gardenPreview &&
+
+                    {/* Gardens details */
+                        gardenPreview &&
                         <View style={{ width: '100%', paddingBottom: 20, gap: 20 }}>
                             <View>
                                 <Text style={{ fontSize: 18, fontFamily: 'Lato_700Bold' }}>{ gardenPreview.name }</Text>
@@ -146,17 +149,21 @@ const SearchScreen = () => {
                             </View>
                             <View style={{ flexDirection: 'row' }}>
                                 <Text style={{ width: '70%' }}>{ gardenPreview.description }</Text>
-                                { user.gardens.indexOf(gardenPreview.id) > -1
+
+                                { /* Toggle join / subscribed button depending user.gardens */
+                                    user.gardens.indexOf(gardenPreview.id) > -1
                                     ? <View style={{ backgroundColor: '#BDCEBB', borderRadius: 5, justifyContent: 'center', alignItems: 'center', padding: 10, flex: 1 }} >
                                         <Text style={{ fontSize: 16, fontFamily: 'Lato_400Regular', color: 'white' }} >Inscrit</Text>
                                     </View>
-                                    :<TouchableOpacity style={{ backgroundColor: '#466760', borderRadius: 5, justifyContent: 'center', alignItems: 'center', padding: 10, flex: 1 }} onPress={() => handleJoin()}>
+                                    : <TouchableOpacity style={{ backgroundColor: '#466760', borderRadius: 5, justifyContent: 'center', alignItems: 'center', padding: 10, flex: 1 }} onPress={() => handleJoin()}>
                                         <Text style={{ fontSize: 16, fontFamily: 'Lato_400Regular', color: 'white' }} >Rejoindre</Text>
                                     </TouchableOpacity>
                                 }
+
                             </View>
                         </View>
                     }
+
                     <TextInput
                         value={ address } 
                         onChangeText={ e => setAddress(e) } 
@@ -169,14 +176,14 @@ const SearchScreen = () => {
                     />
                     <Text style={{ fontSize: 16, fontFamily: 'Lato_400Regular', color: '#466760', paddingVertical: 10 }}>Intérêt : </Text>
                     <RadioButtonGroup 
-                        options={ interestItems }
+                        options={ interestOptions }
                         selected={ interest }
                         onSelect={ setInterest }
                         color='#466760'
                     />
                     <Text style={{ fontSize: 16, fontFamily: 'Lato_400Regular', color: '#466760', paddingVertical: 10 }}>Bonus : </Text>
                     <CheckBoxGroup
-                        options={ bonusItems }
+                        options={ bonusOptions }
                         selected={ bonus }
                         onSelect={ setBonus }
                         color='#466760'

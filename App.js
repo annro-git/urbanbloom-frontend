@@ -19,6 +19,7 @@ import WeatherScreen from './screens/WeatherScreen'
 import CustomHeader from './components/molecular/CustomHeader'
 import CustomTabBar from './components/molecular/CustomTabBar'
 import SearchScreen from './screens/SearchScreen'
+import PostScreen from './screens/PostScreen'
 import GardenScreen from './screens/GardenScreen'
 import test from './reducers/test'
 import user from './reducers/user'
@@ -40,7 +41,7 @@ const Tab = createBottomTabNavigator()
 const tabs = [
   { name: 'Accueil', component: TestScreen, icon: House, position: 'bottom' },
   { name: 'Recherche', component: SearchScreen, icon: Search, position: 'bottom' },
-  { name: 'Publier', component: TestScreen, icon: CirclePlus, position: 'bottom' },
+  { name: 'Publier', component: PostScreen, icon: CirclePlus, position: 'bottom' },
   { name: 'Jardins', component: GardenScreen, icon: Leaf, position: 'bottom' },
   { name: 'Ressources', component: TestScreen, icon: Book, position: 'bottom' },
   { name: 'Profile', component: ProfileScreen },
