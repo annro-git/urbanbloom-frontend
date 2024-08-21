@@ -31,7 +31,7 @@ import test from './reducers/test'
 import user from './reducers/user'
 
 // URL BACKEND
-global.BACKEND_URL = 'http://192.168.1.24:3000'
+global.BACKEND_URL = 'http://192.168.1.95:3000'
 
 // Redux
 const reducers = combineReducers({ test, user })

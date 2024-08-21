@@ -4,6 +4,7 @@ import AuJardin from '../components/molecular/Garden/AuJardin';
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { useFonts, Lato_300Light, Lato_400Regular, Lato_700Bold, Lato_900Black } from '@expo-google-fonts/lato';
 import * as LucideIcons from 'lucide-react-native';
 
@@ -21,9 +22,13 @@ export default HomeScreen = () => {
     const [showAllEvents, setShowAllEvents] = useState(false);
     const [showAllPartages, setShowAllPartages] = useState(false);
 
+    const { token } = useSelector(state => state.user);
+
+    console.log(token)
+
     useEffect(() => {
 
-        fetch(`http://${process.env.IP_ADDRESS}:3000/events`,
+        fetch(`${global.BACKEND_URL}/events`,
             {
                 method: 'GET',
                 headers: {
@@ -41,7 +46,6 @@ export default HomeScreen = () => {
             { id: 3, date: '03/01/2024', hour: '12:00', title: 'Event 3' },
             { id: 4, date: '04/01/2024', hour: '13:00', title: 'Event 4' },
         ]; */
-        setEvents(fetchedEvents);
 
         const fetchedPartages = [
             { id: 1, username: 'John Doe', uriPP: 'https://avatar.iran.liara.run/public/35' },
