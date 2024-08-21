@@ -14,24 +14,19 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 // import LogotypeV from './components/LogotypeV'
 import TestScreen from './screens/TestScreen'
 import SplashScreen from './screens/SplashScreen'
-import SigninScreen from './screens/SigninScreen'
-import SignupScreen from './screens/SignupScreen'
 import ProfileScreen from './screens/ProfileScreen'
 import WeatherScreen from './screens/WeatherScreen'
 import CustomHeader from './components/molecular/CustomHeader'
 import ForgotScreen from './screens/ForgotScreen'
 import SearchScreen from './screens/SearchScreen'
 import SigninScreen from './screens/SigninScreen'
-import SignipScreen from './screens/SignupScreen'
+import SignupScreen from './screens/SignupScreen'
 import PostScreen from './screens/PostScreen'
 import GardenScreen from './screens/GardenScreen'
 import ResourcesScreen from './screens/ResourcesScreen'
 import HomeScreen from './screens/HomeScreen'
-
 import CustomTabBar from './components/molecular/CustomTabBar'
-import SearchScreen from './screens/SearchScreen'
-import PostScreen from './screens/PostScreen'
-import GardenScreen from './screens/GardenScreen'
+
 import test from './reducers/test'
 import user from './reducers/user'
 
@@ -78,15 +73,9 @@ const TabNavigator = () => {
 // Stack navigation
 const Stack = createNativeStackNavigator()
 const stacks = [
-<<<<<<< HEAD
-  { name: 'Auth', component: AuthScreen, },
-  { name: 'Forgot', component: ForgotScreen, },
-
-=======
   { name: 'Splash', component: SplashScreen, },
   { name: 'SignIn', component: SigninScreen, },
   { name: 'SignUp', component: SignupScreen, },
->>>>>>> main
   { name: 'Tab', component: TabNavigator, },
 
   // { name: 'Profile', component: ProfileScreen, }
