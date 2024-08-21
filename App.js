@@ -78,9 +78,15 @@ const TabNavigator = () => {
 // Stack navigation
 const Stack = createNativeStackNavigator()
 const stacks = [
+<<<<<<< HEAD
+  { name: 'Auth', component: AuthScreen, },
+  { name: 'Forgot', component: ForgotScreen, },
+
+=======
   { name: 'Splash', component: SplashScreen, },
   { name: 'SignIn', component: SigninScreen, },
   { name: 'SignUp', component: SignupScreen, },
+>>>>>>> main
   { name: 'Tab', component: TabNavigator, },
 
   // { name: 'Profile', component: ProfileScreen, }

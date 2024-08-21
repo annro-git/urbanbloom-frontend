@@ -1,90 +1,74 @@
+import { ScrollView, View, Text } from "react-native"
+import { useState } from "react"
+import { useDispatch } from "react-redux"
+import { updateUser } from "../reducers/user"
 
-import { TouchableOpacity, StyleSheet, Text, View, TextInput } from 'react-native';
-import { useFonts, Lato_300Light, Lato_400Regular, Lato_700Bold, Lato_900Black } from '@expo-google-fonts/lato'
+import InputText from '../components/atomic/InputText'
+import Button from "../components/atomic/Button"
+import Logotype from "../components/molecular/Logotype"
 
-export default function SignInScreen({ navigation }) {
+const SigninScreen = ({ navigation }) => {
 
-    let [loaded] = useFonts({
-        Lato_300Light,
-        Lato_400Regular,
-        Lato_700Bold,
-        Lato_900Black,
-    })
+    const dispatch = useDispatch()
+    const { navigate } = navigation
+    
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [error, setError] = useState(null)
 
-    if (!loaded) {
-        return null
+    const handleSignin = async () => {
+        const response = await fetch(`${global.BACKEND_URL}/user/token`, {
+            method: 'GET',
+            headers: {'Content-Type': 'application/json', email, password }
+        })
+        const json = await response.json()
+        if(!json.result){
+            setError(json.error)
+            return
+        }
+        dispatch(updateUser({ email, token: json.token, username: json.username }))
+        navigate('Tab')
     }
 
     return (
-        <View style={styles.container}>
-         
-            <Text style={styles.title}>Bonjour</Text>
-            <View style={styles.inputC}>
-                <Text style={styles.identifiant}>Identifiant</Text>
-                <TextInput style={styles.input} placeholder="" />
+        <ScrollView contentContainerStyle={{
+            alignItems: 'center',
+            backgroundColor: 'white', 
+            flex: 1,
+            gap: 20,
+            justifyContent: 'center',
+            padding: 20,
+        }}>
+            <Logotype direction='vertical' color='#294849' size={64} fontSize={20} />
+            <View
+                style={{
+                    width: '80%',
+                    gap: 20,
+                }}
+            >
+                {error && <Text style={{ color: 'red' }}>{ error }</Text>}
+                <InputText
+                    value={ email } 
+                    onChangeText={ e => setEmail(e) } 
+                    placeholder="Email" 
+                    color="#C5BBA2" 
+                    autoCapitalize="none" 
+                    autoComplete="email" 
+                    inputMode="email"
+                />
+                <InputText
+                    value={ password } 
+                    onChangeText={ e => setPassword(e) } 
+                    placeholder="Mot de passe" 
+                    color="#C5BBA2" 
+                    secureTextEntry={ true } 
+                    autoCapitalize="none" 
+                    onSubmitEditing={() => handleSignin()}
+                />
+                <Button onPress={() => handleSignin()} text="Se connecter" primary="#294849" secondary="white" />
             </View>
-            <View style={styles.inputC}>
-                <Text style={styles.mdp}>Mot de passe</Text>
-                <TextInput style={styles.input} placeholder="" />
-            </View>
-            <TouchableOpacity onPress={() => navigation.navigate('Mdp oublié')} >
-                <Text style={styles.mdpoublie}>Mot de passe oublié ?</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.seconnecterC} title="Se connecter" onPress={() => navigation.navigate('TabNavigator')} >
-                <Text style={styles.seconnecter}>Se connecter</Text>
-            </TouchableOpacity>
-
-        </View>
+        </ScrollView>
     )
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    title: {
-        fontFamily: 'Lato_900Black',
-        fontSize: 30,
-        marginTop: 30,
-        marginBottom: 30,
-    },
-    input: {
-        borderWidth: 1,
-        borderColor: 'black',
-        padding: 10,
-        borderRadius: 5,
-        marginBottom: 20,
-        height: 40,
-    },
-    inputC: {
-        width: '80%',
-    },
-    seconnecterC: {
-        width: '80%',
-        backgroundColor: '#000',
-        padding: 10,
-        borderRadius: 5,
-    },
-    seconnecter: {
-        color: '#fff',
-        textAlign: 'center',
-    },
-    identifiant: {
-        fontFamily: 'Lato_700Bold',
-        marginBottom: 5,
-    },
-    mdp: {
-        fontFamily: 'Lato_700Bold',
-        marginBottom: 5,
-    },
-    mdpoublie: {
-        fontFamily: 'Lato_700Bold',
-        color: '#000',
-        marginTop: 10,
-        marginBottom: 20,
-        textDecorationLine: 'underline',
-    }
-});
+export default SigninScreen

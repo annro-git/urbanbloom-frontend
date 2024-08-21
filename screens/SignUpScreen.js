@@ -1,90 +1,87 @@
+import { ScrollView, View, Text } from "react-native"
+import { useState } from "react"
+import { useDispatch } from "react-redux"
+import { updateUser } from "../reducers/user"
 
-import { TouchableOpacity, StyleSheet, Text, View, TextInput } from 'react-native';
-import { useFonts, Lato_300Light, Lato_400Regular, Lato_700Bold, Lato_900Black } from '@expo-google-fonts/lato'
+import InputText from '../components/atomic/InputText'
+import Button from "../components/atomic/Button"
+import Logotype from "../components/molecular/Logotype"
 
-export default function SignUpScreen({ navigation }) {
+const SignupScreen = ({ navigation }) => {
 
-    let [loaded] = useFonts({
-        Lato_300Light,
-        Lato_400Regular,
-        Lato_700Bold,
-        Lato_900Black,
-    })
+    const dispatch = useDispatch()
+    const { navigate } = navigation
 
-    if (!loaded) {
-        return null
+    const [username, setUsername] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [error, setError] = useState(null)
+
+    const handleSignup = async () => {
+        const newUser = { username, email, password }
+        const response = await fetch(`${global.BACKEND_URL}/user`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(newUser)
+        })
+        const json = await response.json()
+        if(!json.result){
+            if(json.error.errors){
+                setError(json.error.message)
+                return
+            }
+            setError(json.error)
+            return
+        }
+        dispatch(updateUser({ username, email, token: json.token }))
+        navigate('Tab')
     }
 
     return (
-        <View style={styles.container}>
-          
-            <Text style={styles.title}>Bienvenue</Text>
-            <View style={styles.inputC}>
-                <Text style={styles.identifiant}>Identifiant</Text>
-                <TextInput style={styles.input} placeholder="" />
+        <ScrollView contentContainerStyle={{
+            alignItems: 'center',
+            backgroundColor: 'white', 
+            flex: 1,
+            gap: 20,
+            justifyContent: 'center',
+            padding: 20,
+        }}>
+            <Logotype direction='vertical' color='#294849' size={64} fontSize={20} />
+            <View
+                style={{
+                    width: '80%',
+                    gap: 20,
+                }}
+            >
+                {error && <Text style={{ color: 'red' }}>{ error }</Text>}
+                <InputText
+                    value={ username } 
+                    onChangeText={ e => setUsername(e) } 
+                    placeholder="Identifiant" 
+                    color="#C5BBA2"
+                />
+                <InputText
+                    value={ email } 
+                    onChangeText={ e => setEmail(e) } 
+                    placeholder="Email" 
+                    color="#C5BBA2" 
+                    autoCapitalize="none" 
+                    autoComplete="email" 
+                    inputMode="email"
+                />
+                <InputText
+                    value={ password } 
+                    onChangeText={ e => setPassword(e) } 
+                    placeholder="Mot de passe" 
+                    color="#C5BBA2" 
+                    secureTextEntry={ true } 
+                    autoCapitalize="none" 
+                    onSubmitEditing={() => handleSignup() }
+                />
+                <Button onPress={() => handleSignup()} text="Créer un compte" primary="#294849" secondary="white" />
             </View>
-            <View style={styles.inputC}>
-                <Text style={styles.email}>Email</Text>
-                <TextInput style={styles.input} placeholder="" />
-            </View>
-            <View style={styles.inputC}>
-                <Text style={styles.mdp}>Mot de passe</Text>
-                <TextInput style={styles.input} placeholder="" />
-            </View>
-            <TouchableOpacity style={styles.seconnecterC} title="Créer un compte" onPress={() => navigation.navigate('TabNavigator')} >
-                <Text style={styles.seconnecter}>Se connecter</Text>
-            </TouchableOpacity>
-        </View>
+        </ScrollView>
     )
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    title: {
-        fontFamily: 'Lato_900Black',
-        fontSize: 30,
-        marginTop: 30,
-        marginBottom: 20,
-    },
-    input: {
-        borderWidth: 1,
-        borderColor: 'black',
-        padding: 10,
-        borderRadius: 5,
-        marginBottom: 20,
-        height: 40,
-    },
-    inputC: {
-        width: '80%',
-    },
-    identifiant: {
-        fontFamily: 'Lato_700Bold',
-        fontSize: 15,
-    },
-    email: {
-        fontFamily: 'Lato_700Bold',
-        fontSize: 15,
-    },
-    mdp: {
-        fontFamily: 'Lato_700Bold',
-        fontSize: 15,
-    },
-    seconnecterC: {
-        width: '80%',
-        backgroundColor: '#000',
-        padding: 10,
-        borderRadius: 5,
-        paddingTop: 10,
-        paddingBottom: 13,
-        marginTop: 20,
-    },
-    seconnecter: {
-        color: '#fff',
-        textAlign: 'center',
-    },
-})
+export default SignupScreen
