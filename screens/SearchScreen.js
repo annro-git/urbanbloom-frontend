@@ -187,6 +187,7 @@ const SearchScreen = () => {
                         selected={ bonus }
                         onSelect={ setBonus }
                         color='#466760'
+                        fontSize={ 14 }
                     />
                 </View>
             </View>
