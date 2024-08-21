@@ -23,12 +23,24 @@ export default HomeScreen = () => {
 
     useEffect(() => {
 
-        const fetchedEvents = [
+        fetch(`http://${process.env.IP_ADDRESS}:3000/events`,
+            {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'token': token,
+                },
+            }
+        )
+            .then(response => response.json())
+            .then(data => setEvents(data))
+
+        /* const fetchedEvents = [
             { id: 1, date: '01/01/2024', hour: '10:00', title: 'Event 1' },
             { id: 2, date: '02/01/2024', hour: '11:00', title: 'Event 2' },
             { id: 3, date: '03/01/2024', hour: '12:00', title: 'Event 3' },
             { id: 4, date: '04/01/2024', hour: '13:00', title: 'Event 4' },
-        ];
+        ]; */
         setEvents(fetchedEvents);
 
         const fetchedPartages = [
