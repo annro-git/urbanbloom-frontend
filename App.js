@@ -13,24 +13,33 @@ import { StatusBar } from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 // import LogotypeV from './components/LogotypeV'
 import TestScreen from './screens/TestScreen'
-import AuthScreen from './screens/AuthScreen'
+import SplashScreen from './screens/SplashScreen'
+import SigninScreen from './screens/SigninScreen'
+import SignupScreen from './screens/SignupScreen'
 import ProfileScreen from './screens/ProfileScreen'
 import WeatherScreen from './screens/WeatherScreen'
 import CustomHeader from './components/molecular/CustomHeader'
 import ForgotScreen from './screens/ForgotScreen'
 import SearchScreen from './screens/SearchScreen'
-import SignInScreen from './screens/SignInScreen'
-import SignUpScreen from './screens/SignUpScreen'
+import SigninScreen from './screens/SigninScreen'
+import SignipScreen from './screens/SignupScreen'
 import PostScreen from './screens/PostScreen'
-import GardensScreen from './screens/GardensScreen'
+import GardenScreen from './screens/GardenScreen'
 import ResourcesScreen from './screens/ResourcesScreen'
 import HomeScreen from './screens/HomeScreen'
 
 import CustomTabBar from './components/molecular/CustomTabBar'
+import SearchScreen from './screens/SearchScreen'
+import PostScreen from './screens/PostScreen'
+import GardenScreen from './screens/GardenScreen'
 import test from './reducers/test'
+import user from './reducers/user'
+
+// URL BACKEND
+global.BACKEND_URL = 'http://192.168.1.24:3000'
 
 // Redux
-const reducers = combineReducers({ test })
+const reducers = combineReducers({ test, user })
 const persistConfig = { key: 'urbanbloom', storage: AsyncStorage }
 const store = configureStore({
   reducer: persistReducer(persistConfig, reducers),
@@ -44,7 +53,7 @@ const tabs = [
   { name: 'Accueil', component: HomeScreen, icon: House, position: 'bottom' },
   { name: 'Recherche', component: SearchScreen, icon: Search, position: 'bottom' },
   { name: 'Publier', component: PostScreen, icon: CirclePlus, position: 'bottom' },
-  { name: 'Jardins', component: GardensScreen, icon: Leaf, position: 'bottom' },
+  { name: 'Jardins', component: GardenScreen, icon: Leaf, position: 'bottom' },
   { name: 'Ressources', component: ResourcesScreen, icon: Book, position: 'bottom' },
   { name: 'Profile', component: ProfileScreen },
   { name: 'Weather', component: WeatherScreen },
@@ -69,9 +78,9 @@ const TabNavigator = () => {
 // Stack navigation
 const Stack = createNativeStackNavigator()
 const stacks = [
-  { name: 'Auth', component: AuthScreen, },
-  { name: 'Forgot', component: ForgotScreen, },
-
+  { name: 'Splash', component: SplashScreen, },
+  { name: 'SignIn', component: SigninScreen, },
+  { name: 'SignUp', component: SignupScreen, },
   { name: 'Tab', component: TabNavigator, },
 
   // { name: 'Profile', component: ProfileScreen, }

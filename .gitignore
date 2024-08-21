@@ -34,5 +34,5 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
-# dotenv environment variables file
-.env
+# don't know
+%ProgramData%/
