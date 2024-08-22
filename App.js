@@ -29,12 +29,14 @@ import CustomTabBar from './components/molecular/CustomTabBar'
 
 import test from './reducers/test'
 import user from './reducers/user'
+import garden from './reducers/garden'
+import { useEffect } from 'react'
 
 // URL BACKEND
 global.BACKEND_URL = 'http://192.168.1.95:3000'
 
 // Redux
-const reducers = combineReducers({ test, user })
+const reducers = combineReducers({ test, user, garden })
 const persistConfig = { key: 'urbanbloom', storage: AsyncStorage }
 const store = configureStore({
   reducer: persistReducer(persistConfig, reducers),

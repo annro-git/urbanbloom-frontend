@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import { useFonts, Lato_300Light, Lato_400Regular, Lato_700Bold, Lato_900Black } from '@expo-google-fonts/lato';
 import * as LucideIcons from 'lucide-react-native';
 
+
 export default HomeScreen = () => {
 
     let [loaded] = useFonts({
@@ -24,9 +25,20 @@ export default HomeScreen = () => {
 
     const { token } = useSelector(state => state.user);
 
-    console.log(token)
-
     useEffect(() => {
+
+        fetch(`${global.BACKEND_URL}/gardens`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'token': token,
+            }
+        }
+        )
+            .then(response => response.json())
+            .then(data => dispatch(updateGardens(data)))
+
+
 
         fetch(`${global.BACKEND_URL}/events`,
             {
@@ -49,8 +61,8 @@ export default HomeScreen = () => {
 
         const fetchedPartages = [
             { id: 1, username: 'John Doe', uriPP: 'https://avatar.iran.liara.run/public/35' },
-            { id: 2, username: 'Jane Doe', uriPP: 'https://avatar.iran.liara.run/public/71'},
-            { id: 3, username: 'Ash', uriPP: 'https://avatar.iran.liara.run/public/41'},
+            { id: 2, username: 'Jane Doe', uriPP: 'https://avatar.iran.liara.run/public/71' },
+            { id: 3, username: 'Ash', uriPP: 'https://avatar.iran.liara.run/public/41' },
             { id: 4, username: 'Yoda', uriPP: 'https://avatar.iran.liara.run/public/45' },
         ];
         setPartages(fetchedPartages);
@@ -138,5 +150,5 @@ const styles = StyleSheet.create({
         fontSize: 20,
         marginLeft: 10,
     },
-    
+
 });
