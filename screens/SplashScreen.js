@@ -1,11 +1,10 @@
-import { View, TouchableOpacity } from "react-native"
+import { View } from "react-native"
 import { useEffect } from "react"
 import { useSelector } from "react-redux"
-import { Trash2 } from "lucide-react-native"
 
-import AsyncStorage from "@react-native-async-storage/async-storage"
 import Logotype from "../components/molecular/Logotype"
 import Button from "../components/atomic/Button"
+import AsyncStorageCleaner from "../components/atomic/AsyncStorageCleaner"
 
 const SplashSreen = ({ navigation }) => {
 
@@ -39,10 +38,9 @@ const SplashSreen = ({ navigation }) => {
 
             {/* on press : empty urbanbloom AsyncStorage key */}
             <View style={{ position: "absolute", bottom: 0, right: 0, margin: 20}}>
-                <TouchableOpacity onPress={() => AsyncStorage.removeItem('persist:urbanbloom')}>
-                    <Trash2 color='red' size={32} />
-                </TouchableOpacity>
+                <AsyncStorageCleaner navigate={ navigate } size={ 32 } />
             </View>
+            {/* -------------------------------------------- */}
         </View>
     )
 }

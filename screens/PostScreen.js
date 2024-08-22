@@ -2,6 +2,7 @@ import { View, Text, ScrollView } from "react-native"
 import { useEffect, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { updateGardens } from "../reducers/user"
+import { useIsFocused } from "@react-navigation/native"
 
 import InputSelect from "../components/atomic/InputSelect"
 import RadioButtonGroup from "../components/atomic/RadioButtonGroup"
@@ -14,9 +15,9 @@ const typeOptions = [
     { label: 'Evénement', value: 'event' }
 ]
 
-const PostScreen = ({ navigation }) => {
+const PostScreen = () => {
 
-    const { navigate } = navigation
+    const isFocused = useIsFocused()
 
     const dispatch = useDispatch()
 
@@ -25,6 +26,7 @@ const PostScreen = ({ navigation }) => {
     const [selectedGarden, setSelectedGarden] = useState('')
     const [type, setType] = useState('message')
     const [message, setMessage] = useState({ title: '', text: '', pictures: []})
+    const [setMessageStatus, setSetMessageStatus] = useState('')
 
     const handleSendMessage = async() => {
         const messageBody = {
@@ -39,7 +41,10 @@ const PostScreen = ({ navigation }) => {
             body: JSON.stringify(messageBody)
         })
         const json = await response.json()
-        console.log(json)
+        if(json.result){
+            setMessage({ title: '', text: '', pictures: []})
+            setMessageStatus('Message envoyé')
+        }
     }
 
     useEffect(() => {
@@ -59,10 +64,13 @@ const PostScreen = ({ navigation }) => {
             const jsonB = await responseB.json()
             jsonB.result && setGardenOptions(jsonB.gardens)
         })()
-    }, [])
+    }, [isFocused])
 
     return (
-        <ScrollView contentContainerStyle={{ backgroundColor: '#F9F2E0', alignItems: 'center', paddingVertical: 20, minHeight: '100%' }} >
+        <ScrollView
+            contentContainerStyle={{ backgroundColor: '#F9F2E0', alignItems: 'center', paddingVertical: 20, minHeight: '100%' }}
+            keyboardShouldPersistTaps="always"
+        >
             <View style={{ width: '80%', gap: 20 }} >
                 <View style={{ zIndex: 9 }}>
                     <InputSelect
