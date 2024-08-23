@@ -27,7 +27,7 @@
       [
         "expo-image-picker",
         {
-          "photosPermission": "Allow UrbanBloom to access your photos"
+          "photosPermission": "Allow urbanbloom-frontend to access your photos"
         }
       ]
     ],
