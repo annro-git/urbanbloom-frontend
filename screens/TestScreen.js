@@ -12,12 +12,23 @@ const TestScreen = () => {
     const dispatch = useDispatch()
     const [test, setTest] = useState('')
     const testRedux = useSelector(state => state.test.value)
+
     const [cameraOverlay, setCameraOverlay] = useState(null)
+    const [pictureUrls, setPictureUrls] = useState([])
 
-    const camera = <CustomCamera facingOption='back' onClose={() => setCameraOverlay(null)} />
-
+    const camera = () => {
+        return (
+            <CustomCamera 
+                facingOption='back' 
+                closeCamera={() => setCameraOverlay(null)} 
+                savePictureURI={(e) => setPictureUrls([...pictureUrls, e])} 
+                pictureUrls={ pictureUrls } 
+            />
+        )
+    }
+    
     return (
-        <View style={{ backgroundColor: '#F9F2E0', flex: 1, justifyContent: 'center', alignItems: 'center', position:'relative' }}>
+        <View style={{ backgroundColor: '#F9F2E0', flex: 1, justifyContent: 'center', alignItems: 'center', position:'relative',  minHeight: '100%' }}>
             <View style={{ width: '80%', gap: 10 }}>
                 <InputText value={test} onChangeText={e => setTest(e)} />
                 <TouchableOpacity 
