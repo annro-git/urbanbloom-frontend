@@ -1,17 +1,28 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
-import { Text, Button, View, TouchableOpacity, Image, StyleSheet, Alert } from "react-native"
+import { Text, Button, View, TouchableOpacity, Image, StyleSheet, Modal, TextInput, CheckBox, Alert } from "react-native"
 import * as LucideIcons from 'lucide-react-native';
 import { useDispatch } from "react-redux";
 import { updateUser } from "../reducers/user";
 import * as ImagePicker from 'expo-image-picker';
-import { Button, Modal } from 'antd';
+import CheckBoxGroup from "../components/atomic/CheckBoxGroup";
 
 
 const ppURIToDispatch = ''
 
-
 const ProfileScreen = props => {
+
+    const interestOptions = [
+        { label: 'Fruits', value: 'fruits', },
+        { label: 'Légumes', value: 'vegetables', },
+        { label: 'Fleurs', value: 'flowers', },
+    ]
+
+    const bonusOptions = [
+        { label: 'Accessibilité', value: 'a11y' },
+        { label: 'Animaux', value: 'dogs' },
+        { label: 'Point d\'eau', value: 'water' },
+    ]
 
     const dispatch = useDispatch()
 
@@ -20,8 +31,10 @@ const ProfileScreen = props => {
     const user = useSelector(state => state.user)
     const [image, setImage] = useState(null);
     const [status, requestPermission] = ImagePicker.useMediaLibraryPermissions();
-    const [openModal, setOpenModal] = useState(false)
-
+    const [openModal, setOpenModal] = useState(false);
+    const [interest, setInterest] = useState([]);
+    const [bonus, setBonus] = useState([]);
+    const [address, setAdress] = useState('')
 
 
     useEffect(() => {
@@ -62,19 +75,37 @@ const ProfileScreen = props => {
         }
     };
 
-    const createGarden = () => {
+    const createGarden = async () => {
 
         console.log('create garden')
+        const reponse = await fetch(`https://api-adresse.data.gouv.fr/search/?q=${address}`)
+        const data = await reponse.json()
+        if (data.code === '400') {
+            Alert.alert('Adresse invalide')
+            return
+        }
+
+        console.log(data.features[0].geometry.coordinates[1])
+        console.log(data.features[0].geometry.coordinates[0])
+        console.log(bonus)
+        console.log(interest)
+
 
         fetch(`${global.BACKEND_URL}/garden`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'token': token,
             },
             body: JSON.stringify({
+                token: token,
                 name: 'new garden',
                 description: 'description',
+                interests: interest,
+                bonus: bonus,
+                coordinates: {
+                    latitude: data.features[0].geometry.coordinates[1],
+                    longitude: data.features[0].geometry.coordinates[0],
+                },
             })
         }
         )
@@ -82,14 +113,16 @@ const ProfileScreen = props => {
             .then(data => {
                 console.log(data)
                 if (data.success) {
+                    console.log(data.garden)
                     setGardens([...gardens, data.garden])
                 }
             })
-        };
+    };
 
     return (
         <>
             <View style={styles.container}>
+
                 <Button title='dispatch ppURI' onPress={() => { dispatch(updateUser({ ppURI: ppURIToDispatch })) }} />
                 <View style={styles.userc}>
                     <TouchableOpacity onPress={pickImage} style={styles.touchablepp}>
@@ -112,7 +145,7 @@ const ProfileScreen = props => {
                 <View style={styles.jardinsc}>
                     <View style={styles.jardins}>
                         <Text style={styles.jardin}>Jardins</Text>
-                        <TouchableOpacity onPress={()=>{setOpenModal(true)}} >
+                        <TouchableOpacity onPress={() => { setOpenModal(true) }} >
                             <LucideIcons.CirclePlus style={styles.circleplus} size={20} />
                         </TouchableOpacity>
                     </View>
@@ -126,7 +159,45 @@ const ProfileScreen = props => {
                 <View style={styles.activitiesc}>
                     <Text style={styles.activites}>Activité récente</Text>
                 </View>
-                {openModal && <Modal style={styles.modal}></Modal>}
+                <Modal style={styles.modal}
+                    animationType="fade"
+                    transparent={true}
+                    visible={openModal}
+                    >
+                    <View style={styles.modalContainer}>
+                        <View style={styles.modal}>
+                            <Text>Nouveau jardin:</Text>
+                            <TextInput placeholder='Nom du jardin' />
+                            <TextInput placeholder='Description' />
+                            <View>
+                                <Text>Intérêts:</Text>
+                                <CheckBoxGroup
+                                    options={interestOptions}   
+                                    selected={interest}
+                                    onSelect={setInterest}
+                                    color='#000000BF'
+                                    fontSize={16} />
+                            </View>
+                            <View>
+                                <Text>Bonus:</Text>
+                                <CheckBoxGroup
+                                    options={bonusOptions}
+                                    selected={bonus}
+                                    onSelect={setBonus}
+                                    color='#000000BF'
+                                    fontSize={16} />
+                            </View>
+                            <View>
+                                <TextInput placeholder={'Adresse'} onChangeText={(value) => setAdress(value)} value={address} />
+                            </View>
+
+
+                            <TouchableOpacity onPress={() => { createGarden(), setOpenModal(false) }} style={styles.button}>
+                                <Text>Créer jardin</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </Modal>
             </View>
 
         </>
@@ -225,6 +296,19 @@ const styles = StyleSheet.create({
         fontSize: 20,
         marginBottom: 20,
         marginLeft: 20,
+    },
+    modal: {
+        backgroundColor: 'white',
+        marginTop: 100,
+        marginBottom: 100,
+        marginLeft: 20,
+        marginRight: 20,
+        padding: 20,
+        borderRadius: 20,
+    },
+    button: {
+        marginTop: 20,
+        color: 'green',
     },
 
 

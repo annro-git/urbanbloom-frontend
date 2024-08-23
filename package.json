@@ -16,7 +16,6 @@
     "@react-navigation/native": "^6.1.18",
     "@react-navigation/native-stack": "^6.11.0",
     "@reduxjs/toolkit": "^2.2.7",
-    "antd": "^5.20.2",
     "dotenv": "^16.4.5",
     "expo": "~51.0.28",
     "expo-camera": "^15.0.14",
