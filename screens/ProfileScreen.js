@@ -77,19 +77,12 @@ const ProfileScreen = props => {
 
     const createGarden = async () => {
 
-        console.log('create garden')
         const reponse = await fetch(`https://api-adresse.data.gouv.fr/search/?q=${address}`)
         const data = await reponse.json()
         if (data.code === '400') {
             Alert.alert('Adresse invalide')
             return
         }
-
-        console.log(data.features[0].geometry.coordinates[1])
-        console.log(data.features[0].geometry.coordinates[0])
-        console.log(bonus)
-        console.log(interest)
-
 
         fetch(`${global.BACKEND_URL}/garden`, {
             method: 'POST',
@@ -111,9 +104,8 @@ const ProfileScreen = props => {
         )
             .then(response => response.json())
             .then(data => {
-                console.log(data)
+        
                 if (data.success) {
-                    console.log(data.garden)
                     setGardens([...gardens, data.garden])
                 }
             })
