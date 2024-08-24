@@ -56,7 +56,6 @@ const ProfileScreen = props => {
 
     useEffect(() => {
 
-        
         fetchGardens()
     }
 
