@@ -28,8 +28,6 @@ const ProfileScreen = props => {
 
     const [gardens, setGardens] = useState([]);
     const { token, username, ppURI, } = useSelector(state => state.user);
-    const user = useSelector(state => state.user)
-    const [image, setImage] = useState(null);
     const [status, requestPermission] = ImagePicker.useMediaLibraryPermissions();
     const [openModal, setOpenModal] = useState(false);
     const [interest, setInterest] = useState([]);
