@@ -35,6 +35,7 @@ const ProfileScreen = props => {
     const [interest, setInterest] = useState([]);
     const [bonus, setBonus] = useState([]);
     const [address, setAdress] = useState('')
+    const [created, setCreated] = useState(false)
 
 
     useEffect(() => {
@@ -52,7 +53,7 @@ const ProfileScreen = props => {
                 setGardens(data.gardens)
             })
     }
-        , [])
+        , [created])
 
     const pickImage = async () => {
 
@@ -104,9 +105,10 @@ const ProfileScreen = props => {
         )
             .then(response => response.json())
             .then(data => {
-        
+
                 if (data.success) {
                     setGardens([...gardens, data.garden])
+                    setCreated(!created)
                 }
             })
     };
@@ -155,7 +157,7 @@ const ProfileScreen = props => {
                     animationType="fade"
                     transparent={true}
                     visible={openModal}
-                    >
+                >
                     <View style={styles.modalContainer}>
                         <View style={styles.modal}>
                             <Text>Nouveau jardin:</Text>
@@ -164,7 +166,7 @@ const ProfileScreen = props => {
                             <View>
                                 <Text>Intérêts:</Text>
                                 <CheckBoxGroup
-                                    options={interestOptions}   
+                                    options={interestOptions}
                                     selected={interest}
                                     onSelect={setInterest}
                                     color='#000000BF'
