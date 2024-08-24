@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import Garden from "../components/molecular/Garden/Garden";
 import CheckBoxGroup from "../components/atomic/CheckBoxGroup";
 
-
 const GardenScreen = () => {
 
   const interestOptions = [

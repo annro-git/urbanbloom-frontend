@@ -1,9 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 
 export default Garden = (props) => {
+
+    const { token, ppURI } = useSelector(state => state.user);
 
     return (
         <View style={styles.container}>
@@ -15,10 +18,15 @@ export default Garden = (props) => {
                     {props.name}
                 </Text>
             </View>
-            <View>
+            <View style={styles.descriptionc}>
                 <Text>
                     Présentation: {props.description}
                 </Text>
+            </View>
+            <View>
+                <TouchableOpacity style={styles.voirc}>
+                    <Text style={styles.voir}>Voir</Text>
+                </TouchableOpacity>
             </View>
         </View>
     )
@@ -26,7 +34,7 @@ export default Garden = (props) => {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'white',
+        backgroundColor: '#5F7C7D',
         margin: 10,
         padding: 10,
         borderRadius: 10,
@@ -50,5 +58,21 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 10,
         margin: 10,
+    },
+    descriptionc: {
+        marginTop: 10,
+        height: '30%',
+    },
+    voirc: {
+        alignSelf: 'center',
+        backgroundColor: 'lightblue',
+        borderRadius: 10,
+        marginTop: 30,
+        width: '20%',
+        height: 30,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderColor: 'black',
+        borderWidth: 1,
     },
 })
