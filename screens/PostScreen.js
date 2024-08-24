@@ -10,6 +10,7 @@ import CustomCamera from "../components/molecular/CustomCamera"
 import TextArea from "../components/atomic/TextArea"
 import Button from "../components/atomic/Button"
 import TextInput from "../components/atomic/InputText"
+import InputDate from "../components/atomic/InputDate"
 
 const typeOptions = [
     { label: 'Message', value: 'message' },
@@ -29,6 +30,7 @@ const PostScreen = () => {
     const [message, setMessage] = useState({ title: '', text: ''})
     const [cameraOverlay, setCameraOverlay] = useState(null)
     const [pictureUrls, setPictureUrls] = useState([])
+    const [event, setEvent] = useState({ title: '', text: '', date: '' })
 
     const camera = () => {
         Keyboard.dismiss()
@@ -69,6 +71,7 @@ const PostScreen = () => {
 
     const handleSendMessage = async() => {
         const { title, text } = message
+        const { token } = user
         if(!title || !text){
             console.log('Missing/Empty field(s)')
             return
@@ -78,12 +81,7 @@ const PostScreen = () => {
             const uploadResult = await uploadPictures(pictureUrls)
             pictures = uploadResult
         }
-        const messageBody = {
-            token: user.token,
-            title: title,
-            text: text,
-            pictures,
-        }
+        const messageBody = { token, title, text, pictures }
         const response = await fetch(`${global.BACKEND_URL}/garden/${selectedGarden.id}/post`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -96,6 +94,30 @@ const PostScreen = () => {
         }
     }
 
+    const handleSendEvent = async() => {
+        const { title, text, date } = event
+        const { token } = user
+        if(!title || !text || !date){
+            console.log('Missing/empty field(s)')
+            return
+        }
+        let pictures = []
+        if(pictureUrls){
+            const uploadResult = await uploadPictures(pictureUrls)
+            pictures = uploadResult
+        }
+        const eventBody = { token, title, text, date, pictures }
+        const response = await fetch(`${global.BACKEND_URL}/garden/${selectedGarden.id}/event`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(eventBody)
+        })
+        const json = await response.json()
+        if(json.result){
+            setEvent({ title: '', text: '', date: ''})
+            setPictureUrls([])
+        }
+    }
     // Refresh User Gardens Names on screen focus
     useEffect(() => {
         (async() => {
@@ -122,7 +144,7 @@ const PostScreen = () => {
             keyboardShouldPersistTaps="always"
         >
             <View style={{ width: '80%', gap: 20, paddingVertical: 20 }} >
-                <View style={{ zIndex: 2 }}>
+                <View style={{ zIndex: 3 }}>
                     <InputSelect
                         placeholder='Sélectionnez un jardin'
                         options={ gardenOptions }
@@ -182,6 +204,63 @@ const PostScreen = () => {
                                 secondary='white'
                                 text='Envoyer'
                                 onPress={() => handleSendMessage()}
+                            />
+                        </View>
+                    </View>
+                }
+                { type === 'event' &&
+                    <View style={{ gap: 20 }}>
+                        <View style={{ zIndex: 2 }}>
+                            <InputDate
+                                color='#C5BBA2'
+                                padding={ 20 }
+                                size={ 16 }
+                                placeholder="Sélectionner une date"
+                                onPick={e => setEvent({title: event.title, text: event.text, date: e})}
+                            />
+                        </View>
+                        <TextInput
+                            placeholder="Titre"
+                            color='#C5BBA2'
+                            value={ event.title }
+                            onChangeText={e => setEvent({title: e, text: event.text, date: event.date})}
+                            fontSize={ 16 }
+                        />
+                        <TextArea
+                            placeholder="Description..."
+                            color='#C5BBA2'
+                            value={ event.text }
+                            onChangeText={e => setEvent({title: event.title, text: e, date: event.date})}
+                            fontSize={ 14 }
+                        />
+                        {pictureUrls.length > 0 &&
+                            <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 20 }}>
+                                {
+                                    pictureUrls.map((picture, index) => {
+                                        return(
+                                            <TouchableOpacity key={index} onPress={() => setPictureUrls(pictureUrls.filter(e => e !== picture))}>
+                                                <Image 
+                                                    source={{ uri: picture }} 
+                                                    style={{ resizeMode: 'cover', width: 100, height: 100, borderRadius: 10 }}
+                                                />
+                                            </TouchableOpacity>
+                                        )
+                                    })
+                                }
+                            </View>
+                        }
+                        <View style={{ gap: 20 }}>
+                            <Button
+                                primary='white'
+                                secondary='#466760'
+                                text='Prendre une photo'
+                                onPress={() => setCameraOverlay(camera)}
+                            />
+                            <Button
+                                primary='#466760'
+                                secondary='white'
+                                text='Envoyer'
+                                onPress={() => handleSendEvent()}
                             />
                         </View>
                     </View>

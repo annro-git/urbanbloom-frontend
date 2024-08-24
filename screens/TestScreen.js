@@ -6,15 +6,16 @@ import { add } from "../reducers/test"
 import InputText from "../components/atomic/InputText"
 import Button from "../components/atomic/Button"
 import CustomCamera from "../components/molecular/CustomCamera"
+import InputDate from "../components/atomic/InputDate"
 
 const TestScreen = () => {
 
     const dispatch = useDispatch()
     const [test, setTest] = useState('')
     const testRedux = useSelector(state => state.test.value)
-
     const [cameraOverlay, setCameraOverlay] = useState(null)
     const [pictureUrls, setPictureUrls] = useState([])
+    const [selectedDate, setSelectedDate] = useState('')
 
     const camera = () => {
         return (
@@ -30,6 +31,15 @@ const TestScreen = () => {
     return (
         <View style={{ backgroundColor: '#F9F2E0', flex: 1, justifyContent: 'center', alignItems: 'center', position:'relative',  minHeight: '100%' }}>
             <View style={{ width: '80%', gap: 10 }}>
+                <View style={{ zIndex: 2 }}>
+                    <InputDate
+                        color='#C5BBA2'
+                        padding={ 20 }
+                        size={ 16 }
+                        placeholder="Sélectionner une date"
+                        onPick={ setSelectedDate }
+                    />
+                </View>
                 <InputText value={test} onChangeText={e => setTest(e)} />
                 <TouchableOpacity 
                     onPress={() => dispatch(add(test)) } 
@@ -44,6 +54,7 @@ const TestScreen = () => {
                     primary='white'
                     onPress={() => setCameraOverlay(camera)}
                 />
+                <Text>{selectedDate}</Text>
             </View>
             { cameraOverlay }
         </View>
