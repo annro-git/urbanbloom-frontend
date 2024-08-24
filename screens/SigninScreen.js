@@ -1,6 +1,6 @@
 import { ScrollView, View, Text } from "react-native"
 import { useEffect, useState } from "react"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { updateUser } from "../reducers/user"
 
 import InputText from '../components/atomic/InputText'

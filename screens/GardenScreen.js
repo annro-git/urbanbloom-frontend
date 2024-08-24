@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Garden from "../components/molecular/Garden/Garden";
 import CheckBoxGroup from "../components/atomic/CheckBoxGroup";
+import * as ImagePicker from 'expo-image-picker';
+import { updateGardens } from "../reducers/garden";
 
 const GardenScreen = () => {
 
@@ -20,6 +22,8 @@ const GardenScreen = () => {
   ]
 
   const { token } = useSelector(state => state.user);
+  const { gpURI } = useSelector(state => state.garden);
+
   const [gardens, setGardens] = useState([]);
   const [openModal, setOpenModal] = useState(false);
   const [interest, setInterest] = useState([]);
@@ -27,6 +31,8 @@ const GardenScreen = () => {
   const [address, setAdress] = useState('');
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
+
+  const [status, requestPermission] = ImagePicker.useMediaLibraryPermissions();
 
   const fetchGardens = async () => {
 
@@ -80,15 +86,41 @@ const GardenScreen = () => {
     })
     const json = await response.json()
     fetchGardens()
-
   }
+
+  const chooseGP = async (selectedGardenName) => {
+    if (status !== 'granted') {
+      requestPermission();
+    }
+    console.log(selectedGardenName)
+    // No permissions request is necessary for launching the image library
+
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+
+    if (!result.canceled) {
+      const updatedGardens = gardens.map(garden => {
+        if (garden.id === selectedGardenName) { // Assurez-vous d'avoir une manière de sélectionner le bon jardin
+          return { ...garden, gpURI: result.assets[0].uri };
+        }
+        return garden;
+      });
+      setGardens(updatedGardens);
+      dispatch(updateGardens({ gpURI: result.assets[0].uri }));
+    }
+  }
+  
   return (
     <ScrollView style={styles.scrollview}>
       <View style={styles.container}>
         <TouchableOpacity style={styles.ajouterbutton} onPress={() => setOpenModal(true)}>
           <Text style={styles.ajouter}>Ajouter un jardin</Text>
         </TouchableOpacity>
-        {gardens.map((garden, index) => <Garden key={index} name={garden.name} description={garden.description} />)}
+        {gardens.map((garden, index) => <Garden key={index} name={garden.name} description={garden.description} chooseGP={chooseGP} gpURI={gpURI} />)}
         <Modal style={styles.modal}
           animationType="fade"
           transparent={true}

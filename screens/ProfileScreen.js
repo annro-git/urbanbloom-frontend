@@ -73,7 +73,7 @@ const ProfileScreen = props => {
         });
 
         if (!result.canceled) {
-            setImage(result.assets[0].uri)
+         
             dispatch(updateUser({ ppURI: result.assets[0].uri }))
         }
     };
@@ -107,7 +107,7 @@ const ProfileScreen = props => {
         )
             .then(response => response.json())
             .then(data => {
-                console.log(data)
+              
                 if (data.result === true) {
                     fetchGardens()
                   

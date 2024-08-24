@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     gardens: [],
+    gpURI: [],
 }
 
 export const gardenSlice = createSlice({
@@ -10,6 +11,7 @@ export const gardenSlice = createSlice({
     reducers: {
         updateGardens: (state, action) => {
             state.gardens = action.payload
+            state.gpURI.push(action.payload.gpURI)
         }
     }
 })
