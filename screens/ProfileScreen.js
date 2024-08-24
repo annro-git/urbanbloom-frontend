@@ -43,7 +43,7 @@ const ProfileScreen = props => {
                 'token': token,
             }
         }
-    )
+        )
         const data = await response.json()
 
         setGardens(data.gardens)
@@ -73,7 +73,7 @@ const ProfileScreen = props => {
         });
 
         if (!result.canceled) {
-         
+
             dispatch(updateUser({ ppURI: result.assets[0].uri }))
         }
     };
@@ -107,10 +107,10 @@ const ProfileScreen = props => {
         )
             .then(response => response.json())
             .then(data => {
-              
+
                 if (data.result === true) {
                     fetchGardens()
-                  
+
                 }
             })
     };

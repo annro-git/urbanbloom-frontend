@@ -47,14 +47,17 @@ const SigninScreen = ({ navigation }) => {
     }
 
     return (
-        <ScrollView contentContainerStyle={{
-            alignItems: 'center',
-            backgroundColor: 'white',
-            flex: 1,
-            gap: 20,
-            justifyContent: 'center',
-            padding: 20,
-        }}>
+        <ScrollView
+            contentContainerStyle={{
+                alignItems: 'center',
+                backgroundColor: 'white', 
+                flex: 1,
+                gap: 20,
+                justifyContent: 'center',
+                padding: 20,
+            }}
+            keyboardShouldPersistTaps="always"
+        >
             <Logotype direction='vertical' color='#294849' size={64} fontSize={20} />
             <View
                 style={{
