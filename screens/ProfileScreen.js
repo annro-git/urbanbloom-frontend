@@ -8,8 +8,6 @@ import * as ImagePicker from 'expo-image-picker';
 import CheckBoxGroup from "../components/atomic/CheckBoxGroup";
 
 
-const ppURIToDispatch = ''
-
 const ProfileScreen = props => {
 
     const interestOptions = [
@@ -120,8 +118,6 @@ const ProfileScreen = props => {
     return (
         <>
             <View style={styles.container}>
-
-                <Button title='dispatch ppURI' onPress={() => { dispatch(updateUser({ ppURI: ppURIToDispatch })) }} />
                 <View style={styles.userc}>
                     <TouchableOpacity onPress={pickImage} style={styles.touchablepp}>
                         {!ppURI && <View >
