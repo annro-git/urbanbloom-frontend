@@ -35,11 +35,12 @@ const ProfileScreen = props => {
     const [interest, setInterest] = useState([]);
     const [bonus, setBonus] = useState([]);
     const [address, setAdress] = useState('')
-    const [created, setCreated] = useState(false)
 
 
-    useEffect(() => {
-        fetch(`${global.BACKEND_URL}/user/gardens`, {
+
+    const fetchGardens = async () => {
+
+        const response = await fetch(`${global.BACKEND_URL}/user/gardens`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -47,13 +48,19 @@ const ProfileScreen = props => {
             }
         }
         )
-            .then(response => response.json())
-            .then(data => {
+        const data = await response.json()
 
-                setGardens(data.gardens)
-            })
+        setGardens(data.gardens)
+
     }
-        , [created])
+
+    useEffect(() => {
+
+        
+        fetchGardens()
+    }
+
+        , [])
 
     const pickImage = async () => {
 
@@ -77,6 +84,8 @@ const ProfileScreen = props => {
     };
 
     const createGarden = async () => {
+
+        
 
         const reponse = await fetch(`https://api-adresse.data.gouv.fr/search/?q=${address}`)
         const data = await reponse.json()
@@ -105,10 +114,10 @@ const ProfileScreen = props => {
         )
             .then(response => response.json())
             .then(data => {
-
-                if (data.success) {
-                    setGardens([...gardens, data.garden])
-                    setCreated(!created)
+                console.log(data)
+                if (data.result === true) {
+                    fetchGardens()
+                  
                 }
             })
     };
