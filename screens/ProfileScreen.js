@@ -52,7 +52,7 @@ const ProfileScreen = props => {
                 setGardens(data.gardens)
             })
     }
-        , [gardens])
+        , [])
 
     const pickImage = async () => {
 
