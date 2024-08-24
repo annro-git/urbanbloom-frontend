@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { MapPin } from "lucide-react-native"
 import { updateGardens } from "../reducers/user"
+import { useIsFocused } from "@react-navigation/native"
 import MapView, { Marker } from "react-native-maps"
 
 import TextInput from "../components/atomic/InputText"
@@ -24,6 +25,7 @@ const bonusOptions =[
 
 const SearchScreen = () => {
 
+    const isFocused = useIsFocused()
     const dispatch = useDispatch()
 
     const user = useSelector(state => state.user)

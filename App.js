@@ -33,6 +33,7 @@ import garden from './reducers/garden'
 import { useEffect } from 'react'
 
 // URL BACKEND
+// global.BACKEND_URL = 'https://urbanbloom-backend.vercel.app/'
 global.BACKEND_URL = 'http://192.168.1.95:3000'
 
 // Redux

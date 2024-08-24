@@ -1,28 +1,28 @@
 import { TouchableOpacity, Text } from "react-native"
 
-const Button = props => {
+const Button = ({ onPress, primary, secondary, border, text, padding, width }) => {
     return (
         <TouchableOpacity 
-            onPress={props.onPress}
+            onPress={onPress}
             style={{
                 alignItems: 'center',
-                backgroundColor: props.primary,
+                backgroundColor: primary,
                 borderRadius: 10,
                 justifyContent: 'center',
-                padding: props.padding || 20,
-                width: props.width || '100%',
+                padding: padding || 20,
+                width: width || '100%',
                 borderWidth: 1,
-                borderColor: props.border ? props.border : 'transparent'
+                borderColor: border ? border : 'transparent'
             }}
         >
             <Text
                 style={{
-                    color: props.secondary,
+                    color: secondary,
                     fontFamily: 'Lato_400Regular',
                     fontSize: 20,
                 }}
             >
-                {props.text}
+                {text}
             </Text>
         </TouchableOpacity>
     )
