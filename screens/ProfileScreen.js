@@ -47,7 +47,7 @@ const ProfileScreen = props => {
                 'token': token,
             }
         }
-        )
+    )
         const data = await response.json()
 
         setGardens(data.gardens)
@@ -83,8 +83,6 @@ const ProfileScreen = props => {
     };
 
     const createGarden = async () => {
-
-        
 
         const reponse = await fetch(`https://api-adresse.data.gouv.fr/search/?q=${address}`)
         const data = await reponse.json()
