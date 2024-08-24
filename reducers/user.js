@@ -31,7 +31,7 @@ export const userSlice = createSlice({
             state.lastLocation = { latitude, longitude }
         },
         updateGardens: (state, action) => {
-            state.gardens = action.payload
+            state.gardens.push(action.payload)
         },
     }
 })

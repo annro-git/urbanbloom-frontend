@@ -5,14 +5,16 @@ import * as LucideIcons from 'lucide-react-native';
 
 export default Garden = ({ name, gpURI, description, chooseGP }) => {
 
+        //console.log(gpURI)
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <TouchableOpacity onPress={()=>{chooseGP(name)}} style={styles.touchablepp}>
-                    {!gpURI && <View >
+                <TouchableOpacity onPress={() => { chooseGP(name) }} style={styles.touchablepp}>
+                    {(!gpURI || gpURI.length === 0 || gpURI.includes(null)) && <View >
                         <LucideIcons.HousePlus style={styles.nopp} size={50} color={"black"} opacity={0.5} />
                     </View>}
-                    {gpURI && <Image source={{ uri: gpURI }} style={styles.gpuri} />}
+                    {gpURI && gpURI.length > 0 && !gpURI.includes(null) && <Image source={{ uri: gpURI }} style={styles.gpuri} />}
                 </TouchableOpacity>
                 <Text style={styles.name}>
                     {name}

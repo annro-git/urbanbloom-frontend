@@ -18,6 +18,7 @@ const SignupScreen = ({ navigation }) => {
     const [error, setError] = useState(null)
 
     const handleSignup = async () => {
+
         const newUser = { username, email, password }
         const response = await fetch(`${global.BACKEND_URL}/user`, {
             method: 'POST',

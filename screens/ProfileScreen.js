@@ -25,6 +25,7 @@ const ProfileScreen = props => {
     const dispatch = useDispatch()
 
     const [gardens, setGardens] = useState([]);
+    const user = useSelector(state => state.user);
     const { token, username, ppURI, } = useSelector(state => state.user);
     const [status, requestPermission] = ImagePicker.useMediaLibraryPermissions();
     const [openModal, setOpenModal] = useState(false);
@@ -32,7 +33,7 @@ const ProfileScreen = props => {
     const [bonus, setBonus] = useState([]);
     const [address, setAdress] = useState('')
 
-
+    console.log(user)
 
     const fetchGardens = async () => {
 

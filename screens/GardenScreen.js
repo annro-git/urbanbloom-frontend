@@ -1,11 +1,11 @@
-import { ScrollView, Text, TouchableOpacity, View, StyleSheet, Modal, TextInput } from "react-native";
+import { ScrollView, Text, TouchableOpacity, View, StyleSheet, Modal, TextInput, Button } from "react-native";
 
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Garden from "../components/molecular/Garden/Garden";
 import CheckBoxGroup from "../components/atomic/CheckBoxGroup";
 import * as ImagePicker from 'expo-image-picker';
-import { updateGardens } from "../reducers/garden";
+import { updateGardens, clearGardens } from "../reducers/garden";
 
 const GardenScreen = () => {
 
@@ -22,8 +22,11 @@ const GardenScreen = () => {
   ]
 
   const { token } = useSelector(state => state.user);
-  const { gpURI } = useSelector(state => state.garden);
+  const list = useSelector(state => state.garden.gardens);
 
+  console.log(list)
+
+  const dispatch = useDispatch();
   const [gardens, setGardens] = useState([]);
   const [openModal, setOpenModal] = useState(false);
   const [interest, setInterest] = useState([]);
@@ -45,7 +48,7 @@ const GardenScreen = () => {
     }
     )
     const data = await response.json()
-
+    
     setGardens(data.gardens)
   }
 
@@ -89,10 +92,12 @@ const GardenScreen = () => {
   }
 
   const chooseGP = async (selectedGardenName) => {
+
+
     if (status !== 'granted') {
       requestPermission();
     }
-    console.log(selectedGardenName)
+
     // No permissions request is necessary for launching the image library
 
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -102,25 +107,30 @@ const GardenScreen = () => {
       quality: 1,
     });
 
+
     if (!result.canceled) {
       const updatedGardens = gardens.map(garden => {
-        if (garden.id === selectedGardenName) { // Assurez-vous d'avoir une manière de sélectionner le bon jardin
+        if (garden.name === selectedGardenName) { // Assurez-vous d'avoir une manière de sélectionner le bon jardin
           return { ...garden, gpURI: result.assets[0].uri };
         }
         return garden;
       });
       setGardens(updatedGardens);
-      dispatch(updateGardens({ gpURI: result.assets[0].uri }));
+      //console.log(result.assets[0].uri)
+      dispatch(updateGardens({gpURI: result.assets[0].uri, gardenName: selectedGardenName}));
     }
   }
-  
+
+  // reducer garden ok il faut maintenant mettre à jour gpURI dans le jsx GardenScreen en bouclant sur les gardens du reducer et en passant le gpURI en props à Garden
+
   return (
     <ScrollView style={styles.scrollview}>
       <View style={styles.container}>
         <TouchableOpacity style={styles.ajouterbutton} onPress={() => setOpenModal(true)}>
           <Text style={styles.ajouter}>Ajouter un jardin</Text>
         </TouchableOpacity>
-        {gardens.map((garden, index) => <Garden key={index} name={garden.name} description={garden.description} chooseGP={chooseGP} gpURI={gpURI} />)}
+        <Button title='Cear' onPress={() => {dispatch(clearGardens())}} />
+        {gardens.map((garden, index) => <Garden style={styles.garden} key={index} name={garden.name} description={garden.description} chooseGP={chooseGP} gpURI={gpURI} />)}
         <Modal style={styles.modal}
           animationType="fade"
           transparent={true}
@@ -202,5 +212,25 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 20,
     height: 500,
+  },
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  button: {
+    backgroundColor: 'lightgreen',
+    padding: 10,
+    borderRadius: 10,
+    margin: 10,
+  },
+  garden: {
+    backgroundColor: '#5F7C7D',
+    margin: 10,
+    padding: 10,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: 'black',
+    height: 200,
   },
 })
