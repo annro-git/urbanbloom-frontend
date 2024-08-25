@@ -22,14 +22,14 @@ export const userSlice = createSlice({
         updateUser: (state, action) => {
             const { username, email, token, ppURI, events } = action.payload
             state.username = username
-            state.email = email 
+            state.email = email
             state.token = token
             state.ppURI = ppURI
-           
-            if ((events !== undefined) && state.events.some(e => e.id === events.id)) {
+
+            if (state.events.some(e => e.id === events.id)) {
                 state.events = state.events.filter(e => e.id !== events.id)
             }
-            else if (events !== undefined) {
+            else {
                 state.events.push(events)
             }
         },
@@ -40,7 +40,7 @@ export const userSlice = createSlice({
         updateGardens: (state, action) => {
             state.gardens.push(action.payload)
         },
-        
+
     }
 })
 
