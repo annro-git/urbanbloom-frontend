@@ -5,7 +5,7 @@ import * as LucideIcons from 'lucide-react-native';
 
 export default Garden = ({ name, gpURI, description, chooseGP }) => {
 
-        //console.log(gpURI)
+    
 
     return (
         <View style={styles.container}>

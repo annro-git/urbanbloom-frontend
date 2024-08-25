@@ -110,13 +110,13 @@ const GardenScreen = () => {
 
     if (!result.canceled) {
       const updatedGardens = gardens.map(garden => {
-        if (garden.name === selectedGardenName) { // Assurez-vous d'avoir une manière de sélectionner le bon jardin
+        if (garden.name === selectedGardenName) { 
           return { ...garden, gpURI: result.assets[0].uri };
         }
         return garden;
       });
       setGardens(updatedGardens);
-      //console.log(result.assets[0].uri)
+      
       dispatch(updateGardens({gpURI: result.assets[0].uri, gardenName: selectedGardenName}));
     }
   }
