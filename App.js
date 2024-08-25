@@ -20,7 +20,7 @@ import CustomHeader from './components/molecular/CustomHeader'
 import ForgotScreen from './screens/ForgotScreen'
 import SearchScreen from './screens/SearchScreen'
 import SigninScreen from './screens/SigninScreen'
-import SignUpScreen from './screens/SignUpScreen'
+import SignupScreen from './screens/SignupScreen'
 import PostScreen from './screens/PostScreen'
 import GardenScreen from './screens/GardenScreen'
 import ResourcesScreen from './screens/ResourcesScreen'
@@ -78,7 +78,7 @@ const Stack = createNativeStackNavigator()
 const stacks = [
   { name: 'Splash', component: SplashScreen, },
   { name: 'SignIn', component: SigninScreen, },
-  { name: 'SignUp', component: SignUpScreen, },
+  { name: 'SignUp', component: SignupScreen, },
   { name: 'Tab', component: TabNavigator, },
 
   // { name: 'Profile', component: ProfileScreen, }
