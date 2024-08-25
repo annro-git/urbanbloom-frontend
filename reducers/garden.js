@@ -9,7 +9,6 @@ export const gardenSlice = createSlice({
     initialState,
     reducers: {
         updateGardens: (state, action) => {
-           
 
             const garden = state.gardens.find(g => g.gardenName === action.payload.name);
             if (garden) {
@@ -17,12 +16,11 @@ export const gardenSlice = createSlice({
             } else {
                 state.gardens.push(action.payload);
             }
-          
         },
         clearGardens: (state, action) => {
-            
+
             state.gardens = [];
-           
+            
         }
     }
 })
