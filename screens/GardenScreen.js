@@ -22,9 +22,9 @@ const GardenScreen = () => {
   ]
 
   const { token } = useSelector(state => state.user);
-  const list = useSelector(state => state.garden.gardens);
+  const gardensList = useSelector(state => state.garden.gardens);
 
-  console.log(list)
+  console.log(gardensList)
 
   const dispatch = useDispatch();
   const [gardens, setGardens] = useState([]);
@@ -130,7 +130,7 @@ const GardenScreen = () => {
           <Text style={styles.ajouter}>Ajouter un jardin</Text>
         </TouchableOpacity>
         <Button title='Cear' onPress={() => {dispatch(clearGardens())}} />
-        {gardens.map((garden, index) => <Garden style={styles.garden} key={index} name={garden.name} description={garden.description} chooseGP={chooseGP} gpURI={gpURI} />)}
+        {gardens.map((garden, index) => <Garden style={styles.garden} key={index} name={garden.name} description={garden.description} chooseGP={chooseGP} gpURI={garden.gpURI} />)}
         <Modal style={styles.modal}
           animationType="fade"
           transparent={true}
