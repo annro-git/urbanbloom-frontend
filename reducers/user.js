@@ -39,11 +39,33 @@ export const userSlice = createSlice({
             state.lastLocation = { latitude, longitude }
         },
         updateGardens: (state, action) => {
-            state.gardens.push(action.payload)
+            
+            if (action.payload !== undefined) {
+                if (state.gardens.some(g => g.gardenName === action.payload.gardenName)) {
+                    state.gardens = state.gardens.filter(g => g.gardenName !== action.payload.gardenName)
+                }
+                else {
+                    state.gardens.push(action.payload)
+                }
+            }
         },
+        updateGardenppURI: (state, action) => {
 
+            const { name, ppURI } = action.payload;
+            const garden = state.gardens.find(g => g.gardenName === name);
+            if (garden) {
+                garden.ppURI = ppURI;
+            } else {
+                console.log(`Garden ${name} not found`);
+            }
+        },
+        clearGardens: (state, action) => {
+
+            state.gardens = [];
+            
+        }
     }
 })
 
-export const { updateUser, updateLocation, updateGardens } = userSlice.actions
+export const { updateUser, updateLocation, updateGardens, updateGardenppURI, clearGardens } = userSlice.actions
 export default userSlice.reducer

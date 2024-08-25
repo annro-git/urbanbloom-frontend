@@ -1,20 +1,26 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import * as LucideIcons from 'lucide-react-native';
+import { useDispatch } from 'react-redux';
+import { clearGardens } from '../../../reducers/user';
+
+export default Garden = ({ name, ppURI, description, chooseGP }) => {
+
+    console.log('Garden.js: name:', name, 'ppURI:', ppURI, 'description:', description);
+
+    const dispatch = useDispatch();
+ 
 
 
-export default Garden = ({ name, gpURI, description, chooseGP }) => {
-
-    
 
     return (
         <View style={styles.container}>
             <View style={styles.header}>
                 <TouchableOpacity onPress={() => { chooseGP(name) }} style={styles.touchablepp}>
-                    {(!gpURI || gpURI.length === 0 || gpURI.includes(null)) && <View >
+                    {(!ppURI || ppURI.length === 0 || ppURI.includes(null)) && <View >
                         <LucideIcons.HousePlus style={styles.nopp} size={50} color={"black"} opacity={0.5} />
                     </View>}
-                    {gpURI && gpURI.length > 0 && !gpURI.includes(null) && <Image source={{ uri: gpURI }} style={styles.gpuri} />}
+                    {ppURI && ppURI.length > 0 && !ppURI.includes(null) && <Image source={{ uri: ppURI }} style={styles.ppuri} />}
                 </TouchableOpacity>
                 <Text style={styles.name}>
                     {name}
@@ -25,9 +31,9 @@ export default Garden = ({ name, gpURI, description, chooseGP }) => {
                     Présentation: {description}
                 </Text>
             </View>
-            <View>
-                <TouchableOpacity style={styles.voirc}>
-                    <Text>Voir</Text>
+            <View> 
+                <TouchableOpacity onPress={()=>dispatch(clearGardens())} style={styles.voirc}> 
+                    <Text>Voir {/* onPress à retirer, sert à clear le state.user.gardens*/}</Text> 
                 </TouchableOpacity>
             </View>
         </View>
@@ -81,7 +87,7 @@ const styles = StyleSheet.create({
         borderColor: 'black',
         borderWidth: 1,
     },
-    gpuri: {
+    ppuri: {
         width: 50,
         height: 50,
         borderRadius: 50,

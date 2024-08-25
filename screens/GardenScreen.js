@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Garden from "../components/molecular/Garden/Garden";
 import CheckBoxGroup from "../components/atomic/CheckBoxGroup";
 import * as ImagePicker from 'expo-image-picker';
-import { updateGardens, clearGardens } from "../reducers/garden";
+import { updateGardenppURI, updateGardens } from "../reducers/user";
 
 const GardenScreen = () => {
 
@@ -21,8 +21,10 @@ const GardenScreen = () => {
     { label: 'Point d\'eau', value: 'water' },
   ]
 
-  const { token } = useSelector(state => state.user);
-  const gardensList = useSelector(state => state.garden.gardens);
+  const { token, } = useSelector(state => state.user);
+  const gardensList = useSelector(state => state.user.gardens);
+
+  console.log(gardensList)
 
   const dispatch = useDispatch();
   const [gardens, setGardens] = useState([]);
@@ -47,7 +49,8 @@ const GardenScreen = () => {
     )
     const data = await response.json()
 
-    setGardens(data.gardens)
+    console.log(data.gardens)
+    dispatch(updateGardens(data.gardens))
   }
 
   useEffect(() => {
@@ -65,27 +68,30 @@ const GardenScreen = () => {
       return
     }
 
+    const newGarden = {
+    token,
+    name,
+    description,
+    interests: interest,
+    bonus,
+    coordinates: {
+      latitude: data.features[0].geometry.coordinates[1],
+      longitude: data.features[0].geometry.coordinates[0],
+
+    },
+
+  }
+
     const response = await fetch(`${global.BACKEND_URL}/garden`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-        token,
-        name,
-        description,
-        interests: interest,
-        bonus,
-        coordinates: {
-          latitude: data.features[0].geometry.coordinates[1],
-          longitude: data.features[0].geometry.coordinates[0],
-
-        },
-
-      })
+      body: JSON.stringify(newGarden)
 
     })
     const json = await response.json()
+    dispatch(updateGardens(newGarden))
     fetchGardens()
   }
 
@@ -107,15 +113,15 @@ const GardenScreen = () => {
 
 
     if (!result.canceled) {
-      const updatedGardens = gardens.map(garden => {
+      const updatedGardens = gardensList.map(garden => {
         if (garden.name === selectedGardenName) {
-          return { ...garden, gpURI: result.assets[0].uri };
+          return { ...garden, ppURI: result.assets[0].uri };
         }
         return garden;
       });
       setGardens(updatedGardens);
 
-      dispatch(updateGardens({ gpURI: result.assets[0].uri, gardenName: selectedGardenName }));
+      dispatch(updateGardenppURI({ ppURI: result.assets[0].uri, gardenName: selectedGardenName }));
     }
   }
 
@@ -127,7 +133,7 @@ const GardenScreen = () => {
         <TouchableOpacity style={styles.ajouterbutton} onPress={() => setOpenModal(true)}>
           <Text style={styles.ajouter}>Ajouter un jardin</Text>
         </TouchableOpacity>
-        {gardens.map((garden, index) => <Garden style={styles.garden} key={index} name={garden.name} description={garden.description} chooseGP={chooseGP} gpURI={garden.gpURI} />)}
+        {(gardensList.length > 0) && gardensList.map((garden, index) => <Garden style={styles.garden} key={index} name={garden.name} description={garden.description} chooseGP={chooseGP} ppURI={garden.ppURI} />)}
         <Modal style={styles.modal}
           animationType="fade"
           transparent={true}
