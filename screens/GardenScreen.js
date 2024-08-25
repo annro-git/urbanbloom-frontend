@@ -121,7 +121,7 @@ const GardenScreen = () => {
     }
   }
 
-  // reducer garden ok il faut maintenant mettre à jour gpURI dans le jsx GardenScreen en bouclant sur les gardens du reducer et en passant le gpURI en props à Garden
+ 
 
   return (
     <ScrollView style={styles.scrollview}>
@@ -129,7 +129,6 @@ const GardenScreen = () => {
         <TouchableOpacity style={styles.ajouterbutton} onPress={() => setOpenModal(true)}>
           <Text style={styles.ajouter}>Ajouter un jardin</Text>
         </TouchableOpacity>
-        <Button title='Cear' onPress={() => {dispatch(clearGardens())}} />
         {gardens.map((garden, index) => <Garden style={styles.garden} key={index} name={garden.name} description={garden.description} chooseGP={chooseGP} gpURI={garden.gpURI} />)}
         <Modal style={styles.modal}
           animationType="fade"
