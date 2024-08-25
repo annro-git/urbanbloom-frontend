@@ -1,7 +1,7 @@
 import { View, Text, ScrollView, Image, TouchableOpacity, Keyboard } from "react-native"
 import { useEffect, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
-import { updateGardens } from "../reducers/user"
+import { updateGardens, updateUser } from "../reducers/user"
 import { useIsFocused } from "@react-navigation/native"
 
 import InputSelect from "../components/atomic/InputSelect"
@@ -116,6 +116,10 @@ const PostScreen = () => {
         if(json.result){
             setEvent({ title: '', text: '', date: ''})
             setPictureUrls([])
+
+        const { title, text, date, pictures } = eventBody
+
+        dispatch(updateUser({ events: {title, text, date, pictures} }))
         }
     }
     // Refresh User Gardens Names on screen focus

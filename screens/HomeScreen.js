@@ -18,35 +18,12 @@ export default HomeScreen = () => {
         Lato_900Black,
     })
 
-    const [events, setEvents] = useState([]);
-    //const [partages, setPartages] = useState([]);
+   
+    const { events } = useSelector(state => state.user);
     const [showAllEvents, setShowAllEvents] = useState(false);
-    //const [showAllPartages, setShowAllPartages] = useState(false);
+    const user = useSelector(state => state.user)
 
-    const { token } = useSelector(state => state.user);
-
-    console.log(token)
-
-    useEffect(() => {
-
-        fetch(`${global.BACKEND_URL}/user/events`,
-            {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'token': token,
-                },
-            }
-        )
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-            setEvents(data.events)})
-
-        
-        
-    }, []);
-
+    
     const displayedEvents = showAllEvents ? events : events.slice(0, 3);
    // const displayedPartages = showAllPartages ? partages : partages.slice(0, 3);
 
@@ -59,8 +36,8 @@ export default HomeScreen = () => {
             <View style={styles.container}>
                 <View style={styles.agendac}>
                     <Text style={styles.agenda}>Agenda</Text>
-                    {displayedEvents.map(event => (
-                        <Event key={event.id} date={event.date} hour={event.hour} title={event.title} />
+                    {displayedEvents.map((event, i) => (
+                        <Event key={i} date={event.date} hour={event.hour} title={event.title} />
                     ))}
                     {events.length > 3 && (
                         <TouchableOpacity style={styles.showall} onPress={() => setShowAllEvents(!showAllEvents)}>

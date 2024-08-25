@@ -11,19 +11,21 @@ export default function Event(props) {
         Lato_400Regular,
         Lato_700Bold,
         Lato_900Black,
-      })
-    
-      if (!loaded) {
+    })
+
+    if (!loaded) {
         return null
-      }
+    }
 
     const { date, hour, title } = props;
 
     return (
         <View style={styles.container}>
-            <Text style={styles.date}>{date}</Text>
-            <Text style={styles.hour}>{hour}</Text>
-            <Text style={styles.title}>|      {title}</Text>
+            <View style={styles.description}>
+                <Text style={styles.date}>{date}</Text>
+                <Text style={styles.hour}>{hour}</Text>
+                <Text style={styles.title}>|      {title}</Text>
+            </View>
             <View style={styles.icons}>
                 <TouchableOpacity style={styles.icon1}>
                     <LucideIcons.CircleX size={20} color={'#ccc'} />
@@ -45,10 +47,13 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: '#ccc',
         flexDirection: 'row',
-        justifyContent: 'flex-start',
+        justifyContent: 'space-between',
         alignItems: 'center',
         backgroundColor: '#fff',
     },
+    description: {
+        flexDirection: 'row',
+    }, 
     date: {
         marginRight: 5,
         fontFamily: 'Lato_400Regular',
@@ -62,10 +67,11 @@ const styles = StyleSheet.create({
         marginRight: 70,
     },
     icons: {
-        flexDirection: 'row', 
+        alignSelf: 'flex-end',
+        flexDirection: 'row',
     },
     icon1: {
-        marginLeft: -20,
+
         marginRight: 10,
     },
     icon2: {

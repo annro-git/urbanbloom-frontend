@@ -21,16 +21,17 @@ export const userSlice = createSlice({
     reducers: {
         updateUser: (state, action) => {
             const { username, email, token, ppURI, events } = action.payload
-            state.username = username
-            state.email = email
-            state.token = token
-            state.ppURI = ppURI
+            if (username !== undefined) state.username = username;
+            if (email !== undefined) state.email = email;
+            if (token !== undefined) state.token = token;
+            if (ppURI !== undefined) state.ppURI = ppURI;
 
-            if (state.events.some(e => e.id === events.id)) {
-                state.events = state.events.filter(e => e.id !== events.id)
-            }
-            else {
-                state.events.push(events)
+            if (events !== undefined) {
+                if (state.events.some(e => e.title === events.title)) {
+                    state.events = state.events.filter(e => e.title !== events.title);
+                } else {
+                    state.events.push(events);
+                }
             }
         },
         updateLocation: (state, action) => {
