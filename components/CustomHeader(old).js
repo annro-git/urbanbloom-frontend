@@ -13,8 +13,6 @@ const CustomHeader = props => {
     const [weatherIcon, setWeatherIcon] = useState('')
     const [ppURI, setPpURI] = useState("https://avatar.iran.liara.run/public/boy?username=Ash")
 
-    console.log(ppURI);
-
     const fetchWeather = async () => {
 
         try {
@@ -74,7 +72,7 @@ const CustomHeader = props => {
                 throw new Error('Network response was not ok');
             }
             const data = await response.json();
-            console.log(data)
+
             setPpURI(data.user.ppURI);
         } catch (error) {
             console.error('Fetch profile picture failed:', error);

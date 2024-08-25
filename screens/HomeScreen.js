@@ -19,28 +19,17 @@ export default HomeScreen = () => {
     })
 
     const [events, setEvents] = useState([]);
-    const [partages, setPartages] = useState([]);
+    //const [partages, setPartages] = useState([]);
     const [showAllEvents, setShowAllEvents] = useState(false);
-    const [showAllPartages, setShowAllPartages] = useState(false);
+    //const [showAllPartages, setShowAllPartages] = useState(false);
 
     const { token } = useSelector(state => state.user);
 
+    console.log(token)
+
     useEffect(() => {
 
-        fetch(`${global.BACKEND_URL}/gardens`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'token': token,
-            }
-        }
-        )
-            .then(response => response.json())
-            .then(data => dispatch(updateGardens(data)))
-
-
-
-        fetch(`${global.BACKEND_URL}/events`,
+        fetch(`${global.BACKEND_URL}/user/events`,
             {
                 method: 'GET',
                 headers: {
@@ -50,26 +39,16 @@ export default HomeScreen = () => {
             }
         )
             .then(response => response.json())
-            .then(data => setEvents(data))
+            .then(data => {
+                console.log(data)
+            setEvents(data.events)})
 
-        /* const fetchedEvents = [
-            { id: 1, date: '01/01/2024', hour: '10:00', title: 'Event 1' },
-            { id: 2, date: '02/01/2024', hour: '11:00', title: 'Event 2' },
-            { id: 3, date: '03/01/2024', hour: '12:00', title: 'Event 3' },
-            { id: 4, date: '04/01/2024', hour: '13:00', title: 'Event 4' },
-        ]; */
-
-        const fetchedPartages = [
-            { id: 1, username: 'John Doe', uriPP: 'https://avatar.iran.liara.run/public/35' },
-            { id: 2, username: 'Jane Doe', uriPP: 'https://avatar.iran.liara.run/public/71' },
-            { id: 3, username: 'Ash', uriPP: 'https://avatar.iran.liara.run/public/41' },
-            { id: 4, username: 'Yoda', uriPP: 'https://avatar.iran.liara.run/public/45' },
-        ];
-        setPartages(fetchedPartages);
+        
+        
     }, []);
 
     const displayedEvents = showAllEvents ? events : events.slice(0, 3);
-    const displayedPartages = showAllPartages ? partages : partages.slice(0, 3);
+   // const displayedPartages = showAllPartages ? partages : partages.slice(0, 3);
 
     if (!loaded) {
         return null
@@ -89,7 +68,7 @@ export default HomeScreen = () => {
                         </TouchableOpacity>
                     )}
                 </View>
-                <View style={styles.partagesc}>
+                {/* <View style={styles.partagesc}>
                     <Text style={styles.partages}>Partages</Text>
                     {displayedPartages.map(partage => (
                         <Partages key={partage.id} username={partage.username} uriPP={partage.uriPP} />
@@ -99,7 +78,7 @@ export default HomeScreen = () => {
                             <LucideIcons.CircleEllipsis name={showAllPartages ? "expand-less" : "expand-more"} size={20} color="#2c4943" />
                         </TouchableOpacity>
                     )}
-                </View>
+                </View> */}
                 <View style={styles.aujardin}>
                     <AuJardin />
                 </View>
@@ -150,5 +129,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         marginLeft: 10,
     },
+   
+    
 
 });

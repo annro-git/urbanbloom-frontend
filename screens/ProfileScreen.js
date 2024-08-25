@@ -33,7 +33,6 @@ const ProfileScreen = props => {
     const [bonus, setBonus] = useState([]);
     const [address, setAdress] = useState('')
 
-    console.log(user)
 
     const fetchGardens = async () => {
 

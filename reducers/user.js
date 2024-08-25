@@ -20,11 +20,18 @@ export const userSlice = createSlice({
     initialState,
     reducers: {
         updateUser: (state, action) => {
-            const { username, email, token, ppURI } = action.payload
-            state.username = username !== undefined ? username : state.username
-            state.email = email !== undefined ? email : state.email
-            state.token = token !== undefined ? token : state.token
+            const { username, email, token, ppURI, events } = action.payload
+            state.username = username
+            state.email = email 
+            state.token = token
             state.ppURI = ppURI
+           
+            if ((events !== undefined) && state.events.some(e => e.id === events.id)) {
+                state.events = state.events.filter(e => e.id !== events.id)
+            }
+            else if (events !== undefined) {
+                state.events.push(events)
+            }
         },
         updateLocation: (state, action) => {
             const { latitude, longitude } = action.payload
@@ -33,6 +40,7 @@ export const userSlice = createSlice({
         updateGardens: (state, action) => {
             state.gardens.push(action.payload)
         },
+        
     }
 })
 

@@ -24,8 +24,6 @@ const GardenScreen = () => {
   const { token } = useSelector(state => state.user);
   const gardensList = useSelector(state => state.garden.gardens);
 
-  console.log(gardensList)
-
   const dispatch = useDispatch();
   const [gardens, setGardens] = useState([]);
   const [openModal, setOpenModal] = useState(false);
@@ -48,7 +46,7 @@ const GardenScreen = () => {
     }
     )
     const data = await response.json()
-    
+
     setGardens(data.gardens)
   }
 
@@ -110,18 +108,18 @@ const GardenScreen = () => {
 
     if (!result.canceled) {
       const updatedGardens = gardens.map(garden => {
-        if (garden.name === selectedGardenName) { 
+        if (garden.name === selectedGardenName) {
           return { ...garden, gpURI: result.assets[0].uri };
         }
         return garden;
       });
       setGardens(updatedGardens);
-      
-      dispatch(updateGardens({gpURI: result.assets[0].uri, gardenName: selectedGardenName}));
+
+      dispatch(updateGardens({ gpURI: result.assets[0].uri, gardenName: selectedGardenName }));
     }
   }
 
- 
+
 
   return (
     <ScrollView style={styles.scrollview}>
