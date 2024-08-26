@@ -6,13 +6,10 @@ import { clearGardens } from '../../../reducers/user';
 
 export default Garden = ({ name, ppURI, description, chooseGP }) => {
 
-    console.log('Garden.js: name:', name, 'ppURI:', ppURI, 'description:', description);
+    //console.log('Garden.js: name:', name, 'ppURI:', ppURI, 'description:', description);
 
-    const dispatch = useDispatch();
+    const dispatch = useDispatch(); //Pour clear le state.user.gardens
  
-
-
-
     return (
         <View style={styles.container}>
             <View style={styles.header}>

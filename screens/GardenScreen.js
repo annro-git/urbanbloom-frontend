@@ -48,8 +48,7 @@ const GardenScreen = () => {
     }
     )
     const data = await response.json()
-
-    console.log(data.gardens)
+    
     dispatch(updateGardens(data.gardens))
   }
 
@@ -69,18 +68,18 @@ const GardenScreen = () => {
     }
 
     const newGarden = {
-    token,
-    name,
-    description,
-    interests: interest,
-    bonus,
-    coordinates: {
-      latitude: data.features[0].geometry.coordinates[1],
-      longitude: data.features[0].geometry.coordinates[0],
+      token,
+      name,
+      description,
+      interests: interest,
+      bonus,
+      coordinates: {
+        latitude: data.features[0].geometry.coordinates[1],
+        longitude: data.features[0].geometry.coordinates[0],
 
-    },
+      },
 
-  }
+    }
 
     const response = await fetch(`${global.BACKEND_URL}/garden`, {
       method: 'POST',
