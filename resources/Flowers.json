@@ -1,0 +1,266 @@
+[
+  {
+    "name": "Alstroemeria",
+    "type": "flower",
+    "sow": {
+      "start": {
+        "$date": "2024-03-01T00:00:00.000Z"
+      },
+      "end": {
+        "$date": "2024-06-30T00:00:00.000Z"
+      }
+    },
+    "harvest": {
+      "start": {
+        "$date": "2024-06-01T00:00:00.000Z"
+      },
+      "end": {
+        "$date": "2024-10-31T00:00:00.000Z"
+      }
+    },
+    "image": "https://images.unsplash.com/photo-1647710782448-2e7d7f36a246?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "text": "L'Alstroemeria, également connue sous le nom de 'lis des Incas' ou 'lis du Pérou', est une plante vivace originaire d'Amérique du Sud, particulièrement du Chili et du Brésil. Elle est appréciée pour sa longue floraison et ses fleurs vibrantes, souvent utilisées dans les compositions florales.\n    \n    Caractéristiques principales :\n    \n    -\tFleurs : Les fleurs de l'Alstroemeria sont regroupées en ombelles et peuvent avoir une grande variété de couleurs, notamment le rose, le rouge, l'orange, le jaune, le blanc, et parfois même le violet. Chaque fleur présente des pétales délicats souvent marqués de stries ou de taches contrastantes, ce qui leur donne un aspect exotique et élégant.\n\n    -\tFeuillage : Le feuillage est lancéolé, de couleur verte, et pousse en spirale autour de la tige. Une particularité intéressante est que les feuilles de l'Alstroemeria ont tendance à se tourner à 180°, ce qui fait que le dessous de la feuille se retrouve à l'extérieur.\n\n    -\tTaille : L'Alstroemeria peut atteindre une hauteur de 30 à 90 cm selon les variétés et les conditions de culture.\n\n    -\tFloraison : La floraison de l'Alstroemeria se produit généralement de la fin du printemps jusqu'à l'automne. Elle est connue pour sa longue durée de vie en vase, ce qui en fait une fleur de choix pour les bouquets.\n\n    -\tCulture : Elle préfère un emplacement en plein soleil ou mi-ombre et un sol bien drainé, riche en matière organique. L'Alstroemeria est assez résistante au froid et peut supporter des températures modérément basses, mais elle aime les climats doux.\n\n    -\tSymbolique : En langage des fleurs, l'Alstroemeria est souvent associée à l'amitié, à la dévotion et à la prospérité.\n    \n    C'est une fleur polyvalente qui ajoute de la couleur et de l'élégance aux jardins ainsi qu'aux compositions florales."
+  },
+  {
+    "name": "Célosie",
+    "type": "flower",
+    "sow": {
+      "start": {
+        "$date": "2024-02-01T00:00:00.000Z"
+      },
+      "end": {
+        "$date": "2024-05-31T00:00:00.000Z"
+      }
+    },
+    "harvest": {
+      "start": {
+        "$date": "2024-07-01T00:00:00.000Z"
+      },
+      "end": {
+        "$date": "2024-10-31T00:00:00.000Z"
+      }
+    },
+    "image": "https://cdn.pixabay.com/photo/2021/07/13/00/39/celosia-6441024_1280.jpg",
+    "text": "La Célosie, également connue sous le nom de crête de coq ou amarante plumeuse, est une plante annuelle remarquable pour ses fleurs aux formes et aux couleurs uniques. Originaire d'Asie, d'Afrique et d'Amérique du Sud, elle est appréciée pour sa texture et son apparence exubérante.\n\n    Caractéristiques principales :\n    \n    -\tFleurs : Les fleurs de la Célosie sont très distinctives et viennent principalement sous deux formes :\n    \n    -\tCélosie cristata (crête de coq) : Les fleurs ressemblent à une crête de coq avec une texture ondulée, souvent dense et charnue. Elles peuvent être rouge, rose, jaune, orange, ou même pourpre.\n    \n    -\tCélosie plumosa (amarante plumeuse) : Cette variété produit des inflorescences en forme de plumeaux ou d'épis coniques, avec des couleurs vibrantes comme le rouge, l'orange, le jaune, et le violet.\n    \n    -\tFeuillage : Les feuilles de la Célosie sont lancéolées, parfois nervurées, et varient du vert clair au rougeâtre, selon la variété. Les tiges peuvent également être teintées de rouge, ce qui ajoute à la couleur générale de la plante.\n\n    -\tTaille : La Célosie peut atteindre une hauteur de 30 à 90 cm, selon les conditions de culture et les variétés spécifiques.\n\n    -\tFloraison : La floraison de la Célosie se produit généralement en été et peut durer jusqu'à l'automne. Les fleurs sont persistantes, ce qui signifie qu'elles conservent leur forme et leur couleur pendant une longue période, même après avoir été coupées.\n\n    -\tCulture : Elle préfère un emplacement en plein soleil et un sol bien drainé, légèrement acide à neutre. La Célosie est relativement résistante à la sécheresse, mais elle pousse mieux avec un arrosage régulier. Elle est sensible au froid et ne supporte pas les gelées.\n\n    -\tUtilisations : La Célosie est souvent utilisée dans les massifs de fleurs, les bordures, et comme fleur coupée pour les bouquets. En raison de sa texture unique, elle est également populaire dans les compositions de fleurs séchées.\n\n    -\tSymbolique : En langage des fleurs, la Célosie symbolise l'immortalité et la chaleur, en raison de sa capacité à maintenir sa forme et sa couleur.\n\n    La Célosie est une plante idéale pour apporter une touche de couleur vive et une texture intrigante aux jardins et aux arrangements floraux. Elle se distingue par son allure exotique et sa durabilité, que ce soit en pleine terre ou en vase."
+  },
+  {
+    "name": "Chrysanthème",
+    "type": "flower",
+    "sow": {
+      "start": {
+        "$date": "2024-03-01T00:00:00.000Z"
+      },
+      "end": {
+        "$date": "2024-06-30T00:00:00.000Z"
+      }
+    },
+    "harvest": {
+      "start": {
+        "$date": "2024-08-01T00:00:00.000Z"
+      },
+      "end": {
+        "$date": "2024-11-30T00:00:00.000Z"
+      }
+    },
+    "image": "https://pixnio.com/free-images/2017/03/16/2017-03-16-10-14-49-1152x768.jpg",
+    "text": "Le chrysanthème, souvent surnommé reine de l'automne, est une plante vivace très populaire, particulièrement en Europe et en Asie, où elle est souvent associée aux célébrations et aux rites funéraires. Originaire de Chine et du Japon, cette plante est reconnue pour ses fleurs abondantes et variées.\n\n    Caractéristiques principales :\n    \n    -\tFleurs : Le chrysanthème présente une grande diversité de formes et de tailles de fleurs. Elles peuvent être simples (semblables à des marguerites), doubles (en forme de pompons), en forme d'anémones, incurvées, ou même en forme d'araignée. Les couleurs des chrysanthèmes sont tout aussi variées, allant du blanc, jaune, orange, rouge, rose au violet, avec des nuances intermédiaires et parfois bicolores.\n\n    -\tFeuillage : Les feuilles du chrysanthème sont lobées, d'un vert foncé, et dégagent une odeur particulière lorsqu'elles sont froissées. Leur aspect peut varier selon les variétés, allant de formes arrondies à des formes plus allongées et découpées.\n\n    -\tTaille : Le chrysanthème peut atteindre une hauteur de 30 cm à 1,5 m selon les variétés et les conditions de culture. Certaines variétés naines sont utilisées pour les bordures, tandis que d'autres, plus grandes, sont parfaites pour les massifs ou comme fleurs coupées.\n\n    -\tFloraison : La floraison du chrysanthème intervient principalement en automne, de septembre à novembre, bien qu'il existe des variétés hâtives qui fleurissent dès l'été. C'est l'une des dernières fleurs à s'épanouir avant l'hiver, apportant de la couleur dans les jardins lorsque beaucoup d'autres plantes se fanent.\n\n    -\tCulture : Le chrysanthème préfère un emplacement en plein soleil et un sol bien drainé, riche en matière organique. Il est important de protéger les jeunes pousses du gel au printemps et d'éviter l'humidité stagnante, qui peut provoquer des maladies. Les tiges doivent parfois être tuteurées pour éviter qu'elles ne se couchent sous le poids des fleurs.\n\n    -\tUtilisations : Les chrysanthèmes sont largement utilisés dans les jardins d'automne, les compositions florales, et les bouquets. En France, ils sont traditionnellement associés à la Toussaint, où ils sont utilisés pour honorer les défunts. Cependant, dans d'autres cultures, ils symbolisent la joie et sont utilisés dans diverses célébrations.\n\n    -\tSymbolique : En Asie, le chrysanthème est symbole de longévité, de bonheur et de prospérité. En France, il est souvent associé au deuil et au souvenir, en raison de son utilisation fréquente lors des commémorations.\n    \n    Le chrysanthème est une plante polyvalente et résistante, capable de résister aux premières gelées et d'égayer les jardins et les intérieurs bien après la fin de l'été. Sa grande variété de formes et de couleurs en fait un choix apprécié pour les jardiniers et les fleuristes du monde entier."
+  },
+  {
+    "name": "Dahlia",
+    "type": "fruit",
+    "sow": {
+      "start": {
+        "$date": "2024-03-01T00:00:00.000Z"
+      },
+      "end": {
+        "$date": "2024-06-30T00:00:00.000Z"
+      }
+    },
+    "harvest": {
+      "start": {
+        "$date": "2024-07-01T00:00:00.000Z"
+      },
+      "end": {
+        "$date": "2024-10-31T00:00:00.000Z"
+      }
+    },
+    "image": "https://cdn.pixabay.com/photo/2018/07/20/23/29/dahlia-3551658_1280.jpg",
+    "text": "Le Dahlia est une plante vivace tubéreuse appartenant à la famille des Astéracées. Originaire du Mexique, il est largement cultivé dans le monde entier pour ses fleurs spectaculaires et colorées. Le Dahlia est particulièrement prisé pour l'énorme variété de formes, de tailles et de couleurs de ses fleurs, ce qui en fait un favori des jardiniers et des collectionneurs.\n    \n    Caractéristiques principales :\n    \n    -\tFleurs : Le Dahlia est célèbre pour la diversité de ses fleurs. Elles peuvent être simples, semi-doubles ou doubles, et se présentent sous différentes formes, comme les fleurs en pompon, les cactus, les anémones, et bien d'autres. Les fleurs de Dahlia peuvent varier de quelques centimètres à plus de 30 cm de diamètre, et elles existent dans presque toutes les couleurs imaginables : rouge, rose, jaune, orange, violet, blanc, et même bicolores. Cette variété incroyable fait du Dahlia l'une des plantes les plus versatiles pour le jardinage.\n\n    -\tFeuillage : Les feuilles du Dahlia sont composées, de forme ovale à lancéolée, et généralement vert foncé. Selon les variétés, elles peuvent être lisses ou légèrement velues. Les tiges, quant à elles, sont généralement creuses et peuvent varier en hauteur de 30 cm à plus de 1,5 m, en fonction de la variété cultivée.\n\n    -\tTaille : Le Dahlia peut être une plante basse idéale pour les bordures, ou atteindre des hauteurs importantes, parfaites pour les massifs ou les arrière-plans de jardin. Les variétés naines mesurent environ 30 cm, tandis que les variétés plus grandes peuvent dépasser 1,5 m.\n\n    -\tFloraison : Le Dahlia fleurit du milieu de l'été jusqu'aux premières gelées, offrant une longue période de floraison. Les fleurs sont produites en abondance, apportant une touche spectaculaire et colorée au jardin pendant les mois les plus chauds.\n\n    -\tCulture : Le Dahlia préfère un emplacement en plein soleil avec un sol riche, fertile et bien drainé. Il est planté au printemps, une fois que tout risque de gelée est passé. Les tubercules doivent être déterrés et stockés à l'abri du gel durant l'hiver, sauf dans les régions au climat doux où ils peuvent rester en terre. Le Dahlia nécessite un arrosage régulier et une fertilisation pour encourager une floraison abondante. Les tiges des variétés les plus hautes doivent être tuteurées pour éviter qu'elles ne se cassent sous le poids des fleurs.\n\n    -\tUtilisations : Les Dahlias sont extrêmement polyvalents dans le jardin. Ils peuvent être utilisés dans les massifs, les bordures, les potagers, ou comme fleurs coupées pour des bouquets spectaculaires. Les grandes variétés sont souvent utilisées en arrière-plan, tandis que les plus petites conviennent aux bordures ou aux pots.\n\n    -\tSymbolique : Le Dahlia est associé à l'élégance, à la dignité et à la reconnaissance. En langage des fleurs, il symbolise également l'engagement et la force intérieure, en raison de sa croissance vigoureuse et de sa floraison spectaculaire."
+  },
+  {
+    "name": "Giroflée",
+    "type": "fruit",
+    "sow": {
+      "start": {
+        "$date": "2024-02-01T00:00:00.000Z"
+      },
+      "end": {
+        "$date": "2024-05-31T00:00:00.000Z"
+      }
+    },
+    "harvest": {
+      "start": {
+        "$date": "2024-06-01T00:00:00.000Z"
+      },
+      "end": {
+        "$date": "2024-09-30T00:00:00.000Z"
+      }
+    },
+    "image": "https://cdn.pixabay.com/photo/2022/05/10/14/33/wallflower-7187256_1280.jpg",
+    "text": "La giroflée, également connue sous le nom scientifique Erysimum ou Matthiola, est une plante vivace ou bisannuelle appartenant à la famille des Brassicacées (ou Crucifères). Elle est très appréciée pour ses fleurs colorées et parfumées, qui fleurissent souvent dès le début du printemps, apportant une touche de couleur et de fragrance aux jardins après l'hiver.\n    \n    Caractéristiques principales :\n    \n    -\tFleurs : Les fleurs de la giroflée sont petites, en forme de croix (typique des crucifères), et sont regroupées en grappes terminales. Elles viennent dans une large gamme de couleurs, y compris le jaune, l'orange, le rouge, le pourpre, le rose et le blanc. Certaines variétés peuvent même être bicolores. Les fleurs de la giroflée sont particulièrement prisées pour leur parfum doux et épicé, qui est très agréable et attire les pollinisateurs comme les abeilles.\n\n    -\tFeuillage : Les feuilles de la giroflée sont étroites, lancéolées, et de couleur vert grisâtre. Elles sont souvent légèrement velues, ce qui leur donne une texture douce au toucher. Le feuillage est persistant ou semi-persistant, selon les conditions climatiques, et forme une belle touffe dense qui reste attractive même en dehors de la période de floraison.\n\n    -\tTaille : La giroflée peut atteindre une hauteur de 20 à 80 cm, selon les variétés et les conditions de culture. Les plantes plus basses sont idéales pour les bordures, tandis que les variétés plus hautes peuvent être utilisées en arrière-plan ou dans des massifs.\n\n    -\tFloraison : La giroflée fleurit principalement au printemps, mais certaines variétés peuvent prolonger leur floraison jusqu'au début de l'été. Dans les climats doux, elle peut même commencer à fleurir dès la fin de l'hiver. Cette floraison précoce en fait une des premières sources de nectar pour les pollinisateurs après l'hiver.\n\n    -\tCulture : La giroflée préfère un emplacement en plein soleil et un sol bien drainé, légèrement calcaire. Elle est résistante à la sécheresse, ce qui la rend idéale pour les jardins méditerranéens ou les rocailles. Elle est également assez tolérante au froid, bien que les variétés bisannuelles soient souvent cultivées comme des annuelles dans les régions plus froides. Les giroflées sont faciles à cultiver à partir de graines, qui peuvent être semées en automne ou au printemps.\n\n    -\tUtilisations : La giroflée est idéale pour les bordures, les massifs, les rocailles, et les jardinières. Grâce à son parfum envoûtant, elle est souvent plantée près des zones de vie extérieures, comme les terrasses ou les chemins, où son parfum peut être pleinement apprécié. Elle est également utilisée comme fleur coupée, bien que sa durée de vie en vase soit relativement courte.\n\n    -\tSymbolique : En langage des fleurs, la giroflée est souvent associée à la fidélité et à la constance, en raison de sa capacité à fleurir de manière fiable année après année, même dans des conditions difficiles.\n\n    La giroflée est une plante charmante et rustique qui apporte non seulement une belle couleur mais aussi un parfum délicieux au jardin au début du printemps. Facile à cultiver et résistante, elle est un excellent choix pour les jardiniers de tous niveaux, cherchant à prolonger la saison des floraisons parfumées."
+  },
+  {
+    "name": "Hortensia",
+    "type": "flower",
+    "sow": {
+      "start": {
+        "$date": "2024-03-01T00:00:00.000Z"
+      },
+      "end": {
+        "$date": "2024-06-30T00:00:00.000Z"
+      }
+    },
+    "harvest": {
+      "start": {
+        "$date": "2024-06-01T00:00:00.000Z"
+      },
+      "end": {
+        "$date": "2024-11-30T00:00:00.000Z"
+      }
+    },
+    "image": "https://images.unsplash.com/photo-1471696035578-3d8c78d99684?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "text": "L'hortensia, ou Hydrangea, est un arbuste ornemental populaire appartenant à la famille des Hydrangeacées. Originaire principalement d'Asie de l'Est, notamment du Japon et de la Chine, l'hortensia est largement cultivé pour ses grandes inflorescences colorées qui embellissent les jardins du printemps à l'automne. Caractéristiques principales : - Fleurs : Les fleurs de l'hortensia se présentent sous forme de grandes inflorescences en boule (Hydrangea macrophylla) ou en panicules (Hydrangea paniculata). Les couleurs varient du bleu, rose, rouge, pourpre au blanc, et peuvent même changer de teinte en fonction de la nature du sol (acide ou alcalin). Par exemple, un sol acide tend à produire des fleurs bleues, tandis qu'un sol alcalin favorise des fleurs roses. Les inflorescences peuvent être constituées de fleurs stériles (grandes et voyantes) et de fleurs fertiles (plus petites et discrètes). - Feuillage : Les feuilles de l'hortensia sont larges, ovales à elliptiques, et souvent dentelées sur les bords. Elles sont de couleur vert foncé, offrant un beau contraste avec les fleurs. Certaines variétés présentent un feuillage qui prend des teintes d'automne, comme le pourpre ou le rouge, avant de tomber. - Taille : Les hortensias varient en taille selon les espèces et les variétés. Ils peuvent aller de petits arbustes compacts d'environ 60 cm à des spécimens plus grands atteignant jusqu'à 2,5 mètres de hauteur. Leur port peut être érigé, arrondi ou étalé. - Floraison : La floraison des hortensias s'étend généralement du printemps à l'automne, avec un pic durant l'été. La durée de floraison prolongée et l'évolution des couleurs des fleurs au fil de la saison en font une plante précieuse pour apporter une couleur continue au jardin. - Culture : L'hortensia préfère un emplacement mi-ombragé à ombragé, bien qu'il tolère le plein soleil dans les régions où les étés ne sont pas trop chauds. Il aime les sols riches, humides, bien drainés et légèrement acides. Un arrosage régulier est essentiel, surtout pendant les périodes de sécheresse, car les hortensias sont sensibles au manque d'eau. Ils bénéficient également d'un paillage pour conserver l'humidité du sol et protéger les racines. - Utilisations : L'hortensia est polyvalent en aménagement paysager. Il est utilisé dans les massifs, les bordures, en haies ou en isolé. Grâce à ses grandes inflorescences, il est aussi un excellent choix pour les compositions florales et les bouquets, frais ou secs. Les hortensias peuvent également être cultivés en pot, ce qui permet de les déplacer pour créer des points focaux dans le jardin. - Symbolique : En langage des fleurs, l'hortensia symbolise la gratitude, l'abondance, et l'amour profond. Cependant, dans certaines cultures, il peut aussi représenter le caprice ou le détachement émotionnel, en raison de l'abondance de ses fleurs qui peut être perçue comme une démonstration excessive. L'hortensia est un arbuste magnifique et durable, apprécié pour sa capacité à offrir une floraison abondante et colorée tout au long de la belle saison. Sa facilité de culture et sa capacité à s'adapter à différents types de sols en font un choix idéal pour les jardiniers souhaitant ajouter de la structure et de la couleur à leur jardin."
+  },
+  {
+    "name": "Lisianthus",
+    "type": "flower",
+    "sow": {
+      "start": {
+        "$date": "2024-01-01T00:00:00.000Z"
+      },
+      "end": {
+        "$date": "2024-05-31T00:00:00.000Z"
+      }
+    },
+    "harvest": {
+      "start": {
+        "$date": "2024-06-01T00:00:00.000Z"
+      },
+      "end": {
+        "$date": "2024-10-31T00:00:00.000Z"
+      }
+    },
+    "image": "https://cdn.pixabay.com/photo/2016/05/19/09/49/lisianthus-1402486_1280.jpg",
+    "text": "Le Lisianthus (Eustoma grandiflorum), également appelé eustoma ou 'rose du Texas', est une plante annuelle ou bisannuelle originaire des prairies du sud des États-Unis, du Mexique et des Caraïbes. Très prisée pour ses fleurs élégantes qui ressemblent à des roses ou des pavots, le lisianthus est largement utilisé dans les bouquets et les arrangements floraux en raison de sa beauté et de sa longue durée de vie en vase. Caractéristiques principales : - Fleurs : Les fleurs du lisianthus sont grandes, en forme de coupe, et très semblables à celles de la rose, avec des pétales doux et légèrement ondulés. Elles peuvent être simples ou doubles, et se déclinent dans une vaste gamme de couleurs, notamment le blanc, le rose, le violet, le bleu, et parfois bicolores. Les fleurs peuvent atteindre jusqu'à 5 cm de diamètre, et elles s'ouvrent en succession le long des tiges, offrant une floraison prolongée. - Feuillage : Les feuilles du lisianthus sont allongées, lancéolées, et d'un vert grisâtre, avec une texture légèrement cireuse. Le feuillage, bien que discret, met en valeur les fleurs délicates et est assez résistant.- Taille : Le lisianthus atteint généralement une hauteur de 30 à 90 cm, selon les variétés et les conditions de culture. Les variétés plus hautes sont souvent utilisées comme fleurs coupées, tandis que les variétés plus compactes sont idéales pour les pots ou les bordures de jardin. - Floraison : La floraison du lisianthus se produit principalement en été, souvent de juin à septembre. Les fleurs durent longtemps, à la fois sur la plante et une fois coupées, ce qui en fait une plante particulièrement appréciée des fleuristes. - Culture : Le lisianthus est une plante assez exigeante à cultiver, nécessitant des conditions spécifiques pour prospérer. Il préfère un emplacement en plein soleil ou à mi-ombre, avec un sol bien drainé, riche en matière organique et légèrement acide à neutre. Le lisianthus a besoin d'un arrosage régulier mais modéré, car il est sensible à l'excès d'humidité qui peut provoquer la pourriture des racines. Il est souvent cultivé sous serre ou en intérieur, en raison de ses besoins spécifiques et de sa sensibilité au froid.\n\n    -\tUtilisations : Le lisianthus est principalement utilisé comme fleur coupée en raison de sa longue tenue en vase et de son élégance. Il est très populaire dans les bouquets de mariage, les arrangements floraux sophistiqués, et les compositions d'intérieur. En jardinage, il peut être utilisé dans les massifs, les bordures, ou en pot pour orner balcons et terrasses.\n\n    -\tSymbolique : Le lisianthus symbolise la gratitude, l'appréciation, et l'élégance. Il est également associé à des sentiments de charme, de romantisme, et d'admiration, ce qui en fait un choix courant pour exprimer des émotions délicates et raffinées.\n    \n    Le lisianthus est une plante d'une grande beauté, prisée pour ses fleurs qui allient la grâce des roses et la légèreté des pavots. Bien que son entretien demande une certaine attention, sa floraison élégante et ses nombreuses couleurs en font une fleur très recherchée pour embellir les jardins, les bouquets et les compositions florales."
+  },
+  {
+    "name": "Myrte",
+    "type": "flower",
+    "sow": {
+      "start": {
+        "$date": "2024-03-01T00:00:00.000Z"
+      },
+      "end": {
+        "$date": "2024-06-30T00:00:00.000Z"
+      }
+    },
+    "harvest": {
+      "start": {
+        "$date": "2024-07-01T00:00:00.000Z"
+      },
+      "end": {
+        "$date": "2024-11-30T00:00:00.000Z"
+      }
+    },
+    "image": "https://c.pxhere.com/photos/64/12/flower_myrtle_nature-638485.jpg!d",
+    "text": "La myrte (Myrtus communis) est un arbuste persistant appartenant à la famille des Myrtacées, originaire du bassin méditerranéen et du Moyen-Orient. Connu pour son feuillage aromatique, ses petites fleurs blanches parfumées et ses baies décoratives, la myrte est une plante emblématique des jardins méditerranéens et possède une riche histoire symbolique et culturelle.\n    \n    Caractéristiques principales :\n    \n    -\tFleurs : Les fleurs de la myrte sont petites, généralement de 1 à 2 cm de diamètre, et d'un blanc pur. Elles sont composées de cinq pétales délicats entourant un bouquet d'étamines dorées proéminentes, ce qui leur donne un aspect léger et aérien. Très parfumées, les fleurs de myrte dégagent un arôme doux et agréable, rappelant parfois celui de l'orange. Elles apparaissent principalement en été, de juin à août.\n\n    -\tFeuillage : Le feuillage de la myrte est persistant, dense et très aromatique. Les feuilles sont petites, ovales, pointues, et d'un vert foncé brillant. Lorsqu'elles sont écrasées, elles dégagent un parfum intense et épicé, souvent comparé à celui de l'eucalyptus ou du clou de girofle, en raison de la présence d'huiles essentielles. Ces feuilles sont également utilisées en cuisine et en parfumerie.\n\n    -\tFruits : Après la floraison, la myrte produit de petites baies arrondies, généralement de couleur bleu-noir, bien que certaines variétés puissent produire des baies blanches ou roses. Les baies sont comestibles et sont parfois utilisées pour aromatiser des liqueurs, notamment la célèbre liqueur de myrte de Sardaigne. Elles sont également consommées en cuisine, particulièrement dans les plats méditerranéens.\n\n    -\tTaille : La myrte est un arbuste compact pouvant atteindre 1 à 3 mètres de hauteur et d'envergure, selon les conditions de culture. Son port est généralement arrondi et touffu, avec des branches fines et bien ramifiées.\n\n    -\tFloraison : La floraison de la myrte a lieu en été, avec une profusion de petites fleurs blanches qui couvrent l'arbuste, attirant ainsi les abeilles et autres pollinisateurs. Cette floraison parfumée et élégante fait de la myrte un choix apprécié pour les jardins ornementaux.\n\n    -\tCulture : La myrte préfère les emplacements ensoleillés et les sols bien drainés, légèrement acides à neutres. Elle tolère bien la sécheresse une fois établie, ce qui en fait une plante idéale pour les jardins méditerranéens ou les zones au climat sec. La myrte est résistante aux embruns et peut être cultivée en bord de mer. Elle peut être taillée pour former des haies ou des topiaires, ou laissée à son état naturel pour former un buisson dense et attrayant. Elle peut également être cultivée en pot.\n\n    -\tUtilisations : La myrte est utilisée pour créer des haies, des bordures ou comme plante isolée dans les jardins méditerranéens. Ses feuilles parfumées et ses baies sont également utilisées en cuisine, en médecine traditionnelle, et dans la production de liqueurs. En parfumerie, l'huile essentielle extraite des feuilles de myrte est prisée pour ses propriétés aromatiques. En outre, la myrte est souvent utilisée dans les bouquets de mariée en raison de sa signification symbolique.\n\n    -\tSymbolique : La myrte a une forte symbolique, notamment dans les cultures méditerranéennes. Elle est associée à l'amour, à la pureté et à la fidélité. Dans la mythologie grecque, la myrte était sacrée pour Aphrodite, la déesse de l'amour, et elle est traditionnellement utilisée dans les rites de mariage et les célébrations religieuses pour symboliser la fécondité et l'harmonie.\n    \n    La myrte est un arbuste polyvalent et aromatique, apprécié pour son feuillage persistant, ses fleurs parfumées et ses baies décoratives. Sa facilité de culture dans les climats chauds et secs, ainsi que sa riche symbolique, en font une plante de choix pour les jardins méditerranéens et les compositions florales."
+  },
+  {
+    "name": "Œillet d'Inde",
+    "type": "flower",
+    "sow": {
+      "start": {
+        "$date": "2024-03-01T00:00:00.000Z"
+      },
+      "end": {
+        "$date": "2024-06-30T00:00:00.000Z"
+      }
+    },
+    "harvest": {
+      "start": {
+        "$date": "2024-07-01T00:00:00.000Z"
+      },
+      "end": {
+        "$date": "2024-10-31T00:00:00.000Z"
+      }
+    },
+    "image": "https://cdn.pixabay.com/photo/2019/07/27/18/09/flower-4367279_1280.jpg",
+    "text": "L'œillet d'Inde (Tagetes spp.), également connu sous le nom de Tagète, est une plante annuelle appartenant à la famille des Astéracées. Originaire du Mexique et des régions tropicales d'Amérique centrale, l'œillet d'Inde est largement cultivé pour ses fleurs vives et odorantes, qui ajoutent une couleur éclatante aux jardins tout au long de l'été et de l'automne.\n    \n    Caractéristiques principales :\n    \n    -\tFleurs : Les fleurs de l'œillet d'Inde sont généralement composées de nombreux petits pétales disposés en rangées concentriques, formant des inflorescences en forme de boule ou de coupe. Elles sont disponibles dans une gamme de couleurs allant du jaune, orange, rouge au bicolore. Les fleurs sont souvent très vives et peuvent mesurer entre 2 et 10 cm de diamètre, selon les variétés. Elles ont une odeur distincte qui est parfois décrite comme terreuse ou résineuse, ce qui aide à repousser certains insectes nuisibles.\n\n    -\tFeuillage : Le feuillage de l'œillet d'Inde est composé de feuilles dentelées, fines et très découpées, de couleur vert foncé à vert clair. Les feuilles sont aromatiques lorsqu'elles sont froissées, ajoutant une touche de parfum aux jardins. La plante a un port touffu, formant une belle couverture de feuillage dense autour des fleurs.\n\n    -\tTaille : L'œillet d'Inde varie en taille selon les variétés. Les espèces naines atteignent généralement 20 à 30 cm de hauteur, tandis que les variétés plus grandes peuvent atteindre jusqu'à 60 cm. Certaines espèces, comme le Tagetes erecta, peuvent même dépasser 90 cm.\n\n    -\tFloraison : La floraison de l'œillet d'Inde commence généralement en été et peut durer jusqu'aux premières gelées. La plante produit une abondance de fleurs tout au long de la saison, ce qui en fait un excellent choix pour maintenir la couleur dans les jardins pendant une longue période.\n\n    -\tCulture : L'œillet d'Inde préfère un emplacement en plein soleil et un sol bien drainé, riche en matière organique. Il est relativement tolérant à la sécheresse mais apprécie un arrosage régulier, surtout pendant les périodes de chaleur. La plante est facile à cultiver à partir de graines, qui peuvent être semées directement en pleine terre ou en pépinière au printemps, après tout risque de gel. Les œillets d'Inde sont généralement assez robustes et nécessitent peu d'entretien, bien qu'ils bénéficient d'une taille légère pour encourager une floraison abondante.\n\n    -\tUtilisations : L'œillet d'Inde est souvent utilisé dans les massifs, les bordures, les jardinières et les pots. Il est également employé comme plante répulsive dans les potagers pour éloigner les nuisibles, notamment les nématodes du sol. Ses fleurs sont parfois utilisées en bouquets ou en arrangements floraux. En jardinage, il est apprécié pour sa capacité à ajouter une couleur vive et continue pendant toute la saison estivale.\n\n    -\tSymbolique : Dans certaines cultures, l'œillet d'Inde est associé à la célébration de la vie et de la mort, en particulier au Mexique, où il est utilisé lors du Día de los Muertos (Jour des Morts). Ses fleurs sont souvent placées sur les autels pour honorer les défunts et symboliser la continuité de la vie.\n    \n    L'œillet d'Inde est une plante ornementale vivace, riche en couleurs et en avantages pratiques pour le jardinage. Facile à cultiver et versatile, il est un choix populaire pour ajouter une touche vibrante et durable aux espaces extérieurs tout en offrant des propriétés répulsives pour certains insectes nuisibles."
+  },
+  {
+    "name": "Rose",
+    "type": "flower",
+    "sow": {
+      "start": {
+        "$date": "2024-02-01T00:00:00.000Z"
+      },
+      "end": {
+        "$date": "2024-06-30T00:00:00.000Z"
+      }
+    },
+    "harvest": {
+      "start": {
+        "$date": "2024-05-01T00:00:00.000Z"
+      },
+      "end": {
+        "$date": "2024-11-30T00:00:00.000Z"
+      }
+    },
+    "image": "https://get.pxhere.com/photo/plant-flower-petal-bloom-love-bouquet-gift-rose-red-romance-romantic-blooming-pink-flora-flowers-close-up-roses-petals-anniversary-valentine-bud-floristry-floribunda-macro-photography-valentine's-day-flowering-plant-garden-roses-rose-family-red-roses-flower-bouquet-land-plant-rose-order-916881.jpg",
+    "text": "La rose (Rosa spp.) est l'une des plantes les plus célèbres et appréciées dans le monde entier, appartenant à la famille des Rosacées. Avec ses fleurs élégantes et parfumées, la rose est souvent associée à la beauté, à l'amour et à la romance. Elle est cultivée depuis des millénaires et existe dans une variété infinie de couleurs, de formes et de tailles.\n    \n    Caractéristiques principales :\n    \n    -\tFleurs : Les roses présentent une grande diversité dans leurs fleurs, qui peuvent être simples (avec une seule rangée de pétales) ou doubles (avec plusieurs rangées de pétales). Les fleurs sont généralement en forme de coupe, mais peuvent aussi être en forme de pompon, de coupes ou de rosettes, selon les variétés. Les roses viennent dans presque toutes les couleurs imaginables, du blanc, rose, rouge, jaune, orange, violet, au bleu, et peuvent aussi être bicolores ou multicolores. Certaines variétés ont un parfum subtil, tandis que d'autres dégagent un parfum intense et enivrant.\n\n    -\tFeuillage : Les feuilles de la rose sont composées, généralement avec 5 à 7 folioles par feuille, de forme ovale ou lancéolée. Elles sont souvent brillantes et de couleur vert foncé, mais peuvent également présenter des teintes de bronze ou de pourpre chez certaines variétés. Les feuilles sont dentelées sur les bords et sont souvent recouvertes de petites épines ou aiguillons.\n\n    -\tTaille : Les roses varient considérablement en taille, selon le type et la variété. Les rosiers peuvent être des arbustes de petite taille atteignant environ 30 cm (comme les roses miniatures) ou des variétés grimpantes ou buissonnantes atteignant jusqu'à 3 mètres de hauteur. Les rosiers sont également disponibles en forme de buissons, de couvre-sols, ou de variétés grimpantes.\n\n    -\tFloraison : La floraison des roses dépend du type de rosier et des conditions climatiques. En général, les roses fleurissent du printemps à l'automne, avec des périodes de repos entre les floraisons pour certaines variétés. Les roses remontantes peuvent produire plusieurs vagues de fleurs tout au long de la saison, tandis que les roses non-remontantes fleurissent généralement une fois par an.\n\n    -\tCulture : Les roses préfèrent un emplacement en plein soleil et un sol bien drainé, riche en matière organique. Elles nécessitent un arrosage régulier, surtout pendant les périodes sèches, et bénéficient d'une fertilisation régulière pour encourager une floraison abondante. Les roses doivent être taillées chaque année pour enlever les fleurs fanées et encourager la nouvelle croissance. Elles peuvent être sujettes à divers parasites et maladies, notamment les pucerons, les champignons et les taches noires, nécessitant parfois des traitements préventifs.\n\n    -\tUtilisations : Les roses sont extrêmement polyvalentes et peuvent être utilisées dans les jardins, les parterres, les haies, les pots, et les jardinières. Elles sont souvent choisies pour leurs qualités décoratives dans les arrangements floraux, les bouquets de mariage, et les compositions pour diverses occasions. En plus de leur beauté, les roses sont également utilisées dans la fabrication de produits parfumés, tels que les eaux de toilette, les huiles essentielles et les cosmétiques.\n\n    -\tSymbolique : Les roses sont profondément symboliques et sont associées à une variété de significations en fonction de leur couleur. Les roses rouges symbolisent l'amour passionné, les roses blanches représentent la pureté et la paix, les roses jaunes symbolisent l'amitié et la joie, tandis que les roses roses évoquent la gratitude et l'admiration. Les roses sont également souvent utilisées pour exprimer des sentiments de romance et d'affection.\n    \n    La rose est une plante intemporelle et emblématique, appréciée pour sa beauté exceptionnelle, sa diversité de variétés, et son parfum envoûtant. Que ce soit dans un jardin, un bouquet, ou comme élément décoratif, la rose continue d'être une des fleurs les plus aimées et célébrées à travers le monde."
+  },
+  {
+    "name": "Sedum",
+    "type": "flower",
+    "sow": {
+      "start": {
+        "$date": "2024-03-01T00:00:00.000Z"
+      },
+      "end": {
+        "$date": "2024-06-30T00:00:00.000Z"
+      }
+    },
+    "harvest": {
+      "start": {
+        "$date": "2024-07-01T00:00:00.000Z"
+      },
+      "end": {
+        "$date": "2024-09-30T00:00:00.000Z"
+      }
+    },
+    "image": "https://cdn.pixabay.com/photo/2019/11/13/16/05/sedum-4624145_1280.jpg",
+    "text": "Le sedum, également connu sous le nom de orpin ou herbe aux chapeaux, est un genre de plantes succulentes appartenant à la famille des Crassulacées. Ce genre comprend de nombreuses espèces et variétés, caractérisées par leur capacité à stocker l'eau dans leurs tissus, ce qui les rend particulièrement résistantes à la sécheresse. Les sedums sont largement appréciés pour leur feuillage intéressant, leurs fleurs attrayantes, et leur facilité d'entretien.\n    \n    Caractéristiques principales :\n    \n    -\tFleurs : Les fleurs de sedum varient en fonction des espèces, mais elles sont généralement petites, étoilées et regroupées en inflorescences en ombelle ou en corymbe. Les couleurs des fleurs peuvent aller du blanc au rose, au rouge et au jaune. La floraison a lieu généralement à la fin de l'été ou au début de l'automne, apportant une touche de couleur lorsque de nombreuses autres plantes commencent à se faner. Les fleurs attirent les abeilles et les papillons, contribuant à la biodiversité du jardin.\n\n    -\tFeuillage : Les feuilles de sedum sont charnues et succulentes, adaptées pour stocker l'eau dans des conditions sèches. Elles peuvent être ovales, rondes ou en forme de lance, et varient en couleur du vert au bleu-vert, au rouge ou au pourpre, selon les variétés et les saisons. Le feuillage peut également prendre des teintes automnales intéressantes, notamment le rouge ou le bronze, avant de se faner.\n\n    -\tTaille : La taille des sedums varie considérablement selon les espèces. Certaines variétés restent compactes, atteignant environ 10 à 20 cm de hauteur, tandis que d'autres peuvent atteindre jusqu'à 60 cm de hauteur. Les sedums peuvent également se propager largement en formant des tapis ou des couvre-sols.\n\n    -\tFloraison : Les sedums fleurissent généralement de la fin de l'été à l'automne, offrant une période de floraison prolongée lorsque de nombreuses autres plantes commencent à se faner. Les inflorescences peuvent durer plusieurs semaines, ajoutant une touche de couleur aux jardins d'automne.\n\n    -\tCulture : Les sedums sont faciles à cultiver et préfèrent un emplacement en plein soleil, bien qu'ils puissent tolérer une légère ombre. Ils nécessitent un sol bien drainé, souvent sableux ou rocailleux, et sont très tolérants à la sécheresse, ce qui les rend idéaux pour les jardins de rocaille, les bordures sèches, et les jardins xerophytes. Les sedums sont généralement rustiques et résistent bien aux conditions hivernales. Ils peuvent être propagés par bouturage, division ou semences.\n\n    -\tUtilisations : Les sedums sont polyvalents en aménagement paysager. Ils sont utilisés dans les jardins de rocaille, les bordures, les jardins de succulentes, et comme couvre-sol. Leur faible besoin en eau et leur résistance à la sécheresse les rendent idéaux pour les jardins nécessitant peu d'entretien. Ils sont également utilisés dans les toits verts et les jardins urbains pour leur capacité à tolérer des conditions extrêmes.\n\n    -\tSymbolique : Bien que les sedums ne soient pas traditionnellement associés à une symbolique spécifique, leur capacité à prospérer dans des conditions difficiles et leur facilité d'entretien en font un symbole de résilience et de robustesse. Ils représentent la capacité à s'adapter et à prospérer malgré les défis.\n    \n    Les sedums sont des plantes succulentes extrêmement robustes et décoratives, appréciées pour leur feuillage intéressant, leurs fleurs attrayantes, et leur faible besoin en entretien. Que ce soit dans un jardin de rocaille, une bordure sèche ou un toit vert, les sedums ajoutent une touche de couleur et de texture tout au long de la saison, tout en étant adaptés à des conditions de culture variées."
+  },
+  {
+    "name": "Viorne",
+    "type": "flower",
+    "sow": {
+      "start": {
+        "$date": "2024-03-01T00:00:00.000Z"
+      },
+      "end": {
+        "$date": "2024-06-30T00:00:00.000Z"
+      }
+    },
+    "harvest": {
+      "start": {
+        "$date": "2024-06-01T00:00:00.000Z"
+      },
+      "end": {
+        "$date": "2024-11-30T00:00:00.000Z"
+      }
+    },
+    "image": "https://get.pxhere.com/photo/plant-white-flower-produce-flowers-shrub-viburnum-spiraea-candytuft-yarrow-flowering-plant-daisy-family-prachtspiere-spierstrauch-land-plant-evergreen-candytuft-alyssum-moschatel-family-633177.jpg",
+    "text": "Le viorne (Viburnum spp.) est un genre d'arbustes appartenant à la famille des Adoxacées. Ces plantes ornementales sont appréciées pour leur floraison abondante, leurs fruits décoratifs et leur feuillage attrayant. Originaires principalement des régions tempérées de l'hémisphère nord, les viburnums sont largement cultivés dans les jardins pour leur beauté et leur utilité en aménagement paysager.\n    \n    Caractéristiques principales :\n    \n    -\tFleurs : Les fleurs de viburnum sont souvent regroupées en inflorescences en corymbe ou en ombelle. Elles varient en forme et en couleur selon les espèces, mais sont généralement petites et nombreuses. Les couleurs vont du blanc au rose, au rouge, et parfois au jaune. La floraison a lieu au printemps ou au début de l'été, et les fleurs sont souvent parfumées, ajoutant un attrait supplémentaire au jardin.\n\n    -\tFeuillage : Les feuilles de viburnum sont généralement ovales, dentelées ou lobées, avec des teintes de vert allant du vert clair au vert foncé. Certaines espèces présentent un feuillage décoratif, changeant de couleur en automne pour des teintes de rouge, orange ou pourpre. Le feuillage est souvent dense et constitue un fond attrayant pour les fleurs et les fruits.\n\n    -\tFruits : Après la floraison, les viburnums produisent des baies qui varient en couleur du rouge, orange, au noir, selon les espèces. Ces fruits sont souvent très décoratifs et peuvent persister sur la plante pendant l'hiver. Certaines baies sont comestibles, tandis que d'autres peuvent être toxiques si ingérées en grande quantité. Les baies attirent les oiseaux et ajoutent de l'intérêt visuel aux jardins pendant les mois d'automne et d'hiver.\n\n    -\tTaille : Les viburnums varient en taille selon les espèces. Ils peuvent aller de petits arbustes de 1 à 2 mètres de hauteur à de grands arbres ou arbustes de 3 à 4 mètres, voire plus. Leurs dimensions et leur port varient, allant de compact et buissonnant à étalé ou élancé.\n\n    -\tFloraison : La période de floraison dépend de l'espèce, mais les viburnums fleurissent généralement au printemps ou au début de l'été. Les inflorescences peuvent durer plusieurs semaines et sont souvent suivies de la formation des baies. Les viburnums remontants peuvent avoir une deuxième floraison ou une prolongation de la floraison initiale en fin d'été.\n\n    -\tCulture : Les viburnums préfèrent un emplacement en plein soleil ou à mi-ombre et un sol bien drainé, riche en matière organique. Ils sont assez rustiques et tolèrent diverses conditions de sol, mais ils prospèrent dans des sols légèrement acides à neutres. Les viburnums nécessitent un arrosage régulier, surtout pendant les périodes sèches, et bénéficient d'une taille légère après la floraison pour maintenir leur forme et encourager une nouvelle croissance.\n\n    -\tUtilisations : Les viburnums sont utilisés dans les jardins comme arbustes ornementaux pour créer des haies, des bordures ou des points focaux. Ils peuvent également être plantés en massifs ou en isolé pour leur effet décoratif. Les baies attirent la faune, en particulier les oiseaux, et ajoutent un intérêt visuel en automne et en hiver. Certaines espèces de viburnum sont également utilisées en médecine traditionnelle pour leurs propriétés médicinales.\n\n    -\tSymbolique : Le viburnum symbolise généralement la beauté et l'abondance. Les fleurs de viburnum sont souvent associées à la prospérité et à la protection, tandis que les baies peuvent symboliser l'abondance et la richesse de la nature. Leur présence dans les jardins est souvent perçue comme un symbole de fertilité et de prospérité.\n    \n    Les viburnums sont des arbustes polyvalents et esthétiques qui apportent une touche de beauté et de fonctionnalité aux jardins. Leur floraison décorative, leurs fruits attrayants, et leur feuillage changeant en automne en font des plantes appréciées pour l'aménagement paysager tout au long de l'année."
+  }
+]

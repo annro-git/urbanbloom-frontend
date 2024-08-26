@@ -48,7 +48,7 @@ const GardenScreen = () => {
     }
     )
     const data = await response.json()
-    
+
     dispatch(updateGardens(data.gardens))
   }
 

@@ -1,0 +1,486 @@
+[
+    {
+        "name": "Amande",
+        "type": "fruit",
+        "sow": {
+            "start": {
+                "$date": "2023-11-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2023-02-28T00:00:00.000Z"
+            }
+        },
+        "harvest": {
+            "start": {
+                "$date": "2024-08-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-10-31T00:00:00.000Z"
+            }
+        },
+        "image": "https://cdn.pixabay.com/photo/2013/02/20/11/30/almond-83766_1280.jpg",
+        "text": "L’amande (Prunus dulcis) est la graine comestible de l’amandier, un arbre de la famille des Rosacées. Originaire d’Asie occidentale, l’amande est cultivée dans de nombreuses régions du monde pour ses graines nutritives et polyvalentes, utilisées dans de nombreux produits alimentaires et cosmétiques. Les amandes sont particulièrement prisées pour leur goût délicat et leur texture croquante.\n\n    L’amande est la graine de l’amandier, un arbre à feuilles caduques qui peut atteindre une hauteur de 4 à 10 mètres. L’amandier produit des fleurs roses ou blanches au printemps, suivies de fruits ovoïdes velus qui contiennent la graine comestible à l’intérieur d’une coque dure. L’amande est riche en protéines, fibres, vitamines E et B2, magnésium, calcium, et antioxydants. Elle est réputée pour ses bienfaits pour la santé, notamment pour le cœur, grâce à sa teneur en acides gras monoinsaturés.\n\n    Conditions de culture\n\n    L’amandier préfère les climats chauds et secs, typiques des régions méditerranéennes et des zones tempérées chaudes. Il pousse bien dans des sols bien drainés, légers, et légèrement alcalins, avec un pH idéal entre 6,5 et 8,0. L’amandier est sensible au gel, particulièrement pendant la floraison, et nécessite une période de dormance froide pour produire des fruits.\n\n    -\tClimat : Les amandiers nécessitent des hivers doux et des étés chauds et secs. Ils tolèrent mal les gelées tardives au printemps qui peuvent endommager les fleurs.\n\n    -\tSol : Le sol doit être bien drainé et riche en nutriments. Les sols lourds et mal drainés peuvent entraîner des problèmes de pourriture des racines.\n\n    -\tArrosage : Un arrosage régulier est nécessaire pendant la période de croissance active, mais il est important d’éviter les excès d’eau pour prévenir les maladies fongiques.\n\n    Moments de plantation\n\n    Les amandiers peuvent être plantés à partir de graines ou de jeunes plants greffés. La plantation se fait généralement à l’automne ou au début du printemps, lorsque le sol est réchauffé.\n    -\tPlantation des graines : Les graines doivent être stratifiées avant la plantation pour améliorer la germination. Cela implique de les placer dans un milieu humide et froid pendant plusieurs semaines.\n\n    -\tJeunes plants : Les jeunes plants greffés sont plantés dans des trous de plantation suffisamment larges pour accueillir les racines sans les courber. Ils doivent être espacés de 4 à 6 mètres pour permettre une bonne circulation de l’air et une croissance optimale.\n\n    Récolte\n\n    La récolte des amandes a lieu en été ou au début de l’automne, environ 7 à 8 mois après la floraison, lorsque les coques extérieures des fruits commencent à s’ouvrir. Les amandes sont souvent récoltées manuellement ou mécaniquement en secouant les arbres pour faire tomber les fruits au sol.\n\n    Récolte et conservation\n\n    Après la récolte, les amandes doivent être séchées pour réduire leur teneur en humidité et éviter le développement de moisissures. Les coques dures sont ensuite retirées pour extraire les graines.\n    Les amandes doivent être conservées dans un endroit frais, sec, et sombre, de préférence dans des récipients hermétiques, pour prolonger leur durée de conservation. Les amandes peuvent être stockées au réfrigérateur ou au congélateur pour prolonger leur fraîcheur et éviter le rancissement des graisses.\n\n    En résumé, l’amande est un fruit à coque précieux, connu pour ses multiples utilisations culinaires et ses bienfaits nutritionnels. Sa culture nécessite des conditions climatiques spécifiques et un soin particulier pendant la floraison et la récolte. Les amandes, riches en nutriments essentiels, sont un ajout sain et polyvalent à de nombreux plats et produits alimentaires."
+    },
+    {
+        "name": "Baie de Goji",
+        "type": "fruit",
+        "sow": {
+            "start": {
+                "$date": "2024-03-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-05-31T00:00:00.000Z"
+            }
+        },
+        "harvest": {
+            "start": {
+                "$date": "2024-06-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-10-31T00:00:00.000Z"
+            }
+        },
+        "image": "https://cdn.pixabay.com/photo/2018/02/18/16/26/goji-3162716_1280.jpg",
+        "text": "La baie de goji (Lycium barbarum), également appelée baie de lyciet, est un fruit issu de l'arbuste du même nom, appartenant à la famille des Solanacées. Originaire d’Asie, notamment des régions du nord-ouest de la Chine, la baie de goji est utilisée depuis des siècles dans la médecine traditionnelle chinoise pour ses bienfaits potentiels sur la santé. Elle est souvent consommée séchée, sous forme de jus, ou intégrée à divers plats.\n\n    Les baies de goji sont de petites baies ovales de couleur rouge orangé, mesurant environ 1 à 2 cm de longueur. Elles ont une saveur légèrement sucrée, avec des notes acidulées et une texture moelleuse, semblable à celle des raisins secs. Les baies de goji sont particulièrement riches en antioxydants, vitamines A, C, B2, et en minéraux comme le fer et le zinc. Elles contiennent également des acides aminés essentiels et des polysaccharides, qui contribuent à leurs bienfaits pour la santé, notamment pour le système immunitaire, la santé oculaire, et le bien-être général.\n\n    Conditions de culture\n\n    Le goji est un arbuste rustique qui peut s’adapter à une variété de conditions climatiques, bien qu'il préfère les climats tempérés à chauds. Il pousse bien dans des sols bien drainés et légèrement acides à neutres, avec un pH idéal compris entre 6,0 et 8,0. Le goji est résistant à la sécheresse une fois établi, mais il nécessite un arrosage régulier pendant les premières années de croissance.\n    -\tClimat : Les arbustes de goji préfèrent des climats où les hivers sont froids et les étés sont chauds et ensoleillés. Ils tolèrent bien les gels légers et peuvent supporter des températures négatives.\n\n    -\tSol : Le sol doit être bien drainé et fertile. Un sol trop compact ou mal drainé peut nuire à la croissance de l’arbuste.\n\n    -\tArrosage : Les jeunes plants nécessitent un arrosage régulier pour établir leurs racines, tandis que les plantes matures sont assez tolérantes à la sécheresse. Il est important de ne pas trop arroser pour éviter le pourrissement des racines.\n\n    Moments de plantation\n\n    Les plants de goji peuvent être cultivés à partir de graines ou de boutures.\n    -\tSemis de graines : Les graines de goji peuvent être semées à l’intérieur à la fin de l’hiver ou au début du printemps. Elles doivent être placées à environ 1 cm de profondeur dans un terreau léger. Une fois que les jeunes plants ont atteint une hauteur de 10 à 15 cm, ils peuvent être transplantés à l’extérieur.\n\n    -\tPlantation de boutures : Les boutures peuvent être prélevées sur des plants établis au printemps ou à l’automne. Elles sont plantées directement dans le sol ou dans des pots pour favoriser l’enracinement.\n\n\n    Récolte\n\n    La récolte des baies de goji a lieu généralement à la fin de l'été ou au début de l'automne, lorsque les baies sont bien mûres et ont une couleur rouge vif. Les baies doivent être cueillies avec précaution pour éviter de les écraser, car elles sont délicates.\n\n    Récolte et conservation\n\n    Après la récolte, les baies de goji sont souvent séchées pour prolonger leur durée de conservation. Elles peuvent être séchées au soleil ou à l’aide d’un déshydrateur. Les baies séchées se conservent bien dans un endroit frais et sec, à l’abri de la lumière, dans des contenants hermétiques.\n    Les baies de goji peuvent être consommées directement en collation, ajoutées aux céréales, smoothies, ou incorporées dans des plats sucrés et salés. Leur teneur élevée en nutriments en fait un ajout sain et polyvalent à l’alimentation.\n\n    En résumé, la baie de goji est un fruit nutritif et bénéfique, prisé pour ses propriétés antioxydantes et ses multiples bienfaits pour la santé. Sa culture est relativement simple, à condition de respecter ses besoins en matière de climat et de sol. Les baies de goji apportent une touche exotique et saine à de nombreux plats."
+    },
+    {
+        "name": "Chataigne",
+        "type": "fruit",
+        "sow": {
+            "start": {
+                "$date": "2023-11-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2023-03-31T00:00:00.000Z"
+            }
+        },
+        "harvest": {
+            "start": {
+                "$date": "2024-09-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-11-30T00:00:00.000Z"
+            }
+        },
+        "image": "https://cdn.pixabay.com/photo/2019/09/24/04/43/chestnuts-4500209_1280.jpg",
+        "text": "La châtaigne est le fruit du châtaignier (Castanea sativa), un arbre appartenant à la famille des Fagacées. Originaire des régions tempérées de l'hémisphère nord, la châtaigne est un fruit à coque apprécié depuis des millénaires pour sa saveur douce et sa polyvalence culinaire. Elle a longtemps été une source alimentaire essentielle dans de nombreuses cultures, notamment en Europe et en Asie.\n    \n    La châtaigne se distingue par sa coque brun foncé et lisse, avec une chair tendre et sucrée. Contrairement au marron d’Inde, qui est toxique, la châtaigne est comestible et est utilisée dans de nombreux plats. Les châtaignes sont riches en glucides complexes, en fibres, en vitamines B, en vitamine C, ainsi qu’en minéraux comme le potassium, le magnésium et le fer. Elles ont une faible teneur en matières grasses par rapport à d'autres fruits à coque.\n\n    Conditions de culture\n\n    Le châtaignier préfère les climats tempérés et pousse bien dans des sols bien drainés, acides à neutres, avec un pH idéal entre 5,5 et 6,5. Il s’adapte à divers types de sols mais préfère ceux qui sont légers et sablonneux.\n    -\tClimat : Les châtaigniers ont besoin d'un climat avec des étés chauds et des hivers froids. Ils sont résistants au gel, mais des gelées tardives peuvent affecter la récolte.\n\n    -\tSol : Le sol doit être bien drainé pour éviter la pourriture des racines. Les châtaigniers n’aiment pas les sols compacts ou très calcaires.\n\n    -\tArrosage : Un arrosage régulier est important, surtout pendant les premières années de croissance et les périodes de sécheresse. Cependant, il faut éviter l’excès d’humidité pour prévenir les maladies.\n\n    Moments de plantation\n\n    Les châtaigniers sont généralement plantés à partir de jeunes arbres ou de semis.\n    -\tPlantation des jeunes arbres : Les jeunes arbres sont plantés à l'automne ou au début du printemps. Les trous de plantation doivent être suffisamment larges et profonds pour permettre aux racines de s'étendre.\n\n    -\tSemis : Les graines de châtaigne peuvent être plantées directement en pleine terre ou dans des pots pour être transplantées plus tard. Le semis se fait généralement à l’automne, après stratification des graines pour améliorer la germination.\n\n    Récolte\n\n    La récolte des châtaignes se fait à l'automne, généralement entre septembre et novembre, lorsque les bogues (les enveloppes épineuses) s'ouvrent naturellement et laissent tomber les fruits au sol. La récolte se fait en ramassant les châtaignes tombées ou en secouant les branches pour libérer les fruits.\n\n    Récolte et conservation\n\n    Après la récolte, les châtaignes doivent être triées pour éliminer les fruits endommagés ou véreux. Les châtaignes fraîches se conservent mieux dans un endroit frais et sec, idéalement dans un panier ou un sac en toile pour permettre une bonne circulation de l’air. Elles peuvent être conservées plusieurs semaines au réfrigérateur.\n    Pour prolonger la conservation, les châtaignes peuvent être séchées, congelées, ou transformées en farine. Avant de les consommer, il est souvent nécessaire de les cuire (en les grillant ou en les bouillant) pour enlever la peau intérieure.\n\n    En résumé, la châtaigne est un fruit nourrissant et délicieux, utilisé dans une variété de plats sucrés et salés. Sa culture nécessite des conditions spécifiques de sol et de climat, mais elle récompense les efforts par une récolte abondante et nutritive. Les châtaignes sont non seulement une source importante de nutriments, mais aussi une tradition culinaire riche dans de nombreuses régions du monde."
+    },
+    {
+        "name": "Citron",
+        "type": "fruit",
+        "sow": {
+            "start": {
+                "$date": "2024-03-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-05-31T00:00:00.000Z"
+            }
+        },
+        "harvest": {
+            "start": {
+                "$date": "2024-10-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-03-31T00:00:00.000Z"
+            }
+        },
+        "image": "https://cdn.pixabay.com/photo/2015/03/20/18/57/lemon-682698_1280.jpg",
+        "text": "Le citron (Citrus limon) est un agrume bien connu pour sa saveur acide et rafraîchissante. Originaire d'Asie, il est maintenant cultivé dans le monde entier, notamment dans les régions méditerranéennes, subtropicales et tropicales. Le citron est utilisé pour ses jus, son zeste, et comme ingrédient essentiel dans de nombreuses recettes et boissons.\n    \n    Le citron est un fruit ovale à la peau jaune vif. Sa pulpe juteuse est divisée en segments et est riche en acide citrique, ce qui lui confère son goût caractéristique. Le citron est une excellente source de vitamine C et contient également des vitamines B, du potassium, et des antioxydants. En plus de ses usages culinaires, il est également utilisé pour ses propriétés nettoyantes et désinfectantes naturelles.\n\n    Conditions de culture\n\n    Le citronnier est un arbre persistant qui peut atteindre une hauteur de 3 à 6 mètres. Il nécessite un climat chaud et ensoleillé, avec des températures douces tout au long de l'année. Il est sensible au gel, ce qui limite sa culture à des régions sans hivers rigoureux.\n\n    -\tClimat : Le citronnier préfère des températures comprises entre 15 et 30 °C. Il tolère mal le gel, qui peut endommager ses fruits et son feuillage.\n\n    -\tSol : Le citronnier pousse bien dans un sol bien drainé, léger, et légèrement acide à neutre, avec un pH compris entre 5,5 et 7,0. Un sol trop lourd ou mal drainé peut entraîner des problèmes de racines.\n\n    -\tArrosage : Le citronnier nécessite un arrosage régulier, surtout pendant la période de floraison et de fructification. Il est important de maintenir le sol légèrement humide sans excès pour éviter les maladies.\n\n    Moments de plantation\n\n    es citronniers peuvent être plantés à partir de graines, de boutures, ou de jeunes plants greffés. La plantation est généralement effectuée au printemps, après la fin des risques de gel.\n    -\tPlantation des graines : Bien que la culture à partir de graines soit possible, elle est moins courante car elle prend du temps et les plants ne sont pas toujours fidèles au type.\n\n    -\tPlantation des jeunes plants : Les jeunes plants greffés sont la méthode de culture la plus courante. Ils sont plantés dans des trous assez larges pour accueillir le système racinaire, à un endroit où ils reçoivent beaucoup de soleil.\n\n    Récolte\n\n    La récolte des citrons dépend de la variété et du climat, mais elle peut généralement commencer 6 à 9 mois après la floraison. Les citrons sont prêts à être récoltés lorsqu'ils ont atteint une taille adéquate et une couleur jaune uniforme. Ils doivent être cueillis avec précaution pour éviter d’endommager le fruit ou l’arbre.\n\n    Récolte et conservation\n\n    Après la récolte, les citrons peuvent être conservés à température ambiante pendant environ une semaine ou au réfrigérateur pendant plusieurs semaines. Ils peuvent également être transformés en jus, confitures, ou conservés sous forme de zestes séchés pour une utilisation ultérieure.\n\n    En résumé, le citron est un agrume polyvalent, apprécié pour sa saveur et ses propriétés bénéfiques pour la santé. Sa culture nécessite un climat adapté et des soins réguliers, mais il récompense les efforts par une récolte abondante et continue de fruits riches en vitamine C. Les citrons apportent une touche rafraîchissante et acidulée à de nombreux plats et boissons, tout en offrant divers bienfaits pour la santé."
+    },
+    {
+        "name": "Coing",
+        "type": "fruit",
+        "sow": {
+            "start": {
+                "$date": "2023-11-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2023-03-31T00:00:00.000Z"
+            }
+        },
+        "harvest": {
+            "start": {
+                "$date": "2024-09-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-11-30T00:00:00.000Z"
+            }
+        },
+        "image": "https://cdn.pixabay.com/photo/2016/10/21/14/33/quince-1758170_1280.jpg",
+        "text": "Le coing est le fruit du cognassier (Cydonia oblonga), un arbre de la famille des Rosacées. Originaire d’Asie centrale et du sud-ouest, il est cultivé depuis des millénaires dans le bassin méditerranéen. Le coing est apprécié pour son parfum envoûtant et ses utilisations culinaires, notamment en confitures, gelées et pâtisseries.\n    \n    Le coing est un fruit de forme irrégulière, souvent bosselé, avec une peau duveteuse jaune doré à maturité. Sa chair est ferme, granuleuse, et astringente lorsqu’elle est crue, mais elle devient douce et parfumée après cuisson. Le coing est riche en fibres, en vitamine C, en potassium, et en antioxydants, ce qui en fait un fruit sain malgré sa consommation limitée à l'état cru.\n    \n    Conditions de culture\n    \n    e cognassier est un arbre rustique qui peut atteindre 4 à 8 mètres de hauteur. Il est bien adapté aux climats tempérés et peut tolérer des températures froides. Il préfère les sols riches et bien drainés.\n    -\tClimat : Le cognassier préfère un climat tempéré avec des étés chauds et des hivers froids. Il résiste bien au gel mais craint les fortes gelées tardives qui peuvent endommager les fleurs.\n\n    -\tSol : Il pousse bien dans des sols fertiles, profonds, et bien drainés, avec un pH neutre à légèrement acide. Les sols lourds et mal drainés peuvent être problématiques, entraînant la pourriture des racines.\n\n    -\tArrosage : Un arrosage régulier est important, surtout pendant les périodes sèches, mais le sol ne doit pas être détrempé. Une irrigation suffisante aide à la croissance des fruits.\n    \n    Moments de plantation\n    \n    Les cognassiers sont généralement plantés à partir de jeunes plants ou de boutures greffées.\n    -\tPlantation des jeunes plants : La plantation s'effectue à l'automne ou au début du printemps. Les plants doivent être placés dans des trous suffisamment grands pour permettre aux racines de se développer librement. Ils doivent être espacés d’environ 4 à 5 mètres pour assurer une bonne circulation de l'air.\n\n    -\tBoutures : Les boutures peuvent être prises à l'automne et plantées après avoir développé des racines.\n    \n    Récolte\n    \n    La récolte des coings a lieu en automne, généralement entre septembre et novembre, lorsque les fruits sont bien jaunes et dégagent leur parfum caractéristique. Les coings doivent être récoltés avant les premières gelées, car le froid peut endommager le fruit.\n\n    Récolte et conservation\n    \n    Après la récolte, les coings doivent être manipulés avec soin pour éviter les ecchymoses. Ils se conservent bien dans un endroit frais et sec, comme une cave ou un réfrigérateur, pendant plusieurs semaines.\n    Les coings peuvent être utilisés pour préparer des gelées, des confitures, des pâtes de fruits, ou être cuits dans des plats sucrés et salés. Leur parfum et leur saveur se marient bien avec les pommes, les poires et les épices comme la cannelle.\n    \n    En résumé, le coing est un fruit au parfum unique, offrant de nombreuses possibilités culinaires. Sa culture est adaptée aux climats tempérés, et l'arbre nécessite un entretien modéré pour produire des fruits de qualité. Malgré son astringence à l’état cru, le coing est prisé pour ses préparations culinaires, qui révèlent sa douceur et son parfum envoûtant."
+    },
+    {
+        "name": "Figue",
+        "type": "fruit",
+        "sow": {
+            "start": {
+                "$date": "2023-11-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-03-31T00:00:00.000Z"
+            }
+        },
+        "harvest": {
+            "start": {
+                "$date": "2024-08-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-10-31T00:00:00.000Z"
+            }
+        },
+        "image": "https://cdn.pixabay.com/photo/2019/10/28/13/14/fig-4584343_1280.jpg",
+        "text": "La figue est le fruit du figuier (Ficus carica), un arbre de la famille des Moracées. Originaire du Moyen-Orient et d'Asie occidentale, la figue est cultivée depuis des milliers d'années pour ses fruits sucrés et nutritifs. Elle est très appréciée dans les régions méditerranéennes et dans d'autres climats chauds du monde.\n    \n    Les figues sont des fruits charnus et sucrés, généralement en forme de poire, avec une peau fine de couleur variable selon la variété (vert, violet, brun ou noir). Leur pulpe est douce, avec de petites graines comestibles, et est riche en nutriments tels que les fibres, le potassium, le calcium, et des antioxydants. Les figues peuvent être consommées fraîches ou séchées et sont souvent utilisées dans les desserts, les confitures, ou comme ingrédient dans les plats salés.\n    \n    Conditions de culture\n    \n    Le figuier est un arbre robuste qui peut atteindre jusqu’à 10 mètres de hauteur, mais il est souvent maintenu plus bas par la taille pour faciliter la récolte. Il préfère les climats chauds et secs, bien qu'il puisse tolérer des périodes de froid modéré.\n    -\tClimat : Le figuier prospère dans des climats méditerranéens avec des étés chauds et des hivers doux. Il peut supporter des gelées légères, mais les jeunes arbres et les fruits peuvent être endommagés par le gel.\n\n    -\tSol : Le figuier s’adapte à une large gamme de sols, mais il préfère les sols bien drainés, riches en matière organique, et légèrement alcalins à neutres (pH de 6,0 à 7,5).\n\n    -\tArrosage : Bien qu’il soit résistant à la sécheresse, un arrosage régulier pendant la saison de croissance améliore la qualité et la quantité des fruits. Le sol doit être maintenu légèrement humide mais jamais détrempé.\n    \n    Moments de plantation\n    \n    Les figuiers peuvent être plantés à partir de boutures ou de jeunes arbres. La meilleure période de plantation est à l'automne ou au début du printemps, lorsque le sol est humide et encore chaud.\n    -\tPlantation de jeunes arbres : Les jeunes figuiers sont plantés dans des trous suffisamment profonds pour couvrir les racines. Ils doivent être espacés de 4 à 5 mètres pour permettre leur expansion.\n\n    -\tBoutures : Les boutures de figuier peuvent être plantées directement dans le sol au printemps ou conservées en intérieur jusqu'à l’enracinement.\n    \n    Récolte\n    \n    La récolte des figues dépend de la variété et du climat, mais elle se fait généralement de l'été à l'automne. Les figues sont prêtes à être récoltées lorsqu'elles deviennent douces et légèrement tombantes. Elles doivent être manipulées avec soin car elles sont fragiles et peuvent facilement s'abîmer.\n    \n    Récolte et conservation\n    \n    Les figues fraîches ont une durée de conservation courte et doivent être consommées rapidement après la récolte ou conservées au réfrigérateur pendant quelques jours. Elles peuvent également être séchées pour une conservation à plus long terme.\n    Les figues séchées sont un en-cas populaire et se conservent plusieurs mois dans un endroit frais et sec. Elles peuvent être utilisées dans les gâteaux, les biscuits, et les plats cuisinés pour ajouter une touche sucrée.\n    \n    En résumé, la figue est un fruit savoureux et polyvalent, apprécié pour sa douceur naturelle et ses bienfaits nutritionnels. Le figuier est un arbre facile à cultiver dans des climats chauds, nécessitant peu d’entretien, et offrant des récoltes généreuses. Les figues, qu'elles soient fraîches ou séchées, sont un régal prisé dans le monde entier pour leur goût unique et leur utilité culinaire."
+    },
+    {
+        "name": "Framboise",
+        "type": "fruit",
+        "sow": {
+            "start": {
+                "$date": "2023-06-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2023-07-31T00:00:00.000Z"
+            }
+        },
+        "harvest": {
+            "start": {
+                "$date": "2024-08-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-10-31T00:00:00.000Z"
+            }
+        },
+        "image": "https://cdn.pixabay.com/photo/2016/07/03/23/18/raspberries-1495713_1280.jpg",
+        "text": "La framboise est le fruit du framboisier (Rubus idaeus), un arbuste de la famille des Rosacées. Originaire d'Europe et d'Asie, la framboise est cultivée pour ses fruits sucrés et juteux, très prisés pour leur saveur délicate et leurs nombreuses applications culinaires. Elle est consommée fraîche, en confitures, en pâtisseries, ou sous forme de jus et de sauces.\n    \n    Les framboises sont de petits fruits composés, constitués de nombreuses petites drupes regroupées autour d'un réceptacle central. Elles sont généralement de couleur rouge, mais il existe aussi des variétés jaunes, noires et violettes. Les framboises sont riches en fibres, en vitamine C, en manganèse, et contiennent des antioxydants puissants, comme les anthocyanines, qui leur donnent leur couleur caractéristique.\n    \n    Conditions de culture\n    \n    Le framboisier est un arbuste vivace qui peut atteindre 1,5 à 2 mètres de hauteur. Il préfère les climats tempérés avec des hivers froids pour favoriser la dormance, suivis de printemps et d'étés doux.\n    -\tClimat : Le framboisier pousse mieux dans des climats tempérés, avec une bonne résistance au froid hivernal. Les gelées printanières tardives peuvent affecter la floraison et la production de fruits.\n\n    -\tSol : Les framboisiers préfèrent les sols bien drainés, fertiles, et légèrement acides à neutres, avec un pH idéal de 5,5 à 6,5. Un sol trop compact ou mal drainé peut entraîner des problèmes de pourriture des racines.\n\n    -\tArrosage : Un arrosage régulier est essentiel, surtout pendant les périodes sèches et la fructification. Le sol doit être maintenu humide, mais il est important d’éviter l'excès d'eau pour ne pas causer de maladies fongiques.\n    \n    Moments de plantation\n    \n    Les framboisiers sont généralement plantés à partir de plants ou de drageons en automne ou au début du printemps.\n    -\tPlantation des plants : Les jeunes plants doivent être espacés de 40 à 60 cm, avec un espacement entre les rangs de 1,5 à 2 mètres. Ils sont plantés dans des trous suffisamment profonds pour couvrir les racines.\n\n    -\tMultiplication par drageons : Les drageons peuvent être prélevés à partir de plantes mères à l'automne ou au printemps et replantés pour créer de nouvelles rangées.\n    \n    Récolte\n    \n    La récolte des framboises s'effectue généralement de la fin du printemps à l'été, selon la variété et le climat. Les fruits doivent être cueillis lorsqu'ils sont bien colorés et se détachent facilement de la plante. Les framboises sont fragiles et doivent être manipulées avec précaution pour éviter de les écraser.\n\n    Récolte et conservation\n    \n    Les framboises fraîches se conservent au réfrigérateur pendant 1 à 2 jours. Pour prolonger leur conservation, elles peuvent être congelées, transformées en confitures, en coulis, ou en desserts.\n    La congélation est une méthode populaire pour conserver les framboises, permettant de les utiliser tout au long de l'année. Elles peuvent être étalées sur une plaque pour un pré-congélation avant d'être transférées dans des sacs ou des contenants hermétiques.\n    \n    En résumé, la framboise est un fruit délicieux et nutritif, apprécié pour sa saveur sucrée et sa polyvalence en cuisine. Le framboisier est facile à cultiver dans des climats tempérés, offrant une production abondante de fruits si les conditions de sol et d’arrosage sont respectées. Les framboises sont non seulement une friandise estivale savoureuse, mais aussi une source importante de nutriments et d'antioxydants bénéfiques pour la santé."
+    },
+    {
+        "name": "Kaki",
+        "type": "fruit",
+        "sow": {
+            "start": {
+                "$date": "2023-11-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-03-31T00:00:00.000Z"
+            }
+        },
+        "harvest": {
+            "start": {
+                "$date": "2024-10-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-12-31T00:00:00.000Z"
+            }
+        },
+        "image": "https://cdn.pixabay.com/photo/2015/12/19/17/38/fruit-1100023_1280.jpg",
+        "text": "Le kaki est le fruit du plaqueminier (Diospyros kaki), un arbre de la famille des Ébénacées. Originaire de Chine, le kaki est maintenant cultivé dans de nombreux pays à travers le monde, notamment en Asie, en Méditerranée, et en Amérique du Sud. Apprécié pour sa douceur et sa texture unique, le kaki est consommé frais ou séché, et utilisé dans divers plats culinaires.\n    \n    Le kaki est un fruit de forme ronde ou ovale, à la peau lisse de couleur orange vif à rouge. Il existe deux principaux types de kakis : les kakis astringents et les kakis non astringents. Les kakis astringents, tels que le Hachiya, doivent être très mûrs pour être consommés, car ils contiennent des tanins qui rendent la chair astringente lorsqu'elle n'est pas mûre. Les kakis non astringents, comme le Fuyu, peuvent être mangés quand ils sont encore fermes. Le kaki est riche en fibres, en vitamine A, en vitamine C, et en antioxydants.\n    \n    Conditions de culture\n    Le plaqueminier est un arbre à feuilles caduques qui peut atteindre 5 à 10 mètres de hauteur. Il est relativement résistant et s'adapte à divers climats, mais il préfère les régions où les hivers sont doux.\n    -\tClimat : Le kaki prospère dans des climats tempérés à subtropicaux, avec des étés chauds et des hivers modérément froids. Il peut tolérer des gelées légères, mais des températures extrêmement basses peuvent endommager l’arbre et les fruits.\n\n    -\tSol : Le plaqueminier préfère les sols bien drainés, fertiles, et légèrement acides à neutres, avec un pH de 6,0 à 7,5. Il tolère une certaine sécheresse, mais pousse mieux dans un sol maintenu humide.\n\n    -\tArrosage : Un arrosage régulier est essentiel, surtout pendant la période de croissance et de fructification. L’arrosage doit être suffisant pour maintenir le sol humide, sans provoquer de saturation en eau.\n    \n    Moments de plantation\n    \n    Les plaqueminiers peuvent être plantés à partir de graines, de boutures, ou de jeunes plants greffés. La meilleure période de plantation est l’automne ou le début du printemps, lorsque les températures sont douces et que le sol est humide.\n    -\tPlantation des jeunes plants : Les jeunes arbres sont plantés dans des trous suffisamment larges pour accueillir le système racinaire. Ils doivent être espacés de 5 à 6 mètres pour permettre une bonne circulation de l'air et un développement optimal.\n\n    -\tBoutures : Les boutures peuvent être prélevées et enracinées en serre avant d’être plantées à l'extérieur.\n\n    Récolte\n    \n    La récolte des kakis a lieu en automne, généralement de septembre à décembre, selon la variété et le climat. Les kakis astringents doivent être cueillis lorsqu'ils sont bien mûrs et ramollis, tandis que les kakis non astringents peuvent être récoltés lorsqu'ils sont encore fermes.\n    \n    Récolte et conservation\n    \n    Les kakis doivent être manipulés avec soin pour éviter les ecchymoses. Les fruits peuvent être conservés à température ambiante pour poursuivre leur mûrissement, ou au réfrigérateur pour prolonger leur conservation de quelques semaines.\n    Les kakis sont souvent consommés frais, mais ils peuvent aussi être séchés, transformés en purées, en confitures, ou utilisés dans des pâtisseries et des salades.\n    \n    En résumé, le kaki est un fruit doux et nutritif, apprécié pour sa saveur et sa polyvalence culinaire. Le plaqueminier est un arbre facile à cultiver dans des climats tempérés à subtropicaux, nécessitant peu d’entretien une fois établi. Les kakis offrent une délicieuse friandise automnale et constituent une source précieuse de vitamines et de fibres."
+    },
+    {
+        "name": "Myrtille",
+        "type": "fruit",
+        "sow": {
+            "start": {
+                "$date": "2023-11-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-03-31T00:00:00.000Z"
+            }
+        },
+        "harvest": {
+            "start": {
+                "$date": "2024-06-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-08-31T00:00:00.000Z"
+            }
+        },
+        "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "text": "La myrtille est le fruit du myrtillier, un arbuste appartenant au genre Vaccinium, de la famille des Éricacées. Originaire des régions tempérées d’Amérique du Nord, d’Europe, et d’Asie, la myrtille est prisée pour sa saveur sucrée et acidulée, ainsi que pour ses bienfaits pour la santé. Elle est consommée fraîche, en jus, en confitures, et dans une variété de plats sucrés et salés.\n    \n    Les myrtilles sont de petites baies rondes, généralement de couleur bleu foncé à noir, recouvertes d'une fine pellicule protectrice appelée pruine. Elles sont riches en fibres, en vitamine C, en vitamine K, et en manganèse. Les myrtilles sont également célèbres pour leur teneur élevée en antioxydants, en particulier les anthocyanines, qui leur confèrent leur couleur caractéristique et contribuent à leurs nombreux bienfaits pour la santé.\n    \n    Conditions de culture\n    \n    Le myrtillier est un arbuste vivace qui peut atteindre 1 à 2 mètres de hauteur selon les variétés. Il préfère les climats frais et les sols acides, ce qui en fait une plante bien adaptée à certaines régions tempérées.\n    -\tClimat : Les myrtilliers prospèrent dans les climats frais à tempérés, avec des hivers froids qui favorisent la dormance hivernale nécessaire à la production de fruits. Les températures estivales modérées sont idéales pour une bonne fructification.\n\n    -\tSol : Le sol doit être acide, bien drainé, et riche en matière organique, avec un pH idéal compris entre 4,5 et 5,5. Un sol trop alcalin peut entraîner des problèmes de croissance et de développement des plantes.\n\n    -\tArrosage : Les myrtilliers ont besoin d’un arrosage régulier, surtout pendant la période de croissance et de fructification. Il est important de maintenir le sol uniformément humide sans excès d’eau pour éviter les maladies racinaires.\n    \n    Moments de plantation\n    \n    Les myrtilliers sont généralement plantés à partir de jeunes plants ou de boutures. La plantation s’effectue de préférence à l’automne ou au début du printemps.\n    -\tPlantation des jeunes plants : Les arbustes doivent être plantés dans des trous suffisamment larges pour permettre aux racines de s'étendre. Ils doivent être espacés de 1 à 1,5 mètre pour favoriser une bonne circulation de l’air et un développement optimal.\n\n    -\tBoutures : Les boutures peuvent être prises de plantes établies et enracinées dans un milieu acide et humide avant d’être transplantées.\n    \n    Récolte\n    \n    La récolte des myrtilles a généralement lieu de la fin du printemps à la fin de l’été, selon la variété et le climat. Les baies sont prêtes à être récoltées lorsqu'elles sont entièrement colorées et se détachent facilement de la plante. Les myrtilles doivent être manipulées avec précaution pour éviter de les écraser.\n    \n    Récolte et conservation\n    \n    Les myrtilles fraîches se conservent au réfrigérateur pendant environ une semaine. Pour prolonger leur conservation, elles peuvent être congelées, séchées, ou transformées en confitures et en sauces.\n    La congélation est une méthode courante pour conserver les myrtilles. Elles peuvent être étalées sur une plaque pour un pré-congélation avant d’être transférées dans des sacs ou des conteneurs hermétiques.\n    \n    En résumé, la myrtille est un fruit délicieux et nutritif, apprécié pour sa saveur sucrée et ses bienfaits pour la santé. Le myrtillier est un arbuste facile à cultiver dans des climats frais à tempérés, offrant une production abondante de fruits si les conditions de sol et d’arrosage sont respectées. Les myrtilles, qu'elles soient consommées fraîches ou transformées, constituent une source importante de vitamines et d'antioxydants bénéfiques pour la santé."
+    },
+    {
+        "name": "Noisette",
+        "type": "fruit",
+        "sow": {
+            "start": {
+                "$date": "2023-11-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-03-31T00:00:00.000Z"
+            }
+        },
+        "harvest": {
+            "start": {
+                "$date": "2024-09-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-10-31T00:00:00.000Z"
+            }
+        },
+        "image": "https://images.pexels.com/photos/68483/hazelnuts-brown-nuts-open-68483.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "text": "La noisette est le fruit du noisetier (Corylus avellana), un arbuste de la famille des Bétulacées. Originaire d’Europe et d’Asie mineure, la noisette est cultivée depuis des siècles pour ses fruits à coque, riches en nutriments et en huile. Elle est très appréciée dans le monde entier pour sa saveur douce et sa polyvalence en cuisine, que ce soit dans les desserts, les pâtisseries, ou comme en-cas.\n    \n    La noisette est un fruit sec, enveloppé dans une coque dure et lisse, généralement de forme ronde ou ovale. À l'intérieur, la graine comestible est recouverte d'une fine pellicule brune. Les noisettes sont riches en graisses saines, en fibres, en vitamine E, en magnésium, et en antioxydants. Elles sont souvent consommées crues, grillées, ou transformées en beurre de noisette.\n    \n    Conditions de culture\n    \n    Le noisetier est un arbuste vigoureux qui peut atteindre 3 à 6 mètres de hauteur. Il s’adapte bien à divers types de sols et climats, bien qu'il préfère les régions tempérées.\n    -\tClimat : Le noisetier prospère dans les climats tempérés avec des hivers froids qui sont nécessaires à sa floraison. Il tolère des gelées hivernales, mais les gelées tardives peuvent affecter les chatons et la production de fruits.\n\n    -\tSol : Le noisetier préfère les sols bien drainés, fertiles, et légèrement acides à neutres, avec un pH de 5,5 à 7,5. Les sols trop argileux ou trop pauvres doivent être amendés pour améliorer la structure et la fertilité.\n\n    -\tArrosage : Un arrosage régulier est nécessaire, surtout pendant les périodes sèches et pendant la formation des fruits. Le sol doit être maintenu humide mais pas détrempé pour éviter la pourriture des racines.\n    \n    Moments de plantation\n    \n    Les noisetiers sont généralement plantés à partir de jeunes plants ou de drageons. La plantation s’effectue de préférence à l’automne ou au début du printemps.\n    -\tPlantation des jeunes plants : Les plants doivent être espacés de 4 à 5 mètres pour permettre un bon développement de l’arbuste et une circulation d’air suffisante. Ils sont plantés dans des trous assez profonds pour accueillir le système racinaire.\n\n    -\tMultiplication par drageons : Les drageons peuvent être prélevés de plantes mères et replantés après enracinement.\n    \n    Récolte\n    \n    La récolte des noisettes a généralement lieu à la fin de l'été ou au début de l'automne, lorsque les fruits tombent au sol ou lorsque la coque commence à brunir et à s'ouvrir. Les noisettes doivent être ramassées régulièrement pour éviter les pertes dues à la faune ou à la pourriture.\n\n    Récolte et conservation\n    \n    Après la récolte, les noisettes doivent être séchées pendant plusieurs semaines dans un endroit sec et ventilé pour éviter la moisissure. Elles se conservent ensuite plusieurs mois dans un endroit frais et sec, à l'abri de l'humidité.\n    Les noisettes peuvent être consommées crues, grillées, ou utilisées dans de nombreuses préparations culinaires. Elles sont souvent incorporées dans les pâtisseries, les chocolats, et les confiseries, ou transformées en huile de noisette pour les assaisonnements.\n    \n    En résumé, la noisette est un fruit sec savoureux et nutritif, apprécié pour sa teneur en graisses saines et sa polyvalence culinaire. Le noisetier est un arbuste facile à cultiver dans les climats tempérés, offrant une production régulière de fruits si les conditions de sol et d’arrosage sont respectées. Les noisettes constituent une excellente source de nutriments et d'énergie, appréciées dans le monde entier pour leur goût et leur texture unique."
+    },
+    {
+        "name": "Noix",
+        "type": "fruit",
+        "sow": {
+            "start": {
+                "$date": "2023-11-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-03-31T00:00:00.000Z"
+            }
+        },
+        "harvest": {
+            "start": {
+                "$date": "2024-09-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-11-30T00:00:00.000Z"
+            }
+        },
+        "image": "https://cdn.pixabay.com/photo/2017/10/04/17/22/walnut-2816935_1280.jpg",
+        "text": "La noix est le fruit du noyer (Juglans regia), un arbre de la famille des Juglandacées. Originaire d'Asie centrale, la noix est cultivée depuis l'Antiquité pour ses fruits à coque, riches en nutriments et en huile. Elle est très prisée pour sa saveur douce et sa polyvalence en cuisine, utilisée dans les salades, les pâtisseries, et comme en-cas nutritif.\n    \n    La noix est composée d'une coque dure et ridée qui entoure une amande comestible divisée en deux cerneaux. Les noix sont riches en acides gras oméga-3, en protéines, en fibres, en magnésium, en cuivre, et en antioxydants. Elles possèdent des propriétés bénéfiques pour la santé, notamment pour le cœur et le cerveau.\n    \n    Conditions de culture\n    \n    Le noyer est un arbre majestueux qui peut atteindre 20 à 30 mètres de hauteur. Il est adapté aux climats tempérés et nécessite suffisamment d'espace pour se développer pleinement.\n    -\tClimat : Le noyer préfère les climats tempérés avec des hivers froids qui favorisent la dormance. Il est résistant aux gelées hivernales, mais les gelées tardives au printemps peuvent affecter les jeunes pousses et les fleurs.\n\n    -\tSol : Le noyer s’épanouit dans des sols profonds, bien drainés, et fertiles, avec un pH de 6,0 à 7,5. Il n’aime pas les sols compacts ou mal drainés, qui peuvent conduire à la pourriture des racines.\n\n    -\tArrosage : Un arrosage régulier est crucial, surtout durant les premières années de croissance et pendant les périodes de sécheresse. Le sol doit être maintenu humide mais pas détrempé.\n    \n    Moments de plantation\n    \n    Les noyers sont généralement plantés à partir de jeunes plants ou de greffes. La plantation se fait de préférence à l’automne ou au début du printemps.\n    -\tPlantation des jeunes plants : Les arbres doivent être espacés de 8 à 12 mètres pour permettre un développement optimal. Ils sont plantés dans des trous profonds pour accueillir le système racinaire.\n\n    -\tGreffes : Les greffes sont souvent utilisées pour reproduire des variétés spécifiques et doivent être réalisées par des jardiniers expérimentés.\n    \n    Récolte\n    \n    La récolte des noix s’effectue généralement à l’automne, lorsque les fruits tombent naturellement au sol ou que les coques commencent à s’ouvrir. Les noix doivent être ramassées régulièrement pour éviter qu'elles ne pourrissent ou ne soient endommagées par les animaux.\n\n    Récolte et conservation\n    \n    Après la récolte, les noix doivent être séchées pendant plusieurs semaines dans un endroit sec et bien ventilé pour réduire leur humidité. Une fois sèches, elles se conservent plusieurs mois dans un endroit frais et sec, à l'abri de l'humidité.\n    Les noix peuvent être consommées crues, grillées, ou utilisées dans une variété de plats culinaires. Elles sont couramment utilisées dans les pâtisseries, les salades, et les plats mijotés, ou transformées en huile de noix pour les vinaigrettes et les assaisonnements.\n    \n    En résumé, la noix est un fruit sec délicieux et nutritif, apprécié pour ses acides gras oméga-3 et sa polyvalence en cuisine. Le noyer est un arbre robuste, adapté aux climats tempérés, qui produit des fruits abondants lorsqu'il est bien entretenu. Les noix, qu'elles soient consommées seules ou intégrées dans des recettes, constituent une source importante de nutriments et d'énergie, bénéfique pour la santé."
+    },
+    {
+        "name": "Physalis",
+        "type": "fruit",
+        "sow": {
+            "start": {
+                "$date": "2024-03-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-05-31T00:00:00.000Z"
+            }
+        },
+        "harvest": {
+            "start": {
+                "$date": "2024-08-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-10-31T00:00:00.000Z"
+            }
+        },
+        "image": "https://cdn.pixabay.com/photo/2017/06/02/17/45/groundcherries-2366935_1280.jpg",
+        "text": "Le physalis, également connu sous le nom de lanterne chinoise ou coqueret du Pérou, est le fruit de plusieurs espèces de plantes du genre Physalis, appartenant à la famille des Solanacées. Originaire d'Amérique du Sud, notamment du Pérou et du Chili, le physalis est cultivé pour ses petits fruits enveloppés dans une calice en forme de lanterne. Il est apprécié pour sa saveur unique, à la fois sucrée et acidulée, et est souvent utilisé dans les desserts, les salades, et comme garniture décorative.\n    \n    Le fruit du physalis est une petite baie ronde, généralement de couleur orange à jaune, entourée d'un calice papyracé qui protège le fruit pendant sa croissance. Le physalis est riche en vitamine C, en antioxydants, en vitamine A, et en composés phytochimiques bénéfiques pour la santé. Sa saveur est souvent décrite comme un mélange de tomate et d’ananas, avec une touche de citron.\n    \n    Conditions de culture\n    \n    Le physalis est une plante vivace dans les climats tropicaux et subtropicaux, mais est généralement cultivée comme une annuelle dans les climats tempérés. Elle peut atteindre une hauteur de 0,5 à 1 mètre.\n    -\tClimat : Le physalis préfère un climat chaud et ensoleillé. Il est sensible aux gelées, et dans les régions plus froides, il est souvent cultivé sous serre ou en pot pour être rentré à l’intérieur durant l’hiver.\n\n    -\tSol : La plante s’épanouit dans des sols bien drainés, riches en matière organique, et légèrement acides à neutres, avec un pH de 5,5 à 7,0. Un sol compact ou mal drainé peut entraîner des problèmes de croissance et de maladies.\n\n    -\tArrosage : Le physalis nécessite un arrosage régulier, surtout pendant la floraison et la fructification. Le sol doit être maintenu humide mais sans excès d'eau pour éviter la pourriture des racines.\n    \n    Moments de plantation\n    \n    Le physalis est généralement planté à partir de graines. Dans les climats tempérés, les semis sont démarrés à l’intérieur environ 6 à 8 semaines avant la dernière date de gel prévue.\n    -\tPlantation des semis : Une fois que les risques de gel sont passés et que le sol s’est réchauffé, les jeunes plants peuvent être transplantés à l’extérieur, espacés de 60 à 80 cm pour permettre une bonne circulation de l'air et un développement optimal.\n\n    -\tSemis directs : Dans les climats plus chauds, les graines peuvent être semées directement en pleine terre lorsque les températures sont suffisamment élevées.\n\n    Récolte\n    \n    La récolte des physalis a généralement lieu à la fin de l’été ou au début de l’automne, lorsque le calice sèche et se décolore, indiquant que le fruit est mûr. Les fruits doivent être ramassés régulièrement pour éviter qu'ils ne tombent au sol et ne se détériorent.\n    \n    Récolte et conservation\n    \n    Les physalis se conservent bien dans leur calice à température ambiante pendant plusieurs semaines. Ils peuvent également être réfrigérés pour prolonger leur durée de conservation.\n    Les physalis sont souvent consommés frais, mais ils peuvent aussi être transformés en confitures, en sauces, ou utilisés comme garniture pour les desserts. Leur saveur unique en fait un ingrédient intéressant dans les salades de fruits, les tartes, et même certains plats salés.\n    \n    En résumé, le physalis est un fruit exotique et délicieux, apprécié pour sa saveur sucrée-acidulée et ses propriétés nutritives. Facile à cultiver dans les climats chauds, le physalis offre une production abondante de fruits si les conditions de sol et d’arrosage sont respectées. Les physalis constituent une addition unique et décorative à de nombreux plats, apportant à la fois couleur et goût."
+    },
+    {
+        "name": "Poire",
+        "type": "fruit",
+        "sow": {
+            "start": {
+                "$date": "2023-11-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-03-31T00:00:00.000Z"
+            }
+        },
+        "harvest": {
+            "start": {
+                "$date": "2024-08-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-10-31T00:00:00.000Z"
+            }
+        },
+        "image": "https://cdn.pixabay.com/photo/2016/07/22/09/59/fruits-1534494_1280.jpg",
+        "text": "La poire est le fruit du poirier (Pyrus), un arbre appartenant à la famille des Rosacées. Cultivée depuis des milliers d’années, la poire est originaire des régions tempérées d'Europe et d'Asie occidentale. Elle est très appréciée pour sa chair juteuse, sucrée et parfumée, et est utilisée aussi bien crue que cuite dans une multitude de plats sucrés et salés.\n    \n    Les poires se présentent sous diverses formes, tailles et couleurs, allant du vert au jaune, en passant par le rouge et le brun. La chair est tendre et juteuse, souvent granuleuse, avec un goût doux et légèrement floral. Les poires sont riches en fibres, en vitamine C, et contiennent des antioxydants. Elles sont reconnues pour leurs bienfaits digestifs et leur contribution à une alimentation saine.\n    \n    Conditions de culture\n    \n    Le poirier est un arbre à feuilles caduques qui peut atteindre 10 à 20 mètres de hauteur. Il s’adapte bien aux climats tempérés, nécessitant une période de froid hivernal pour bien fructifier.\n    -\tClimat : Les poiriers prospèrent dans les climats tempérés avec des hivers suffisamment froids pour induire une dormance. Ils nécessitent un certain nombre d'heures de froid pour bien produire des fruits. Les gelées tardives peuvent affecter les fleurs et réduire la récolte.\n\n    -\tSol : Les poiriers préfèrent les sols bien drainés, fertiles et légèrement acides à neutres, avec un pH de 6,0 à 7,0. Ils tolèrent divers types de sols, mais un bon drainage est crucial pour éviter les maladies racinaires.\n\n    -\tArrosage : Un arrosage régulier est nécessaire, particulièrement durant les périodes sèches et pendant la formation des fruits. Le sol doit rester humide, mais pas détrempé.\n    \n    Moments de plantation\n    \n    Les poiriers sont généralement plantés à partir de jeunes arbres greffés. La meilleure période de plantation est l’automne ou le début du printemps, lorsque les températures sont modérées.\n    -\tPlantation des jeunes arbres : Les arbres doivent être espacés de 4 à 6 mètres pour permettre un bon développement et une circulation d’air adéquate. Le trou de plantation doit être assez large pour accueillir le système racinaire sans contrainte.\n\n    -\tGreffes et variétés : Les greffes sont courantes pour garantir des variétés spécifiques et résistantes. Le choix de la variété dépend des conditions climatiques et des préférences gustatives.\n\n    Récolte\n    \n    La récolte des poires varie en fonction de la variété, mais se situe généralement de la fin de l’été à l’automne. Les poires sont souvent cueillies avant d’être complètement mûres et laissées à mûrir à température ambiante. Lorsqu'une légère pression à la base de la tige provoque un léger enfoncement, la poire est prête à être consommée.\n    \n    Récolte et conservation\n    \n    Les poires se conservent bien à température ambiante jusqu'à leur maturité, après quoi elles peuvent être réfrigérées pour prolonger leur durée de conservation de quelques semaines. Les poires peuvent être transformées en compotes, en confitures, ou utilisées dans les tartes et les salades.\n    \n    En résumé, la poire est un fruit savoureux et nutritif, apprécié pour sa douceur et sa polyvalence culinaire. Le poirier est un arbre rustique qui, avec les soins appropriés, produit une récolte abondante de fruits. Les poires sont une excellente source de fibres et de vitamines, contribuant à une alimentation équilibrée et variée."
+    },
+    {
+        "name": "Pomme",
+        "type": "fruit",
+        "sow": {
+            "start": {
+                "$date": "2023-11-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-03-31T00:00:00.000Z"
+            }
+        },
+        "harvest": {
+            "start": {
+                "$date": "2024-08-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-10-31T00:00:00.000Z"
+            }
+        },
+        "image": "https://img.freepik.com/photos-gratuite/delicieux-arrangement-pommes_23-2148917762.jpg?t=st=1723778683~exp=1723782283~hmac=e72bcca8b100eb06e013158418b159da350c29d1bea798b358303a4731d9a417&w=1060",
+        "text": "La pomme est le fruit du pommier (Malus domestica), un arbre de la famille des Rosacées. Elle est l'un des fruits les plus cultivés et consommés dans le monde, avec une histoire de culture qui remonte à des milliers d'années. Originaire d’Asie centrale, la pomme a été introduite en Europe puis en Amérique du Nord par les colons européens. Elle est appréciée pour sa diversité de saveurs, de textures, et ses nombreux usages culinaires.\n    \n    Les pommes se déclinent en de nombreuses variétés, offrant une large gamme de couleurs (rouge, jaune, vert), de tailles et de goûts (de très sucré à très acidulé). La chair est croquante, juteuse, et parfois granuleuse. Les pommes sont riches en fibres alimentaires, en vitamine C, et contiennent de nombreux antioxydants, notamment des flavonoïdes qui contribuent à leurs bienfaits pour la santé, notamment pour la digestion et la réduction des risques de maladies cardiaques.\n    \n    Conditions de culture\n    \n    Le pommier est un arbre à feuilles caduques qui peut atteindre 4 à 12 mètres de hauteur, selon la variété et le porte-greffe. Il est bien adapté aux climats tempérés et nécessite une période de froid hivernal pour fructifier correctement.\n    -\tClimat : Les pommiers prospèrent dans les climats tempérés avec des hivers froids, qui sont essentiels pour la dormance et une bonne fructification. Les gelées tardives au printemps peuvent endommager les fleurs et affecter la récolte.\n\n    -\tSol : Le pommier préfère les sols bien drainés, fertiles, et légèrement acides à neutres, avec un pH de 6,0 à 7,0. Bien que tolérant à différents types de sols, un bon drainage est important pour éviter les maladies racinaires.\n\n    -\tArrosage : Un arrosage régulier est nécessaire, surtout pendant les périodes sèches et la formation des fruits. Le sol doit rester humide sans être détrempé pour éviter le stress hydrique et favoriser la croissance saine des fruits.\n    \n    Moments de plantation\n    \n    Les pommiers sont généralement plantés à partir de jeunes arbres greffés, ce qui garantit des variétés spécifiques et résistantes. La plantation est préférable à l’automne ou au début du printemps.\n    -\tPlantation des jeunes arbres : Les arbres doivent être espacés de 4 à 6 mètres, selon la taille attendue, pour permettre un bon développement et une circulation d’air adéquate. Le trou de plantation doit être suffisamment large pour accueillir le système racinaire sans contrainte.\n\n    -\tGreffes et variétés : Les greffes permettent de choisir parmi de nombreuses variétés, adaptées aux goûts et aux conditions climatiques locales. Les variétés populaires incluent 'Golden Delicious', 'Granny Smith', 'Fuji', et 'Gala', chacune offrant des caractéristiques de saveur et de texture distinctes.\n\n    Récolte\n    \n    La période de récolte des pommes varie selon la variété, s'étendant généralement de la fin de l'été à la fin de l'automne. Les pommes sont cueillies lorsqu'elles ont atteint leur taille, leur couleur, et leur texture optimales. Une pression légère à la base de la tige qui provoque un léger enfoncement indique souvent qu'une pomme est prête à être récoltée.\n    \n    Récolte et conservation\n    \n    Les pommes se conservent bien dans un endroit frais, sec, et sombre, comme un cellier, et peuvent être réfrigérées pour prolonger leur durée de conservation. Elles peuvent être utilisées fraîches, cuites, ou transformées en jus, compotes, cidres, et vinaigres.\n    \n    En résumé, la pomme est un fruit polyvalent et nutritif, apprécié pour sa saveur délicieuse et sa richesse en nutriments essentiels. Le pommier, avec les soins appropriés, peut produire une abondance de fruits savoureux. Les pommes, qu'elles soient consommées crues ou transformées, constituent une excellente source de fibres et d'antioxydants, favorisant une alimentation saine et équilibrée."
+    },
+    {
+        "name": "Raisin",
+        "type": "fruit",
+        "sow": {
+            "start": {
+                "$date": "2023-11-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-03-31T00:00:00.000Z"
+            }
+        },
+        "harvest": {
+            "start": {
+                "$date": "2024-08-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-10-31T00:00:00.000Z"
+            }
+        },
+        "image": "https://cdn.pixabay.com/photo/2021/01/05/05/30/grapes-5889697_1280.jpg",
+        "text": "Le raisin est le fruit de la vigne (Vitis vinifera), un arbuste de la famille des Vitacées. Cultivé depuis l’Antiquité, le raisin est originaire des régions du Proche-Orient et du bassin méditerranéen. C'est un fruit essentiel pour la consommation fraîche, le séchage en raisins secs, et surtout la production de vin, ce qui en fait l’un des fruits les plus importants économiquement et culturellement dans le monde.\n    \n    Le raisin se présente sous forme de grappes composées de baies juteuses et sucrées. Ces baies peuvent varier en couleur du vert au noir, en passant par le rouge et le pourpre. Le raisin est riche en sucre naturel, en fibres, en vitamine C, en vitamine K, et en antioxydants puissants comme le resvératrol, qui contribuent à la protection contre les maladies cardiovasculaires et ont des effets anti-âge.\n    \n    Conditions de culture\n    \n    La vigne est une plante grimpante ligneuse qui nécessite un climat spécifique et un bon ensoleillement pour produire des fruits de qualité. Elle est cultivée principalement dans les régions tempérées à climat méditerranéen.\n    -\tClimat : Les vignes prospèrent dans les climats tempérés avec des étés chauds et secs et des hivers doux. Un bon ensoleillement est crucial pour le développement des sucres et des arômes dans les baies. Les vignes tolèrent un large éventail de climats, mais les conditions extrêmes de gel peuvent endommager les plantes.\n\n    -\tSol : La vigne s'adapte à de nombreux types de sols, mais préfère les sols bien drainés, légers, et légèrement acides à neutres. Les sols rocheux ou sablonneux sont souvent idéaux pour favoriser un bon drainage et le développement racinaire.\n\n    -\tArrosage : Les vignes nécessitent un arrosage modéré. Un excès d'eau peut nuire à la qualité des fruits, tandis que le stress hydrique contrôlé peut améliorer la concentration des arômes et des sucres.\n    \n    Moments de plantation\n    \n    Les vignes sont généralement plantées à partir de boutures ou de jeunes plants. La meilleure période de plantation est l'automne ou le début du printemps, lorsque le sol est encore humide et les températures modérées.\n    -\tPlantation des boutures : Les boutures de vigne sont plantées dans des trous suffisamment profonds pour accueillir les racines et assurer un bon contact avec le sol. Un espacement de 1,5 à 3 mètres est recommandé pour permettre un bon développement des vignes.\n\n    -\tFormation des treilles : Les vignes nécessitent un support, comme des treilles ou des fils de fer, pour grimper et développer correctement leurs grappes. Un système de palissage approprié est crucial pour une bonne gestion de la croissance.\n\n    Récolte\n    \n    La période de récolte des raisins varie selon les variétés et les conditions climatiques, mais elle se situe généralement entre la fin de l'été et le début de l'automne. Les raisins sont récoltés lorsqu'ils ont atteint leur pleine maturité, c'est-à-dire lorsque le taux de sucre et l’acidité sont équilibrés, et que les arômes sont bien développés.\n    \n    Récolte et conservation\n    \n    Les raisins frais se conservent au réfrigérateur pendant environ une à deux semaines. Pour une conservation plus longue, ils peuvent être transformés en raisins secs, en confitures, ou utilisés dans la production de vin.\n    Le raisin est également transformé en divers produits dérivés comme le vin, le jus, le vinaigre, et le sirop. La viticulture, la culture de la vigne pour le vin, est une activité agricole d'importance mondiale, avec des techniques spécifiques pour chaque type de vin produit.\n    \n    En résumé, le raisin est un fruit polyvalent et précieux, apprécié pour sa saveur sucrée, ses nutriments, et ses nombreux usages culinaires et œnologiques. La vigne, bien que nécessitant des conditions de culture spécifiques, offre une production abondante et diversifiée de fruits lorsqu'elle est bien entretenue. Le raisin est non seulement un aliment de base, mais aussi une part essentielle de la culture et de l’économie de nombreuses régions du monde."
+    },
+    {
+        "name": "Tomate",
+        "type": "fruit",
+        "sow": {
+            "start": {
+                "$date": "2024-03-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-05-31T00:00:00.000Z"
+            }
+        },
+        "harvest": {
+            "start": {
+                "$date": "2024-07-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-10-31T00:00:00.000Z"
+            }
+        },
+        "image": "https://cdn.pixabay.com/photo/2011/03/16/16/01/tomatoes-5356_1280.jpg",
+        "text": "La tomate est le fruit de la plante Solanum lycopersicum, appartenant à la famille des Solanacées. Originaire d'Amérique du Sud et centrale, elle a été domestiquée au Mexique avant d'être introduite en Europe au XVIe siècle. Depuis, elle est devenue l'un des fruits les plus cultivés et consommés dans le monde. Utilisée comme légume en cuisine, la tomate est un ingrédient fondamental dans de nombreuses cuisines à travers le monde.\n    \n    Les tomates se présentent sous de nombreuses formes, tailles et couleurs, allant du rouge au jaune, en passant par le vert, l'orange et même le noir. La chair est juteuse, sucrée, et légèrement acidulée. Elles sont riches en vitamines C et A, en potassium, et en lycopène, un puissant antioxydant lié à la réduction des risques de maladies cardiaques et de certains cancers.\n    \n    Conditions de culture\n    \n    La tomate est une plante annuelle dans les climats tempérés, mais peut être pérenne dans les climats tropicaux. Elle nécessite une saison de croissance chaude et ensoleillée pour bien fructifier.\n    -\tClimat : Les tomates prospèrent dans les climats chauds avec des températures diurnes de 20 à 25 °C. Elles ne supportent pas le gel et ont besoin de beaucoup de lumière pour une production optimale de fruits.\n\n    -\tSol : Les tomates préfèrent les sols bien drainés, riches en matière organique, et légèrement acides à neutres, avec un pH de 6,0 à 7,0. Un sol bien amendé avec du compost ou du fumier vieilli est idéal pour leur croissance.\n\n    -\tArrosage : Un arrosage régulier et profond est essentiel pour éviter le stress hydrique. Le sol doit être maintenu humide mais pas détrempé. Un paillage peut aider à conserver l'humidité du sol et à réduire les mauvaises herbes.\n    \n    Moments de plantation\n    \n    Les tomates sont généralement cultivées à partir de semis, qui sont démarrés à l'intérieur 6 à 8 semaines avant la dernière date de gel prévue dans la région.\n    -\tPlantation des semis : Les jeunes plants sont transplantés à l'extérieur une fois que les risques de gel sont passés et que le sol s'est réchauffé. Un espacement de 50 à 60 cm entre les plants est recommandé pour permettre une bonne circulation de l'air et un développement optimal.\n\n    -\tSupports : Les tomates nécessitent souvent des tuteurs, des cages ou des treillis pour soutenir la plante et éviter que les fruits ne touchent le sol.\n    \n    Récolte\n    \n    La récolte des tomates a lieu généralement de l'été à l'automne, en fonction des variétés et des conditions climatiques. Les tomates sont mûres lorsqu'elles ont atteint leur couleur pleine et se détachent facilement de la tige. Elles peuvent être récoltées légèrement avant pleine maturité et laissées à mûrir à température ambiante.\n    \n    Récolte et conservation\n    \n    Les tomates fraîches se conservent mieux à température ambiante, loin de la lumière directe du soleil. Réfrigérer les tomates peut altérer leur texture et leur saveur. Pour prolonger leur durée de conservation, les tomates peuvent être transformées en sauces, purées, ou séchées.\n    En cuisine, les tomates sont extrêmement polyvalentes, utilisées dans les salades, les sauces, les soupes, et les plats cuits. Elles sont également la base de nombreux produits transformés tels que le ketchup, les concentrés, et les jus.\n    \n    En résumé, la tomate est un fruit fondamental de la cuisine mondiale, apprécié pour sa saveur, sa polyvalence, et ses bienfaits pour la santé. Elle nécessite des conditions de culture chaudes et ensoleillées et offre une abondance de fruits lorsque les conditions de sol et d'arrosage sont respectées. Les tomates, avec leur large gamme de variétés et d'utilisations, sont un élément clé de nombreuses traditions culinaires à travers le monde."
+    },
+    {
+        "name": "Noix",
+        "type": "fruit",
+        "sow": {
+            "start": {
+                "$date": "2023-11-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-03-31T00:00:00.000Z"
+            }
+        },
+        "harvest": {
+            "start": {
+                "$date": "2024-09-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-11-30T00:00:00.000Z"
+            }
+        },
+        "image": "https://pixabay.com/fr/photos/noyer-noix-des-noisettes-2816935/",
+        "text": "La noix est le fruit du noyer (Juglans regia), un arbre de la famille des Juglandacées. Originaire d'Asie centrale, la noix est cultivée depuis l'Antiquité pour ses fruits à coque, riches en nutriments et en huile. Elle est très prisée pour sa saveur douce et sa polyvalence en cuisine, utilisée dans les salades, les pâtisseries, et comme en-cas nutritif.\n    \n    La noix est composée d'une coque dure et ridée qui entoure une amande comestible divisée en deux cerneaux. Les noix sont riches en acides gras oméga-3, en protéines, en fibres, en magnésium, en cuivre, et en antioxydants. Elles possèdent des propriétés bénéfiques pour la santé, notamment pour le cœur et le cerveau.\n    \n    Conditions de culture\n    \n    Le noyer est un arbre majestueux qui peut atteindre 20 à 30 mètres de hauteur. Il est adapté aux climats tempérés et nécessite suffisamment d'espace pour se développer pleinement.\n    -\tClimat : Le noyer préfère les climats tempérés avec des hivers froids qui favorisent la dormance. Il est résistant aux gelées hivernales, mais les gelées tardives au printemps peuvent affecter les jeunes pousses et les fleurs.\n\n    -\tSol : Le noyer s’épanouit dans des sols profonds, bien drainés, et fertiles, avec un pH de 6,0 à 7,5. Il n’aime pas les sols compacts ou mal drainés, qui peuvent conduire à la pourriture des racines.\n\n    -\tArrosage : Un arrosage régulier est crucial, surtout durant les premières années de croissance et pendant les périodes de sécheresse. Le sol doit être maintenu humide mais pas détrempé.\n    \n    Moments de plantation\n    \n    Les noyers sont généralement plantés à partir de jeunes plants ou de greffes. La plantation se fait de préférence à l’automne ou au début du printemps.\n    -\tPlantation des jeunes plants : Les arbres doivent être espacés de 8 à 12 mètres pour permettre un développement optimal. Ils sont plantés dans des trous profonds pour accueillir le système racinaire.\n\n    -\tGreffes : Les greffes sont souvent utilisées pour reproduire des variétés spécifiques et doivent être réalisées par des jardiniers expérimentés.\n    \n    Récolte\n    \n    La récolte des noix s’effectue généralement à l’automne, lorsque les fruits tombent naturellement au sol ou que les coques commencent à s’ouvrir. Les noix doivent être ramassées régulièrement pour éviter qu'elles ne pourrissent ou ne soient endommagées par les animaux.\n\n    Récolte et conservation\n    \n    Après la récolte, les noix doivent être séchées pendant plusieurs semaines dans un endroit sec et bien ventilé pour réduire leur humidité. Une fois sèches, elles se conservent plusieurs mois dans un endroit frais et sec, à l'abri de l'humidité.\n    Les noix peuvent être consommées crues, grillées, ou utilisées dans une variété de plats culinaires. Elles sont couramment utilisées dans les pâtisseries, les salades, et les plats mijotés, ou transformées en huile de noix pour les vinaigrettes et les assaisonnements.\n    \n    En résumé, la noix est un fruit sec délicieux et nutritif, apprécié pour ses acides gras oméga-3 et sa polyvalence en cuisine. Le noyer est un arbre robuste, adapté aux climats tempérés, qui produit des fruits abondants lorsqu'il est bien entretenu. Les noix, qu'elles soient consommées seules ou intégrées dans des recettes, constituent une source importante de nutriments et d'énergie, bénéfique pour la santé."
+    },
+    {
+        "name": "Physalis",
+        "type": "fruit",
+        "sow": {
+            "start": {
+                "$date": "2024-03-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-05-31T00:00:00.000Z"
+            }
+        },
+        "harvest": {
+            "start": {
+                "$date": "2024-08-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-10-31T00:00:00.000Z"
+            }
+        },
+        "image": "https://pixabay.com/fr/photos/cerises-de-terre-des-fruits-2366935/",
+        "text": "Le physalis, également connu sous le nom de lanterne chinoise ou coqueret du Pérou, est le fruit de plusieurs espèces de plantes du genre Physalis, appartenant à la famille des Solanacées. Originaire d'Amérique du Sud, notamment du Pérou et du Chili, le physalis est cultivé pour ses petits fruits enveloppés dans une calice en forme de lanterne. Il est apprécié pour sa saveur unique, à la fois sucrée et acidulée, et est souvent utilisé dans les desserts, les salades, et comme garniture décorative.\n    \n    Le fruit du physalis est une petite baie ronde, généralement de couleur orange à jaune, entourée d'un calice papyracé qui protège le fruit pendant sa croissance. Le physalis est riche en vitamine C, en antioxydants, en vitamine A, et en composés phytochimiques bénéfiques pour la santé. Sa saveur est souvent décrite comme un mélange de tomate et d’ananas, avec une touche de citron.\n    \n    Conditions de culture\n    \n    Le physalis est une plante vivace dans les climats tropicaux et subtropicaux, mais est généralement cultivée comme une annuelle dans les climats tempérés. Elle peut atteindre une hauteur de 0,5 à 1 mètre.\n    -\tClimat : Le physalis préfère un climat chaud et ensoleillé. Il est sensible aux gelées, et dans les régions plus froides, il est souvent cultivé sous serre ou en pot pour être rentré à l’intérieur durant l’hiver.\n\n    -\tSol : La plante s’épanouit dans des sols bien drainés, riches en matière organique, et légèrement acides à neutres, avec un pH de 5,5 à 7,0. Un sol compact ou mal drainé peut entraîner des problèmes de croissance et de maladies.\n\n    -\tArrosage : Le physalis nécessite un arrosage régulier, surtout pendant la floraison et la fructification. Le sol doit être maintenu humide mais sans excès d'eau pour éviter la pourriture des racines.\n    \n    Moments de plantation\n    \n    Le physalis est généralement planté à partir de graines. Dans les climats tempérés, les semis sont démarrés à l’intérieur environ 6 à 8 semaines avant la dernière date de gel prévue.\n    -\tPlantation des semis : Une fois que les risques de gel sont passés et que le sol s’est réchauffé, les jeunes plants peuvent être transplantés à l’extérieur, espacés de 60 à 80 cm pour permettre une bonne circulation de l'air et un développement optimal.\n\n    -\tSemis directs : Dans les climats plus chauds, les graines peuvent être semées directement en pleine terre lorsque les températures sont suffisamment élevées.\n\n    Récolte\n    \n    La récolte des physalis a généralement lieu à la fin de l’été ou au début de l’automne, lorsque le calice sèche et se décolore, indiquant que le fruit est mûr. Les fruits doivent être ramassés régulièrement pour éviter qu'ils ne tombent au sol et ne se détériorent.\n    \n    Récolte et conservation\n    \n    Les physalis se conservent bien dans leur calice à température ambiante pendant plusieurs semaines. Ils peuvent également être réfrigérés pour prolonger leur durée de conservation.\n    Les physalis sont souvent consommés frais, mais ils peuvent aussi être transformés en confitures, en sauces, ou utilisés comme garniture pour les desserts. Leur saveur unique en fait un ingrédient intéressant dans les salades de fruits, les tartes, et même certains plats salés.\n    \n    En résumé, le physalis est un fruit exotique et délicieux, apprécié pour sa saveur sucrée-acidulée et ses propriétés nutritives. Facile à cultiver dans les climats chauds, le physalis offre une production abondante de fruits si les conditions de sol et d’arrosage sont respectées. Les physalis constituent une addition unique et décorative à de nombreux plats, apportant à la fois couleur et goût."
+    },
+    {
+        "name": "Poire",
+        "type": "fruit",
+        "sow": {
+            "start": {
+                "$date": "2023-11-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-03-31T00:00:00.000Z"
+            }
+        },
+        "harvest": {
+            "start": {
+                "$date": "2024-08-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-10-31T00:00:00.000Z"
+            }
+        },
+        "image": "https://pixabay.com/fr/photos/poire-aliments-fruits-vitamines-7492435/",
+        "text": "La poire est le fruit du poirier (Pyrus), un arbre appartenant à la famille des Rosacées. Cultivée depuis des milliers d’années, la poire est originaire des régions tempérées d'Europe et d'Asie occidentale. Elle est très appréciée pour sa chair juteuse, sucrée et parfumée, et est utilisée aussi bien crue que cuite dans une multitude de plats sucrés et salés.\n    \n    Les poires se présentent sous diverses formes, tailles et couleurs, allant du vert au jaune, en passant par le rouge et le brun. La chair est tendre et juteuse, souvent granuleuse, avec un goût doux et légèrement floral. Les poires sont riches en fibres, en vitamine C, et contiennent des antioxydants. Elles sont reconnues pour leurs bienfaits digestifs et leur contribution à une alimentation saine.\n    \n    Conditions de culture\n    \n    Le poirier est un arbre à feuilles caduques qui peut atteindre 10 à 20 mètres de hauteur. Il s’adapte bien aux climats tempérés, nécessitant une période de froid hivernal pour bien fructifier.\n    -\tClimat : Les poiriers prospèrent dans les climats tempérés avec des hivers suffisamment froids pour induire une dormance. Ils nécessitent un certain nombre d'heures de froid pour bien produire des fruits. Les gelées tardives peuvent affecter les fleurs et réduire la récolte.\n\n    -\tSol : Les poiriers préfèrent les sols bien drainés, fertiles et légèrement acides à neutres, avec un pH de 6,0 à 7,0. Ils tolèrent divers types de sols, mais un bon drainage est crucial pour éviter les maladies racinaires.\n\n    -\tArrosage : Un arrosage régulier est nécessaire, particulièrement durant les périodes sèches et pendant la formation des fruits. Le sol doit rester humide, mais pas détrempé.\n    \n    Moments de plantation\n    \n    Les poiriers sont généralement plantés à partir de jeunes arbres greffés. La meilleure période de plantation est l’automne ou le début du printemps, lorsque les températures sont modérées.\n    -\tPlantation des jeunes arbres : Les arbres doivent être espacés de 4 à 6 mètres pour permettre un bon développement et une circulation d’air adéquate. Le trou de plantation doit être assez large pour accueillir le système racinaire sans contrainte.\n\n    -\tGreffes et variétés : Les greffes sont courantes pour garantir des variétés spécifiques et résistantes. Le choix de la variété dépend des conditions climatiques et des préférences gustatives.\n\n    Récolte\n    \n    La récolte des poires varie en fonction de la variété, mais se situe généralement de la fin de l’été à l’automne. Les poires sont souvent cueillies avant d’être complètement mûres et laissées à mûrir à température ambiante. Lorsqu'une légère pression à la base de la tige provoque un léger enfoncement, la poire est prête à être consommée.\n    \n    Récolte et conservation\n    \n    Les poires se conservent bien à température ambiante jusqu'à leur maturité, après quoi elles peuvent être réfrigérées pour prolonger leur durée de conservation de quelques semaines. Les poires peuvent être transformées en compotes, en confitures, ou utilisées dans les tartes et les salades.\n    \n    En résumé, la poire est un fruit savoureux et nutritif, apprécié pour sa douceur et sa polyvalence culinaire. Le poirier est un arbre rustique qui, avec les soins appropriés, produit une récolte abondante de fruits. Les poires sont une excellente source de fibres et de vitamines, contribuant à une alimentation équilibrée et variée."
+    },
+    {
+        "name": "Pomme",
+        "type": "fruit",
+        "sow": {
+            "start": {
+                "$date": "2023-11-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-03-31T00:00:00.000Z"
+            }
+        },
+        "harvest": {
+            "start": {
+                "$date": "2024-08-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-10-31T00:00:00.000Z"
+            }
+        },
+        "image": "https://img.freepik.com/photos-gratuite/delicieux-arrangement-pommes_23-2148917762.jpg?t=st=1723778683~exp=1723782283~hmac=e72bcca8b100eb06e013158418b159da350c29d1bea798b358303a4731d9a417&w=1060",
+        "text": "La pomme est le fruit du pommier (Malus domestica), un arbre de la famille des Rosacées. Elle est l'un des fruits les plus cultivés et consommés dans le monde, avec une histoire de culture qui remonte à des milliers d'années. Originaire d’Asie centrale, la pomme a été introduite en Europe puis en Amérique du Nord par les colons européens. Elle est appréciée pour sa diversité de saveurs, de textures, et ses nombreux usages culinaires.\n    \n    Les pommes se déclinent en de nombreuses variétés, offrant une large gamme de couleurs (rouge, jaune, vert), de tailles et de goûts (de très sucré à très acidulé). La chair est croquante, juteuse, et parfois granuleuse. Les pommes sont riches en fibres alimentaires, en vitamine C, et contiennent de nombreux antioxydants, notamment des flavonoïdes qui contribuent à leurs bienfaits pour la santé, notamment pour la digestion et la réduction des risques de maladies cardiaques.\n    \n    Conditions de culture\n    \n    Le pommier est un arbre à feuilles caduques qui peut atteindre 4 à 12 mètres de hauteur, selon la variété et le porte-greffe. Il est bien adapté aux climats tempérés et nécessite une période de froid hivernal pour fructifier correctement.\n    -\tClimat : Les pommiers prospèrent dans les climats tempérés avec des hivers froids, qui sont essentiels pour la dormance et une bonne fructification. Les gelées tardives au printemps peuvent endommager les fleurs et affecter la récolte.\n\n    -\tSol : Le pommier préfère les sols bien drainés, fertiles, et légèrement acides à neutres, avec un pH de 6,0 à 7,0. Bien que tolérant à différents types de sols, un bon drainage est important pour éviter les maladies racinaires.\n\n    -\tArrosage : Un arrosage régulier est nécessaire, surtout pendant les périodes sèches et la formation des fruits. Le sol doit rester humide sans être détrempé pour éviter le stress hydrique et favoriser la croissance saine des fruits.\n    \n    Moments de plantation\n    \n    Les pommiers sont généralement plantés à partir de jeunes arbres greffés, ce qui garantit des variétés spécifiques et résistantes. La plantation est préférable à l’automne ou au début du printemps.\n    -\tPlantation des jeunes arbres : Les arbres doivent être espacés de 4 à 6 mètres, selon la taille attendue, pour permettre un bon développement et une circulation d’air adéquate. Le trou de plantation doit être suffisamment large pour accueillir le système racinaire sans contrainte.\n\n    -\tGreffes et variétés : Les greffes permettent de choisir parmi de nombreuses variétés, adaptées aux goûts et aux conditions climatiques locales. Les variétés populaires incluent 'Golden Delicious', 'Granny Smith', 'Fuji', et 'Gala', chacune offrant des caractéristiques de saveur et de texture distinctes.\n\n    Récolte\n    \n    La période de récolte des pommes varie selon la variété, s'étendant généralement de la fin de l'été à la fin de l'automne. Les pommes sont cueillies lorsqu'elles ont atteint leur taille, leur couleur, et leur texture optimales. Une pression légère à la base de la tige qui provoque un léger enfoncement indique souvent qu'une pomme est prête à être récoltée.\n    \n    Récolte et conservation\n    \n    Les pommes se conservent bien dans un endroit frais, sec, et sombre, comme un cellier, et peuvent être réfrigérées pour prolonger leur durée de conservation. Elles peuvent être utilisées fraîches, cuites, ou transformées en jus, compotes, cidres, et vinaigres.\n    \n    En résumé, la pomme est un fruit polyvalent et nutritif, apprécié pour sa saveur délicieuse et sa richesse en nutriments essentiels. Le pommier, avec les soins appropriés, peut produire une abondance de fruits savoureux. Les pommes, qu'elles soient consommées crues ou transformées, constituent une excellente source de fibres et d'antioxydants, favorisant une alimentation saine et équilibrée."
+    },
+    {
+        "name": "Raisin",
+        "type": "fruit",
+        "sow": {
+            "start": {
+                "$date": "2023-11-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-03-31T00:00:00.000Z"
+            }
+        },
+        "harvest": {
+            "start": {
+                "$date": "2024-08-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-10-31T00:00:00.000Z"
+            }
+        },
+        "image": "https://pixabay.com/fr/photos/raisins-fruit-groupe-raisin-5889697/",
+        "text": "Le raisin est le fruit de la vigne (Vitis vinifera), un arbuste de la famille des Vitacées. Cultivé depuis l’Antiquité, le raisin est originaire des régions du Proche-Orient et du bassin méditerranéen. C'est un fruit essentiel pour la consommation fraîche, le séchage en raisins secs, et surtout la production de vin, ce qui en fait l’un des fruits les plus importants économiquement et culturellement dans le monde.\n    \n    Le raisin se présente sous forme de grappes composées de baies juteuses et sucrées. Ces baies peuvent varier en couleur du vert au noir, en passant par le rouge et le pourpre. Le raisin est riche en sucre naturel, en fibres, en vitamine C, en vitamine K, et en antioxydants puissants comme le resvératrol, qui contribuent à la protection contre les maladies cardiovasculaires et ont des effets anti-âge.\n    \n    Conditions de culture\n    \n    La vigne est une plante grimpante ligneuse qui nécessite un climat spécifique et un bon ensoleillement pour produire des fruits de qualité. Elle est cultivée principalement dans les régions tempérées à climat méditerranéen.\n    -\tClimat : Les vignes prospèrent dans les climats tempérés avec des étés chauds et secs et des hivers doux. Un bon ensoleillement est crucial pour le développement des sucres et des arômes dans les baies. Les vignes tolèrent un large éventail de climats, mais les conditions extrêmes de gel peuvent endommager les plantes.\n\n    -\tSol : La vigne s'adapte à de nombreux types de sols, mais préfère les sols bien drainés, légers, et légèrement acides à neutres. Les sols rocheux ou sablonneux sont souvent idéaux pour favoriser un bon drainage et le développement racinaire.\n\n    -\tArrosage : Les vignes nécessitent un arrosage modéré. Un excès d'eau peut nuire à la qualité des fruits, tandis que le stress hydrique contrôlé peut améliorer la concentration des arômes et des sucres.\n    \n    Moments de plantation\n    \n    Les vignes sont généralement plantées à partir de boutures ou de jeunes plants. La meilleure période de plantation est l'automne ou le début du printemps, lorsque le sol est encore humide et les températures modérées.\n    -\tPlantation des boutures : Les boutures de vigne sont plantées dans des trous suffisamment profonds pour accueillir les racines et assurer un bon contact avec le sol. Un espacement de 1,5 à 3 mètres est recommandé pour permettre un bon développement des vignes.\n\n    -\tFormation des treilles : Les vignes nécessitent un support, comme des treilles ou des fils de fer, pour grimper et développer correctement leurs grappes. Un système de palissage approprié est crucial pour une bonne gestion de la croissance.\n\n    Récolte\n    \n    La période de récolte des raisins varie selon les variétés et les conditions climatiques, mais elle se situe généralement entre la fin de l'été et le début de l'automne. Les raisins sont récoltés lorsqu'ils ont atteint leur pleine maturité, c'est-à-dire lorsque le taux de sucre et l’acidité sont équilibrés, et que les arômes sont bien développés.\n    \n    Récolte et conservation\n    \n    Les raisins frais se conservent au réfrigérateur pendant environ une à deux semaines. Pour une conservation plus longue, ils peuvent être transformés en raisins secs, en confitures, ou utilisés dans la production de vin.\n    Le raisin est également transformé en divers produits dérivés comme le vin, le jus, le vinaigre, et le sirop. La viticulture, la culture de la vigne pour le vin, est une activité agricole d'importance mondiale, avec des techniques spécifiques pour chaque type de vin produit.\n    \n    En résumé, le raisin est un fruit polyvalent et précieux, apprécié pour sa saveur sucrée, ses nutriments, et ses nombreux usages culinaires et œnologiques. La vigne, bien que nécessitant des conditions de culture spécifiques, offre une production abondante et diversifiée de fruits lorsqu'elle est bien entretenue. Le raisin est non seulement un aliment de base, mais aussi une part essentielle de la culture et de l’économie de nombreuses régions du monde."
+    },
+    {
+        "name": "Tomate",
+        "type": "fruit",
+        "sow": {
+            "start": {
+                "$date": "2024-03-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-05-31T00:00:00.000Z"
+            }
+        },
+        "harvest": {
+            "start": {
+                "$date": "2024-07-01T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2024-10-31T00:00:00.000Z"
+            }
+        },
+        "image": "https://pixabay.com/fr/photos/tomates-fruit-aliments-5356/",
+        "text": "La tomate est le fruit de la plante Solanum lycopersicum, appartenant à la famille des Solanacées. Originaire d'Amérique du Sud et centrale, elle a été domestiquée au Mexique avant d'être introduite en Europe au XVIe siècle. Depuis, elle est devenue l'un des fruits les plus cultivés et consommés dans le monde. Utilisée comme légume en cuisine, la tomate est un ingrédient fondamental dans de nombreuses cuisines à travers le monde.\n    \n    Les tomates se présentent sous de nombreuses formes, tailles et couleurs, allant du rouge au jaune, en passant par le vert, l'orange et même le noir. La chair est juteuse, sucrée, et légèrement acidulée. Elles sont riches en vitamines C et A, en potassium, et en lycopène, un puissant antioxydant lié à la réduction des risques de maladies cardiaques et de certains cancers.\n    \n    Conditions de culture\n    \n    La tomate est une plante annuelle dans les climats tempérés, mais peut être pérenne dans les climats tropicaux. Elle nécessite une saison de croissance chaude et ensoleillée pour bien fructifier.\n    -\tClimat : Les tomates prospèrent dans les climats chauds avec des températures diurnes de 20 à 25 °C. Elles ne supportent pas le gel et ont besoin de beaucoup de lumière pour une production optimale de fruits.\n\n    -\tSol : Les tomates préfèrent les sols bien drainés, riches en matière organique, et légèrement acides à neutres, avec un pH de 6,0 à 7,0. Un sol bien amendé avec du compost ou du fumier vieilli est idéal pour leur croissance.\n\n    -\tArrosage : Un arrosage régulier et profond est essentiel pour éviter le stress hydrique. Le sol doit être maintenu humide mais pas détrempé. Un paillage peut aider à conserver l'humidité du sol et à réduire les mauvaises herbes.\n    \n    Moments de plantation\n    \n    Les tomates sont généralement cultivées à partir de semis, qui sont démarrés à l'intérieur 6 à 8 semaines avant la dernière date de gel prévue dans la région.\n    -\tPlantation des semis : Les jeunes plants sont transplantés à l'extérieur une fois que les risques de gel sont passés et que le sol s'est réchauffé. Un espacement de 50 à 60 cm entre les plants est recommandé pour permettre une bonne circulation de l'air et un développement optimal.\n\n    -\tSupports : Les tomates nécessitent souvent des tuteurs, des cages ou des treillis pour soutenir la plante et éviter que les fruits ne touchent le sol.\n    \n    Récolte\n    \n    La récolte des tomates a lieu généralement de l'été à l'automne, en fonction des variétés et des conditions climatiques. Les tomates sont mûres lorsqu'elles ont atteint leur couleur pleine et se détachent facilement de la tige. Elles peuvent être récoltées légèrement avant pleine maturité et laissées à mûrir à température ambiante.\n    \n    Récolte et conservation\n    \n    Les tomates fraîches se conservent mieux à température ambiante, loin de la lumière directe du soleil. Réfrigérer les tomates peut altérer leur texture et leur saveur. Pour prolonger leur durée de conservation, les tomates peuvent être transformées en sauces, purées, ou séchées.\n    En cuisine, les tomates sont extrêmement polyvalentes, utilisées dans les salades, les sauces, les soupes, et les plats cuits. Elles sont également la base de nombreux produits transformés tels que le ketchup, les concentrés, et les jus.\n    \n    En résumé, la tomate est un fruit fondamental de la cuisine mondiale, apprécié pour sa saveur, sa polyvalence, et ses bienfaits pour la santé. Elle nécessite des conditions de culture chaudes et ensoleillées et offre une abondance de fruits lorsque les conditions de sol et d'arrosage sont respectées. Les tomates, avec leur large gamme de variétés et d'utilisations, sont un élément clé de nombreuses traditions culinaires à travers le monde."
+    }
+]
