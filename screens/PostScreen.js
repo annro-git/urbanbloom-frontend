@@ -144,6 +144,7 @@ const PostScreen = () => {
             keyboardShouldPersistTaps="always"
         >
             <View style={{ width: '80%', gap: 20, paddingVertical: 20 }} >
+                <Text style={{ fontSize: 20, fontFamily: 'Lato_700Bold', color: '#294849', lineHeight: 24 }}>Publier</Text>
                 <View style={{ zIndex: 3 }}>
                     <InputSelect
                         placeholder='Sélectionnez un jardin'

@@ -1,6 +1,6 @@
 import { TouchableOpacity, Text } from "react-native"
 
-const Button = ({ onPress, primary, secondary, border, text, padding, width }) => {
+const Button = ({ onPress, primary, secondary, border, text, padding, width, fontSize }) => {
     return (
         <TouchableOpacity 
             onPress={onPress}
@@ -19,7 +19,7 @@ const Button = ({ onPress, primary, secondary, border, text, padding, width }) =
                 style={{
                     color: secondary,
                     fontFamily: 'Lato_400Regular',
-                    fontSize: 20,
+                    fontSize: fontSize || 20,
                 }}
             >
                 {text}

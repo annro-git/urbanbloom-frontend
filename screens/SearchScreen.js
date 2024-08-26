@@ -81,7 +81,7 @@ const SearchScreen = () => {
             const json = await response.json()
             json.result && dispatch(updateGardens(json.gardens))
         })()
-    }, [])
+    }, [isFocused])
 
     // Filter markers depending interest and bonus
     useEffect(() => {
@@ -149,8 +149,8 @@ const SearchScreen = () => {
                                 <Text style={{ fontSize: 18, fontFamily: 'Lato_700Bold' }}>{ gardenPreview.name }</Text>
                                 <Text style={{ fontSize: 14, fontFamily: 'Lato_300Light' }}>{ gardenPreview.members } jardinier(s)</Text>
                             </View>
-                            <View style={{ flexDirection: 'row' }}>
-                                <Text style={{ width: '70%' }}>{ gardenPreview.description }</Text>
+                            <View style={{ flexDirection: 'row', gap: 10, alignItems: 'flex-end' }}>
+                                <Text style={{ width: '70%' }}>{ (gardenPreview.description).substr(0, 80)+'...' }</Text>
 
                                 { /* Toggle join / subscribed button depending user.gardens */
                                     user.gardens.indexOf(gardenPreview.id) > -1

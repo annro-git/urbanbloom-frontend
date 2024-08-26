@@ -72,7 +72,7 @@ const stacks = [
   { name: 'SignIn', component: SigninScreen, },
   { name: 'SignUp', component: SignupScreen, },
   { name: 'Tab', component: TabNavigator, },
-  // { name: 'Profile', component: ProfileScreen, }
+  { name: 'Profile', component: ProfileScreen, }
 ]
 
 const App = () => {
