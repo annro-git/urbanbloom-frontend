@@ -79,6 +79,8 @@ const SearchScreen = () => {
                 headers: { 'Content-Type': 'application/json', token: user.token }
             })
             const json = await response.json()
+
+            
             json.result && dispatch(updateGardens(json.gardens))
         })()
     }, [])

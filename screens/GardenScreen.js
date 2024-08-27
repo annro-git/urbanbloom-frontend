@@ -23,9 +23,11 @@ const GardenScreen = () => {
 
   const { token, } = useSelector(state => state.user);
   const gardensList = useSelector(state => state.user.gardens);
+  
+  console.log("🚀 ~ file: GardenScreen.js:26 ~ GardenScreen ~ gardensList:", gardensList)
 
-  console.log(gardensList)
-
+  
+  
   const dispatch = useDispatch();
   const [gardens, setGardens] = useState([]);
   const [openModal, setOpenModal] = useState(false);
@@ -174,7 +176,7 @@ const GardenScreen = () => {
     </ScrollView>
   );
 };
-
+ 
 export default GardenScreen;
 
 
