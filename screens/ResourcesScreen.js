@@ -8,7 +8,7 @@ const resources = ['Légumes', 'Fruits', 'Fleurs', 'Outils']
 export default ResourcesScreen = () => {
     return (
         <View style={styles.container}>
-            <View style={{alignItems: 'center', }}>
+            <View style={{ alignItems: 'center', }}>
                 <Text style={styles.title}>Ressources</Text>
             </View>
             <View style={styles.resourcescontainer}>
