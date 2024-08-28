@@ -14,7 +14,7 @@ export default FruitsScreen = () => {
     return (
         <View style={styles.container}>
             <View style={styles.title}>
-                <Text style={styles.fruits}>Fleurs</Text>
+                <Text style={styles.fruits}>Fruits</Text>
             </View>
             <ScrollView>
                 {fruits.map((fruit, i) => {

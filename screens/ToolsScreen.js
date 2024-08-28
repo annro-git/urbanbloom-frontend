@@ -14,7 +14,7 @@ export default ToolsScreen = () => {
     return (
         <View style={styles.container}>
             <View style={styles.title}>
-                <Text style={styles.tools}>Fleurs</Text>
+                <Text style={styles.tools}>Outils</Text>
             </View>
             <ScrollView>
                 {tools.map((tool, i) => {
