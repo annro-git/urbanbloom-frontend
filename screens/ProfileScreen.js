@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
-import { Text, Button, View, TouchableOpacity, Image, StyleSheet, Modal, TextInput, CheckBox, Alert } from "react-native"
+import { Text, View, TouchableOpacity, Image, StyleSheet, Modal, TextInput, Alert, ScrollView } from "react-native"
 import * as LucideIcons from 'lucide-react-native';
 import { useDispatch } from "react-redux";
 import { updateUser } from "../reducers/user";
 import * as ImagePicker from 'expo-image-picker';
 import CheckBoxGroup from "../components/atomic/CheckBoxGroup";
+import AsyncStorageCleaner from "../components/atomic/AsyncStorageCleaner";
+import { useNavigation } from "@react-navigation/native"
 
 
-const ProfileScreen = props => {
+const ProfileScreen = () => {
 
     const interestOptions = [
         { label: 'Fruits', value: 'fruits', },
@@ -23,6 +25,7 @@ const ProfileScreen = props => {
     ]
 
     const dispatch = useDispatch()
+    const { navigate } = useNavigation()
 
     const [gardens, setGardens] = useState([]);
     const user = useSelector(state => state.user);
@@ -31,7 +34,8 @@ const ProfileScreen = props => {
     const [openModal, setOpenModal] = useState(false);
     const [interest, setInterest] = useState([]);
     const [bonus, setBonus] = useState([]);
-    const [address, setAdress] = useState('')
+    const [address, setAdress] = useState('');
+    const [showAllGardens, setShowAllGardens] = useState(false);
 
 
     const fetchGardens = async () => {
@@ -115,6 +119,8 @@ const ProfileScreen = props => {
             })
     };
 
+    const displayedGardens = showAllGardens ? gardens : gardens.slice(0, 4);
+
     return (
         <>
             <View style={styles.container}>
@@ -136,6 +142,7 @@ const ProfileScreen = props => {
                         </Text>
                     </View>
                 </View>
+                <ScrollView>
                 <View style={styles.jardinsc}>
                     <View style={styles.jardins}>
                         <Text style={styles.jardin}>Jardins</Text>
@@ -144,15 +151,27 @@ const ProfileScreen = props => {
                         </TouchableOpacity>
                     </View>
                     <View style={styles.gardensgrid}>
-                        {gardens.map(garden => <View key={garden._id} title={garden.name} style={styles.gardenc} >
+                        {displayedGardens.map(garden => <View key={garden._id} title={garden.name} style={styles.gardenc} >
                             <LucideIcons.Leaf style={styles.leaf} />
                             <Text> {garden.name}</Text>
                         </View>)}
+                        
                     </View>
+                    {gardens.length > 4 && (
+                            <TouchableOpacity style={styles.showall} onPress={() => setShowAllGardens(!showAllGardens)}>
+                                <LucideIcons.CircleEllipsis name={showAllGardens ? "expand-less" : "expand-more"} size={20} color="#2c4943" />
+                            </TouchableOpacity>
+                        )}
                 </View>
                 <View style={styles.activitiesc}>
                     <Text style={styles.activites}>Activité récente</Text>
                 </View>
+                </ScrollView>
+                <View style={styles.asyncc}>
+                    <AsyncStorageCleaner navigate={navigate} size={25} />
+                </View>
+
+
                 <Modal style={styles.modal}
                     animationType="fade"
                     transparent={true}
@@ -206,6 +225,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     userc: {
+        justifyContent: 'center',
         flexDirection: 'row',
         marginTop: 20,
         marginBottom: 20,
@@ -264,6 +284,7 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         width: '90%',
         gridTemplateColumns: 'repeat(2, 1fr)',
+        alignItems: 'center',
 
     },
     gardenc: {
@@ -283,8 +304,7 @@ const styles = StyleSheet.create({
 
 
     activitiesc: {
-        flexDirection: 'column',
-        justifyContent: 'center',
+        height: 200,
     },
     activites: {
         fontSize: 20,
@@ -304,7 +324,18 @@ const styles = StyleSheet.create({
         marginTop: 20,
         color: 'green',
     },
-
-
-
+    asyncc: {
+        alignSelf: 'center',
+        backgroundColor: '#983659', 
+        width: '100%',
+        height: 30,
+        position: 'absolute',
+        alignItems: 'center',
+        bottom: 0,
+        justifyContent: 'center',
+    },
+    showall: {
+        alignItems: 'center',
+        marginTop: 5,
+    },
 })

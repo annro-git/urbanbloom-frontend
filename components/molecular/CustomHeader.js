@@ -47,9 +47,7 @@ const CustomHeader = ({ route }) => {
             </TouchableOpacity>
             <View style={{ flexDirection: 'row', gap: 20, alignItems: 'center' }}>
 
-                {/* on press : empty urbanbloom AsyncStorage key, then navigate to Splash */}
-                <AsyncStorageCleaner navigate={ navigate } size={ 16 }/>
-                {/* --------------------------------------------------------------------- */}
+                
                 
                 <TouchableOpacity onPress={() => navigate('Weather')}>
                     <WeatherIcon color= { route.name === 'Weather' ? '#FEC2A9' : '#BDCEBB' } />

@@ -1,5 +1,5 @@
 import { TouchableOpacity } from "react-native"
-import { Trash2 } from "lucide-react-native"
+import { Trash2, LogOut } from "lucide-react-native"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 
 const AsyncStorageCleaner = ({ navigate, size }) => {
@@ -8,7 +8,7 @@ const AsyncStorageCleaner = ({ navigate, size }) => {
             AsyncStorage.removeItem('persist:urbanbloom')
             navigate('Splash')
         }} >
-            <Trash2 color='red' size={ size } />
+            <LogOut color='black' size={ size } />
         </TouchableOpacity>
     )
 }

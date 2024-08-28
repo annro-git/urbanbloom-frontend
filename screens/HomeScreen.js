@@ -19,7 +19,7 @@ export default HomeScreen = () => {
     })
 
    
-    const { events } = useSelector(state => state.user);
+    const { events } = useSelector(state => state.user);
     const [showAllEvents, setShowAllEvents] = useState(false);
     const user = useSelector(state => state.user)
 
