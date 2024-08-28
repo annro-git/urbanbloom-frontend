@@ -1,22 +1,28 @@
 import { TextInput as Input } from "react-native"
 
-const TextInput = props => {
+const TextInput = ({ placeholder, color, padding, width, onChangeText, value, autoCapitalize, autoComplete, inputMode, onSubmitEditing }) => {
     
     return (
         <Input
-            { ...props }
-            placeholderTextColor={ props.color }
+            placeholder={ placeholder }
+            placeholderTextColor={ color }
             style={{
                 backgroundColor: 'white',
                 borderWidth: 1,
-                borderColor: props.color,
+                borderColor: color,
                 borderRadius: 5,
                 color: '#000000BF',
                 fontFamily: 'Lato_400Regular',
                 fontSize: 16,
-                padding: props.padding || 20,
-                width: '100%'
+                padding: padding || 20,
+                width: width || '100%'
             }}
+            onChangeText={ onChangeText }
+            value={ value }
+            autoCapitalize={ autoCapitalize || 'sentences' }
+            autoComplete={ autoComplete || 'off' }
+            inputMode={ inputMode || 'text' }
+            onSubmitEditing={ onSubmitEditing || '' }
         />
     )
 }

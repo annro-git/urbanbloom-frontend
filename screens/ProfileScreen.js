@@ -1,10 +1,13 @@
 import { Text } from "react-native"
+import { useSelector } from "react-redux"
 
-const ProfileScreen = props => {
+const ProfileScreen = () => {
+
+    const user = useSelector(state => state.user)
 
     return (
         <>
-            <Text>ProfileScreen</Text>
+            <Text>User: {JSON.stringify(user)}</Text>
         </>
     )
 }

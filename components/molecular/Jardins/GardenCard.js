@@ -1,9 +1,8 @@
 import { View, Text, Image } from "react-native"
-import { MessageCircleMore } from "lucide-react-native"
 
 import Button from "../../atomic/Button"
 
-const GardenCard = ({ name, description, ppURI, members }) => {
+const GardenCard = ({ name, description, ppURI, members, onSelect }) => {
     return (
         <View style={{ borderRadius: 10, padding: 20, backgroundColor: '#BDCEBB', width: '100%', gap: 20 }}>
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: 20 }}>
@@ -14,7 +13,7 @@ const GardenCard = ({ name, description, ppURI, members }) => {
                         <Text style={{ fontSize: 14, fontFamily: 'Lato_400Regular', color: '#466760' }}>{members} jardiniers</Text>
                     </View>
                     <Text style={{ color: '#000000BF', paddingBottom: 10 }}>{description}</Text>
-                    <Button text='Participer' primary='#466760' secondary='white' fontSize={ 16 } padding={ 10 } />
+                    <Button text='Participer' primary='#466760' secondary='white' fontSize={ 16 } padding={ 10 } onPress={() => onSelect()} />
                 </View>
             </View>
         </View>
