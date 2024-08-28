@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         backgroundColor: '#F9F3E0',
+        alignItems: 'center',
     },
     title: {
         fontSize: 24,
@@ -63,6 +64,7 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         backgroundColor: '#F9F3E0',
         paddingBottom: 60,
+        justifyContent: 'center',
     },
     touchable: {
         width: '40%',
