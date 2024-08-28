@@ -14,8 +14,8 @@ export default ResourcesScreen = () => {
             <View style={styles.resourcescontainer}>
 
                 {resources.map((resource, i) => {
-                    return <TouchableOpacity key={i} onPress={() => navigation.navigate(resource)}>
-                        <ResourcesGroup key={i} style={styles.resource} name={resource} />
+                    return <TouchableOpacity style={styles.touchable} key={i} onPress={() => navigation.navigate(resource)}>
+                        <ResourcesGroup key={i}  name={resource} />
                     </TouchableOpacity>
                 })}
 
@@ -43,12 +43,14 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         flexWrap: 'wrap',
-        justifyContent: 'center',
         backgroundColor: '#F9F3E0',
         paddingBottom: 60,
     },
-    resource: {
-        margin: 10,
-    },
+    touchable: {
+        width: '40%',
+        height: '45%',
+        margin: 15,
+
+    }
 
 });

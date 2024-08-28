@@ -14,11 +14,13 @@ export default ResourcesGroup = ({ name }) => {
     const imageSource = images[name];
 
     return (
-        <ImageBackground source={imageSource} style={styles.background}>
-            
+        <View style={styles.container} >
+            <ImageBackground source={imageSource} style={styles.background} resizeMode="cover">
+
                 <Text style={styles.title}>{name}</Text>
-            
-        </ImageBackground>
+
+            </ImageBackground>
+        </View>
     );
 
 }
@@ -26,23 +28,24 @@ export default ResourcesGroup = ({ name }) => {
 
 const styles = StyleSheet.create({
 
-    
+    container: {
+        width: '100%',
+        height: '100%',
+        margin: 10,
+    },
     background: {
         backgroundColor: '#fff',
         alignItems: 'center',
-        margin: 10,
-        borderRadius: 10,
         overflow: 'hidden',
-        width: 350,
-        height: 475,
-
-   
+        height: '100%',
+        width: '100%',
+        borderRadius: 10,
     },
     title: {
-        fontSize: 24,
+        fontSize: 12,
         fontWeight: 'bold',
         margin: 20,
-        textShadowRadius: 10, 
-        textShadowColor: '#fff', 
+        textShadowRadius: 10,
+        textShadowColor: '#fff',
     },
 });
