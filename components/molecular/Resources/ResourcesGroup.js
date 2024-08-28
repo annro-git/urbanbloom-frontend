@@ -16,15 +16,12 @@ export default ResourcesGroup = ({ name }) => {
     return (
         <View style={styles.container} >
             <ImageBackground source={imageSource} style={styles.background} resizeMode="cover">
-
                 <Text style={styles.title}>{name}</Text>
-
             </ImageBackground>
         </View>
     );
 
 }
-
 
 const styles = StyleSheet.create({
 
@@ -42,7 +39,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
     title: {
-        fontSize: 12,
+        fontSize: 18,
         fontWeight: 'bold',
         margin: 20,
         textShadowRadius: 10,

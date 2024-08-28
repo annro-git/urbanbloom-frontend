@@ -26,6 +26,10 @@ import GardenScreen from './screens/GardenScreen'
 import ResourcesScreen from './screens/ResourcesScreen'
 import HomeScreen from './screens/HomeScreen'
 import CustomTabBar from './components/molecular/CustomTabBar'
+import VegetablesScreen from './screens/VegetablesScreen'
+import FruitsScreen from './screens/FruitsScreen'
+import FlowersScreen from './screens/FlowersScreen'
+import ToolsScreen from './screens/ToolsScreen'
 
 import test from './reducers/test'
 import user from './reducers/user'
@@ -45,6 +49,24 @@ const store = configureStore({
 })
 const persiststor = persistStore(store)
 
+// Stack resources
+const StackResources = createNativeStackNavigator()
+const resources = [
+  { name: 'Légumes', component: VegetablesScreen },
+  { name: 'Fruits', component: FruitsScreen },
+  { name: 'Fleurs', component: FlowersScreen },
+  { name: 'Outils', component: ToolsScreen }
+]
+
+const ResourcesStack = () => {
+  return (
+    <StackResources.Navigator screenOptions={{ headerShown: false }}>
+      <StackResources.Screen name="Resources" component={ResourcesScreen} />
+      {resources.map((resource, index) => <StackResources.Screen key={index} name={resource.name} component={resource.component} />)}
+    </StackResources.Navigator>
+  );
+};
+
 // Tab navigation
 const Tab = createBottomTabNavigator()
 const tabs = [
@@ -52,7 +74,7 @@ const tabs = [
   { name: 'Recherche', component: SearchScreen, icon: Search, position: 'bottom' },
   { name: 'Publier', component: PostScreen, icon: CirclePlus, position: 'bottom' },
   { name: 'Jardins', component: GardenScreen, icon: Leaf, position: 'bottom' },
-  { name: 'Ressources', component: ResourcesScreen, icon: Book, position: 'bottom' },
+  { name: 'Ressources', component: ResourcesStack, icon: Book, position: 'bottom' },
   { name: 'Profile', component: ProfileScreen },
   { name: 'Weather', component: WeatherScreen },
 ]
@@ -72,6 +94,8 @@ const TabNavigator = () => {
     </Tab.Navigator>
   )
 }
+
+
 
 // Stack navigation
 const Stack = createNativeStackNavigator()

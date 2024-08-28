@@ -2,10 +2,28 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import ResourcesGroup from '../components/molecular/Resources/ResourcesGroup';
+import { useFocusEffect } from '@react-navigation/native';
+import { CommonActions } from '@react-navigation/native';
 
-const resources = ['Légumes', 'Fruits', 'Fleurs', 'Outils']
+export default ResourcesScreen = ({ navigation }) => {
 
-export default ResourcesScreen = () => {
+    /* const [isReset, setIsReset] = useState(false);
+
+    useFocusEffect(
+        React.useCallback(() => {
+            if (!isReset) {
+                const resetAction = CommonActions.reset({
+                    index: 0,
+                    routes: [{ name: 'Resources' }],
+                });
+                navigation.dispatch(resetAction);
+                setIsReset(true);
+            }
+        }, [navigation, isReset])
+    ); */
+
+    const resources = ['Légumes', 'Fruits', 'Fleurs', 'Outils']
+
     return (
         <View style={styles.container}>
             <View style={{ alignItems: 'center', }}>
@@ -15,7 +33,7 @@ export default ResourcesScreen = () => {
 
                 {resources.map((resource, i) => {
                     return <TouchableOpacity style={styles.touchable} key={i} onPress={() => navigation.navigate(resource)}>
-                        <ResourcesGroup key={i}  name={resource} />
+                        <ResourcesGroup key={i} name={resource} />
                     </TouchableOpacity>
                 })}
 
