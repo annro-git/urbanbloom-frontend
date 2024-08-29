@@ -28,8 +28,8 @@ const ReplyCard = ({ createdAt, owner, text }) => {
         <View style={{ backgroundColor: 'white', padding: 20, borderRadius: 10, flexDirection: 'row', gap: 20 }}>
             <Image source={{ uri: ownerPPURI }} style={{ width: 48, height: 48, borderRadius: 48 }} />
             <View style={{ flex: 1, gap: 5 }}>
-                <Text>{ owner }, { dayjs(createdAt).locale('fr').fromNow() }</Text>
-                <Text>{ text }</Text>
+                <Text style={{ fontSize: 12, fontFamily: 'Lato_400Regular' }}>{ owner }, { dayjs(createdAt).locale('fr').fromNow() }</Text>
+                <Text style={{ fontSize: 14, fontFamily: 'Lato_400Regular' }}>{ text }</Text>
             </View>
         </View>
     )

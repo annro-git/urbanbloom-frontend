@@ -29,6 +29,8 @@ const CustomHeader = ({ route }) => {
         })()
     }, [])
 
+    
+
     return (
         <SafeAreaView
             style={{

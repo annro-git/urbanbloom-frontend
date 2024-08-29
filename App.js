@@ -26,7 +26,7 @@ import user from './reducers/user'
 
 // URL BACKEND
 // global.BACKEND_URL = 'https://urbanbloom-backend.vercel.app/'
-global.BACKEND_URL = 'http://192.168.1.24:3000'
+global.BACKEND_URL = 'http://192.168.15.112:3000'
 
 // Redux
 const reducers = combineReducers({ test, user })

@@ -46,7 +46,7 @@ const PostCard = ({ createdAt, likes, owner, repliesCount, text, title, gardenId
                 </View>
             </View>
             <Pressable onPress={() => showPost()}>
-                <Text>{ text }</Text>
+                <Text style={{ fontSize: 14, fontFamily: 'Lato_400Regular' }}>{ text }</Text>
             </Pressable>
             {pictures.length > 0 &&
                 <Pressable onPress={() => showPost()}>

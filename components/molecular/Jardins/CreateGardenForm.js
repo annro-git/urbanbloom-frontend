@@ -88,6 +88,7 @@ const CreateGardenForm = ({ style, setGardenScreenMode }) => {
             body: JSON.stringify(gardenBody),
         })
         const json = await response.json()
+        console.log(json)
         if(!json.result) return
 
         setNewGarden({ address: '', name: '', description: '', interests: [], bonus: [] })
