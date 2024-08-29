@@ -1,14 +1,34 @@
+import { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, Image } from 'react-native';
+import { useSelector } from 'react-redux';
 
 
 export default VegetablesScreen = () => {
 
-    const vegetables = require('../resources/Vegetables.json')
+    const [vegetables, setVegetables] = useState([])
+    const { token } = useSelector(state => state.user)
+
+    useEffect(() => {
+
+        fetch(`${global.BACKEND_URL}/user/pages`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                token
+            },
+        })
+            .then(response => response.json())
+            .then(data => {
+                setVegetables(data.pages.vegetables)
+            })
+            .catch(error => console.error(error))
+
+    }, []);
 
     const formatDate = (isoDate) => {
         const date = new Date(isoDate);
         const options = { day: '2-digit', month: '2-digit' };
-        return date.toLocaleDateString('fr-FR', options); // Vous pouvez personnaliser le format ici
+        return date.toLocaleDateString('fr-FR', options);
     };
 
     return (
@@ -20,13 +40,13 @@ export default VegetablesScreen = () => {
                 {vegetables.map((vegetable, i) => {
                     return (<View key={i} styles={styles.vegetablecontainer}>
                         <View style={styles.header}>
-                            <View style={{  alignItems: 'center', width: '50%' }}>
-                                <Image source={{ uri: vegetable.image }} style={{ borderRadius: 50, height: 60, width: '35%'}} />
+                            <View style={{ alignItems: 'center', width: '50%' }}>
+                                <Image source={{ uri: vegetable.image }} style={{ borderRadius: 50, height: 60, width: '35%' }} />
                                 <Text style={styles.name}>{vegetable.name}</Text>
                             </View>
                             <View style={styles.dates}>
-                                <Text style={styles.sow}>Semis: {formatDate(vegetable.sow.start.$date)} au {formatDate(vegetable.sow.end.$date)}</Text>
-                                <Text style={styles.harvest}>Récolte: {formatDate(vegetable.harvest.start.$date)} au {formatDate(vegetable.harvest.end.$date)}</Text>
+                                <Text style={styles.sow}>Semis: {formatDate(vegetable.sow.start)} au {formatDate(vegetable.sow.end)}</Text>
+                                <Text style={styles.harvest}>Récolte: {formatDate(vegetable.harvest.start)} au {formatDate(vegetable.harvest.end)}</Text>
                             </View>
                         </View>
                         <Text style={styles.text}>{vegetable.text}</Text>
@@ -58,7 +78,7 @@ const styles = StyleSheet.create({
 
     },
     header: {
-       
+
         justifyContent: 'space-between',
         alignItems: 'center',
 
@@ -73,7 +93,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         margin: 20,
-        marginTop: 5,   
+        marginTop: 5,
     },
     text: {
         fontSize: 16,
@@ -91,7 +111,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-around',
     },
-    
+
 
 
 });

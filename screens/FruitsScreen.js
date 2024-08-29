@@ -1,9 +1,28 @@
 import { View, Text, StyleSheet, ScrollView, Image } from 'react-native';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 
 export default FruitsScreen = () => {
 
-    const fruits = require('../resources/Fruits.json')
+    const { token } = useSelector(state => state.user)
+    const [fruits, setFruits] = useState([])
+
+    useEffect(() => {
+        fetch(`${global.BACKEND_URL}/user/pages`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                token
+            },
+        })
+            .then(response => response.json())
+            .then(data => {
+                setFruits(data.pages.fruits)
+            })
+            .catch(error => console.error(error))
+    }
+        , []);
 
     const formatDate = (isoDate) => {
         const date = new Date(isoDate);
@@ -25,8 +44,8 @@ export default FruitsScreen = () => {
                                 <Text style={styles.name}>{fruit.name}</Text>
                             </View>
                             <View style={styles.dates}>
-                                <Text style={styles.sow}>Semis: {formatDate(fruit.sow.start.$date)} au {formatDate(fruit.sow.end.$date)}</Text>
-                                <Text style={styles.harvest}>Récolte: {formatDate(fruit.harvest.start.$date)} au {formatDate(fruit.harvest.end.$date)}</Text>
+                                <Text style={styles.sow}>Semis: {formatDate(fruit.sow.start)} au {formatDate(fruit.sow.end)}</Text>
+                                <Text style={styles.harvest}>Récolte: {formatDate(fruit.harvest.start)} au {formatDate(fruit.harvest.end)}</Text>
                             </View>
                         </View>
                         <Text style={styles.text}>{fruit.text}</Text>

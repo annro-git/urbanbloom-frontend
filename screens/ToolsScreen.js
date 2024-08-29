@@ -1,9 +1,30 @@
 import { View, Text, StyleSheet, ScrollView, Image } from 'react-native';
+import { useEffect, useState } from 'react';  
+import { useSelector } from 'react-redux'; 
 
 
 export default ToolsScreen = () => {
 
-    const tools = require('../resources/Tools.json')
+    const { token } = useSelector(state => state.user)
+    const [tools, setTools] = useState([])
+
+    useEffect(() => {
+
+        fetch(`${global.BACKEND_URL}/user/tools`, {
+
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                token
+            },
+        })
+            .then(response => response.json())
+            .then(data => {
+                setTools(data.tools)
+            })
+            .catch(error => console.error(error))
+
+    }, []);
 
     const formatDate = (isoDate) => {
         const date = new Date(isoDate);

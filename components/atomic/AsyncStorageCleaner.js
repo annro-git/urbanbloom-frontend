@@ -4,11 +4,11 @@ import AsyncStorage from "@react-native-async-storage/async-storage"
 
 const AsyncStorageCleaner = ({ navigate, size }) => {
     return (
-        <TouchableOpacity onPress={() => { 
+        <TouchableOpacity onPress={() => {
             AsyncStorage.removeItem('persist:urbanbloom')
             navigate('Splash')
         }} >
-            <LogOut color='black' size={ size } />
+            <LogOut color='black' size={size} />
         </TouchableOpacity>
     )
 }

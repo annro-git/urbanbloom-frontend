@@ -1,9 +1,31 @@
 import { View, Text, StyleSheet, ScrollView, Image } from 'react-native';
+import { useEffect, useState } from 'react'; 
+import { useSelector } from 'react-redux'; 
 
 
 export default FlowersScreen = () => {
 
-    const flowers = require('../resources/Flowers.json')
+    const { token } = useSelector(state => state.user)
+    const [flowers, setFlowers] = useState([])
+
+    useEffect(() => {
+
+        fetch(`${global.BACKEND_URL}/user/pages`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                token
+            },
+        })
+            .then(response => response.json())
+            .then(data => {
+                setFlowers(data.pages.flowers)
+            })
+            .catch(error => console.error(error))
+        
+    }, []);
+
+   
 
     const formatDate = (isoDate) => {
         const date = new Date(isoDate);
@@ -25,8 +47,8 @@ export default FlowersScreen = () => {
                                 <Text style={styles.name}>{flower.name}</Text>
                             </View>
                             <View style={styles.dates}>
-                                <Text style={styles.sow}>Semis: {formatDate(flower.sow.start.$date)} au {formatDate(flower.sow.end.$date)}</Text>
-                                <Text style={styles.harvest}>Récolte: {formatDate(flower.harvest.start.$date)} au {formatDate(flower.harvest.end.$date)}</Text>
+                                <Text style={styles.sow}>Semis: {formatDate(flower.sow.start)} au {formatDate(flower.sow.end)}</Text>
+                                <Text style={styles.harvest}>Récolte: {formatDate(flower.harvest.start)} au {formatDate(flower.harvest.end)}</Text>
                             </View>
                         </View>
                         <Text style={styles.text}>{flower.text}</Text>
