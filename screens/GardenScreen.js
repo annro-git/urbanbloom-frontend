@@ -1,247 +1,311 @@
-import { useEffect, useState } from "react"
-import { ScrollView, View, Text, TouchableOpacity, Keyboard, Image } from "react-native"
-import { ArrowLeftIcon } from "lucide-react-native"
+import { useState, useEffect } from "react"
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View, Image } from "react-native"
 import { useSelector } from "react-redux"
 import { useIsFocused } from "@react-navigation/native"
+import { ArrowLeft } from "lucide-react-native"
 
 import GardenCard from "../components/molecular/Jardins/GardenCard"
-import Button from "../components/atomic/Button"
 import PostCard from "../components/molecular/Jardins/PostCard"
-import CreateGardenForm from "../components/molecular/Jardins/CreateGardenForm"
-import ReplyForm from "../components/molecular/Jardins/ReplyForm"
 import ReplyCard from "../components/molecular/Jardins/ReplyCard"
+import ReplyForm from "../components/molecular/Jardins/ReplyForm"
+import Button from "../components/atomic/Button"
+import CreateGardenForm from "../components/molecular/Jardins/CreateGardenForm"
 import Likes from "../components/molecular/Jardins/Likes"
+import dayjs from 'dayjs'
+import 'dayjs/locale/fr'
 
 const GardenScreen = ({ navigation }) => {
 
     const { navigate } = navigation
 
-    const user = useSelector(state => state.user)
     const isFocused = useIsFocused()
 
-    const [currentGardens, setCurrentGardens] = useState([])
+    const user = useSelector(state => state.user)
+
+    const [currentGardens, setCurrentGardens] = useState(null)
     const [currentGarden, setCurrentGarden] = useState(null)
-    const [currentPosts, setCurrentPosts] = useState([])
+    const [currentPosts, setCurrentPosts] = useState(null)
     const [currentPost, setCurrentPost] = useState(null)
-    const [gardenScreenMode, setGardenScreenMode] = useState('list') // list / create / garden / post
-    const [updater, setUpdater] = useState(false)
+    const [currentEvents, setCurrentEvents] = useState(null)
+    const [currentEvent, setCurrentEvent] = useState(null)
+    const [gardenForm, setGardenForm] = useState(false)
+    const [init, setInit] = useState(false)
 
-    // Get User Gardens
+    // Set Gardens
     useEffect(() => {
-        (async() => {
-            const response = await fetch(`${global.BACKEND_URL}/user/gardens/details`, {
-                method: 'GET',
-                headers: { 'Content-Type': 'application/json', token: user.token }
-            })
-            const json = await response.json()
-            json.result && setCurrentGardens(json.gardens)
-        })()
-    }, [gardenScreenMode])
-
-
-    // Get Current Garden Posts
-    useEffect(() => {
-        if(currentGarden){
-            (async() => {
-                const { token } = user
-                const { id } = currentGarden
-                const response = await fetch(`${global.BACKEND_URL}/garden/${id}/posts`, {
-                    method: 'GET',
-                    headers: { 'Content-Type': 'application/json', token }
-                })
-                const json = await response.json()
-                if(!json.result) return
-                
-                setCurrentPosts(json.posts)
-            })()
-        }
-    }, [currentGarden, updater, isFocused, gardenScreenMode])
-    
-    // Get Current Post
-    const showPost = async(gardenId, postId) => {
+      (async() => {
         const { token } = user
-        const response = await fetch(`${global.BACKEND_URL}/garden/${gardenId}/post/${postId}`, {
+        const response = await fetch(`${global.BACKEND_URL}/user/gardens/details`, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json', token }
+        })
+        const json = await response.json()
+        if(!json.result) return
+        setCurrentGardens(json.gardens)
+      })()
+    }, [isFocused, init])
+
+    // Reset Garden
+    const resetGarden = () => {
+        setCurrentGarden(null)
+        setCurrentPosts(null)
+        setCurrentPost(null)
+        setCurrentEvents(null)
+        setCurrentEvent(null)
+        setGardenForm(false)
+        setInit(!init)
+    }
+
+    // Set Garden
+    const setGarden = async(garden) => {
+        const { token } = user
+        const response = await fetch(`${global.BACKEND_URL}/garden/${garden.id}`, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json', token }
+        })
+        const json = await response.json()
+        if(!json.result) return
+        setCurrentEvent(null)
+        setCurrentEvents(json.events)
+        setCurrentPost(null)
+        setCurrentPosts(json.posts)
+        setCurrentGarden(garden)
+    }
+
+    // Set Post
+    const setPost = async(garden, post) => {
+        const { token } = user
+        const response = await fetch(`${global.BACKEND_URL}/garden/${garden.id}/post/${post.id}`, {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json', token }
             })
         const json = await response.json()
         if(!json.result) return
-        
-        const post = json.post
-        post.gardenId = gardenId
-        post.postId = postId
-
-        onShowPost(post)
-    }    
-
-    const onLikesChange = () => {
-        setUpdater(e => !e)
+        setCurrentEvent(null)
+        setCurrentEvents(null)
+        setCurrentPost(json.post)
+        setCurrentPosts(null)
     }
 
-    const onShowPost = e => {
-        setCurrentPost(e)
-        setGardenScreenMode('post')
-    }
-
-    const handleMore = garden => {
-        setCurrentGarden(garden)
-        setGardenScreenMode('garden')
+    // Set Likes
+    const setLikes = (post) => {
+        if(!currentPost){
+            setGarden(currentGarden)
+            return
+        }
+        setPost(currentGarden, post)
     }
 
     return (
-        <View style={{ backgroundColor: '#F9F2E0' }}>
-            {gardenScreenMode === 'list' &&
-                <ScrollView
-                    contentContainerStyle={{ alignItems: 'center', minHeight: '100%', paddingVertical: 20, gap: 20 }}
-                    keyboardShouldPersistTaps="always"
-                >
-                    {currentGardens.length !== 0 
-                        ? <View style={{ width: '80%', gap: 20 }}>
-                            <Text style={{ fontSize: 20, fontFamily: 'Lato_700Bold', color: '#294849', lineHeight: 24 }}>Vos jardins</Text>
-                            {currentGardens.map((garden, index) => {
-                                const { name, description, ppURI, members } = garden
-                                return(
-                                    <GardenCard 
-                                        key={ index } 
-                                        name={ name } 
-                                        description={ description } 
-                                        ppURI={ ppURI } 
-                                        members={ members }
-                                        onSelect={() => handleMore(garden) } 
-                                    />
+        <>
+        {/* Default */}
+        {!gardenForm && !currentGarden && !currentPost && !currentEvent &&
+        <ScrollView keyboardShouldPersistTaps="always" contentContainerStyle={styles.wrapper}>
+            
+            {currentGardens && currentGardens.length > 0
+                ? <>
+                <View style={styles.container}>
+                    <Text style={styles.title}>Mes jardins</Text>
+                </View>
+                <View style={styles.container}>
+                {currentGardens.map((garden, index) => {
+                    const { name, description, ppURI, members } = garden
+                    return(
+                        <GardenCard 
+                            key={ index } 
+                            name={ name } 
+                            description={ description } 
+                            ppURI={ ppURI } 
+                            members={ members }
+                            setLikes={() => setLikes(post)}
+                            setGarden={() => setGarden(garden)}
+                        />
+                    )
+                })}
+                    <Button text='Nouveau jardin' primary='white' secondary='#466760' onPress={() => setGardenForm(true)} />
+                </View>
+                </>
+                : <View style={{...styles.container, height: '100%', justifyContent: 'center'}}>
+                    <Text style={styles.paragraph}>Vous n'êtes inscrit à aucun Jardin {'\n'}pour le moment !</Text>
+                    <Button text='Rechercher' primary='#466760' secondary='white' onPress={() => navigate('Recherche')} />
+                    <Button text='Nouveau jardin' primary='white' secondary='#466760' onPress={() => setGardenForm(true)} />
+                </View>
+            }
+        </ScrollView>
+        }
+        {/* Garden View */}
+        {!gardenForm && currentGarden && !currentPost && !currentEvent &&
+        <ScrollView keyboardShouldPersistTaps="always" contentContainerStyle={styles.wrapper}>
+            <View style={[styles.container, styles.header]}>
+                    <TouchableOpacity onPress={() => resetGarden()}>
+                        <ArrowLeft size={ 24 } color='#294849' />
+                    </TouchableOpacity>
+                    <Text style={{...styles.title, flex: 1}}>{ currentGarden.name }</Text>
+            </View>
+            {/* Events list */}
+            {currentEvents && currentEvents.length > 0
+                ? <View style={styles.container}>
+                    <Text>{JSON.stringify(currentEvents)}</Text>
+                </View>
+                : <Text>Aucun événement à venir !</Text>
+            }
+            {/* Posts list */}
+            {currentPosts && currentPosts.length > 0
+                ? <View style={styles.container}>
+                {currentPosts
+                    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+                    .map((post, index) => {
+                        const { createdAt, likes, owner, repliesCount, text, title, id, pictures } = post
+                        return(
+                            <PostCard
+                                key={ index }
+                                createdAt={ createdAt }
+                                likes={ likes }
+                                owner={ owner }
+                                repliesCount={ repliesCount }
+                                text={ text }
+                                title={ title }
+                                gardenId={ currentGarden.id }
+                                postId={ id }
+                                pictures={ pictures }
+                                setPost={() => setPost(currentGarden, post) }
+                                setLikes={ () => setLikes(post) }
+                            />
+                        )
+                    })
+                }
+                <Button text='Publier' primary='white' secondary='#466760' onPress={() => navigate('Publier')} />
+                </View>
+                : <View style={{ ...styles.container, flex: 1, justifyContent: 'center' }}>
+                    <Text style={styles.paragraph}>Aucune publication pour le moment !</Text>
+                    <Button text='Publier' primary='white' secondary='#466760' onPress={() => navigate('Publier')} />
+                </View>
+            }
+        </ScrollView>
+        }
+        {/* Post View */}
+        {!gardenForm && currentGarden && currentPost && !currentEvent &&
+        <View style={styles.postWrapper}>
+            <View style={[styles.container, styles.header]}>
+                    <TouchableOpacity onPress={() => setGarden(currentGarden)}>
+                        <ArrowLeft size={ 24 } color='#294849' />
+                    </TouchableOpacity>
+                    <View style={{ gap: 2, flex: 1 }}>
+                        <Text style={styles.title}>{ currentPost.title }</Text>
+                        <Text style={{ fontSize: 14, fontFamily: 'Lato_700Bold', color: '#000000BF' }} >{ currentGarden.name }</Text>
+                        <Text style={{ fontSize: 12, fontFamily: 'Lato_400Regular', color: '#000000BF' }} >{ currentPost.owner }, { dayjs(currentPost.createdAt).locale('fr').fromNow() } </Text>
+                    </View>
+            </View>
+            
+            {currentPost.replies.length > 0
+                ? <ScrollView keyboardShouldPersistTaps="always" style={{ width: '100%' }} contentContainerStyle={{...styles.container, alignSelf: 'center'}}>
+                {/* Post */}
+                <View style={{ width: '100%', backgroundColor: 'white', padding: 20, borderRadius: 10, gap: 20, borderWidth: 1, borderColor: '#294849' }}>
+                    <Text>{ currentPost.text }</Text>
+                    {currentPost.pictures.length > 0 &&
+                        <View style={{ flexDirection: 'row', gap: 10 }}>
+                            {currentPost.pictures.map((picture, index) => {
+                                return (
+                                    <Image source={{ uri: picture }} key={ index } style={{ width: 64, height: 64, borderRadius: 5 }} />
                                 )
                             })}
                         </View>
-                        : <View style={{ justifyContent: 'center', alignItems: 'center', gap: 20, width: '80%', paddingVertical: 20 }}>
-                            <Text style={{ fontSize: 16, fontFamily: 'Lato_400Regular', textAlign: 'center' }}>Vous n'êtes inscrit à aucun Jardin {'\n'}pour le moment !</Text>
-                            <Button text='Rechercher' primary='#466760' secondary='white' onPress={() => navigate('Recherche')} />
-                        </View>
                     }
-                    <View style={{ width: '80%' }}>
-                        <Button text='Nouveau jardin' primary='white' secondary='#466760' onPress={() => setGardenScreenMode('create')} />
-                    </View>
-                </ScrollView>
-            }
-            {gardenScreenMode === 'create' &&
-                <ScrollView 
-                    contentContainerStyle={{ alignItems: 'center', minHeight: '100%' }}
-                    keyboardShouldPersistTaps="always"
-                >
-                    <View style={{ width: '80%', gap: 20, paddingVertical: 20 }}>
-                        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 20 }}>
-                            <TouchableOpacity onPress={() => setGardenScreenMode('list')} >
-                                <ArrowLeftIcon size={ 24 } color='#294849' />
-                            </TouchableOpacity>
-                            <Text style={{ fontSize: 20, fontFamily: 'Lato_700Bold', color: '#294849', lineHeight: 24 }}>Créer un jardin</Text>
-                        </View>
-                    </View>
-                    <CreateGardenForm 
-                        style={{ width: '80%', gap: 20, paddingBottom: 20 }} 
-                        setGardenScreenMode={ setGardenScreenMode } 
+                    <Likes 
+                        likes={ currentPost.likes } 
+                        owner={ currentPost.owner } 
+                        gardenId={ currentGarden.id } 
+                        postId={ currentPost.id } 
+                        setLikes={() => setLikes(currentPost) }
                     />
+                </View>                
+                {/* Replies */}
+                {currentPost.replies
+                    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+                    .map((reply, index) => {
+                        const { owner, text, createdAt } = reply
+                        return(
+                            <ReplyCard
+                                key={ index }
+                                owner={ owner }
+                                text={ text }
+                                createdAt={ createdAt }
+                            />
+                        )
+                    })
+                }
                 </ScrollView>
+                : <Text>Post + pas de reply + reply form</Text>
             }
-            {gardenScreenMode === 'garden' &&
-                <ScrollView 
-                    contentContainerStyle={{ alignItems: 'center', minHeight: '100%' }}
-                    keyboardShouldPersistTaps="always"
-                >
-                    <View style={{ width: '80%', gap: 20, paddingVertical: 20 }}>
-                        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 20 }}>
-                            <TouchableOpacity onPress={() => setGardenScreenMode('list')} >
-                                <ArrowLeftIcon size={ 24 } color='#294849' />
-                            </TouchableOpacity>
-                            <Text style={{ fontSize: 20, fontFamily: 'Lato_700Bold', color: '#294849', lineHeight: 24, flex: 1 }}>{ currentGarden.name }</Text>
-                            
-                        </View>
-                        <View>
-                            {currentPosts.length > 0
-                                ? <View style={{ gap: 20 }}>
-                                    {currentPosts
-                                        .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-                                        .map((post, index) => {
-                                            const { createdAt, likes, owner, repliesCount, text, title, id, pictures } = post
-                                            return(
-                                                <PostCard
-                                                    key={ index }
-                                                    createdAt={ createdAt }
-                                                    likes={ likes }
-                                                    owner={ owner }
-                                                    repliesCount={ repliesCount }
-                                                    text={ text }
-                                                    title={ title }
-                                                    gardenId={ currentGarden.id }
-                                                    postId={ id }
-                                                    pictures={ pictures }
-                                                    onLikesChange={ onLikesChange }
-                                                    showPost={() => showPost(currentGarden.id, id) }
-                                                />
-                                            )
-                                        })
-                                    }
-                                </View>
-                                : <Text>Aucun message pour le moment</Text>
-                            }
-                        </View>
-                    </View>
-                </ScrollView>
-            }
-            {gardenScreenMode === 'post' &&
-            <View style={{ height: '100%' }}>
-                <ScrollView 
-                    contentContainerStyle={{ alignItems: 'center' }}
-                    keyboardShouldPersistTaps="always"
-                >
-                    <View style={{ width: '80%', gap: 20, paddingVertical: 20 }}>
-                        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 20 }}>
-                            <TouchableOpacity onPress={() => setGardenScreenMode('garden')} >
-                                <ArrowLeftIcon size={ 24 } color='#294849' />
-                            </TouchableOpacity>
-                            <View>
-                                <Text style={{ fontSize: 20, fontFamily: 'Lato_700Bold', color: '#294849', lineHeight: 24, flex: 1 }}>{ currentPost.title }</Text>
-                                <Text style={{ fontSize: 14, fontFamily: 'Lato_700Bold', color: '#000000BF' }} >{ currentGarden.name }</Text>
-                                <Text style={{ fontSize: 12, fontFamily: 'Lato_400Regular', color: '#000000BF' }} >{ currentPost.owner } </Text>
-                            </View>
-                        </View>
-                        <View style={{ backgroundColor: 'white', padding: 20, borderRadius: 10, gap: 20, borderWidth: 1, borderColor: '#294849' }}>
-                           <Text>{ currentPost.text }</Text>
-                           {currentPost.pictures.length > 0 &&
-                                <View style={{ flexDirection: 'row', gap: 10 }}>
-                                    {currentPost.pictures.map((picture, index) => {
-                                        return (
-                                            <Image source={{ uri: picture }} key={ index } style={{ width: 64, height: 64, borderRadius: 5 }} />
-                                        )
-                                    })}
-                                </View>
-                           }
-                           <Likes likes={ currentPost.likes } owner={ currentPost.owner } gardenId={ currentPost.gardenId } postId={ currentPost.postId } onLikesChange={() => showPost(currentPost.gardenId, currentPost.postId) } />
-                        </View>
-                        {currentPost.replies.length > 0
-                            ? <View style={{ gap: 20 }}>
-                                {currentPost.replies
-                                    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-                                    .map((reply, index) => {
-                                        const { owner, text, createdAt } = reply
-                                        return(
-                                            <ReplyCard
-                                                key={ index }
-                                                owner={ owner }
-                                                text={ text }
-                                                createdAt={ createdAt }
-                                            />
-                                        )
-                                    })
-                                }
-                            </View>
-                            : <Text>Aucune réponse pour le moment</Text>
-                        }
-                    </View>
-                </ScrollView>
-                <ReplyForm gardenId={ currentPost.gardenId } postId={ currentPost.postId } showPost={() => showPost(currentPost.gardenId, currentPost.postId)} />
-            </View>
-            }
+            <ReplyForm 
+                gardenId={ currentGarden.id } 
+                postId={ currentPost.id } 
+                setPost={() => setPost(currentGarden, currentPost)} 
+            />
         </View>
+        }
+        {/* Event View */}
+        {!gardenForm && currentGarden && !currentPost && currentEvent &&
+        <>
+            {currentEvent.subscriber.some(name => name === user.name)
+                ? <Text>Event + vous êtes inscrit blabla</Text>
+                : <Text>Event + bouton inscrire</Text>
+            }
+        </>
+        }
+        {/* Create Garden View */}
+        {gardenForm &&
+            <ScrollView keyboardShouldPersistTaps="always" contentContainerStyle={{...styles.wrapper, paddingVertical: 0,}}>
+                <View style={{...styles.container, ...styles.header, paddingTop: 20 }}>
+                    <TouchableOpacity onPress={() => setGardenForm(false)}>
+                        <ArrowLeft size={ 24 } color='#294849' />
+                    </TouchableOpacity>
+                    <Text>Annuler</Text>
+                </View>
+                <CreateGardenForm 
+                    style={{ width: '80%', gap: 20, paddingBottom: 20 }}
+                    resetGarden={() => resetGarden()}
+                />
+            </ScrollView>
+        }
+        </>
     )
 }
+
+const styles = StyleSheet.create({
+    wrapper: {
+        backgroundColor: '#F9F2E0',
+        minHeight: '100%',
+        gap: 20,
+        paddingVertical: 20,
+        alignItems: 'center'
+    },
+    postWrapper: {
+        backgroundColor: '#F9F2E0',
+        height: '100%',
+        gap: 20,
+        paddingVertical: 20,
+        alignItems: 'center'
+    },
+    container: {
+        width: '80%',
+        gap: 20,
+    },
+    header: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 10
+    },
+    title: {
+        fontFamily: 'Lato_700Bold',
+        fontSize: 20,
+        color: '#294849',
+    },
+    paragraph: {
+        fontSize: 16, 
+        fontFamily: 'Lato_400Regular', 
+        textAlign: 'center',
+    },
+})
 
 export default GardenScreen

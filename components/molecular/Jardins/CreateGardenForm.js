@@ -19,7 +19,7 @@ const bonusOptions = [
     { label: 'Point d\'eau', value: 'water' },
 ]
 
-const CreateGardenForm = ({ style, setGardenScreenMode }) => {
+const CreateGardenForm = ({ style, resetGarden }) => {
 
     const user = useSelector(state => state.user)
 
@@ -88,12 +88,11 @@ const CreateGardenForm = ({ style, setGardenScreenMode }) => {
             body: JSON.stringify(gardenBody),
         })
         const json = await response.json()
-        console.log(json)
         if(!json.result) return
 
         setNewGarden({ address: '', name: '', description: '', interests: [], bonus: [] })
         setPictureUrl('')
-        setGardenScreenMode('list')
+        resetGarden()
     }
 
     return (

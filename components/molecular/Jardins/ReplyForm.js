@@ -5,7 +5,7 @@ import { useSelector } from "react-redux"
 
 import TextInput from "../../atomic/InputText"
 
-const ReplyForm = ({ postId, gardenId, showPost }) => {
+const ReplyForm = ({ postId, gardenId, setPost }) => {
 
     const user = useSelector(state => state.user)
     const [replyText, setReplyText] = useState('')
@@ -21,11 +21,11 @@ const ReplyForm = ({ postId, gardenId, showPost }) => {
         if(!json.result) return
 
         setReplyText('')
-        showPost()
+        setPost()
     }
 
     return (
-        <View style={{ flexDirection: 'row', alignItems: 'center', paddingVertical: 20, width: '80%', alignSelf: 'center', gap: 10 }}>
+        <View style={{ flexDirection: 'row', alignItems: 'center', width: '80%', alignSelf: 'center', gap: 10 }}>
             <View style={{ flex: 1 }}>
                 <TextInput
                     placeholder='Réponse' 

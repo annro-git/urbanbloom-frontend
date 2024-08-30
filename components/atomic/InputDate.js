@@ -10,6 +10,7 @@ const InputDate = ({ color, size, placeholder, onPick }) => {
 
     const [isOpen, setIsOpen] = useState(false)
     const [date, setDate] = useState('')
+    const cap1st = str => str.charAt(0).toUpperCase() + str.slice(1)
 
     useEffect(() => {
         setIsOpen(false)
@@ -46,7 +47,9 @@ const InputDate = ({ color, size, placeholder, onPick }) => {
                     onPress={() => setIsOpen(!isOpen)}
                 >
                     {date
-                        ? <Text style={{ fontFamily: 'Lato_400Regular', fontSize: size, color: '#000000BF'}}>{ String(date.locale('fr').format('dddd D MMMM YYYY')) }</Text>
+                        ? <Text style={{ fontFamily: 'Lato_400Regular', fontSize: size, color: '#000000BF'}}>
+                            { cap1st(date.locale('fr').format('dddd D MMMM YYYY')) }
+                        </Text>
                         : <Text style={{ fontFamily: 'Lato_400Regular', fontSize: size, color: color }}>{placeholder}</Text>
                     }
                     {isOpen
@@ -81,7 +84,7 @@ const InputDate = ({ color, size, placeholder, onPick }) => {
                     buttonPrevIcon={ <ChevronLeft color={ color } size={ 32 } />}
                     buttonNextIcon={ <ChevronRight color={ color } size= { 32 } /> }
                     calendarTextStyle={{ fontFamily: 'Lato_400Regular', fontSize: size, color: '#000000BF' }}
-                    selectedTextStyle={{ color: '#000000BF' }}
+                    selectedTextStyle={{ fontFamily: 'Lato_400Regular', fontSize: size, color: '#000000BF' }}
                     selectedItemColor={ color }
                     todayTextStyle={{ color: '#000000BF' }}
                     headerTextStyle={{ fontFamily: 'Lato_400Regular', fontSize: size+2, fontWeight: 400 }}

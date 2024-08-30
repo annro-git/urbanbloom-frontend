@@ -7,36 +7,36 @@ import { ChevronsUp, ChevronsDown, Sun, CloudSun, CloudFog, CloudSunRain, CloudR
 import dayjs from 'dayjs'
 import 'dayjs/locale/fr'
 
-const wmoValues = [
-    {wmo: 0, icon: Sun, text: 'Dégagé'},
-    {wmo: 1, icon: Sun, text: 'Parsemé'},
-    {wmo: 2, icon: CloudSun, text: 'Nuageux'},
-    {wmo: 3, icon: CloudSun, text: 'Couvert'},
-    {wmo: 45, icon: CloudFog, text: 'Brouillard'},
-    {wmo: 48, icon: CloudFog, text: 'Brumeux'},
-    {wmo: 51, icon: CloudFog, text: 'Bruine'},
-    {wmo: 53, icon: CloudDrizzle, text: 'Bruine'},
-    {wmo: 55, icon: CloudDrizzle, text: 'Bruine'},
-    {wmo: 56, icon: CloudDrizzle, text: 'Bruine verglaçante'},
-    {wmo: 57, icon: CloudDrizzle, text: 'Bruine verglaçante'},
-    {wmo: 61, icon: CloudSunRain, text: 'Pluie'},
-    {wmo: 63, icon: CloudSunRain, text: 'Pluie'},
-    {wmo: 65, icon: CloudRain, text: 'Pluie'},
-    {wmo: 66, icon: CloudRainWind, text: 'Pluie verglaçante'},
-    {wmo: 67, icon: CloudRainWind, text: 'Pluie verglaçante'},
-    {wmo: 71, icon: CloudSnow, text: 'Neige'},
-    {wmo: 73, icon: CloudSnow, text: 'Neige'},
-    {wmo: 75, icon: Snowflake, text: 'Neige'},
-    {wmo: 77, icon: Snowflake, text: 'Neige'},
-    {wmo: 80, icon: CloudRainWind, text: 'Averses'},
-    {wmo: 81, icon: CloudRainWind, text: 'Averses'},
-    {wmo: 82, icon: CloudRainWind, text: 'Averses'},
-    {wmo: 85, icon: CloudSnow, text: 'Neige'},
-    {wmo: 86, icon: CloudSnow, text: 'Neige'},
-    {wmo: 95, icon: CloudLightning, text: 'Orageux'},
-    {wmo: 96, icon: CloudHail, text: 'Grêle'},
-    {wmo: 99, icon: CloudLightning, text: 'Orage et grêle'},
-]
+const wmoValues = {
+    0: {icon: Sun, text: 'Dégagé'},
+    1: {icon: Sun, text: 'Parsemé'},
+    2: {icon: CloudSun, text: 'Nuageux'},
+    3: {icon: CloudSun, text: 'Couvert'},
+    45: {icon: CloudFog, text: 'Brouillard'},
+    48: {icon: CloudFog, text: 'Brumeux'},
+    51: {icon: CloudFog, text: 'Bruine'},
+    53: {icon: CloudDrizzle, text: 'Bruine'},
+    55: {icon: CloudDrizzle, text: 'Bruine'},
+    56: {icon: CloudDrizzle, text: 'Bruine verglaçante'},
+    57: {icon: CloudDrizzle, text: 'Bruine verglaçante'},
+    61: {icon: CloudSunRain, text: 'Pluie'},
+    63: {icon: CloudSunRain, text: 'Pluie'},
+    65: {icon: CloudRain, text: 'Pluie'},
+    66: {icon: CloudRainWind, text: 'Pluie verglaçante'},
+    67: {icon: CloudRainWind, text: 'Pluie verglaçante'},
+    71: {icon: CloudSnow, text: 'Neige'},
+    73: {icon: CloudSnow, text: 'Neige'},
+    75: {icon: Snowflake, text: 'Neige'},
+    77: {icon: Snowflake, text: 'Neige'},
+    80: {icon: CloudRainWind, text: 'Averses'},
+    81: {icon: CloudRainWind, text: 'Averses'},
+    82: {icon: CloudRainWind, text: 'Averses'},
+    85: {icon: CloudSnow, text: 'Neige'},
+    86: {icon: CloudSnow, text: 'Neige'},
+    95: {icon: CloudLightning, text: 'Orageux'},
+    96: {icon: CloudHail, text: 'Grêle'},
+    99: {icon: CloudLightning, text: 'Orage et grêle'}
+}
 
 const WeatherScreen = () => {
 
@@ -45,6 +45,7 @@ const WeatherScreen = () => {
     const [weatherData, setWeatherData] = useState(null)
     const [locationName, setLocationName] = useState(null)
 
+    const cap1st = str => str.charAt(0).toUpperCase() + str.slice(1)
 
     // Get current weather and 7 days forecast from open-meteo
     useEffect(() => {
@@ -90,7 +91,7 @@ const WeatherScreen = () => {
                 {weatherData &&
                     <>
                     <View style={{ flexDirection: 'row', gap: 20, alignItems: 'center', justifyContent:'space-between', backgroundColor: 'white', borderRadius: 10, padding: 20}}>
-                        {wmoValues.find(e => weatherData.current.weather_code === e.wmo).icon.render({color: '#C5BBA2', size: 48})}
+                        {wmoValues[weatherData.current.weather_code].icon.render({color: '#C5BBA2', size: 48})}
                         <View style={{ flexDirection: 'row', alignItems: 'center', flex: 1, justifyContent: 'center' }}>
                             <Text style={{ color: '#000000BF', fontFamily: 'Lato_700Bold', fontSize: 48}}>
                                 {Math.round(weatherData.current.temperature_2m)}
@@ -121,7 +122,9 @@ const WeatherScreen = () => {
                             <Text style={{ color: '#000000BF', fontFamily: 'Lato_700Bold', fontSize: 20 }}>{Math.floor(weatherData.current.uv_index)}</Text>
                         </View>
                     </View>
-                    <Text style={{ fontSize: 20, color: '#000000BF', fontFamily: 'Lato_700Bold', color: '#294849', lineHeight: 24 }}>{dayjs(new Date()).locale('fr').format('dddd, D MMMM')}</Text>
+                    <Text style={{ fontSize: 20, color: '#000000BF', fontFamily: 'Lato_700Bold', color: '#294849', lineHeight: 24 }}>
+                        {cap1st(dayjs(new Date()).locale('fr').format('dddd, D MMMM'))}
+                    </Text>
                     <View style={{ backgroundColor: 'white', borderRadius: 10, padding: 20 }}>
                         <ScrollView contentContainerStyle={{ flexDirection: 'row', gap: 30 }} horizontal={ true }>
                             {weatherData.hourly.time.map((hour, index) => {
@@ -129,7 +132,7 @@ const WeatherScreen = () => {
                                 return (
                                     <View key={index} style={{ justifyContent: 'center', alignItems: 'center', gap: 5}}>
                                         <Text style={{ color: '#000000BF', fontFamily: 'Lato_400Regular', fontSize: 12 }}>{dayjs(hour).locale('fr').format('HH:mm')}</Text>
-                                        {wmoValues.find(e => weather_code[index] === e.wmo).icon.render({color: '#C5BBA2', size: 24})}
+                                        {wmoValues[weather_code[index]].icon.render({color: '#C5BBA2', size: 24})}
                                         <Text style={{ color: '#000000BF', fontFamily: 'Lato_700Bold', fontSize: 12 }}>{Math.round(temperature_2m[index])}°C</Text>
                                     </View>
                                 )
@@ -143,8 +146,10 @@ const WeatherScreen = () => {
                             const { temperature_2m_min, temperature_2m_max, weather_code } = weatherData.daily
                             return (
                                 <View key={index} style={{ flexDirection: 'row', justifyContent: 'space-between', backgroundColor: 'white', borderRadius: 10, padding: 20, alignItems: 'center' }}>
-                                    <Text style={{ width: '35%', color: '#000000BF', fontFamily: 'Lato_400Regular', fontSize: 12 }}>{dayjs(day).locale('fr').format('dddd D MMM')}</Text>
-                                    {wmoValues.find(e => weather_code[index] === e.wmo).icon.render({color: '#C5BBA2', size: 24})}
+                                    <Text style={{ width: '35%', color: '#000000BF', fontFamily: 'Lato_400Regular', fontSize: 12 }}>
+                                        {cap1st(dayjs(day).locale('fr').format('dddd D MMM'))}
+                                    </Text>
+                                    {wmoValues[weather_code[index]].icon.render({color: '#C5BBA2', size: 24})}
                                     <View style={{ flexDirection: 'row', gap: 2 }}>
                                         <ChevronsDown size={ 16 } color='#C5BBA2' />
                                         <Text style={{ color: '#000000BF', fontFamily: 'Lato_400Regular', fontSize: 12 }}>{ Math.floor(temperature_2m_min[index]) }°C</Text>

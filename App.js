@@ -21,12 +21,13 @@ import CustomTabBar from './components/molecular/CustomTabBar'
 import SearchScreen from './screens/SearchScreen'
 import PostScreen from './screens/PostScreen'
 import GardenScreen from './screens/GardenScreen'
+import ResourcesScreen from './screens/ResourcesScreen'
 import test from './reducers/test'
 import user from './reducers/user'
 
 // URL BACKEND
 // global.BACKEND_URL = 'https://urbanbloom-backend.vercel.app/'
-global.BACKEND_URL = 'http://192.168.15.112:3000'
+global.BACKEND_URL = 'http://192.168.1.24:3000'
 
 // Redux
 const reducers = combineReducers({ test, user })
@@ -44,7 +45,7 @@ const tabs = [
   { name: 'Recherche', component: SearchScreen, icon: Search, position: 'bottom' },
   { name: 'Publier', component: PostScreen, icon: CirclePlus, position: 'bottom' },
   { name: 'Jardins', component: GardenScreen, icon: Leaf, position: 'bottom' },
-  { name: 'Ressources', component: TestScreen, icon: Book, position: 'bottom' },
+  { name: 'Ressources', component: ResourcesScreen, icon: Book, position: 'bottom' },
   { name: 'Profile', component: ProfileScreen },
   { name: 'Weather', component: WeatherScreen },
 ]
