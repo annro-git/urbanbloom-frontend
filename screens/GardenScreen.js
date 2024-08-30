@@ -4,6 +4,9 @@ import { useSelector } from "react-redux"
 import { useIsFocused } from "@react-navigation/native"
 import { ArrowLeft } from "lucide-react-native"
 
+import dayjs from 'dayjs'
+import 'dayjs/locale/fr'
+
 import GardenCard from "../components/molecular/Jardins/GardenCard"
 import PostCard from "../components/molecular/Jardins/PostCard"
 import ReplyCard from "../components/molecular/Jardins/ReplyCard"
@@ -11,8 +14,7 @@ import ReplyForm from "../components/molecular/Jardins/ReplyForm"
 import Button from "../components/atomic/Button"
 import CreateGardenForm from "../components/molecular/Jardins/CreateGardenForm"
 import Likes from "../components/molecular/Jardins/Likes"
-import dayjs from 'dayjs'
-import 'dayjs/locale/fr'
+import EventsWrapper from "../components/molecular/Jardins/EventsWrapper"
 
 const GardenScreen = ({ navigation }) => {
 
@@ -30,6 +32,20 @@ const GardenScreen = ({ navigation }) => {
     const [currentEvent, setCurrentEvent] = useState(null)
     const [gardenForm, setGardenForm] = useState(false)
     const [init, setInit] = useState(false)
+
+    // Refresh on Focus
+    useEffect(() => {
+      if(currentPost){
+        setPost(currentGarden, currentPost)
+      }
+      if(currentEvent){
+        setEvent(currentEvent)
+      }
+      if(currentGarden && !currentPost && !currentEvent){
+        setGarden(currentGarden)
+      }
+    }, [isFocused])
+    
 
     // Set Gardens
     useEffect(() => {
@@ -65,10 +81,10 @@ const GardenScreen = ({ navigation }) => {
         })
         const json = await response.json()
         if(!json.result) return
-        setCurrentEvent(null)
         setCurrentEvents(json.events)
-        setCurrentPost(null)
+        setCurrentEvent(null)
         setCurrentPosts(json.posts)
+        setCurrentPost(null)
         setCurrentGarden(garden)
     }
 
@@ -81,10 +97,10 @@ const GardenScreen = ({ navigation }) => {
             })
         const json = await response.json()
         if(!json.result) return
-        setCurrentEvent(null)
         setCurrentEvents(null)
-        setCurrentPost(json.post)
+        setCurrentEvent(null)
         setCurrentPosts(null)
+        setCurrentPost(json.post)
     }
 
     // Set Likes
@@ -94,6 +110,28 @@ const GardenScreen = ({ navigation }) => {
             return
         }
         setPost(currentGarden, post)
+    }
+
+    // Set Event
+    const setEvent = event => {
+        setCurrentEvents(null)
+        setCurrentEvent(event)
+        setCurrentPosts(null)
+        setCurrentPost(null)
+    }
+
+    // Subscribe Event
+    const subscribeEvent = async(event) => {
+        const { token, username } = user
+        const response = await fetch(`${global.BACKEND_URL}/garden/${currentGarden.id}/event/${event.id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ token, username })
+        })
+        const json = await response.json()
+        console.log(json)
+        if(!json.result) return
+        setGarden(currentGarden)
     }
 
     return (
@@ -143,12 +181,11 @@ const GardenScreen = ({ navigation }) => {
                     <Text style={{...styles.title, flex: 1}}>{ currentGarden.name }</Text>
             </View>
             {/* Events list */}
-            {currentEvents && currentEvents.length > 0
-                ? <View style={styles.container}>
-                    <Text>{JSON.stringify(currentEvents)}</Text>
-                </View>
-                : <Text>Aucun événement à venir !</Text>
-            }
+            <EventsWrapper
+                events={ currentEvents }
+                setEvent={(e) => setEvent(e)}
+                subscribeEvent={ subscribeEvent }
+            />
             {/* Posts list */}
             {currentPosts && currentPosts.length > 0
                 ? <View style={styles.container}>
@@ -201,7 +238,7 @@ const GardenScreen = ({ navigation }) => {
                 ? <ScrollView keyboardShouldPersistTaps="always" style={{ width: '100%' }} contentContainerStyle={{...styles.container, alignSelf: 'center'}}>
                 {/* Post */}
                 <View style={{ width: '100%', backgroundColor: 'white', padding: 20, borderRadius: 10, gap: 20, borderWidth: 1, borderColor: '#294849' }}>
-                    <Text>{ currentPost.text }</Text>
+                    <Text style={styles.paragraph}>{ currentPost.text }</Text>
                     {currentPost.pictures.length > 0 &&
                         <View style={{ flexDirection: 'row', gap: 10 }}>
                             {currentPost.pictures.map((picture, index) => {
@@ -246,12 +283,43 @@ const GardenScreen = ({ navigation }) => {
         }
         {/* Event View */}
         {!gardenForm && currentGarden && !currentPost && currentEvent &&
-        <>
-            {currentEvent.subscriber.some(name => name === user.name)
-                ? <Text>Event + vous êtes inscrit blabla</Text>
-                : <Text>Event + bouton inscrire</Text>
+        <ScrollView keyboardShouldPersistTaps="always" contentContainerStyle={styles.wrapper}>
+            <View style={[styles.container, styles.header]}>
+                <TouchableOpacity onPress={() => setGarden(currentGarden)}>
+                    <ArrowLeft size={ 24 } color='#294849' />
+                </TouchableOpacity>
+                <View style={{ gap: 2, flex: 1 }}>
+                    <Text style={styles.title}>{ currentEvent.title }</Text>
+                    <Text style={{ fontSize: 14, fontFamily: 'Lato_700Bold', color: '#000000BF' }} >{ currentGarden.name }</Text>
+                    <Text style={{ fontSize: 12, fontFamily: 'Lato_400Regular', color: '#000000BF' }} >{ currentEvent.owner }, { dayjs(currentEvent.createdAt).locale('fr').fromNow() } </Text>
+                </View>
+            </View>
+            <View style={{ width: '80%', backgroundColor: 'white', padding: 20, borderRadius: 10, gap: 20, borderWidth: 1, borderColor: '#294849' }}>
+                <Text>{ currentEvent.text }</Text>
+                {currentEvent.pictures && currentEvent.pictures.length > 0 &&
+                    <View style={{ flexDirection: 'row', gap: 10 }}>
+                        {currentEvent.pictures.map((picture, index) => {
+                            return (
+                                <Image source={{ uri: picture }} key={ index } style={{ width: 64, height: 64, borderRadius: 5 }} />
+                            )
+                        })}
+                    </View>
+                }
+            </View>
+            <View style={{ width: '80%', backgroundColor: 'white', padding: 20, borderRadius: 10, gap: 10 }}>
+                <Text style={{ fontFamily: 'Lato_700Bold', fontSize: 14 }}>Inscrit(s):</Text>
+                <Text style={{ fontFamily: 'Lato_400Regular', fontSize: 12 }}>{currentEvent.subscribers.join(', ')}</Text>
+            </View>
+            {currentEvent.owner === user.username
+                ? <Text style={styles.paragraph}>Vous êtes l'organisateur de cet événement.</Text>
+                : <>
+                {!currentEvent.subscribers.some(e => e === user.username)
+                    ? <Button width="80%" text="S'inscrire" primary='white' secondary='#466760' onPress={() => subscribeEvent(currentEvent)} />
+                    : <Button width="80%" text="Se désinscrire" primary='white' secondary='#466760' onPress={() => subscribeEvent(currentEvent)} />
+                }
+                </>
             }
-        </>
+        </ScrollView>
         }
         {/* Create Garden View */}
         {gardenForm &&
@@ -260,7 +328,7 @@ const GardenScreen = ({ navigation }) => {
                     <TouchableOpacity onPress={() => setGardenForm(false)}>
                         <ArrowLeft size={ 24 } color='#294849' />
                     </TouchableOpacity>
-                    <Text>Annuler</Text>
+                    <Text style={styles.title}>Annuler</Text>
                 </View>
                 <CreateGardenForm 
                     style={{ width: '80%', gap: 20, paddingBottom: 20 }}
