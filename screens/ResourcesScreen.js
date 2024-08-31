@@ -1,9 +1,14 @@
-import { View, ScrollView, Text, TouchableOpacity } from "react-native"
+import { View, ScrollView, Text, TouchableOpacity, Image } from "react-native"
 import { useState, useEffect } from "react"
 import { useSelector } from "react-redux"
 
 import PageTypeCard from "../components/molecular/Ressources/PageTypeCard"
 import { ArrowLeft } from "lucide-react-native"
+
+const parseMonth = int => {
+    const months = ['', 'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre' ]
+    return months[int]
+}
 
 const ResourcesScreen = () => {
 
@@ -83,7 +88,20 @@ const ResourcesScreen = () => {
                             </Text>
                         </TouchableOpacity>
                     </View>
-                    <Text>{JSON.stringify(currentPage)}</Text>
+                    <View>
+                        <View style={{ flexDirection: 'row' }}>
+                            <Text style={{ fontFamily: 'Lato_700Bold', fontSize: 18, color: '#000000BF'}}>Semis : </Text>
+                            <Text style={{ fontFamily: 'Lato_400Regular', fontSize: 18, color: '#000000BF'}}>de {parseMonth(currentPage.sow.from)} à {parseMonth(currentPage.sow.to)}</Text>
+                        </View>
+                        <View style={{ flexDirection: 'row' }}>
+                            <Text style={{ fontFamily: 'Lato_700Bold', fontSize: 18, color: '#000000BF'}}>Récolte : </Text>
+                            <Text style={{ fontFamily: 'Lato_400Regular', fontSize: 18, color: '#000000BF'}}>de {parseMonth(currentPage.harvest.from)} à {parseMonth(currentPage.harvest.to)}</Text>
+                        </View>
+                    </View>
+                    <Image source={{ uri: currentPage.image }} style={{width: '100%', borderRadius: 10, height: 250 }} />
+                    <Text>
+                        {currentPage.text}
+                    </Text>
                 </View>
             }
         </ScrollView>
