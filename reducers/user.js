@@ -8,6 +8,7 @@ const initialState = {
     gardens: [],
     events: [],
     token: '',
+    bio: '',
     lastLocation: {
         latitude: '',
         longitude: ''
@@ -30,9 +31,15 @@ export const userSlice = createSlice({
         },
         updateGardens: (state, action) => {
             state.gardens = action.payload
+        },
+        updateData: (state, action) => {
+            const { bio, firstname, lastname } = action.payload
+            state.firstname = firstname
+            state.lastname = lastname
+            state.bio = bio
         }
     }
 })
 
-export const { updateUser, updateLocation, updateGardens } = userSlice.actions
+export const { updateUser, updateLocation, updateGardens, updateData } = userSlice.actions
 export default userSlice.reducer

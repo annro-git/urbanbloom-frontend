@@ -1,4 +1,4 @@
-import { ScrollView, Text, View } from "react-native"
+import { ScrollView, StyleSheet, Text, View } from "react-native"
 import { useSelector } from "react-redux"
 import { useEffect, useState } from "react"
 import { useIsFocused } from "@react-navigation/native"
@@ -87,7 +87,7 @@ const WeatherScreen = () => {
     return (
         <ScrollView contentContainerStyle={{ minHeight: '100%', alignItems:'center', backgroundColor: '#F9F2E0' }}>
             <View style={{ width: '80%', gap: 20, paddingVertical: 20 }}>
-                <Text style={{ fontSize: 20, color: '#000000BF', fontFamily: 'Lato_700Bold', color: '#294849', lineHeight: 24 }}>{locationName ? locationName : 'Emplacement inconnu'}</Text>
+                <Text style={styles.xxl}>{locationName ? locationName : 'Emplacement inconnu'}</Text>
                 {weatherData &&
                     <>
                     <View style={{ flexDirection: 'row', gap: 20, alignItems: 'center', justifyContent:'space-between', backgroundColor: 'white', borderRadius: 10, padding: 20}}>
@@ -97,7 +97,7 @@ const WeatherScreen = () => {
                                 {Math.round(weatherData.current.temperature_2m)}
                             </Text>
                             <View>
-                                <Text style={{ color: '#000000BF', fontFamily: 'Lato_700Bold', fontSize: 20 }}>°C</Text>
+                                <Text style={styles.l}>°C</Text>
                                 <Text style={{ color: '#000000BF', fontFamily: 'Lato_400Regular', fontSize: 14, paddingLeft: 5 }}>{wmoValues[weatherData.current.weather_code].text}</Text>
                             </View>
                         </View>
@@ -114,15 +114,15 @@ const WeatherScreen = () => {
                     </View>
                     <View style={{ flexDirection: 'row', gap: 20 }}>
                         <View style={{ backgroundColor: 'white', borderRadius: 10, padding: 20, flex: 1, flexDirection: 'row', gap: 5, alignItems: 'center', justifyContent: 'center' }}>
-                            <Text style={{ color: '#000000BF', fontFamily: 'Lato_400Regular', fontSize: 14 }}>Humidité:</Text>
-                            <Text style={{ color: '#000000BF', fontFamily: 'Lato_700Bold', fontSize: 20 }}>{weatherData.current.relative_humidity_2m}%</Text>
+                            <Text style={styles.m}>Humidité:</Text>
+                            <Text style={styles.l}>{weatherData.current.relative_humidity_2m}%</Text>
                         </View>
                         <View style={{ backgroundColor: 'white', borderRadius: 10, padding: 20, flex: 1, flexDirection: 'row', gap: 5, alignItems: 'center', justifyContent: 'center' }}>
-                            <Text style={{ color: '#000000BF', fontFamily: 'Lato_400Regular', fontSize: 14 }}>Indice UV: </Text>
-                            <Text style={{ color: '#000000BF', fontFamily: 'Lato_700Bold', fontSize: 20 }}>{Math.floor(weatherData.current.uv_index)}</Text>
+                            <Text style={styles.m}>Indice UV: </Text>
+                            <Text style={styles.l}>{Math.floor(weatherData.current.uv_index)}</Text>
                         </View>
                     </View>
-                    <Text style={{ fontSize: 20, color: '#000000BF', fontFamily: 'Lato_700Bold', color: '#294849', lineHeight: 24 }}>
+                    <Text style={styles.xxl}>
                         {cap1st(dayjs(new Date()).locale('fr').format('dddd, D MMMM'))}
                     </Text>
                     <View style={{ backgroundColor: 'white', borderRadius: 10, padding: 20 }}>
@@ -131,7 +131,7 @@ const WeatherScreen = () => {
                                 const { temperature_2m, weather_code } = weatherData.hourly
                                 return (
                                     <View key={index} style={{ justifyContent: 'center', alignItems: 'center', gap: 5}}>
-                                        <Text style={{ color: '#000000BF', fontFamily: 'Lato_400Regular', fontSize: 12 }}>{dayjs(hour).locale('fr').format('HH:mm')}</Text>
+                                        <Text style={styles.s}>{dayjs(hour).locale('fr').format('HH:mm')}</Text>
                                         {wmoValues[weather_code[index]].icon.render({color: '#C5BBA2', size: 24})}
                                         <Text style={{ color: '#000000BF', fontFamily: 'Lato_700Bold', fontSize: 12 }}>{Math.round(temperature_2m[index])}°C</Text>
                                     </View>
@@ -139,7 +139,7 @@ const WeatherScreen = () => {
                             })}
                         </ScrollView>
                     </View>
-                    <Text style={{ fontSize: 20, color: '#000000BF', fontFamily: 'Lato_700Bold', color: '#294849', lineHeight: 24 }}>Cette semaine</Text>
+                    <Text style={styles.xxl}>Cette semaine</Text>
                     <View style={{ gap: 20 }}>
                         {weatherData.daily.time.map((day, index) => {
                             if(index === 0) return
@@ -152,9 +152,9 @@ const WeatherScreen = () => {
                                     {wmoValues[weather_code[index]].icon.render({color: '#C5BBA2', size: 24})}
                                     <View style={{ flexDirection: 'row', gap: 2 }}>
                                         <ChevronsDown size={ 16 } color='#C5BBA2' />
-                                        <Text style={{ color: '#000000BF', fontFamily: 'Lato_400Regular', fontSize: 12 }}>{ Math.floor(temperature_2m_min[index]) }°C</Text>
+                                        <Text style={styles.s}>{ Math.floor(temperature_2m_min[index]) }°C</Text>
                                         <ChevronsUp size={ 16 } color='#C5BBA2' />
-                                        <Text style={{ color: '#000000BF', fontFamily: 'Lato_400Regular', fontSize: 12 }}>{ Math.floor(temperature_2m_max[index]) }°C</Text>
+                                        <Text style={styles.s}>{ Math.floor(temperature_2m_max[index]) }°C</Text>
                                     </View>
                                 </View>
                             )
@@ -166,5 +166,30 @@ const WeatherScreen = () => {
         </ScrollView>
     )
 }
+
+const styles = StyleSheet.create({
+    xxl: {
+        fontSize: 20, 
+        color: '#000000BF', 
+        fontFamily: 'Lato_700Bold', 
+        color: '#294849', 
+        lineHeight: 24
+    },
+    l: {
+        color: '#000000BF', 
+        fontFamily: 'Lato_700Bold', 
+        fontSize: 20
+    },
+    m: {
+        color: '#000000BF', 
+        fontFamily: 'Lato_400Regular', 
+        fontSize: 14
+    },
+    s: {
+        color: '#000000BF', 
+        fontFamily: 'Lato_400Regular', 
+        fontSize: 12 
+    }
+})
 
 export default WeatherScreen

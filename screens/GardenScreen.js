@@ -238,7 +238,7 @@ const GardenScreen = ({ navigation }) => {
                 ? <ScrollView keyboardShouldPersistTaps="always" style={{ width: '100%' }} contentContainerStyle={{...styles.container, alignSelf: 'center'}}>
                 {/* Post */}
                 <View style={{ width: '100%', backgroundColor: 'white', padding: 20, borderRadius: 10, gap: 20, borderWidth: 1, borderColor: '#294849' }}>
-                    <Text style={styles.paragraph}>{ currentPost.text }</Text>
+                    <Text style={{...styles.paragraph, textAlign: 'left'}}>{ currentPost.text }</Text>
                     {currentPost.pictures.length > 0 &&
                         <View style={{ flexDirection: 'row', gap: 10 }}>
                             {currentPost.pictures.map((picture, index) => {

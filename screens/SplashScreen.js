@@ -36,11 +36,11 @@ const SplashSreen = ({ navigation }) => {
                 <Button onPress={() => navigate('SignUp')} text="Créer un compte" primary="white" secondary="#294849" border="#294849" />
             </View>
 
-            {/* on press : empty urbanbloom AsyncStorage key */}
+            {/* on press : empty urbanbloom AsyncStorage key
             <View style={{ position: "absolute", bottom: 0, right: 0, margin: 20}}>
                 <AsyncStorageCleaner navigate={ navigate } size={ 32 } />
             </View>
-            {/* -------------------------------------------- */}
+            -------------------------------------------- */}
         </View>
     )
 }

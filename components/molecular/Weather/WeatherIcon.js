@@ -57,8 +57,6 @@ const WeatherIcon = ({ color }) => {
         }
     }, [user])
 
-    console.log(weatherIcon)
-
     return (
         <View style={{ flexDirection: 'row', alignItems: 'flex-end', }}>
             {weatherIcon.wmo &&
