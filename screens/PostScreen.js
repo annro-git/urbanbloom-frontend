@@ -17,7 +17,9 @@ const typeOptions = [
     { label: 'Evénement', value: 'event' }
 ]
 
-const PostScreen = () => {
+const PostScreen = ({ navigation, route }) => {
+
+    const { navigate } = navigation
 
     const isFocused = useIsFocused()
 
@@ -44,7 +46,7 @@ const PostScreen = () => {
                 />
             </View>
         )
-    }
+    }    
 
     const uploadPictures = async(pictures) => {
         let result=[]
@@ -88,10 +90,10 @@ const PostScreen = () => {
             body: JSON.stringify(messageBody)
         })
         const json = await response.json()
-        if(json.result){
-            setMessage({ title: '', text: ''})
-            setPictureUrls([])
-        }
+        if(!json.result) return
+        setMessage({ title: '', text: ''})
+        setPictureUrls([])
+        navigate('Jardins', {garden: {id: selectedGarden.id}})
     }
 
     const handleSendEvent = async() => {
@@ -113,10 +115,10 @@ const PostScreen = () => {
             body: JSON.stringify(eventBody)
         })
         const json = await response.json()
-        if(json.result){
-            setEvent({ title: '', text: '', date: ''})
-            setPictureUrls([])
-        }
+        if(!json.result) return
+        setEvent({ title: '', text: '', date: ''})
+        setPictureUrls([])
+        navigate('Jardins', {garden: {id: selectedGarden.id}})
     }
     // Refresh User Gardens Names on screen focus
     useEffect(() => {
@@ -134,7 +136,10 @@ const PostScreen = () => {
                 body: JSON.stringify({ gardenIds: json.gardens })
             })
             const jsonB = await responseB.json()
-            jsonB.result && setGardenOptions(jsonB.gardens)
+            if(!jsonB.result) return
+            setGardenOptions(jsonB.gardens)
+            if(!route.params) return
+            setSelectedGarden(route.params.garden)
         })()
     }, [isFocused])
 

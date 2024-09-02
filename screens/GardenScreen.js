@@ -16,7 +16,7 @@ import CreateGardenForm from "../components/molecular/Jardins/CreateGardenForm"
 import Likes from "../components/molecular/Jardins/Likes"
 import EventsWrapper from "../components/molecular/Jardins/EventsWrapper"
 
-const GardenScreen = ({ navigation }) => {
+const GardenScreen = ({ navigation, route }) => {
 
     const { navigate } = navigation
 
@@ -32,6 +32,15 @@ const GardenScreen = ({ navigation }) => {
     const [currentEvent, setCurrentEvent] = useState(null)
     const [gardenForm, setGardenForm] = useState(false)
     const [init, setInit] = useState(false)
+
+    // Manage display from another screen
+    useEffect(() => {
+        if(!route.params) return
+        if(route.params.garden){
+            setGarden(route.params.garden)
+        }
+    }, [isFocused])
+    
 
     // Refresh on Focus
     useEffect(() => {
@@ -85,7 +94,7 @@ const GardenScreen = ({ navigation }) => {
         setCurrentEvent(null)
         setCurrentPosts(json.posts)
         setCurrentPost(null)
-        setCurrentGarden(garden)
+        setCurrentGarden(json.garden)
     }
 
     // Set Post
@@ -129,7 +138,6 @@ const GardenScreen = ({ navigation }) => {
             body: JSON.stringify({ token, username })
         })
         const json = await response.json()
-        console.log(json)
         if(!json.result) return
         setGarden(currentGarden)
     }
@@ -211,11 +219,11 @@ const GardenScreen = ({ navigation }) => {
                         )
                     })
                 }
-                <Button text='Publier' primary='white' secondary='#466760' onPress={() => navigate('Publier')} />
+                <Button text='Publier' primary='white' secondary='#466760' onPress={() => navigate('Publier', {garden: {id: currentGarden.id, name: currentGarden.name}})} />
                 </View>
                 : <View style={{ ...styles.container, flex: 1, justifyContent: 'center' }}>
                     <Text style={styles.paragraph}>Aucune publication pour le moment !</Text>
-                    <Button text='Publier' primary='white' secondary='#466760' onPress={() => navigate('Publier')} />
+                    <Button text='Publier' primary='white' secondary='#466760' onPress={() => navigate('Publier', {garden: {id: currentGarden.id, name: currentGarden.name}})} />
                 </View>
             }
         </ScrollView>

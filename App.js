@@ -24,6 +24,7 @@ import GardenScreen from './screens/GardenScreen'
 import ResourcesScreen from './screens/ResourcesScreen'
 import test from './reducers/test'
 import user from './reducers/user'
+import HomeScreen from './screens/HomeScreen'
 
 // URL BACKEND
 // global.BACKEND_URL = 'https://urbanbloom-backend.vercel.app/'
@@ -41,7 +42,7 @@ const persiststor = persistStore(store)
 // Tab navigation
 const Tab = createBottomTabNavigator()
 const tabs = [
-  { name: 'Accueil', component: TestScreen, icon: House, position: 'bottom' },
+  { name: 'Accueil', component: HomeScreen, icon: House, position: 'bottom' },
   { name: 'Recherche', component: SearchScreen, icon: Search, position: 'bottom' },
   { name: 'Publier', component: PostScreen, icon: CirclePlus, position: 'bottom' },
   { name: 'Jardins', component: GardenScreen, icon: Leaf, position: 'bottom' },

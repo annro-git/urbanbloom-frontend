@@ -23,10 +23,11 @@ const bonusOptions =[
     { label: 'Point d\'eau', value: 'water' },
 ]
 
-const SearchScreen = () => {
+const SearchScreen = ({ navigation }) => {
 
     const isFocused = useIsFocused()
     const dispatch = useDispatch()
+    const { navigate } = navigation
 
     const user = useSelector(state => state.user)
     const [address, setAddress] = useState('')
@@ -68,7 +69,9 @@ const SearchScreen = () => {
             body: JSON.stringify({ token: user.token, username: user.username })
         })
         const json = await response.json()
-        json.result && dispatch(updateGardens([...user.gardens, gardenPreview.id]))
+        if(!json.result) return
+        dispatch(updateGardens([...user.gardens, gardenPreview.id]))
+        navigate('Jardins', {garden: {id: gardenPreview.id}})
     }
 
     // Set user.gardens reducer from backend
