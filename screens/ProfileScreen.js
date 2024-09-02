@@ -19,12 +19,12 @@ const ProfileScreen = ({ navigation }) => {
     const user = useSelector(state => state.user)
 
     const [cameraOverlay, setCameraOverlay] = useState(null)
-    const [firstname, setFirstname] = useState(user.firstname)
-    const [lastname, setLastname] = useState(user.lastname)
+    const [firstname, setFirstname] = useState('')
+    const [lastname, setLastname] = useState('')
     const [pp, setPp] = useState(null)
     const [newPp, setNewPp] = useState(null)
     const [editBio, setEditBio] = useState(false)
-    const [bio, setBio] = useState(user.bio)
+    const [bio, setBio] = useState('')
 
     // Set Camera
     const camera = () => {
@@ -86,6 +86,22 @@ const ProfileScreen = ({ navigation }) => {
         if(!json.result) return
         setPp(json.ppURI)
       })()
+    }, [isFocused])
+
+    // Get user data
+    useEffect(() => {
+        (async() => {
+            const { token } = user
+            const response = await fetch(`${global.BACKEND_URL}/user`, {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json', token }
+            })
+            const json = await response.json()
+            if(!json.result) return
+            setBio(json.user.bio)
+            setFirstname(json.user.firstname)
+            setLastname(json.user.lastname)
+        })()
     }, [isFocused])
 
     // Save user
