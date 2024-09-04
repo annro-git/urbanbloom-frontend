@@ -1,21 +1,25 @@
 import { View, ScrollView, Text, TouchableOpacity, Image } from "react-native"
 import { useState, useEffect } from "react"
 import { useSelector } from "react-redux"
+import { ArrowLeft } from "lucide-react-native"
+import { useIsFocused } from "@react-navigation/native"
 
 import PageTypeCard from "../components/molecular/Ressources/PageTypeCard"
-import { ArrowLeft } from "lucide-react-native"
 
 const parseMonth = int => {
     const months = ['', 'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre' ]
     return months[int]
 }
 
-const ResourcesScreen = () => {
+const ResourcesScreen = ({ route }) => {
+
+    const isFocused = useIsFocused()
 
     const user = useSelector(state => state.user)
     const [pages, setPages] = useState(null)
     const [currentPage, setCurrentPage] = useState(null)
 
+    // Get all items
     useEffect(() => {
         (async() => {
             const { token } = user
@@ -29,6 +33,13 @@ const ResourcesScreen = () => {
             setPages(json.pages)
         })()
     }, [])
+
+    // Manage display from another screen
+    useEffect(() => {
+        if(!route.params) return
+        selectPage(route.params)
+    }, [isFocused])
+    
 
     const selectPage = pageName => {
         (async() => {
