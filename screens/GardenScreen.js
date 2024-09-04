@@ -242,8 +242,7 @@ const GardenScreen = ({ navigation, route }) => {
                     </View>
             </View>
             
-            {currentPost.replies.length > 0
-                ? <ScrollView keyboardShouldPersistTaps="always" style={{ width: '100%' }} contentContainerStyle={{...styles.container, alignSelf: 'center'}}>
+            <ScrollView keyboardShouldPersistTaps="always" style={{ width: '100%' }} contentContainerStyle={{...styles.container, alignSelf: 'center'}}>
                 {/* Post */}
                 <View style={{ width: '100%', backgroundColor: 'white', padding: 20, borderRadius: 10, gap: 20, borderWidth: 1, borderColor: '#294849' }}>
                     <Text style={{...styles.paragraph, textAlign: 'left'}}>{ currentPost.text }</Text>
@@ -279,9 +278,10 @@ const GardenScreen = ({ navigation, route }) => {
                         )
                     })
                 }
+                {currentPost.replies.length === 0 &&
+                    <Text style={{fontSize: 16, fontFamily: 'Lato_400Regular', color: '#000000BF'}}>Répondez en premier !</Text>
+                }
                 </ScrollView>
-                : <Text>Post + pas de reply + reply form</Text>
-            }
             <ReplyForm 
                 gardenId={ currentGarden.id } 
                 postId={ currentPost.id } 
