@@ -44,14 +44,16 @@ const GardenScreen = ({ navigation, route }) => {
 
     // Refresh on Focus
     useEffect(() => {
-      if(currentPost){
-        setPost(currentGarden, currentPost)
-      }
-      if(currentEvent){
-        setEvent(currentEvent)
-      }
-      if(currentGarden && !currentPost && !currentEvent){
-        setGarden(currentGarden)
+      if(!route.params){
+        if(currentPost){
+            setPost(currentGarden, currentPost)
+          }
+          if(currentEvent){
+            setEvent(currentEvent)
+          }
+          if(currentGarden && !currentPost && !currentEvent){
+            setGarden(currentGarden)
+          }
       }
     }, [isFocused])
     

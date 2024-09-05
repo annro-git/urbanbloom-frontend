@@ -18,7 +18,6 @@
     "@reduxjs/toolkit": "^2.2.7",
     "expo": "~51.0.31",
     "expo-camera": "~15.0.15",
-    "expo-font": "^12.0.9",
     "expo-location": "^17.0.1",
     "expo-status-bar": "~1.12.1",
     "lucide-react-native": "^0.427.0",

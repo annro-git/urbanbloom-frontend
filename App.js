@@ -8,6 +8,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { House, Search, CirclePlus, Leaf, Book } from 'lucide-react-native'
 import { StatusBar } from 'react-native'
+import { LogBox } from 'react-native'
 
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import SplashScreen from './screens/SplashScreen'
@@ -26,7 +27,7 @@ import HomeScreen from './screens/HomeScreen'
 
 // URL BACKEND
 // global.BACKEND_URL = 'https://urbanbloom-backend.vercel.app/'
-global.BACKEND_URL = 'http://192.168.237.112:3000'
+global.BACKEND_URL = 'http://192.168.1.24:3000'
 
 // Redux
 const reducers = combineReducers({ user })
@@ -77,6 +78,9 @@ const stacks = [
 
 const App = () => {
 
+  // Disable warning (demoday)
+  LogBox.ignoreAllLogs()
+
   // Loading Fonts
   let [loaded] = useFonts({
     Lato_300Light, 
@@ -88,6 +92,7 @@ const App = () => {
   if(!loaded){
     return null
   }
+
   return (
     <Provider store={ store }>
       <PersistGate persistor={ persiststor }>
