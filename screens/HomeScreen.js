@@ -6,6 +6,7 @@ import { useSelector } from "react-redux"
 import EventsPreview from "../components/molecular/Accueil/EventsPreview"
 import LastPostsPreview from "../components/molecular/Accueil/LastPostsPreview"
 import PagesPreview from "../components/molecular/Accueil/PagesPreview"
+import Button from "../components/atomic/Button"
 
 const HomeScreen = ({ navigation }) => {
 
@@ -67,57 +68,90 @@ const HomeScreen = ({ navigation }) => {
             keyboardShouldPersistTaps="always"
         >
             <View style={{ width: '80%', gap: 20, paddingVertical: 20 }} >
-                
                 <Text style={{ fontSize: 20, fontFamily: 'Lato_700Bold', color: '#294849', lineHeight: 24 }}>Bonjour {user.username}</Text>
-                <Text>Vos prochains événements</Text>
+                {/* If no post and no event */}
+                {userGardenLastPosts && userSubscribedEvents && userGardenLastPosts.length === 0 && userSubscribedEvents.length === 0 &&
+                    <>
+                        <Text>Pas de nouvelle, bonne nouvelle ! {'\n'}
+                        Que diriez-vous d'animer un de vos jardins ?</Text>
+                        <Button text="C'est parti !" primary="white" onPress={() => navigate('Jardins')} />
+                    </>
+                }
+                {/* User comming events */}
+                {userGardenLastPosts && userGardenLastPosts.length > 0 &&
+                <View style={{ backgroundColor: '#00000022', padding: 10, gap: 10, borderRadius: 10 }}>
+                    <Text style={{ fontSize: 16, fontFamily: 'Lato_700Bold', color: '#000000BF', lineHeight: 20 }}>Derniers messages</Text>
+                    {userGardenLastPosts.map((post, index) => {
+                        return (
+                            <LastPostsPreview key={index} post={post} navigate={ navigate } index={index} />
+                        )
+                    })}
+                </View>
+                }
+                {userSubscribedEvents && userSubscribedEvents.length > 0 &&
+                <View style={{ backgroundColor: '#00000044', padding: 10, gap: 10, borderRadius: 10 }}>
+                    <Text  style={{ fontSize: 16, fontFamily: 'Lato_700Bold', color: 'white', lineHeight: 20 }}>Prochains événements</Text>
+                    {userSubscribedEvents.sort((a, b) => new Date(a.date) - new Date(b.date))
+                        .map((event, index) => {
+                        return (
+                            <EventsPreview key={index} event={event} navigate={ navigate } index={index} />
+                        )
+                    })}
+                </View>
+                }
+                {/* <Text>Vos prochains événements</Text>
                 <Text>{JSON.stringify(userSubscribedEvents)}</Text>
                 <Text>Derniers messages</Text>
-                <Text>{JSON.stringify(userGardenLastPosts)}</Text>
+                <Text>{JSON.stringify(userGardenLastPosts)}</Text> */}
                 {currentResources &&
                     <View style={{ gap: 20 }}>
+                        {/* Fruits to sow */}
                         {currentResources.sow.fruit.length > 0 &&
                             <>
                             <Text style={{ fontSize: 16, fontFamily: 'Lato_700Bold', color: '#294849', lineHeight: 20 }}>Fruits à planter : </Text>
-                            <ScrollView style={{ flexDirection: 'row', backgroundColor: '#BDCEBB', borderRadius: 20, padding: 10 }} horizontal={ true }>
+                            <ScrollView style={{ flexDirection: 'row', backgroundColor: '#BDCEBB', borderRadius: 10, padding: 10 }} horizontal={ true }>
                             {currentResources.sow.fruit.map((page, index) => {
                                 return(
-                                    <PagesPreview key={ index } name={page.name} image={page.image} navigate={(e) => navigate(e)} />
+                                    <PagesPreview key={ index } name={page.name} image={page.image} navigate={ navigate } />
                                 )
                             })
                             }
                             </ScrollView>
                             </>
                         }
+                        {/* Vegetables to sow */}
                         {currentResources.sow.vegetable.length > 0 &&
                             <>
                             <Text style={{ fontSize: 16, fontFamily: 'Lato_700Bold', color: '#294849', lineHeight: 20 }}>Légumes à planter : </Text>
-                            <ScrollView style={{ flexDirection: 'row', backgroundColor: '#C5BBA2', borderRadius: 20, padding: 10 }} horizontal={ true }>
+                            <ScrollView style={{ flexDirection: 'row', backgroundColor: '#C5BBA2', borderRadius: 10, padding: 10 }} horizontal={ true }>
                             {currentResources.sow.vegetable.map((page, index) => {
                                 return(
-                                    <PagesPreview key={ index } name={page.name} image={page.image} navigate={(e) => navigate(e)} />
+                                    <PagesPreview key={ index } name={page.name} image={page.image} navigate={ navigate } />
                                 )
                             })
                             }
                             </ScrollView>
                             </>
                         }
+                        {/* Fruits to harvest */}
                         {currentResources.harvest.fruit.length > 0 &&
                             <>
                             <Text style={{ fontSize: 16, fontFamily: 'Lato_700Bold', color: '#294849', lineHeight: 20 }}>Fruits à récolter : </Text>
-                            <ScrollView style={{ flexDirection: 'row', backgroundColor: '#BDCEBB', borderRadius: 20, padding: 10 }} horizontal={ true }>
+                            <ScrollView style={{ flexDirection: 'row', backgroundColor: '#BDCEBB', borderRadius: 10, padding: 10 }} horizontal={ true }>
                             {currentResources.harvest.fruit.map((page, index) => {
                                 return(
-                                    <PagesPreview key={ index } name={page.name} image={page.image} navigate={(e) => navigate(e)} />
+                                    <PagesPreview key={ index } name={page.name} image={page.image} navigate={ navigate } />
                                 )
                             })
                             }
                             </ScrollView>
                             </>
                         }
+                        {/* Vegetables to harvest */}
                         {currentResources.harvest.vegetable.length > 0 &&
                             <>
                             <Text style={{ fontSize: 16, fontFamily: 'Lato_700Bold', color: '#294849', lineHeight: 20 }}>Légumes à récolter : </Text>
-                            <ScrollView style={{ flexDirection: 'row', backgroundColor: '#C5BBA2', borderRadius: 20, padding: 10 }} horizontal={ true }>
+                            <ScrollView style={{ flexDirection: 'row', backgroundColor: '#C5BBA2', borderRadius: 10, padding: 10 }} horizontal={ true }>
                             {currentResources.harvest.vegetable.map((page, index) => {
                                 return(
                                     <PagesPreview key={ index } name={page.name} image={page.image} navigate={ navigate } />

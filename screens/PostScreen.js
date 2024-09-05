@@ -150,7 +150,9 @@ const PostScreen = ({ navigation, route }) => {
         >
             <View style={{ width: '80%', gap: 20, paddingVertical: 20 }} >
                 <Text style={{ fontSize: 20, fontFamily: 'Lato_700Bold', color: '#294849', lineHeight: 24 }}>Publier</Text>
-                <View style={{ zIndex: 3 }}>
+                {gardenOptions.length !== 0
+                    ? <>
+                    <View style={{ zIndex: 3 }}>
                     <InputSelect
                         placeholder='Sélectionnez un jardin'
                         options={ gardenOptions }
@@ -158,118 +160,122 @@ const PostScreen = ({ navigation, route }) => {
                         selected={ selectedGarden }
                         color='#C5BBA2'
                     />
-                </View>
-                <RadioButtonGroup
-                    options={ typeOptions }
-                    selected={ type }
-                    onSelect={ setType }
-                    color='#000000BF'
-                    fontSize={ 16 }
-                />
-                { type === 'message' &&
-                    <View style={{ gap: 20 }}>
-                        <TextInput
-                            placeholder="Titre"
-                            color='#C5BBA2'
-                            value={ message.title }
-                            onChangeText={e => setMessage({title: e, text: message.text})}
-                            fontSize={ 16 }
-                        />
-                        <TextArea
-                            placeholder="Message..."
-                            color='#C5BBA2'
-                            value={ message.text }
-                            onChangeText={e => setMessage({title: message.title, text: e})}
-                            fontSize={ 14 }
-                        />
-                        {pictureUrls.length > 0 &&
-                            <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 20 }}>
-                                {
-                                    pictureUrls.map((picture, index) => {
-                                        return(
-                                            <TouchableOpacity key={index} onPress={() => setPictureUrls(pictureUrls.filter(e => e !== picture))}>
-                                                <Image 
-                                                    source={{ uri: picture }} 
-                                                    style={{ resizeMode: 'cover', width: 100, height: 100, borderRadius: 10 }}
-                                                />
-                                            </TouchableOpacity>
-                                        )
-                                    })
-                                }
-                            </View>
-                        }
-                        <View style={{ gap: 20 }}>
-                            <Button
-                                primary='white'
-                                secondary='#466760'
-                                text='Prendre une photo'
-                                onPress={() => setCameraOverlay(camera)}
-                            />
-                            <Button
-                                primary='#466760'
-                                secondary='white'
-                                text='Envoyer'
-                                onPress={() => handleSendMessage()}
-                            />
-                        </View>
                     </View>
-                }
-                { type === 'event' &&
-                    <View style={{ gap: 20 }}>
-                        <View style={{ zIndex: 2 }}>
-                            <InputDate
+                    <RadioButtonGroup
+                        options={ typeOptions }
+                        selected={ type }
+                        onSelect={ setType }
+                        color='#000000BF'
+                        fontSize={ 16 }
+                    />
+                    { type === 'message' &&
+                        <View style={{ gap: 20 }}>
+                            <TextInput
+                                placeholder="Titre"
                                 color='#C5BBA2'
-                                padding={ 20 }
-                                size={ 16 }
-                                placeholder="Sélectionner une date"
-                                onPick={e => setEvent({title: event.title, text: event.text, date: e})}
+                                value={ message.title }
+                                onChangeText={e => setMessage({title: e, text: message.text})}
+                                fontSize={ 16 }
                             />
-                        </View>
-                        <TextInput
-                            placeholder="Titre"
-                            color='#C5BBA2'
-                            value={ event.title }
-                            onChangeText={e => setEvent({title: e, text: event.text, date: event.date})}
-                            fontSize={ 16 }
-                        />
-                        <TextArea
-                            placeholder="Description..."
-                            color='#C5BBA2'
-                            value={ event.text }
-                            onChangeText={e => setEvent({title: event.title, text: e, date: event.date})}
-                            fontSize={ 14 }
-                        />
-                        {pictureUrls.length > 0 &&
-                            <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 20 }}>
-                                {
-                                    pictureUrls.map((picture, index) => {
-                                        return(
-                                            <TouchableOpacity key={index} onPress={() => setPictureUrls(pictureUrls.filter(e => e !== picture))}>
-                                                <Image 
-                                                    source={{ uri: picture }} 
-                                                    style={{ resizeMode: 'cover', width: 100, height: 100, borderRadius: 10 }}
-                                                />
-                                            </TouchableOpacity>
-                                        )
-                                    })
-                                }
+                            <TextArea
+                                placeholder="Message..."
+                                color='#C5BBA2'
+                                value={ message.text }
+                                onChangeText={e => setMessage({title: message.title, text: e})}
+                                fontSize={ 14 }
+                            />
+                            {pictureUrls.length > 0 &&
+                                <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 20 }}>
+                                    {
+                                        pictureUrls.map((picture, index) => {
+                                            return(
+                                                <TouchableOpacity key={index} onPress={() => setPictureUrls(pictureUrls.filter(e => e !== picture))}>
+                                                    <Image 
+                                                        source={{ uri: picture }} 
+                                                        style={{ resizeMode: 'cover', width: 100, height: 100, borderRadius: 10 }}
+                                                    />
+                                                </TouchableOpacity>
+                                            )
+                                        })
+                                    }
+                                </View>
+                            }
+                            <View style={{ gap: 20 }}>
+                                <Button
+                                    primary='white'
+                                    secondary='#466760'
+                                    text='Prendre une photo'
+                                    onPress={() => setCameraOverlay(camera)}
+                                />
+                                <Button
+                                    primary='#466760'
+                                    secondary='white'
+                                    text='Envoyer'
+                                    onPress={() => handleSendMessage()}
+                                />
                             </View>
-                        }
-                        <View style={{ gap: 20 }}>
-                            <Button
-                                primary='white'
-                                secondary='#466760'
-                                text='Prendre une photo'
-                                onPress={() => setCameraOverlay(camera)}
-                            />
-                            <Button
-                                primary='#466760'
-                                secondary='white'
-                                text='Envoyer'
-                                onPress={() => handleSendEvent()}
-                            />
                         </View>
-                    </View>
+                    }
+                    { type === 'event' &&
+                        <View style={{ gap: 20 }}>
+                            <View style={{ zIndex: 2 }}>
+                                <InputDate
+                                    color='#C5BBA2'
+                                    padding={ 20 }
+                                    size={ 16 }
+                                    placeholder="Sélectionner une date"
+                                    onPick={e => setEvent({title: event.title, text: event.text, date: e})}
+                                />
+                            </View>
+                            <TextInput
+                                placeholder="Titre"
+                                color='#C5BBA2'
+                                value={ event.title }
+                                onChangeText={e => setEvent({title: e, text: event.text, date: event.date})}
+                                fontSize={ 16 }
+                            />
+                            <TextArea
+                                placeholder="Description..."
+                                color='#C5BBA2'
+                                value={ event.text }
+                                onChangeText={e => setEvent({title: event.title, text: e, date: event.date})}
+                                fontSize={ 14 }
+                            />
+                            {pictureUrls.length > 0 &&
+                                <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 20 }}>
+                                    {
+                                        pictureUrls.map((picture, index) => {
+                                            return(
+                                                <TouchableOpacity key={index} onPress={() => setPictureUrls(pictureUrls.filter(e => e !== picture))}>
+                                                    <Image 
+                                                        source={{ uri: picture }} 
+                                                        style={{ resizeMode: 'cover', width: 100, height: 100, borderRadius: 10 }}
+                                                    />
+                                                </TouchableOpacity>
+                                            )
+                                        })
+                                    }
+                                </View>
+                            }
+                            <View style={{ gap: 20 }}>
+                                <Button
+                                    primary='white'
+                                    secondary='#466760'
+                                    text='Prendre une photo'
+                                    onPress={() => setCameraOverlay(camera)}
+                                />
+                                <Button
+                                    primary='#466760'
+                                    secondary='white'
+                                    text='Envoyer'
+                                    onPress={() => handleSendEvent()}
+                                />
+                            </View>
+                        </View>
+                    }
+                    </>
+                    :
+                        navigate('Jardins')
                 }
             </View>
             { cameraOverlay }

@@ -10,7 +10,6 @@ import { House, Search, CirclePlus, Leaf, Book } from 'lucide-react-native'
 import { StatusBar } from 'react-native'
 
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import TestScreen from './screens/TestScreen'
 import SplashScreen from './screens/SplashScreen'
 import SigninScreen from './screens/SigninScreen'
 import SignupScreen from './screens/SignupScreen'
@@ -22,16 +21,15 @@ import SearchScreen from './screens/SearchScreen'
 import PostScreen from './screens/PostScreen'
 import GardenScreen from './screens/GardenScreen'
 import ResourcesScreen from './screens/ResourcesScreen'
-import test from './reducers/test'
 import user from './reducers/user'
 import HomeScreen from './screens/HomeScreen'
 
 // URL BACKEND
 // global.BACKEND_URL = 'https://urbanbloom-backend.vercel.app/'
-global.BACKEND_URL = 'http://192.168.1.24:3000'
+global.BACKEND_URL = 'http://192.168.237.112:3000'
 
 // Redux
-const reducers = combineReducers({ test, user })
+const reducers = combineReducers({ user })
 const persistConfig = { key: 'urbanbloom', storage: AsyncStorage }
 const store = configureStore({
   reducer: persistReducer(persistConfig, reducers),
