@@ -159,8 +159,8 @@ const ProfileScreen = ({ navigation }) => {
                         <EditableText value={ lastname } onChangeText={(e) => setLastname(e)} label="Nom" />
                     </View>
                     <Button text="Sauvegarder" primary="white" secondary="#294849" onPress={() => saveUser()} />
-                    <Button text="Se déconnecter" primary='#FEC2A9' secondary='#000000BF' onPress={() => {
-                        AsyncStorage.removeItem('persist:urbanbloom')
+                    <Button text="Se déconnecter" primary='#FEC2A9' secondary='#000000BF' onPress={async() => {
+                        await AsyncStorage.removeItem('persist:urbanbloom')
                         navigate('Splash')
                     }} />
                 </View>
