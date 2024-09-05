@@ -97,7 +97,7 @@ const SearchScreen = ({ navigation }) => {
         const json = await response.json()
         json.result && setMarkers(json.gardens)
       })()
-    }, [interest, bonus])
+    }, [interest, bonus, isFocused])
 
     return (
         <View style={{ flex: 1, position:'relative' }}>

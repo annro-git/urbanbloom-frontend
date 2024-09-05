@@ -274,8 +274,11 @@ const PostScreen = ({ navigation, route }) => {
                         </View>
                     }
                     </>
-                    :
-                        navigate('Jardins')
+                    : <>
+                    <Text style={{fontSize: 16, fontFamily: 'Lato_400Regular', textAlign: 'center',}}>Vous n'êtes inscrit à aucun Jardin {'\n'}pour le moment !</Text>
+                    <Button text='Rechercher' primary='#466760' secondary='white' onPress={() => navigate('Recherche')} />
+                    </>
+                        
                 }
             </View>
             { cameraOverlay }

@@ -9,7 +9,7 @@ import { updateLocation } from "../../reducers/user"
 import * as Location from 'expo-location'
 import Logotype from "./Logotype"
 import WeatherIcon from "./Weather/WeatherIcon"
-import AsyncStorageCleaner from "../atomic/AsyncStorageCleaner"
+// import AsyncStorageCleaner from "../atomic/AsyncStorageCleaner"
 
 const CustomHeader = ({ route }) => {
 
